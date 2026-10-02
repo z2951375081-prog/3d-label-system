@@ -29,9 +29,34 @@ const add = (...values) => values[0].map((_, index) => values.reduce((sum, value
 const matVec = (weights, values) => weights.map((row) => row.reduce((sum, weight, index) => sum + weight * values[index], 0));
 const dot = (left, right) => left.reduce((sum, value, index) => sum + value * right[index], 0);
 const softmax = (values) => { const peak = Math.max(...values); const exp = values.map((value) => Math.exp(value - peak)); const total = exp.reduce((sum, value) => sum + value, 0); return exp.map((value) => value / Math.max(total, 1e-9)); };
+const STYLE_ADAPTER_KEYS = ['radial_ring', 'box_sides', 'anchor_adaptive'];
+const STYLE_ADAPTER_EXPERT_NAMES = ['radial_ring_expert', 'box_sides_expert', 'anchor_adaptive_expert'];
+function truthy(value) { return value === true || ['true', '1', 'yes', 'on'].includes(String(value).toLowerCase()); }
+function deterministicSmall(seed) { return Math.sin(seed * 12.9898 + 78.233) * 43758.5453 % 1; }
+function styleKeyFromExpertName(name = '') {
+  const lower = String(name).toLowerCase();
+  if (lower.includes('radial') || lower.includes('spherical')) return 'radial_ring';
+  if (lower.includes('box') || lower.includes('rectangular')) return 'box_sides';
+  if (lower.includes('anchor') || lower.includes('surround')) return 'anchor_adaptive';
+  return null;
+}
+function legacyStyleKey(key = '') {
+  const lower = String(key).toLowerCase();
+  if (lower === 'spherical') return 'radial_ring';
+  if (lower === 'rectangular') return 'box_sides';
+  if (lower === 'surround') return 'anchor_adaptive';
+  return lower;
+}
+function normalizeStyleWeights(raw = {}, selected = '') {
+  const weights = Object.fromEntries(STYLE_ADAPTER_KEYS.map((key) => [key, Math.max(0, Number(raw[key] ?? raw[key.replace('radial_ring','spherical').replace('box_sides','rectangular').replace('anchor_adaptive','surround')] ?? 0))]));
+  const chosen = legacyStyleKey(selected || raw.selected || raw.gpt_selected || '');
+  if (STYLE_ADAPTER_KEYS.includes(chosen) && !Object.values(weights).some((value) => value > 0)) weights[chosen] = 1;
+  const total = Object.values(weights).reduce((sum, value) => sum + value, 0);
+  return total > 0 ? Object.fromEntries(Object.entries(weights).map(([key, value]) => [key, value / total])) : null;
+}
 
 function parseArgs(argv) {
-  const options = { epochs: 80, learningRate: 0.002, styleWeight: 0.2, directionWeight: 1.25, viewWeight: 0.25, worstViewWeight: 2, cvarViewWeight: 1, stereoWeight: 1, textClarityWeight: 3, leaderCrossingWeight: 3.5, architecture: 'v9', hiddenDim: 64, preGnnFnnLayers: 1, messageLayers: 2, transformerLayers: 1, expertCount: 4, seed: 17, output: defaultOutput, report: defaultReport, warmStart: activeModelFile, manifest: manifestFile, styleGridSize: 20, routerStyleWeight: 0.15, expertStyleWeight: 0.35, targetSource: 'manual', pseudoLabels: '', expertSelection: '' };
+  const options = { epochs: 80, learningRate: 0.002, styleWeight: 0.2, directionWeight: 1.25, viewWeight: 0.25, worstViewWeight: 2, cvarViewWeight: 1, stereoWeight: 1, textClarityWeight: 3, leaderCrossingWeight: 3.5, architecture: 'v9', hiddenDim: 64, preGnnFnnLayers: 1, messageLayers: 2, transformerLayers: 1, expertCount: 4, seed: 17, output: defaultOutput, report: defaultReport, warmStart: activeModelFile, manifest: manifestFile, styleGridSize: 20, routerStyleWeight: 0.15, expertStyleWeight: 0.35, targetSource: 'manual', pseudoLabels: '', expertSelection: '', styleLabels: '', styleAdapterMoE: false, styleEmbeddingDim: 8, styleAdapterDim: 16 };
   for (let index = 0; index < argv.length; index += 1) {
     if (!argv[index].startsWith('--')) continue;
     const key = argv[index].slice(2);
@@ -97,10 +122,32 @@ function v10GeometrySafetyLoss(outputs, graph, options) {
   return viewWeight * viewConditionedLoss(outputs, graph, options) / Math.max(1, graph.nodes.length);
 }
 
+function ensureStyleAdapterMoE(network, options) {
+  const hiddenDim = Number(options.hiddenDim);
+  const styleDim = Math.max(3, Number(options.styleEmbeddingDim || 8));
+  const adapterDim = Math.max(2, Number(options.styleAdapterDim || 16));
+  network.moe.style_adapter = { enabled: true, version: 'style_adapter_moe_v1', style_keys: STYLE_ADAPTER_KEYS, style_embedding_dim: styleDim, adapter_dim: adapterDim, adapter_position: 'after_shared_v10_graph_before_expert_head' };
+  network.moe.style_embeddings = STYLE_ADAPTER_KEYS.map((_, styleIndex) => Array.from({ length: styleDim }, (__, dim) => Number(((styleIndex === dim % STYLE_ADAPTER_KEYS.length ? 0.22 : -0.06) + 0.01 * Math.sin((styleIndex + 1) * (dim + 3))).toFixed(6))));
+  network.moe.experts.forEach((expert, expertIndex) => {
+    expert.name = STYLE_ADAPTER_EXPERT_NAMES[expertIndex] || `style_expert_${expertIndex}`;
+    expert.style_key = STYLE_ADAPTER_KEYS[expertIndex] || null;
+    if (!expert.style_adapter || expert.style_adapter.down_weights?.[0]?.length !== hiddenDim + styleDim || expert.style_adapter.down_weights?.length !== adapterDim) {
+      expert.style_adapter = {
+        down_weights: Array.from({ length: adapterDim }, (_, row) => Array.from({ length: hiddenDim + styleDim }, (__, column) => Number(((deterministicSmall((expertIndex + 1) * 100000 + row * 997 + column * 37) - 0.5) * 0.035).toFixed(6)))),
+        down_bias: Array.from({ length: adapterDim }, (_, row) => Number(((expertIndex - 1) * 0.003 + Math.sin(row + expertIndex) * 0.002).toFixed(6))),
+        up_weights: Array.from({ length: hiddenDim }, (_, row) => Array.from({ length: adapterDim }, (__, column) => Number(((deterministicSmall((expertIndex + 1) * 200000 + row * 499 + column * 53) - 0.5) * 0.012).toFixed(6)))),
+        up_bias: Array.from({ length: hiddenDim }, (_, row) => Number(((expertIndex - 1) * 0.0008 * Math.cos(row + 1)).toFixed(6)))
+      };
+    }
+  });
+  return network;
+}
+
 function makeV9Network(source, options) {
   if (!source?.network) throw new Error('训练需要从已有图模型继承 GNN/Transformer 参数；当前活动模型没有 network');
   const network = clone(source.network);
   const hiddenDim = Number(options.hiddenDim);
+  const useStyleAdapter = truthy(options.styleAdapterMoE);
   if (hiddenDim !== network.input.weights.length) throw new Error(`hiddenDim=${hiddenDim} 与 warm start=${network.input.weights.length} 不一致`);
   if (network.input.weights[0].length !== PURE_3D_LABEL_FEATURE_NAMES.length) throw new Error('生成器输入不是 51D');
   network.fusion.visual_dim = 0;
@@ -117,16 +164,18 @@ function makeV9Network(source, options) {
       anchor_edge_weights: layer.anchor_edge_weights || expanded.map((row) => row.slice(LABEL_RELATION_EDGE_FEATURE_NAMES.length, LABEL_RELATION_EDGE_FEATURE_NAMES.length + ANCHOR_LABEL_EDGE_FEATURE_NAMES.length))
     };
   });
-  const names = ['spherical_contour_style', 'rectangular_edge_style', 'anchor_surround_style', 'balanced_style', 'directional_style'];
-  if (Number(options.expertCount) !== 4 && Number(options.expertCount) !== 5) throw new Error('v9 MoE 专家数只能是 4 或 5');
-  network.moe.experts = network.moe.experts.slice(0, Number(options.expertCount));
-  while (network.moe.experts.length < Number(options.expertCount)) {
+  const names = useStyleAdapter ? STYLE_ADAPTER_EXPERT_NAMES : ['spherical_contour_style', 'rectangular_edge_style', 'anchor_surround_style', 'balanced_style', 'directional_style'];
+  const requestedCount = useStyleAdapter ? 3 : Number(options.expertCount);
+  if (!useStyleAdapter && requestedCount !== 4 && requestedCount !== 5) throw new Error('v9 MoE 专家数只能是 4 或 5；styleAdapterMoE=true 时固定为 3 个风格专家');
+  network.moe.experts = network.moe.experts.slice(0, requestedCount);
+  while (network.moe.experts.length < requestedCount) {
     const template = network.moe.experts[0];
     network.moe.experts.push(clone(template));
   }
   network.moe.experts.forEach((expert, index) => { expert.name = names[index]; });
-  network.moe.router.weights = network.moe.router.weights.slice(0, Number(options.expertCount));
-  network.moe.router.bias = network.moe.router.bias.slice(0, Number(options.expertCount));
+  network.moe.router.weights = network.moe.router.weights.slice(0, requestedCount);
+  network.moe.router.bias = network.moe.router.bias.slice(0, requestedCount);
+  if (useStyleAdapter) ensureStyleAdapterMoE(network, options);
   return network;
 }
 
@@ -178,10 +227,29 @@ function forwardHidden(network, graph) {
     hidden = output;
   }
   const gates = hidden.map((values) => softmax(add(matVec(network.moe.router.weights, values), network.moe.router.bias)));
-  const expertHeads = hidden.map((values) => network.moe.experts.map((expert) => add(matVec(expert.hidden_weights, values), expert.hidden_bias).map(Math.tanh)));
+  const styleEmbeddings = network.moe.style_embeddings || [];
+  const expertInputs = [];
+  const adapterCaches = [];
+  const expertHeads = hidden.map((values, nodeIndex) => network.moe.experts.map((expert, expertIndex) => {
+    let expertInput = values;
+    let adapterCache = null;
+    if (expert.style_adapter) {
+      const embedding = styleEmbeddings[expertIndex] || vector(Number(network.moe.style_adapter?.style_embedding_dim || 0));
+      const adapterInput = [...values, ...embedding];
+      const adapterHidden = add(matVec(expert.style_adapter.down_weights, adapterInput), expert.style_adapter.down_bias).map(Math.tanh);
+      const adapterDelta = add(matVec(expert.style_adapter.up_weights, adapterHidden), expert.style_adapter.up_bias).map(Math.tanh);
+      expertInput = add(values, adapterDelta);
+      adapterCache = { adapterInput, adapterHidden, adapterDelta, embedding };
+    }
+    expertInputs[nodeIndex] ||= [];
+    adapterCaches[nodeIndex] ||= [];
+    expertInputs[nodeIndex][expertIndex] = expertInput;
+    adapterCaches[nodeIndex][expertIndex] = adapterCache;
+    return add(matVec(expert.hidden_weights, expertInput), expert.hidden_bias).map(Math.tanh);
+  }));
   const expertOutputs = expertHeads.map((heads) => heads.map((head, expertIndex) => add(matVec(network.moe.experts[expertIndex].weights, head), network.moe.experts[expertIndex].bias)));
   const output = expertOutputs.map((experts, index) => experts[0].map((_, feature) => experts.reduce((sum, expert, expertIndex) => sum + gates[index][expertIndex] * expert[feature], 0)));
-  return { output, cache: { inputHidden, preGnnCaches, fusionInput, fusionHidden, messageCaches, transformerCaches, finalHidden: hidden, gates, expertHeads, expertOutputs }, features };
+  return { output, cache: { inputHidden, preGnnCaches, fusionInput, fusionHidden, messageCaches, transformerCaches, finalHidden: hidden, gates, expertInputs, adapterCaches, expertHeads, expertOutputs }, features };
 }
 
 function nodeStyleLoss(output, node, graph) {
@@ -215,10 +283,10 @@ function leaderDirectionLoss(outputs, graph) {
 function targetRouterWeights(network, graph) {
   const styleWeights = graph.expertSelection?.router_target || graph.styleRouting?.weights || {};
   const raw = network.moe.experts.map((expert) => {
-    const name = String(expert.name || '').toLowerCase();
-    if (name.includes('spherical')) return Number(styleWeights.spherical || 0);
-    if (name.includes('rectangular')) return Number(styleWeights.rectangular || 0);
-    if (name.includes('surround')) return Number(styleWeights.surround || 0);
+    const key = styleKeyFromExpertName(expert.name || expert.style_key || '');
+    if (key === 'radial_ring') return Number(styleWeights.radial_ring ?? styleWeights.spherical ?? 0);
+    if (key === 'box_sides') return Number(styleWeights.box_sides ?? styleWeights.rectangular ?? 0);
+    if (key === 'anchor_adaptive') return Number(styleWeights.anchor_adaptive ?? styleWeights.surround ?? 0);
     return 0.02;
   });
   const total = raw.reduce((sum, value) => sum + Math.max(0, value), 0) || 1;
@@ -260,7 +328,14 @@ function zeroGrad(network) {
       bias: vector(layer.bias.length)
     })),
     transformer_layers: network.transformer_layers.map((layer) => ({ query_weights: zeros(layer.query_weights.length, layer.query_weights[0].length), query_bias: vector(layer.query_bias.length), key_weights: zeros(layer.key_weights.length, layer.key_weights[0].length), key_bias: vector(layer.key_bias.length), value_weights: zeros(layer.value_weights.length, layer.value_weights[0].length), value_bias: vector(layer.value_bias.length), output_weights: zeros(layer.output_weights.length, layer.output_weights[0].length), output_bias: vector(layer.output_bias.length), ffn_in_weights: zeros(layer.ffn_in_weights.length, layer.ffn_in_weights[0].length), ffn_in_bias: vector(layer.ffn_in_bias.length), ffn_out_weights: zeros(layer.ffn_out_weights.length, layer.ffn_out_weights[0].length), ffn_out_bias: vector(layer.ffn_out_bias.length) })),
-    moe: { router: { weights: zeros(network.moe.router.weights.length, network.moe.router.weights[0].length), bias: vector(network.moe.router.bias.length) }, experts: network.moe.experts.map((expert) => ({ hidden_weights: zeros(expert.hidden_weights.length, expert.hidden_weights[0].length), hidden_bias: vector(expert.hidden_bias.length), weights: zeros(expert.weights.length, expert.weights[0].length), bias: vector(expert.bias.length) })) }
+    moe: {
+      router: { weights: zeros(network.moe.router.weights.length, network.moe.router.weights[0].length), bias: vector(network.moe.router.bias.length) },
+      style_embeddings: Array.isArray(network.moe.style_embeddings) ? network.moe.style_embeddings.map((embedding) => vector(embedding.length)) : null,
+      experts: network.moe.experts.map((expert) => ({
+        hidden_weights: zeros(expert.hidden_weights.length, expert.hidden_weights[0].length), hidden_bias: vector(expert.hidden_bias.length), weights: zeros(expert.weights.length, expert.weights[0].length), bias: vector(expert.bias.length),
+        style_adapter: expert.style_adapter ? { down_weights: zeros(expert.style_adapter.down_weights.length, expert.style_adapter.down_weights[0].length), down_bias: vector(expert.style_adapter.down_bias.length), up_weights: zeros(expert.style_adapter.up_weights.length, expert.style_adapter.up_weights[0].length), up_bias: vector(expert.style_adapter.up_bias.length) } : null
+      }))
+    }
   };
 }
 
@@ -371,14 +446,29 @@ function backward(network, graph, run, options, explicitOutputGradient = null) {
     network.moe.experts.forEach((expert, expertIndex) => {
       const expertOutputGrad = outputGrad.map((value) => value * gates[expertIndex]);
       if (graph.expertTargets && Number(options.expertStyleWeight || 0)) {
-        const style = expertIndex === 0 ? 'spherical' : expertIndex === 1 ? 'rectangular' : expertIndex === 2 ? 'surround' : null;
-        const target = style && graph.expertTargets[style]?.[nodeIndex];
+        const style = styleKeyFromExpertName(network.moe.experts[expertIndex]?.name || network.moe.experts[expertIndex]?.style_key || '');
+        const target = style && (graph.expertTargets[style]?.[nodeIndex] || graph.expertTargets[style === 'radial_ring' ? 'spherical' : style === 'box_sides' ? 'rectangular' : 'surround']?.[nodeIndex]);
         if (target) for (let axis = 0; axis < expertOutputGrad.length; axis += 1) expertOutputGrad[axis] += Number(options.expertStyleWeight) * 2 * (run.cache.expertOutputs[nodeIndex][expertIndex][axis] - target[axis]) / 6 / Math.max(1, nodeCount);
       }
       const head = run.cache.expertHeads[nodeIndex][expertIndex];
+      const expertInput = run.cache.expertInputs?.[nodeIndex]?.[expertIndex] || hidden;
       outerAdd(gradient.moe.experts[expertIndex].weights, expertOutputGrad, head); vectorAddInPlace(gradient.moe.experts[expertIndex].bias, expertOutputGrad);
       const headGrad = transposeVec(expert.weights, expertOutputGrad).map((value, feature) => value * (1 - head[feature] ** 2));
-      outerAdd(gradient.moe.experts[expertIndex].hidden_weights, headGrad, hidden); vectorAddInPlace(gradient.moe.experts[expertIndex].hidden_bias, headGrad); vectorAddInPlace(hiddenGrad[nodeIndex], transposeVec(expert.hidden_weights, headGrad));
+      outerAdd(gradient.moe.experts[expertIndex].hidden_weights, headGrad, expertInput); vectorAddInPlace(gradient.moe.experts[expertIndex].hidden_bias, headGrad);
+      const expertInputGrad = transposeVec(expert.hidden_weights, headGrad);
+      const adapterCache = run.cache.adapterCaches?.[nodeIndex]?.[expertIndex];
+      if (expert.style_adapter && adapterCache && gradient.moe.experts[expertIndex].style_adapter) {
+        vectorAddInPlace(hiddenGrad[nodeIndex], expertInputGrad);
+        const deltaGrad = expertInputGrad.map((value, feature) => value * (1 - adapterCache.adapterDelta[feature] ** 2));
+        outerAdd(gradient.moe.experts[expertIndex].style_adapter.up_weights, deltaGrad, adapterCache.adapterHidden); vectorAddInPlace(gradient.moe.experts[expertIndex].style_adapter.up_bias, deltaGrad);
+        const adapterHiddenGrad = transposeVec(expert.style_adapter.up_weights, deltaGrad).map((value, feature) => value * (1 - adapterCache.adapterHidden[feature] ** 2));
+        outerAdd(gradient.moe.experts[expertIndex].style_adapter.down_weights, adapterHiddenGrad, adapterCache.adapterInput); vectorAddInPlace(gradient.moe.experts[expertIndex].style_adapter.down_bias, adapterHiddenGrad);
+        const adapterInputGrad = transposeVec(expert.style_adapter.down_weights, adapterHiddenGrad);
+        vectorAddInPlace(hiddenGrad[nodeIndex], adapterInputGrad.slice(0, hidden.length));
+        if (gradient.moe.style_embeddings?.[expertIndex]) vectorAddInPlace(gradient.moe.style_embeddings[expertIndex], adapterInputGrad.slice(hidden.length));
+      } else {
+        vectorAddInPlace(hiddenGrad[nodeIndex], expertInputGrad);
+      }
     });
   }
   for (let index = network.transformer_layers.length - 1; index >= 0; index -= 1) hiddenGrad = backwardTransformer(network.transformer_layers[index], run.cache.transformerCaches[index], hiddenGrad, gradient.transformer_layers[index]);
@@ -444,7 +534,12 @@ function applyGradient(network, gradient, learningRate) {
   });
   network.transformer_layers.forEach((layer, index) => { const grad = gradient.transformer_layers[index]; for (const prefix of ['query', 'key', 'value', 'output', 'ffn_in', 'ffn_out']) { updateMatrix(layer[`${prefix}_weights`], grad[`${prefix}_weights`], learningRate); updateVector(layer[`${prefix}_bias`], grad[`${prefix}_bias`], learningRate); } });
   updateMatrix(network.moe.router.weights, gradient.moe.router.weights, learningRate); updateVector(network.moe.router.bias, gradient.moe.router.bias, learningRate);
-  network.moe.experts.forEach((expert, index) => { const grad = gradient.moe.experts[index]; updateMatrix(expert.hidden_weights, grad.hidden_weights, learningRate); updateVector(expert.hidden_bias, grad.hidden_bias, learningRate); updateMatrix(expert.weights, grad.weights, learningRate); updateVector(expert.bias, grad.bias, learningRate); });
+  if (Array.isArray(network.moe.style_embeddings) && gradient.moe.style_embeddings) network.moe.style_embeddings.forEach((embedding, index) => updateVector(embedding, gradient.moe.style_embeddings[index], learningRate));
+  network.moe.experts.forEach((expert, index) => {
+    const grad = gradient.moe.experts[index];
+    if (expert.style_adapter && grad.style_adapter) { updateMatrix(expert.style_adapter.down_weights, grad.style_adapter.down_weights, learningRate); updateVector(expert.style_adapter.down_bias, grad.style_adapter.down_bias, learningRate); updateMatrix(expert.style_adapter.up_weights, grad.style_adapter.up_weights, learningRate); updateVector(expert.style_adapter.up_bias, grad.style_adapter.up_bias, learningRate); }
+    updateMatrix(expert.hidden_weights, grad.hidden_weights, learningRate); updateVector(expert.hidden_bias, grad.hidden_bias, learningRate); updateMatrix(expert.weights, grad.weights, learningRate); updateVector(expert.bias, grad.bias, learningRate);
+  });
 }
 
 function trainGraph(network, graph, options) {
@@ -485,21 +580,32 @@ function resolveTargetLabels(sample, manual, pseudoMap, targetSource) {
 }
 function buildExpertTargets(expertSelection, candidates, heterogeneous, bounds) {
   if (!expertSelection?.experts || !heterogeneous?.frames) return null;
-  return Object.fromEntries(Object.entries(expertSelection.experts).map(([style, expert]) => [style, (expert.labels || []).map((label, index) => localTargetVector(label, candidates[index], heterogeneous.frames[index], bounds))]));
+  return Object.fromEntries(Object.entries(expertSelection.experts).map(([style, expert]) => [legacyStyleKey(style), (expert.labels || []).map((label, index) => localTargetVector(label, candidates[index], heterogeneous.frames[index], bounds))]));
+}
+function buildStyleLabelMap(bundle) {
+  const rows = Array.isArray(bundle?.rows) ? bundle.rows : [];
+  return new Map(rows.map((row) => {
+    const selected = legacyStyleKey(row.gpt_selected || row.selected || row.manual_selected || row.style || '');
+    const weights = normalizeStyleWeights(row.style_distribution || row.weights || row.scores || {}, selected);
+    return [pseudoKey(row.category, row.sample_id), weights ? { selected, weights, source: bundle.version || 'style_label_file' } : null];
+  }).filter(([, value]) => value));
 }
 
 function expertStyleLoss(run, graph) {
   if (!graph.expertTargets || !run.cache?.expertOutputs?.length) return 0;
   const terms = [];
   for (const [style, targets] of Object.entries(graph.expertTargets)) {
-    const expertIndex = style === 'spherical' ? 0 : style === 'rectangular' ? 1 : style === 'surround' ? 2 : undefined;
-    if (expertIndex === undefined) continue;
-    for (let node = 0; node < targets.length; node += 1) terms.push(mean(run.cache.expertOutputs[node][expertIndex].map((value, axis) => square(value - targets[node][axis]))));
+    const normalized = legacyStyleKey(style);
+    const expertIndex = run.cache.expertOutputs[0]?.findIndex((_, index) => styleKeyFromExpertName(graph.networkExpertNames?.[index] || '') === normalized);
+    const fallbackIndex = normalized === 'radial_ring' ? 0 : normalized === 'box_sides' ? 1 : normalized === 'anchor_adaptive' ? 2 : undefined;
+    const selectedIndex = expertIndex >= 0 ? expertIndex : fallbackIndex;
+    if (selectedIndex === undefined) continue;
+    for (let node = 0; node < targets.length; node += 1) terms.push(mean(run.cache.expertOutputs[node][selectedIndex].map((value, axis) => square(value - targets[node][axis]))));
   }
   return mean(terms);
 }
 
-async function buildGraphs(manifest, split, gridSize, architecture = 'v9', pseudoMap = null, targetSource = 'manual', expertSelectionMap = null, expertSelectionSource = null, compactGeometry = false) {
+async function buildGraphs(manifest, split, gridSize, architecture = 'v9', pseudoMap = null, targetSource = 'manual', expertSelectionMap = null, expertSelectionSource = null, compactGeometry = false, styleLabelMap = null) {
   const graphs = [];
   for (const sample of manifest.samples.filter((item) => item.split === split)) {
     const clean = cleanObj(await readText(repoPath(sample.input.source_obj)));
@@ -530,7 +636,7 @@ async function buildGraphs(manifest, split, gridSize, architecture = 'v9', pseud
     const edges = architecture === 'v10' ? null : (heterogeneous?.edgeFeatures || nodes.map((_, targetIndex) => nodes.map((__, sourceIndex) => sourceIndex === targetIndex ? null : graphEdgeFeatures(nodes[sourceIndex], nodes[targetIndex], bounds))));
     const compactHeterogeneous = architecture === 'v10' && heterogeneous ? { frames: heterogeneous.frames, nodeFeatures: heterogeneous.nodeFeatures, anchorEdgeFeatures: heterogeneous.anchorEdgeFeatures, relationEdges: heterogeneous.relationEdges } : heterogeneous;
     const styleTarget = computeSpatialStyleMetrics(targetLabels, bounds, spatialContext);
-    const styleRouting = scoreLayoutStyleExperts(candidates, bounds, geometry, { view: 'main' });
+    const styleRouting = styleLabelMap?.get(pseudoKey(sample.category, sample.sample_id)) || scoreLayoutStyleExperts(candidates, bounds, geometry, { view: 'main' });
     const expertSelection = expertSelectionMap?.get(pseudoKey(sample.category, sample.sample_id)) || null;
     const expertTargets = buildExpertTargets(expertSelection, candidates, heterogeneous, bounds);
     const depthGrids = Object.fromEntries(MULTI_VIEW_NAMES.map((view) => [view, buildDepthGrid(geometry, bounds, view)]));
@@ -587,6 +693,7 @@ function parameterUpdateEvidence(before, after) {
     ] : []),
     ['transformer', before.transformer_layers, after.transformer_layers],
     ['moe_router', before.moe.router, after.moe.router],
+    ...(after.moe.style_embeddings ? [['style_embeddings', before.moe.style_embeddings, after.moe.style_embeddings]] : []),
     ['moe_experts', before.moe.experts, after.moe.experts]
   ];
   return Object.fromEntries(groups.map(([name, left, right]) => {
@@ -620,11 +727,13 @@ async function main() {
   const pseudoMap = pseudoBundle ? buildPseudoLabelMap(pseudoBundle) : null;
   const expertSelectionBundle = options.expertSelection ? await readJson(path.resolve(String(options.expertSelection))) : null;
   const expertSelectionMap = expertSelectionBundle ? buildExpertSelectionMap(expertSelectionBundle) : null;
+  const styleLabelBundle = options.styleLabels ? await readJson(path.resolve(String(options.styleLabels))) : null;
+  const styleLabelMap = styleLabelBundle ? buildStyleLabelMap(styleLabelBundle) : null;
   const trainTargetSource = pseudoMap && String(options.targetSource) !== 'manual' ? 'moe_unsupervised_pseudolabel' : 'manual';
   const compactTrainGeometry = manifest.samples.filter((item) => item.split === 'train').length > 100;
-  const train = await buildGraphs(manifest, 'train', Number(options.styleGridSize), architecture, pseudoMap, trainTargetSource, expertSelectionMap, expertSelectionBundle ? 'geometry_llm_expert_selection' : null, compactTrainGeometry);
-  const val = await buildGraphs(manifest, 'val', Number(options.styleGridSize), architecture, null, 'manual', null, null, false);
-  const test = await buildGraphs(manifest, 'test', Number(options.styleGridSize), architecture, null, 'manual', null, null, false);
+  const train = await buildGraphs(manifest, 'train', Number(options.styleGridSize), architecture, pseudoMap, trainTargetSource, expertSelectionMap, expertSelectionBundle ? 'geometry_llm_expert_selection' : null, compactTrainGeometry, styleLabelMap);
+  const val = await buildGraphs(manifest, 'val', Number(options.styleGridSize), architecture, null, 'manual', null, null, false, styleLabelMap);
+  const test = await buildGraphs(manifest, 'test', Number(options.styleGridSize), architecture, null, 'manual', null, null, false, styleLabelMap);
   const largeDataset = train.length > 100;
   options.largeDataset = largeDataset;
   options.fastMetrics = largeDataset;
@@ -699,24 +808,27 @@ async function main() {
     human_style_targets: ['uniform_label_distribution', '3d_spacing', 'directional_distribution', 'leader_length', 'leader_direction', 'leader_line_non_crossing', 'font_text_clarity', 'air_space_utilization', 'clearance', 'label_occupancy', 'per_view_free_space_distribution'],
     spatial_grid: { type: 'axis_aligned_surface_voxel_grid', grid_size: Number(options.styleGridSize), metrics: ['air_voxel_available_ratio', 'label_occupied_voxel_ratio', 'air_space_utilization', 'mean_3d_clearance', 'min_3d_spacing'] },
     view_loss: { type: 'weighted_main_plus_worst_view_plus_cvar_plus_stereo', weights: { main: 0.4, right: 0.15, left: 0.15, up: 0.15, down: 0.15 }, worst_view_weight: Number(options.worstViewWeight), cvar_weight: Number(options.cvarViewWeight), stereo_weight: Number(options.stereoWeight), text_clarity_weight: Number(options.textClarityWeight), leader_crossing_weight: Number(options.leaderCrossingWeight), terms: ['object_occlusion', 'depth_penetration', 'label_overlap', 'leader_crossing', 'overflow', 'font_text_clarity', 'free_space_distribution_mismatch'], main_view_priority: true },
-    style_moe: { router_targets: ['spherical_contour_style', 'rectangular_edge_style', 'anchor_surround_style'], source_features: ['object_contour_point_cloud', 'projected_aspect', 'contour_regularity', 'anchor_angular_entropy', 'anchor_radial_uniformity'], ambiguous_boundary_policy: 'soft_normalized_probabilities_for_middle_regions' },
+    style_moe: truthy(options.styleAdapterMoE)
+      ? { router_targets: STYLE_ADAPTER_EXPERT_NAMES, source_features: ['style_label_distribution', 'object_geometry', 'anchor_distribution', 'semantic_relations'], architecture: 'style_embedding_plus_lightweight_expert_adapters', style_embedding_dim: Number(options.styleEmbeddingDim), adapter_dim: Number(options.styleAdapterDim), rule_layout_generators_used: false, style_labels: options.styleLabels ? path.relative(root, path.resolve(String(options.styleLabels))).split(path.sep).join('/') : null }
+      : { router_targets: ['spherical_contour_style', 'rectangular_edge_style', 'anchor_surround_style'], source_features: ['object_contour_point_cloud', 'projected_aspect', 'contour_regularity', 'anchor_angular_entropy', 'anchor_radial_uniformity'], ambiguous_boundary_policy: 'soft_normalized_probabilities_for_middle_regions' },
     view_role: 'five_view_evaluation_safety_optimization_only',
-    decoder: isV10 ? 'local_anchor_frame_3d_generator_then_five_view_safety_optimizer' : 'three_d_generator_then_five_view_safety_optimizer',
+    style_preserving_annealing: truthy(options.styleAdapterMoE) ? { optimizer: 'style_preserving_annealing', style_term: 'leader_length_radial_spacing_box_aspect_and_local_displacement', style_weight: Number(options.styleWeight), hard_gate: 'five_view_safety_gate', views: ['main', 'right', 'left', 'up', 'down'] } : null,
+    decoder: truthy(options.styleAdapterMoE) ? 'shared_v10_graph_style_embedding_adapter_moe_then_style_preserving_five_view_safety_optimizer' : (isV10 ? 'local_anchor_frame_3d_generator_then_five_view_safety_optimizer' : 'three_d_generator_then_five_view_safety_optimizer'),
     label_contract: 'manual_count_id_text_anchor_groups_locked',
     input_provenance: 'fixed_manual_contract_anchor_and_metadata_clean_obj_without_adjusted_center_or_box_size',
     ...(isV10 ? graphMetadata : {})
   };
   const model = {
-    version: isV10 ? 'layout_model_v10_anchor_frame_heterogeneous_graph_moe' : 'layout_model_v9_3d_human_style_moe',
+    version: truthy(options.styleAdapterMoE) ? 'layout_model_v10_style_embedding_adapter_moe' : (isV10 ? 'layout_model_v10_anchor_frame_heterogeneous_graph_moe' : 'layout_model_v9_3d_human_style_moe'),
     status: 'trained_supervised_manual_3d_human_style_candidate',
     camera_protocol: 'dataset_multiview_reproduction_v1',
-    inference: { center_blend: 1, size_blend: 1, size_ratio_range: [0.55, 1.8], generation_input: 'pure_3d', selection_status: 'candidate_requires_val_gate' },
+    inference: { center_blend: 1, size_blend: 1, size_ratio_range: [0.55, 1.8], generation_input: 'pure_3d', selection_status: 'candidate_requires_val_gate', post_process: truthy(options.styleAdapterMoE) ? { enabled: false, optimizer: 'style_preserving_annealing', style_weight: Number(options.styleWeight), hard_safety_gate: true, views: ['main', 'right', 'left', 'up', 'down'] } : null },
     architecture: architectureMetadata,
     feature_names: isV10 ? ANCHOR_LOCAL_LABEL_FEATURE_NAMES : PURE_3D_LABEL_FEATURE_NAMES, edge_feature_names: isV10 ? HETEROGENEOUS_EDGE_FEATURE_NAMES : GRAPH_EDGE_FEATURE_NAMES,
     split_policy: { train: train.length, val: val.length, test: test.length, manual_center_and_box_are_targets_only: true, validation_selects_checkpoint: hasValidation, test_used_for_final_evaluation_only: true, preference_updates_exclude_test: true },
-    hyperparameters: { epochs: Number(options.epochs), learning_rate: Number(options.learningRate), style_weight: Number(options.styleWeight), direction_weight: Number(options.directionWeight), view_weight: Number(options.viewWeight), worst_view_weight: Number(options.worstViewWeight), cvar_view_weight: Number(options.cvarViewWeight), stereo_weight: Number(options.stereoWeight), text_clarity_weight: Number(options.textClarityWeight), leader_crossing_weight: Number(options.leaderCrossingWeight), hidden_dim: Number(options.hiddenDim), pre_gnn_fnn_layers: Number(options.preGnnFnnLayers), message_passing_layers: Number(options.messageLayers), transformer_layers: Number(options.transformerLayers), moe_expert_count: best.moe.experts.length, warm_start: String(options.warmStart), seed: Number(options.seed), spatial_grid_size: Number(options.styleGridSize), router_style_weight: Number(options.routerStyleWeight || 0), expert_style_weight: Number(options.expertStyleWeight || 0), large_dataset_fast_metrics: Boolean(largeDataset), compact_train_geometry: Boolean(compactTrainGeometry), target_source: trainTargetSource, pseudo_labels: options.pseudoLabels ? path.relative(root, path.resolve(String(options.pseudoLabels))).split(path.sep).join('/') : null, expert_selection: options.expertSelection ? path.relative(root, path.resolve(String(options.expertSelection))).split(path.sep).join('/') : null, visual_features_used_by_generator: false },
+    hyperparameters: { epochs: Number(options.epochs), learning_rate: Number(options.learningRate), style_weight: Number(options.styleWeight), direction_weight: Number(options.directionWeight), view_weight: Number(options.viewWeight), worst_view_weight: Number(options.worstViewWeight), cvar_view_weight: Number(options.cvarViewWeight), stereo_weight: Number(options.stereoWeight), text_clarity_weight: Number(options.textClarityWeight), leader_crossing_weight: Number(options.leaderCrossingWeight), hidden_dim: Number(options.hiddenDim), pre_gnn_fnn_layers: Number(options.preGnnFnnLayers), message_passing_layers: Number(options.messageLayers), transformer_layers: Number(options.transformerLayers), moe_expert_count: best.moe.experts.length, warm_start: String(options.warmStart), seed: Number(options.seed), spatial_grid_size: Number(options.styleGridSize), router_style_weight: Number(options.routerStyleWeight || 0), expert_style_weight: Number(options.expertStyleWeight || 0), large_dataset_fast_metrics: Boolean(largeDataset), compact_train_geometry: Boolean(compactTrainGeometry), target_source: trainTargetSource, pseudo_labels: options.pseudoLabels ? path.relative(root, path.resolve(String(options.pseudoLabels))).split(path.sep).join('/') : null, expert_selection: options.expertSelection ? path.relative(root, path.resolve(String(options.expertSelection))).split(path.sep).join('/') : null, style_adapter_moe: truthy(options.styleAdapterMoE), style_embedding_dim: Number(options.styleEmbeddingDim), style_adapter_dim: Number(options.styleAdapterDim), style_labels: options.styleLabels ? path.relative(root, path.resolve(String(options.styleLabels))).split(path.sep).join('/') : null, visual_features_used_by_generator: false },
     network: best,
-    training: { train_graphs: train.length, val_graphs: val.length, test_graphs: test.length, train_examples: train.reduce((sum, graph) => sum + graph.nodes.length, 0), val_examples: val.reduce((sum, graph) => sum + graph.nodes.length, 0), test_examples: test.reduce((sum, graph) => sum + graph.nodes.length, 0), best_epoch: bestEpoch, history, metrics, view_metrics: viewMetrics, routing: { train: routingSummary(best, train), val: routingSummary(best, val), test: routingSummary(best, test), style_targets: { train: train.map((graph) => graph.styleRouting.selected), val: val.map((graph) => graph.styleRouting.selected), test: test.map((graph) => graph.styleRouting.selected) } }, parameter_updates: updates, fixed_label_contract_validated: true, training_target_source: trainTargetSource, pseudo_target_count: train.filter((graph) => graph.target_source === 'moe_unsupervised_pseudolabel').length, expert_selection_source: expertSelectionBundle ? 'geometry_llm_expert_selection' : null, expert_selection_count: train.filter((graph) => graph.expertSelection).length, expert_style_supervision_used: train.some((graph) => graph.expertTargets), expert_style_weight: Number(options.expertStyleWeight || 0), adjusted_target_layout_used_as_input: false, test_used_in_gradient_or_checkpoint_selection: false, visual_branch_used_in_generation: false, manual_style_loss_used: true, leader_direction_loss_used: isV10, leader_crossing_loss_used: isV10, per_view_font_clarity_loss_used: isV10 },
+    training: { train_graphs: train.length, val_graphs: val.length, test_graphs: test.length, train_examples: train.reduce((sum, graph) => sum + graph.nodes.length, 0), val_examples: val.reduce((sum, graph) => sum + graph.nodes.length, 0), test_examples: test.reduce((sum, graph) => sum + graph.nodes.length, 0), best_epoch: bestEpoch, history, metrics, view_metrics: viewMetrics, routing: { train: routingSummary(best, train), val: routingSummary(best, val), test: routingSummary(best, test), style_targets: { train: train.map((graph) => graph.styleRouting.selected), val: val.map((graph) => graph.styleRouting.selected), test: test.map((graph) => graph.styleRouting.selected) } }, parameter_updates: updates, fixed_label_contract_validated: true, training_target_source: trainTargetSource, pseudo_target_count: train.filter((graph) => graph.target_source === 'moe_unsupervised_pseudolabel').length, expert_selection_source: expertSelectionBundle ? 'geometry_llm_expert_selection' : null, style_label_source: styleLabelBundle ? (styleLabelBundle.version || 'style_label_file') : null, style_label_count: styleLabelMap ? styleLabelMap.size : 0, expert_selection_count: train.filter((graph) => graph.expertSelection).length, expert_style_supervision_used: train.some((graph) => graph.expertTargets), expert_style_weight: Number(options.expertStyleWeight || 0), adjusted_target_layout_used_as_input: false, test_used_in_gradient_or_checkpoint_selection: false, visual_branch_used_in_generation: false, manual_style_loss_used: true, leader_direction_loss_used: isV10, leader_crossing_loss_used: isV10, per_view_font_clarity_loss_used: isV10 },
     validation_gate: { status: 'candidate_requires_val_gate', criterion: isV10 ? 'v10_val_local_frame_heterogeneous_graph_and_weighted_main_worst_view_cvar_stereo_gate' : 'v9_val_multidimensional_safety_and_pure_3d_generation_gate', selected_without_test: true, test_confirmation_pending: true }
   };
   await fs.writeFile(output, JSON.stringify(model, null, 2) + '\n', 'utf8');

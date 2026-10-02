@@ -209,3 +209,16 @@ tmux attach -t thesis-train
 OBJ 三维数据通过 Git LFS 下载；`experiments/` 中的训练缓存、浏览器缓存和大规模中间结果不提交到 GitHub，会在服务器训练时重新生成。
 
 > 说明：默认的 55 个样本位于 `data/Layout/`，会随仓库通过 Git LFS 下载。扩展的 `data/Layout_200train_50test/` 数据集体积较大且与默认数据存在重复，未放入 GitHub；如需 200-train/50-test 训练，请将该目录单独上传到学校服务器的项目目录中。
+
+## V10 共享图网络 + 三专家 Style-Adapter MoE
+
+已加入不依赖本地训练的 V10 代码入口：共享锚点帧异构图网络先输出共享表示，再注入三组 style embedding 和轻量 residual Adapter；三个专家均输出 6D 局部布局，Router 支持软混合、显式权重混合和指定单一风格。后处理提供带风格保持项的模拟退火，并在 `main/right/left/up/down` 五视角安全门控下接受或拒绝候选。
+
+本地只运行：
+
+```bash
+npm run check:v10:style-adapter-moe
+npm run test:v10:style-adapter-pipeline
+```
+
+不要在本地执行训练命令。学校服务器拉取 GitHub 后，按 `docs/V10风格AdapterMoE训练说明.md` 中的 `npm run train:layout:v10:style-adapter-moe` 启动训练。

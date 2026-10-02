@@ -95,7 +95,11 @@
     "merge:moe-layout-llm-scores": "node scripts/merge-moe-layout-llm-score-shards.mjs",
     "build:extended-test50-comparison": "node scripts/build-extended-test50-comparison.mjs",
     "resume:moe-layout-llm": "node scripts/score-moe-layout-candidate-previews.mjs --manifest experiments/moe_layout_llm_candidate_previews_train33_sep/manifest.json --output experiments/moe_layout_llm_candidate_scores_train33_sep.json --concurrency 2 --resume true --skipFailures true",
-    "merge:moe-layout-llm-train33": "node scripts/merge-moe-layout-llm-score-shards.mjs --partial experiments/moe_layout_llm_candidate_scores_train33_sep.json.partial.json --retry experiments/moe_layout_llm_candidate_scores_retry.json --output experiments/moe_layout_llm_candidate_scores_train33_sep_merged.json"
+    "merge:moe-layout-llm-train33": "node scripts/merge-moe-layout-llm-score-shards.mjs --partial experiments/moe_layout_llm_candidate_scores_train33_sep.json.partial.json --retry experiments/moe_layout_llm_candidate_scores_retry.json --output experiments/moe_layout_llm_candidate_scores_train33_sep_merged.json",
+    "train:layout:v10:style-adapter-moe": "node scripts/train-3d-human-style-layout-model.mjs --architecture v10 --styleAdapterMoE true --expertCount 3 --styleLabels experiments/gpt_style_judgment_main_view.json --output experiments/layout_model_v10_style_adapter_moe_candidate.json --report experiments/layout_training_v10_style_adapter_moe_report.json",
+    "check:layout:v10:style-adapter-moe": "node --check scripts/train-3d-human-style-layout-model.mjs && node --check lib/layout-model.mjs",
+    "test:v10:style-adapter-pipeline": "node scripts/test-v10-style-adapter-pipeline.mjs",
+    "check:v10:style-adapter-moe": "node --check lib/style-adapter-moe.mjs && node --check lib/style-preserving-annealer.mjs && node --check scripts/train-3d-human-style-layout-model.mjs && node --check lib/layout-model.mjs"
   },
   "dependencies": {}
 }
