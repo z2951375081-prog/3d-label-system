@@ -1,0 +1,1004 @@
+{
+  "version": "moe_layout_preference_pairs_v1",
+  "generated_at": "2026-09-28T20:55:35.296Z",
+  "source": "experiments/moe_layout_llm_candidate_scores_sep_probe.json",
+  "dimensions": [
+    "overall",
+    "composition_harmony",
+    "visual_hierarchy",
+    "spatial_balance",
+    "manual_style_similarity",
+    "text_clarity",
+    "leader_line_clarity"
+  ],
+  "score_mapping": {
+    "overall": "overall",
+    "composition_harmony": "style_fit",
+    "visual_hierarchy": "label_spacing",
+    "spatial_balance": "uniformity",
+    "manual_style_similarity": "style_fit",
+    "text_clarity": "text_readability",
+    "leader_line_clarity": "leader_clarity"
+  },
+  "policy": {
+    "candidate_level_llm_scores_are_teacher_preferences": true,
+    "geometry_safety_used_in_selection_score": true,
+    "tie_threshold": 0.025
+  },
+  "count": 12,
+  "sample_count": 2,
+  "sample_summaries": [
+    {
+      "key": "Chair/38635",
+      "candidates": 6,
+      "pairs": 6
+    },
+    {
+      "key": "Chair/39299",
+      "candidates": 6,
+      "pairs": 6
+    }
+  ],
+  "pairs": [
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_38635_baseline",
+        "mode": "baseline",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/down.png"
+        },
+        "selection_score": 4.41425,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_38635_arc_uniformity",
+        "mode": "arc_uniformity",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/down.png"
+        },
+        "selection_score": 3.645775,
+        "composite_score": 3.58,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 4,
+          "spatial_balance": 4,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 3
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 4,
+          "leader_clarity": 3,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0,
+        "spatial_balance": -0.25,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0.25
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_38635_increase_label_gap",
+        "mode": "increase_label_gap",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/down.png"
+        },
+        "selection_score": 4.40005,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_38635_arc_uniformity",
+        "mode": "arc_uniformity",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/down.png"
+        },
+        "selection_score": 3.645775,
+        "composite_score": 3.58,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 4,
+          "spatial_balance": 4,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 3
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 4,
+          "leader_clarity": 3,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0,
+        "spatial_balance": -0.25,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0.25
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_38635_repulsive_spacing",
+        "mode": "repulsive_spacing",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/repulsive_spacing/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/repulsive_spacing/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/repulsive_spacing/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/repulsive_spacing/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/repulsive_spacing/down.png"
+        },
+        "selection_score": 4.41605,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_38635_arc_uniformity",
+        "mode": "arc_uniformity",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/arc_uniformity/down.png"
+        },
+        "selection_score": 3.645775,
+        "composite_score": 3.58,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 4,
+          "spatial_balance": 4,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 3
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 4,
+          "leader_clarity": 3,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0,
+        "spatial_balance": -0.25,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0.25
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_38635_baseline",
+        "mode": "baseline",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/down.png"
+        },
+        "selection_score": 4.41425,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_38635_long_leader_arc",
+        "mode": "long_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/down.png"
+        },
+        "selection_score": 4.08755,
+        "composite_score": 3.57,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_38635_baseline",
+        "mode": "baseline",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/baseline/down.png"
+        },
+        "selection_score": 4.41425,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_38635_short_leader_arc",
+        "mode": "short_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/short_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/short_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/short_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/short_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/short_leader_arc/down.png"
+        },
+        "selection_score": 4.02735,
+        "composite_score": 3.45,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 4,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_38635_increase_label_gap",
+        "mode": "increase_label_gap",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/increase_label_gap/down.png"
+        },
+        "selection_score": 4.40005,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_38635_long_leader_arc",
+        "mode": "long_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_38635/long_leader_arc/down.png"
+        },
+        "selection_score": 4.08755,
+        "composite_score": 3.57,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_39299_arc_uniformity",
+        "mode": "arc_uniformity",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/down.png"
+        },
+        "selection_score": 3.879425,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_39299_long_leader_arc",
+        "mode": "long_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/down.png"
+        },
+        "selection_score": 3.804825,
+        "composite_score": 3.35,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 3,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 3,
+          "object_preservation": 4,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0.25,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_39299_baseline",
+        "mode": "baseline",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/down.png"
+        },
+        "selection_score": 4.26845,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_39299_long_leader_arc",
+        "mode": "long_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/down.png"
+        },
+        "selection_score": 3.804825,
+        "composite_score": 3.35,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 3,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 3,
+          "object_preservation": 4,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0.25,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_39299_increase_label_gap",
+        "mode": "increase_label_gap",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/increase_label_gap/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/increase_label_gap/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/increase_label_gap/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/increase_label_gap/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/increase_label_gap/down.png"
+        },
+        "selection_score": 4.218875,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_39299_long_leader_arc",
+        "mode": "long_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/down.png"
+        },
+        "selection_score": 3.804825,
+        "composite_score": 3.35,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 3,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 3,
+          "object_preservation": 4,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0.25,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_39299_repulsive_spacing",
+        "mode": "repulsive_spacing",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/repulsive_spacing/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/repulsive_spacing/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/repulsive_spacing/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/repulsive_spacing/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/repulsive_spacing/down.png"
+        },
+        "selection_score": 4.27015,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_39299_long_leader_arc",
+        "mode": "long_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/long_leader_arc/down.png"
+        },
+        "selection_score": 3.804825,
+        "composite_score": 3.35,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 3,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 3,
+          "object_preservation": 4,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0.25,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_39299_arc_uniformity",
+        "mode": "arc_uniformity",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/arc_uniformity/down.png"
+        },
+        "selection_score": 3.879425,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_39299_short_leader_arc",
+        "mode": "short_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/down.png"
+        },
+        "selection_score": 3.75255,
+        "composite_score": 3.45,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 4,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "source": "moe_expert_perturbation_llm",
+      "candidate_a": {
+        "candidate_id": "Chair_39299_baseline",
+        "mode": "baseline",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/baseline/down.png"
+        },
+        "selection_score": 4.26845,
+        "composite_score": 4.11,
+        "scores": {
+          "overall": 4,
+          "composition_harmony": 4,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 4,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 4,
+          "style_fit": 4,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 5,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "candidate_b": {
+        "candidate_id": "Chair_39299_short_leader_arc",
+        "mode": "short_leader_arc",
+        "layout_reference": {
+          "main": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/main.png",
+          "right": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/right.png",
+          "left": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/left.png",
+          "up": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/up.png",
+          "down": "experiments/moe_layout_llm_candidate_previews_train33_sep/Chair_39299/short_leader_arc/down.png"
+        },
+        "selection_score": 3.75255,
+        "composite_score": 3.45,
+        "scores": {
+          "overall": 3,
+          "composition_harmony": 2,
+          "visual_hierarchy": 4,
+          "spatial_balance": 3,
+          "manual_style_similarity": 2,
+          "text_clarity": 5,
+          "leader_line_clarity": 4
+        },
+        "raw_scores": {
+          "overall": 3,
+          "style_fit": 2,
+          "uniformity": 3,
+          "leader_clarity": 4,
+          "label_spacing": 4,
+          "object_preservation": 4,
+          "viewport_safety": 5,
+          "text_readability": 5
+        }
+      },
+      "dimension_margins": {
+        "overall": 0.25,
+        "composition_harmony": 0.5,
+        "visual_hierarchy": 0,
+        "spatial_balance": 0,
+        "manual_style_similarity": 0.5,
+        "text_clarity": 0,
+        "leader_line_clarity": 0
+      },
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "prompt_version": "moe_layout_candidate_prompt_v1"
+    }
+  ]
+}

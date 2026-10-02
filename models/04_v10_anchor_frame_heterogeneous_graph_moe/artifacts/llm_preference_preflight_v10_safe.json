@@ -1,0 +1,439 @@
+{
+  "version": "llm_preference_preflight_v1",
+  "generated_at": "2026-09-21T09:46:13.134Z",
+  "ready": true,
+  "requested_experiment": {
+    "samples": 3,
+    "candidates": 4,
+    "rounds": 8,
+    "visual_val_samples": 11
+  },
+  "request_budget": {
+    "local_requests_excluding_connection_probe": 195,
+    "connection_probe_requests": 1,
+    "images_per_request": 6,
+    "images_excluding_probe": 1170
+  },
+  "checks": [
+    {
+      "name": "project_service",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "base_url": "http://127.0.0.1:5173",
+        "http_status": 200
+      }
+    },
+    {
+      "name": "local_qwen_visual_connection",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "configured": true,
+        "tested": true,
+        "tested_at": "2026-09-21T09:29:40.349Z",
+        "model": "qwen3-vl:4b-instruct",
+        "format": "ollama_chat",
+        "scoring_protocol": "aesthetic_safety_v3_fourteen_dimension",
+        "local_only": true,
+        "credentials_required": false
+      }
+    },
+    {
+      "name": "dataset_split",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "total": 55,
+        "train": 33,
+        "val": 11,
+        "test": 11,
+        "policy": "stratified_by_category_mod5"
+      }
+    },
+    {
+      "name": "manual_adjusted_supervision",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "adjusted_samples": 55,
+        "labels": 406,
+        "invalid_samples": []
+      }
+    },
+    {
+      "name": "fourteen_dimension_schema_aesthetic_preference",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "required_dimensions": [
+          "text_clarity",
+          "coverage",
+          "label_label_occlusion",
+          "object_occlusion",
+          "object_penetration",
+          "leader_line_clarity",
+          "multiview_consistency",
+          "binocular_consistency",
+          "manual_style_similarity",
+          "spatial_balance",
+          "size_consistency",
+          "visual_hierarchy",
+          "composition_harmony",
+          "overall"
+        ],
+        "preference_dimensions": [
+          "manual_style_similarity",
+          "spatial_balance",
+          "visual_hierarchy",
+          "composition_harmony",
+          "overall"
+        ],
+        "safety_diagnostics": [
+          "text_clarity",
+          "coverage",
+          "label_label_occlusion",
+          "object_occlusion",
+          "object_penetration",
+          "leader_line_clarity",
+          "multiview_consistency",
+          "binocular_consistency",
+          "size_consistency"
+        ],
+        "policy": "deterministic energy safety gate, then LLM aesthetic reward"
+      }
+    },
+    {
+      "name": "dataset_camera_protocol",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "status": "shared_reproduction_protocol_not_original_camera_ground_truth",
+        "calibration_status": "image_derived_estimate_not_original_camera_metadata",
+        "view_names": [
+          "main",
+          "right",
+          "left",
+          "up",
+          "down"
+        ],
+        "camera_distance_fixed": 10,
+        "held_out_val_test_per_view": true,
+        "limitation": "image-derived reproduction estimate; not original camera metadata"
+      }
+    },
+    {
+      "name": "binoforce_hedgehog_comparison",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "camera_status": "shared_reproduction_protocol_not_original_camera_ground_truth",
+        "methods": [
+          "manual",
+          "current_fixed_label_seed17",
+          "dataset_camera_candidate_seed17",
+          "hedgehog_1d",
+          "hedgehog_3d",
+          "plane",
+          "BinoForce_final_snapshot",
+          "round1_mlp_all"
+        ],
+        "snapshot_rows": 396,
+        "paired_bootstrap_comparisons": 28,
+        "dynamic_and_final_snapshot_separated": true
+      }
+    },
+    {
+      "name": "active_layout_model",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "version": "layout_model_v10_anchor_frame_heterogeneous_graph_moe",
+        "status": "active_val_selected_v10_anchor_frame",
+        "sha256": "3D4AAD72F9EAD8CD29D61B65D5AC4DA4368FE7A2CC1C4DE01046516C981A8A29",
+        "architecture": {
+          "type": "fixed_label_anchor_frame_heterogeneous_graph_transformer_moe",
+          "implemented": true,
+          "generation_input": "pure_3d",
+          "node_input_dim": 51,
+          "label_feature_semantics": "51D_anchor_local_coordinate_surface_patch_3d_style",
+          "label_encoded_dim": 64,
+          "obj_surface_points": 1024,
+          "dgcnn_edgeconv_layers": 2,
+          "dgcnn_neighbor_count": 4,
+          "geometry_feature_dim": 64,
+          "geometry_encoder_training": "deterministic_clean_obj_surface_encoder",
+          "multiview_image_count": 5,
+          "visual_backbone": "frozen_lightweight_cnn_2conv",
+          "visual_feature_dim": 32,
+          "visual_input_source": "evaluation_and_safety_only_clean_obj_renders",
+          "visual_generation_input": false,
+          "fused_feature_dim": 128,
+          "fusion_projection": [
+            128,
+            64
+          ],
+          "edge_input_dim": 28,
+          "hidden_dim": 64,
+          "pre_gnn_fnn_layers": 1,
+          "pre_gnn_fnn_hidden_dim": 128,
+          "pre_gnn_fnn_residual": true,
+          "message_passing_layers": 2,
+          "transformer_layers": 1,
+          "attention": "scaled_dot_product_full_label_set_self_attention",
+          "transformer_residual": true,
+          "transformer_ffn_dim": 128,
+          "moe_router": "learned_per_node_softmax_human_style",
+          "moe_expert_count": 4,
+          "moe_expert_names": [
+            "compact_style",
+            "balanced_style",
+            "spacious_style",
+            "long_text_style"
+          ],
+          "moe_fusion": "soft_weighted_sum_of_expert_outputs",
+          "output_head": [
+            64,
+            32,
+            6
+          ],
+          "output_semantics": "local_u_local_v_local_normal_distance_and_log_size_xyz",
+          "node_semantics": "one_node_per_fixed_label",
+          "edge_semantics": "anchor_label_heterogeneous_edges_plus_label_label_3d_relations",
+          "layer_semantics": [
+            "pure_3d_label_fnn_51_to_64_to_128_to_64",
+            "clean_obj_1024_surface_points_2x_edgeconv_64d",
+            "128d_3d_generation_fusion_to_64d",
+            "2_layer_3d_relational_gnn",
+            "1_layer_global_transformer",
+            "human_style_moe"
+          ],
+          "supervised_target": "manual_adjusted_3d_center_and_box_size",
+          "supervised_loss": "local_frame_3d_center_size_mse_plus_leader_direction_plus_leader_crossing_plus_weighted_main_worst_view_cvar_stereo_text_clarity_loss",
+          "human_style_targets": [
+            "uniform_label_distribution",
+            "3d_spacing",
+            "directional_distribution",
+            "leader_length",
+            "leader_direction",
+            "leader_line_non_crossing",
+            "font_text_clarity",
+            "air_space_utilization",
+            "clearance",
+            "label_occupancy",
+            "per_view_free_space_distribution"
+          ],
+          "spatial_grid": {
+            "type": "axis_aligned_surface_voxel_grid",
+            "grid_size": 20,
+            "metrics": [
+              "air_voxel_available_ratio",
+              "label_occupied_voxel_ratio",
+              "air_space_utilization",
+              "mean_3d_clearance",
+              "min_3d_spacing"
+            ]
+          },
+          "view_loss": {
+            "type": "weighted_main_plus_worst_view_plus_cvar_plus_stereo",
+            "weights": {
+              "main": 0.4,
+              "right": 0.15,
+              "left": 0.15,
+              "up": 0.15,
+              "down": 0.15
+            },
+            "worst_view_weight": 2,
+            "cvar_weight": 1,
+            "stereo_weight": 1,
+            "text_clarity_weight": 3,
+            "leader_crossing_weight": 3.5,
+            "terms": [
+              "object_occlusion",
+              "depth_penetration",
+              "label_overlap",
+              "leader_crossing",
+              "overflow",
+              "font_text_clarity",
+              "free_space_distribution_mismatch"
+            ]
+          },
+          "view_role": "five_view_evaluation_safety_optimization_only",
+          "decoder": "local_anchor_frame_3d_generator_then_five_view_safety_optimizer",
+          "label_contract": "manual_count_id_text_anchor_groups_locked",
+          "input_provenance": "fixed_manual_contract_anchor_and_metadata_clean_obj_without_adjusted_center_or_box_size",
+          "graph_type": "anchor_label_heterogeneous_graph",
+          "anchor_node_semantics": "one_anchor_surface_patch_context_per_label",
+          "label_node_semantics": "one_label_node_per_fixed_label",
+          "anchor_label_edge_dim": 18,
+          "label_label_edge_dim": 10,
+          "combined_edge_dim": 28,
+          "relation_parameterization": "separate_anchor_to_label_and_label_to_label_message_weights",
+          "anchor_nodes_are_fixed_geometric_context": true,
+          "anchor_label_edge_features": [
+            "local_u",
+            "local_v",
+            "local_normal_distance",
+            "anchor_normal_x",
+            "anchor_normal_y",
+            "anchor_normal_z",
+            "leader_direction_x",
+            "leader_direction_y",
+            "leader_direction_z",
+            "leader_length",
+            "normal_alignment",
+            "surface_curvature",
+            "patch_extent",
+            "box_x",
+            "box_y",
+            "box_z",
+            "same_source_part",
+            "same_target_group"
+          ],
+          "label_label_edge_features": [
+            "relative_center_x",
+            "relative_center_y",
+            "relative_center_z",
+            "center_distance",
+            "size_ratio_x",
+            "size_ratio_y",
+            "size_ratio_z",
+            "direction_cosine",
+            "same_source_part",
+            "same_target_group"
+          ],
+          "local_coordinate_frame": "weighted_surface_patch_pca_plus_area_weighted_normals",
+          "frame_fallbacks": [
+            "nearest_triangle_patch",
+            "normal_sign_alignment_to_object_center",
+            "tangent_axis_fallback_for_degenerate_patch"
+          ],
+          "decoder_semantics": "local_tangent_u_local_tangent_v_surface_normal_distance_and_log_size_xyz",
+          "relation_layers": 2,
+          "equivariance_target": "E3_local_frame_consistent_with_rotation_aligned_surface_frame"
+        },
+        "validation_gate": "accepted"
+      }
+    },
+    {
+      "name": "train_manual_leader_length_prior",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "version": "manual_leader_length_prior_v1",
+        "source": {
+          "split": "train_only",
+          "annotation_contract": "after_mannual_adjust/manual_adjusted",
+          "sample_count": 33,
+          "label_count": 248,
+          "normalization": "euclidean(anchor, label.center) / clean_obj_bounds.radius",
+          "manifest_sha256": "E87A4108A2A3C1DE320514F5418F94997696E86D41C468219EDEB174E7A6E4D3",
+          "val_used_for_distribution": false,
+          "test_used_for_distribution": false
+        },
+        "selected_policy": {
+          "id": "train_p10_p90_v1",
+          "hard_min_quantile": "p10",
+          "preferred_min_quantile": "p10",
+          "target_quantile": "p50",
+          "preferred_max_quantile": "p90",
+          "hard_max_quantile": "p95",
+          "minimum_category_labels": 12,
+          "rationale": "P10 lower bound and P90 preferred upper bound were selected on val11 from predeclared P10/P20/P25 candidates. Test11 was evaluated only after selection."
+        },
+        "global_train_distribution": {
+          "count": 248,
+          "min": 0.450383,
+          "p05": 0.808545,
+          "p10": 0.955536,
+          "p20": 1.173239,
+          "p25": 1.232393,
+          "p50": 1.502738,
+          "p75": 1.791898,
+          "p90": 2.052057,
+          "p95": 2.31321,
+          "max": 2.79748,
+          "mean": 1.521357,
+          "std": 0.427385
+        },
+        "validation_selected": "train_p10_p90",
+        "test_used_after_selection_only": true
+      }
+    },
+    {
+      "name": "per_view_free_space_distribution",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "active_v10_per_view_free_space_distribution": true,
+        "version": "directional_density_policy_v1",
+        "sectors": [
+          "right",
+          "upper_right",
+          "up",
+          "upper_left",
+          "left",
+          "lower_left",
+          "down",
+          "lower_right"
+        ],
+        "available_space": "per-view depth grid pixels without object occupancy inside normalized viewport",
+        "selected_configuration": "strong",
+        "weights": {
+          "directional_density": 1.6,
+          "directional_concentration": 1.2
+        },
+        "selection_split": "val11",
+        "test_confirmation_after_selection": true
+      }
+    },
+    {
+      "name": "experiment_scope",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "train_samples": 3,
+        "candidates_per_sample_per_round": 4,
+        "rounds": 8,
+        "visual_val_samples": 11,
+        "train_requests": 96,
+        "validation_requests": 99,
+        "total_external_requests_excluding_probe": 195,
+        "images_per_request": 6,
+        "total_images_excluding_probe": 1170,
+        "standard_visual_checkpoints": [
+          0,
+          1,
+          2,
+          4,
+          8
+        ],
+        "can_test_rise_then_stable": true
+      }
+    },
+    {
+      "name": "required_artifacts",
+      "passed": true,
+      "blocking": true,
+      "details": {
+        "required_files": [
+          "public/dataset-camera.js",
+          "scripts/calibrate-dataset-camera.py",
+          "scripts/run-llm-preference-headless.mjs",
+          "experiments/dataset_camera_protocol.json",
+          "experiments/dataset_camera_calibration.json",
+          "experiments/manual_leader_length_prior.json",
+          "experiments/leader_length_policy_selection.json",
+          "experiments/directional_density_policy.json",
+          "experiments/directional_uniformity_upgrade_offline.json",
+          "experiments/adaptive_directional_rerank_offline.json",
+          "experiments/comparisons/round1/comparison.json",
+          "experiments/comparisons/round1/paired_bootstrap.csv"
+        ],
+        "missing": []
+      }
+    }
+  ],
+  "blocking_failures": [],
+  "next_action": "可启动正式 LLM 偏好实验。"
+}

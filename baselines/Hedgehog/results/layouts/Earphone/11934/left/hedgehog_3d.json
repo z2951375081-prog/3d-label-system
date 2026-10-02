@@ -1,0 +1,779 @@
+{
+  "version": "hedgehog_reproduction",
+  "name": "E-张宸语",
+  "layout_level": "layout1",
+  "layout_type": "hedgehog_3d",
+  "sample_id": "11934",
+  "category": "Earphone",
+  "hierarchy_file": "result_after_merging.json",
+  "normalization": {
+    "center_origin": [
+      -0.03098249999999997,
+      -0.06929449999999998,
+      0.04061849999999999
+    ],
+    "center_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 0.9468857537062935
+  },
+  "groups": [
+    {
+      "group_id": "top_band_4_22",
+      "id": 4,
+      "ori_id": 22,
+      "source_objs": [
+        "original-98.obj",
+        "original-105.obj",
+        "original-99.obj",
+        "original-101.obj",
+        "original-108.obj",
+        "original-13.obj",
+        "original-16.obj",
+        "original-106.obj",
+        "original-14.obj",
+        "original-20.obj",
+        "original-15.obj",
+        "original-19.obj",
+        "new-0.obj",
+        "original-18.obj",
+        "original-121.obj",
+        "original-125.obj",
+        "original-129.obj",
+        "original-127.obj",
+        "original-126.obj",
+        "original-128.obj",
+        "original-102.obj",
+        "original-109.obj",
+        "original-27.obj",
+        "original-107.obj",
+        "original-119.obj",
+        "original-113.obj",
+        "original-114.obj",
+        "original-115.obj",
+        "original-116.obj",
+        "original-112.obj",
+        "original-117.obj",
+        "original-118.obj",
+        "original-111.obj",
+        "original-158.obj",
+        "original-124.obj",
+        "original-123.obj",
+        "original-122.obj",
+        "original-26.obj",
+        "original-306.obj",
+        "original-159.obj",
+        "original-155.obj",
+        "original-160.obj",
+        "original-4.obj",
+        "original-7.obj",
+        "original-5.obj",
+        "original-9.obj",
+        "original-6.obj",
+        "original-10.obj",
+        "original-11.obj",
+        "original-157.obj",
+        "original-156.obj"
+      ],
+      "target_g": [
+        "top_band_original-98",
+        "top_band_original-105",
+        "top_band_original-99",
+        "top_band_original-101",
+        "top_band_original-108",
+        "top_band_original-13",
+        "top_band_original-16",
+        "top_band_original-106",
+        "top_band_original-14",
+        "top_band_original-20",
+        "top_band_original-15",
+        "top_band_original-19",
+        "top_band_new-0",
+        "top_band_original-18",
+        "top_band_original-121",
+        "top_band_original-125",
+        "top_band_original-129",
+        "top_band_original-127",
+        "top_band_original-126",
+        "top_band_original-128",
+        "top_band_original-102",
+        "top_band_original-109",
+        "top_band_original-27",
+        "top_band_original-107",
+        "top_band_original-119",
+        "top_band_original-113",
+        "top_band_original-114",
+        "top_band_original-115",
+        "top_band_original-116",
+        "top_band_original-112",
+        "top_band_original-117",
+        "top_band_original-118",
+        "top_band_original-111",
+        "top_band_original-158",
+        "top_band_original-124",
+        "top_band_original-123",
+        "top_band_original-122",
+        "top_band_original-26",
+        "top_band_original-306",
+        "top_band_original-159",
+        "top_band_original-155",
+        "top_band_original-160",
+        "top_band_original-4",
+        "top_band_original-7",
+        "top_band_original-5",
+        "top_band_original-9",
+        "top_band_original-6",
+        "top_band_original-10",
+        "top_band_original-11",
+        "top_band_original-157",
+        "top_band_original-156"
+      ],
+      "anchor": {
+        "point": [
+          -0.015690911000029395,
+          0.4306807849999714,
+          -0.17879295300002962
+        ]
+      },
+      "label": {
+        "text": "top_band",
+        "box_size": [
+          0.7514503965805039,
+          0.18212139376706324,
+          0.02
+        ],
+        "center": [
+          0.07333964347708583,
+          0.7541476419977292,
+          -0.30315113335223465
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.015690911000029395,
+          0.4306807849999714,
+          -0.17879295300002962
+        ],
+        "bend_points": [],
+        "end": [
+          0.07333964347708583,
+          0.7541476419977292,
+          -0.30315113335223465
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_pad_11_11",
+      "id": 11,
+      "ori_id": 11,
+      "source_objs": [
+        "original-92.obj"
+      ],
+      "target_g": [
+        "earcup_pad_original-92"
+      ],
+      "anchor": {
+        "point": [
+          -0.20649462588549294,
+          0.2255437853362796,
+          -0.005061117128881243
+        ]
+      },
+      "label": {
+        "text": "earcup_pad",
+        "box_size": [
+          0.9140016482679085,
+          0.18212139376706324,
+          0.02
+        ],
+        "center": [
+          -0.6980588535753058,
+          0.5042273314001429,
+          0.010904254726690446
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.20649462588549294,
+          0.2255437853362796,
+          -0.005061117128881243
+        ],
+        "bend_points": [],
+        "end": [
+          -0.6980588535753058,
+          0.5042273314001429,
+          0.010904254726690446
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_frame_10_10",
+      "id": 10,
+      "ori_id": 10,
+      "source_objs": [
+        "original-84.obj",
+        "original-87.obj",
+        "original-91.obj",
+        "original-86.obj",
+        "original-74.obj",
+        "original-71.obj",
+        "original-73.obj",
+        "original-79.obj",
+        "original-77.obj",
+        "original-57.obj",
+        "original-69.obj",
+        "original-70.obj",
+        "original-82.obj",
+        "original-85.obj",
+        "original-89.obj",
+        "original-90.obj",
+        "original-94.obj",
+        "original-95.obj",
+        "original-308.obj",
+        "original-298.obj",
+        "original-68.obj",
+        "original-64.obj",
+        "original-305.obj",
+        "original-301.obj",
+        "original-67.obj",
+        "original-299.obj",
+        "original-303.obj",
+        "original-65.obj",
+        "original-304.obj",
+        "original-307.obj",
+        "original-242.obj",
+        "original-241.obj",
+        "original-247.obj",
+        "original-240.obj",
+        "original-243.obj",
+        "original-246.obj",
+        "original-245.obj",
+        "original-300.obj",
+        "original-311.obj"
+      ],
+      "target_g": [
+        "earcup_frame_original-84",
+        "earcup_frame_original-87",
+        "earcup_frame_original-91",
+        "earcup_frame_original-86",
+        "earcup_frame_original-74",
+        "earcup_frame_original-71",
+        "earcup_frame_original-73",
+        "earcup_frame_original-79",
+        "earcup_frame_original-77",
+        "earcup_frame_original-57",
+        "earcup_frame_original-69",
+        "earcup_frame_original-70",
+        "earcup_frame_original-82",
+        "earcup_frame_original-85",
+        "earcup_frame_original-89",
+        "earcup_frame_original-90",
+        "earcup_frame_original-94",
+        "earcup_frame_original-95",
+        "earcup_frame_original-308",
+        "earcup_frame_original-298",
+        "earcup_frame_original-68",
+        "earcup_frame_original-64",
+        "earcup_frame_original-305",
+        "earcup_frame_original-301",
+        "earcup_frame_original-67",
+        "earcup_frame_original-299",
+        "earcup_frame_original-303",
+        "earcup_frame_original-65",
+        "earcup_frame_original-304",
+        "earcup_frame_original-307",
+        "earcup_frame_original-242",
+        "earcup_frame_original-241",
+        "earcup_frame_original-247",
+        "earcup_frame_original-240",
+        "earcup_frame_original-243",
+        "earcup_frame_original-246",
+        "earcup_frame_original-245",
+        "earcup_frame_original-300",
+        "earcup_frame_original-311"
+      ],
+      "anchor": {
+        "point": [
+          -0.21572242648577333,
+          -0.03671653302311739,
+          0.013745037717760589
+        ]
+      },
+      "label": {
+        "text": "earcup_frame",
+        "box_size": [
+          1.0961231610621678,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -1.4288655250424935,
+          -0.3120461810188111,
+          0.12258795941553781
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.21572242648577333,
+          -0.03671653302311739,
+          0.013745037717760589
+        ],
+        "bend_points": [],
+        "end": [
+          -1.4288655250424935,
+          -0.3120461810188111,
+          0.12258795941553781
+        ]
+      }
+    },
+    {
+      "group_id": "connector_wire_2_2",
+      "id": 2,
+      "ori_id": 2,
+      "source_objs": [
+        "original-255.obj",
+        "original-258.obj",
+        "original-264.obj",
+        "original-261.obj",
+        "original-270.obj",
+        "original-290.obj",
+        "original-276.obj",
+        "original-286.obj",
+        "original-244.obj",
+        "original-292.obj",
+        "original-267.obj",
+        "original-273.obj",
+        "original-279.obj",
+        "original-288.obj",
+        "original-294.obj",
+        "original-296.obj",
+        "original-252.obj",
+        "original-283.obj",
+        "original-249.obj",
+        "original-310.obj",
+        "original-188.obj",
+        "original-194.obj",
+        "original-197.obj",
+        "original-203.obj",
+        "original-213.obj",
+        "original-165.obj",
+        "original-173.obj",
+        "original-170.obj",
+        "original-171.obj",
+        "original-177.obj",
+        "original-167.obj",
+        "original-235.obj",
+        "original-229.obj",
+        "original-230.obj",
+        "original-228.obj",
+        "original-234.obj",
+        "original-233.obj",
+        "original-232.obj",
+        "original-185.obj",
+        "original-206.obj",
+        "original-216.obj",
+        "original-179.obj",
+        "original-174.obj",
+        "original-176.obj",
+        "original-172.obj",
+        "original-236.obj",
+        "original-175.obj",
+        "original-256.obj",
+        "original-265.obj",
+        "original-268.obj",
+        "original-274.obj",
+        "original-285.obj",
+        "original-282.obj",
+        "original-250.obj",
+        "original-251.obj",
+        "original-287.obj",
+        "original-293.obj",
+        "original-278.obj",
+        "original-291.obj",
+        "original-269.obj",
+        "original-260.obj",
+        "original-259.obj",
+        "original-277.obj",
+        "original-289.obj",
+        "original-295.obj",
+        "original-231.obj",
+        "original-182.obj",
+        "original-225.obj",
+        "original-181.obj",
+        "original-212.obj",
+        "original-226.obj",
+        "original-217.obj",
+        "original-218.obj",
+        "original-180.obj",
+        "original-215.obj",
+        "original-186.obj",
+        "original-189.obj",
+        "original-195.obj",
+        "original-207.obj",
+        "original-204.obj",
+        "original-224.obj",
+        "original-222.obj",
+        "original-220.obj",
+        "original-190.obj",
+        "original-199.obj",
+        "original-208.obj",
+        "original-191.obj",
+        "original-200.obj",
+        "original-198.obj",
+        "original-219.obj",
+        "original-209.obj",
+        "original-221.obj",
+        "original-223.obj"
+      ],
+      "target_g": [
+        "connector_wire_original-255",
+        "connector_wire_original-258",
+        "connector_wire_original-264",
+        "connector_wire_original-261",
+        "connector_wire_original-270",
+        "connector_wire_original-290",
+        "connector_wire_original-276",
+        "connector_wire_original-286",
+        "connector_wire_original-244",
+        "connector_wire_original-292",
+        "connector_wire_original-267",
+        "connector_wire_original-273",
+        "connector_wire_original-279",
+        "connector_wire_original-288",
+        "connector_wire_original-294",
+        "connector_wire_original-296",
+        "connector_wire_original-252",
+        "connector_wire_original-283",
+        "connector_wire_original-249",
+        "connector_wire_original-310",
+        "connector_wire_original-188",
+        "connector_wire_original-194",
+        "connector_wire_original-197",
+        "connector_wire_original-203",
+        "connector_wire_original-213",
+        "connector_wire_original-165",
+        "connector_wire_original-173",
+        "connector_wire_original-170",
+        "connector_wire_original-171",
+        "connector_wire_original-177",
+        "connector_wire_original-167",
+        "connector_wire_original-235",
+        "connector_wire_original-229",
+        "connector_wire_original-230",
+        "connector_wire_original-228",
+        "connector_wire_original-234",
+        "connector_wire_original-233",
+        "connector_wire_original-232",
+        "connector_wire_original-185",
+        "connector_wire_original-206",
+        "connector_wire_original-216",
+        "connector_wire_original-179",
+        "connector_wire_original-174",
+        "connector_wire_original-176",
+        "connector_wire_original-172",
+        "connector_wire_original-236",
+        "connector_wire_original-175",
+        "connector_wire_original-256",
+        "connector_wire_original-265",
+        "connector_wire_original-268",
+        "connector_wire_original-274",
+        "connector_wire_original-285",
+        "connector_wire_original-282",
+        "connector_wire_original-250",
+        "connector_wire_original-251",
+        "connector_wire_original-287",
+        "connector_wire_original-293",
+        "connector_wire_original-278",
+        "connector_wire_original-291",
+        "connector_wire_original-269",
+        "connector_wire_original-260",
+        "connector_wire_original-259",
+        "connector_wire_original-277",
+        "connector_wire_original-289",
+        "connector_wire_original-295",
+        "connector_wire_original-231",
+        "connector_wire_original-182",
+        "connector_wire_original-225",
+        "connector_wire_original-181",
+        "connector_wire_original-212",
+        "connector_wire_original-226",
+        "connector_wire_original-217",
+        "connector_wire_original-218",
+        "connector_wire_original-180",
+        "connector_wire_original-215",
+        "connector_wire_original-186",
+        "connector_wire_original-189",
+        "connector_wire_original-195",
+        "connector_wire_original-207",
+        "connector_wire_original-204",
+        "connector_wire_original-224",
+        "connector_wire_original-222",
+        "connector_wire_original-220",
+        "connector_wire_original-190",
+        "connector_wire_original-199",
+        "connector_wire_original-208",
+        "connector_wire_original-191",
+        "connector_wire_original-200",
+        "connector_wire_original-198",
+        "connector_wire_original-219",
+        "connector_wire_original-209",
+        "connector_wire_original-221",
+        "connector_wire_original-223"
+      ],
+      "anchor": {
+        "point": [
+          0.7109543019999691,
+          0.1731660859999682,
+          -0.2059937000000307
+        ]
+      },
+      "label": {
+        "text": "connector_wire",
+        "box_size": [
+          1.2834365449199583,
+          0.15236690391891866,
+          0.02
+        ],
+        "center": [
+          1.460070846052646,
+          0.34679410653135534,
+          -0.4087401406725971
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.7109543019999691,
+          0.1731660859999682,
+          -0.2059937000000307
+        ],
+        "bend_points": [],
+        "end": [
+          1.460070846052646,
+          0.34679410653135534,
+          -0.4087401406725971
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_connector_12_12",
+      "id": 12,
+      "ori_id": 12,
+      "source_objs": [
+        "original-60.obj"
+      ],
+      "target_g": [
+        "earcup_connector_original-60"
+      ],
+      "anchor": {
+        "point": [
+          -0.16598148100003662,
+          -0.0806427810000363,
+          0.04928736099996378
+        ]
+      },
+      "label": {
+        "text": "earcup_connector",
+        "box_size": [
+          1.4753430454350094,
+          0.15416416696617533,
+          0.02
+        ],
+        "center": [
+          -1.3820460363111187,
+          -0.7554982185799236,
+          0.4514506602016825
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.16598148100003662,
+          -0.0806427810000363,
+          0.04928736099996378
+        ],
+        "bend_points": [],
+        "end": [
+          -1.3820460363111187,
+          -0.7554982185799236,
+          0.4514506602016825
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_pad_7_14",
+      "id": 7,
+      "ori_id": 14,
+      "source_objs": [
+        "original-51.obj"
+      ],
+      "target_g": [
+        "earcup_pad_original-51"
+      ],
+      "anchor": {
+        "point": [
+          0.15434227399996825,
+          -0.02934937000003135,
+          0.08077795999996784
+        ]
+      },
+      "label": {
+        "text": "earcup_pad",
+        "box_size": [
+          0.9140016482679085,
+          0.18212139376706324,
+          0.02
+        ],
+        "center": [
+          0.6555350967163961,
+          -0.3499050171228678,
+          0.46704825033928254
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.15434227399996825,
+          -0.02934937000003135,
+          0.08077795999996784
+        ],
+        "bend_points": [],
+        "end": [
+          0.6555350967163961,
+          -0.3499050171228678,
+          0.46704825033928254
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_frame_6_13",
+      "id": 6,
+      "ori_id": 13,
+      "source_objs": [
+        "original-50.obj",
+        "original-45.obj",
+        "original-46.obj",
+        "original-43.obj",
+        "original-29.obj",
+        "original-28.obj",
+        "original-30.obj",
+        "original-32.obj",
+        "original-38.obj",
+        "original-36.obj",
+        "original-53.obj",
+        "original-48.obj",
+        "original-41.obj",
+        "original-44.obj",
+        "original-23.obj",
+        "original-33.obj",
+        "original-49.obj",
+        "original-54.obj"
+      ],
+      "target_g": [
+        "earcup_frame_original-50",
+        "earcup_frame_original-45",
+        "earcup_frame_original-46",
+        "earcup_frame_original-43",
+        "earcup_frame_original-29",
+        "earcup_frame_original-28",
+        "earcup_frame_original-30",
+        "earcup_frame_original-32",
+        "earcup_frame_original-38",
+        "earcup_frame_original-36",
+        "earcup_frame_original-53",
+        "earcup_frame_original-48",
+        "earcup_frame_original-41",
+        "earcup_frame_original-44",
+        "earcup_frame_original-23",
+        "earcup_frame_original-33",
+        "earcup_frame_original-49",
+        "earcup_frame_original-54"
+      ],
+      "anchor": {
+        "point": [
+          0.2656302509999673,
+          -0.04349996800003275,
+          0.01846738099996692
+        ]
+      },
+      "label": {
+        "text": "earcup_frame",
+        "box_size": [
+          1.0961231610621678,
+          0.184,
+          0.02
+        ],
+        "center": [
+          1.3952008466741874,
+          -0.02678495355743024,
+          0.011156382660125502
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.2656302509999673,
+          -0.04349996800003275,
+          0.01846738099996692
+        ],
+        "bend_points": [],
+        "end": [
+          1.3952008466741874,
+          -0.02678495355743024,
+          0.011156382660125502
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_connector_8_15",
+      "id": 8,
+      "ori_id": 15,
+      "source_objs": [
+        "original-25.obj"
+      ],
+      "target_g": [
+        "earcup_connector_original-25"
+      ],
+      "anchor": {
+        "point": [
+          0.29473935899996473,
+          0.07286148299996587,
+          0.037866764999965774
+        ]
+      },
+      "label": {
+        "text": "earcup_connector",
+        "box_size": [
+          1.4753430454350094,
+          0.15416416696617533,
+          0.02
+        ],
+        "center": [
+          1.5501467578147337,
+          0.37083438152385306,
+          0.2022004792486962
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.29473935899996473,
+          0.07286148299996587,
+          0.037866764999965774
+        ],
+        "bend_points": [],
+        "end": [
+          1.5501467578147337,
+          0.37083438152385306,
+          0.2022004792486962
+        ]
+      }
+    }
+  ],
+  "reproduction": {
+    "paper": "Tatzgern et al. 2014, Hedgehog Labeling",
+    "view": "left",
+    "method": "hedgehog_3d",
+    "parameters": {
+      "plane_count": 3,
+      "iterations": 80
+    }
+  }
+}

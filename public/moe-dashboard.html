@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoE1 轮廓布局可视化</title>
+  <link rel="stylesheet" href="/moe-dashboard.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">3D 标签布局 · MoE1</p>
+        <h1>轮廓风格专家、伪标签与 LLM 偏好可视化</h1>
+        <p>集中展示模型需要操作的代码位置、数据文件、训练产物、五视角候选和本地 Qwen 评分结果。</p>
+      </div>
+      <a href="/" class="home-link">返回主工作台</a>
+    </header>
+
+    <section id="status" class="status">正在读取 MoE1 实验数据…</section>
+
+    <section class="grid" id="summaryGrid"></section>
+
+    <section class="panel">
+      <h2>200 train / 50 test：最终 v10 与经典方法对比</h2>
+      <p class="hint">v10 使用扩展 test50 训练报告；BinoForce、Hedgehog 只在同一 category/sample 有保存布局时计入覆盖率，不把缺失布局当作 0 分。</p>
+      <div id="comparisonPanel" class="comparison-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>模型需要操作的位置</h2>
+      <div id="architecture" class="file-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>实验流程与数据文件</h2>
+      <div id="workflow" class="workflow"></div>
+    </section>
+
+    <section class="panel">
+      <h2>test11 全部样本：专家选择与布局效果</h2>
+      <p class="hint">可选择任意测试样本，查看 spherical / rectangular / surround 三个专家的综合评分、五视角布局和最终路由概率；下方同时给出 test11 平均指标。</p>
+      <div class="test-controls"><label for="testSelector">测试样本</label><select id="testSelector"></select></div>
+      <div id="testAverage" class="average-grid"></div>
+      <div id="testExpertPanel" class="test-expert-panel"></div>
+    </section>
+
+    <section class="panel">
+      <h2>LLM 五视角扰动候选</h2>
+      <p class="hint">每个候选包含 main/right/left/up/down 五张叠加预览；评分来自本地 Qwen，多维度用于 LoRA/MDPO 选择。</p>
+      <div id="winners" class="winner-list"></div>
+      <div id="previews" class="preview-grid"></div>
+    </section>
+  </main>
+  <script src="/moe-dashboard.js"></script>
+</body>
+</html>

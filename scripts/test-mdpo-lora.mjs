@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { applyV10BiasGradient, applyV10LoraGradient, initializeV10BiasTuning, initializeV10Lora, materializeV10BiasTuning, materializeV10Lora, materializeV10LoraStep } from '../lib/mdpo-lora.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const model = JSON.parse(await fs.readFile(path.join(root, 'experiments/layout_model.json'), 'utf8'));
+const original = JSON.stringify(model.network);
+const adapters = initializeV10Lora(model.network, { rank: 4, alpha: 8, seed: 17 });
+assert.equal(adapters.matrices.length, 19);
+assert.equal(JSON.stringify(materializeV10Lora(model.network, adapters)), original, 'zero-initialized adapters must reproduce reference exactly');
+const gradient = structuredClone(model.network);
+for (const adapter of adapters.matrices) {
+  let matrix = gradient;
+  for (const part of adapter.path) matrix = matrix[part];
+  for (const row of matrix) row.fill(1);
+}
+const step = applyV10LoraGradient(adapters, gradient, 1e-4);
+assert.ok(step.gradient_norm > 0);
+assert.notEqual(JSON.stringify(materializeV10Lora(model.network, adapters)), original, 'MDPO-updated adapters must change v10 outputs');
+assert.equal(JSON.stringify(model.network), original, 'reference network must stay frozen');
+const bias = initializeV10BiasTuning(model.network);
+assert.equal(bias.trainable_parameters, 28);
+const biasGradient = structuredClone(model.network);
+biasGradient.moe.router.bias.fill(1);
+biasGradient.moe.experts.forEach((expert) => expert.bias.fill(1));
+applyV10BiasGradient(bias, biasGradient, 0.01);
+assert.notDeepEqual(materializeV10BiasTuning(model.network, bias).moe.router.bias, model.network.moe.router.bias);
+assert.equal(JSON.stringify(model.network), original, 'bias tuning must not change reference network');
+const withDropout = initializeV10Lora(model.network, { dropout: 0.05 });
+assert.equal(materializeV10LoraStep(model.network, withDropout, { training: true, random: () => 0 }).masks[0][0], 0);
+assert.equal(materializeV10LoraStep(model.network, withDropout, { training: false }).masks[0][0], 1);
+console.log(`MDPO LoRA adapter test passed: ${adapters.matrices.length} matrices, ${adapters.trainable_parameters} matrix + ${bias.trainable_parameters} bias parameters.`);

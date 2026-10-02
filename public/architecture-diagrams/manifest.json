@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-09-24T02:35:49.417Z",
+  "diagrams": [
+    {
+      "slug": "01-original-v10",
+      "title": "原始 v10 架构",
+      "subtitle": "活动基础布局模型 · 纯三维生成",
+      "width": 760,
+      "height": 1760,
+      "svg": "01-original-v10.svg",
+      "png": "01-original-v10.png"
+    },
+    {
+      "slug": "02-v10-base-reward-mlp",
+      "title": "v10 + 基础奖励 MLP 架构",
+      "subtitle": "安全候选内的美学重排组合",
+      "width": 760,
+      "height": 2280,
+      "svg": "02-v10-base-reward-mlp.svg",
+      "png": "02-v10-base-reward-mlp.png"
+    },
+    {
+      "slug": "03-v10-mdpo",
+      "title": "v10 + MDPO 架构",
+      "subtitle": "七维偏好直接更新策略 · 奖励重排关闭",
+      "width": 760,
+      "height": 2260,
+      "svg": "03-v10-mdpo.svg",
+      "png": "03-v10-mdpo.png"
+    },
+    {
+      "slug": "04-v10-mdpo-base-reward-mlp",
+      "title": "v10 + MDPO + 基础奖励 MLP",
+      "subtitle": "MDPO 策略候选 + 历史奖励重排",
+      "width": 760,
+      "height": 2540,
+      "svg": "04-v10-mdpo-base-reward-mlp.svg",
+      "png": "04-v10-mdpo-base-reward-mlp.png"
+    },
+    {
+      "slug": "05-binoforce",
+      "title": "BinoForce 方法架构",
+      "subtitle": "双目视点下的动态五力布局复现",
+      "width": 760,
+      "height": 1690,
+      "svg": "05-binoforce.svg",
+      "png": "05-binoforce.png"
+    },
+    {
+      "slug": "06-hedgehog-3d",
+      "title": "Hedgehog 3D 方法架构",
+      "subtitle": "径向 Pole + 局部图像平面三自由度优化",
+      "width": 760,
+      "height": 1530,
+      "svg": "06-hedgehog-3d.svg",
+      "png": "06-hedgehog-3d.png"
+    },
+    {
+      "slug": "07-hedgehog-1d",
+      "title": "Hedgehog 1D 方法架构",
+      "subtitle": "标签仅沿径向 Pole 滑动",
+      "width": 760,
+      "height": 1490,
+      "svg": "07-hedgehog-1d.svg",
+      "png": "07-hedgehog-1d.png"
+    },
+    {
+      "slug": "08-manual-optimized-layout",
+      "title": "人工优化布局流程",
+      "subtitle": "数据集参考布局 · 非学习模型",
+      "width": 760,
+      "height": 1420,
+      "svg": "08-manual-optimized-layout.svg",
+      "png": "08-manual-optimized-layout.png"
+    }
+  ]
+}

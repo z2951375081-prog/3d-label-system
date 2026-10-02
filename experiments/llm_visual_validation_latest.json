@@ -1,0 +1,3760 @@
+{
+  "version": "llm_visual_validation_v1",
+  "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+  "generated_at": "2026-09-21T12:19:25.054Z",
+  "split": "val",
+  "images_per_request": 6,
+  "score_dimensions": [
+    "text_clarity",
+    "coverage",
+    "label_label_occlusion",
+    "object_occlusion",
+    "object_penetration",
+    "leader_line_clarity",
+    "multiview_consistency",
+    "binocular_consistency",
+    "manual_style_similarity",
+    "spatial_balance",
+    "size_consistency",
+    "visual_hierarchy",
+    "composition_harmony",
+    "overall"
+  ],
+  "rounds": [
+    {
+      "round": 0,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 0,
+        "kind": "no_reward_baseline",
+        "reward_model_file": null,
+        "reward_model_sha256": null
+      },
+      "score_means": {
+        "text_clarity": 4.894091,
+        "coverage": 4.909091,
+        "label_label_occlusion": 4.903636,
+        "object_occlusion": 4.909091,
+        "object_penetration": 4.909091,
+        "leader_line_clarity": 4.045455,
+        "multiview_consistency": 4.381818,
+        "binocular_consistency": 4.345818,
+        "manual_style_similarity": 4.610545,
+        "spatial_balance": 4.227273,
+        "size_consistency": 4.545455,
+        "visual_hierarchy": 4.190909,
+        "composition_harmony": 4.436364,
+        "overall": 4.363636
+      },
+      "composite_score": 4.351509,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.453909,
+        "objective_score": 1.030636,
+        "label_object_occlusion_ratio": 0.006818,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.903909
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.968,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T09:47:54.8375098Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.9,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4.5,
+            "multiview_consistency": 4.7,
+            "binocular_consistency": 4.8,
+            "manual_style_similarity": 4.6,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.4,
+            "overall": 4.3
+          },
+          "composite_score": 4.335,
+          "response_id": "2026-09-21T09:48:33.5750571Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.065,
+          "response_id": "2026-09-21T09:49:16.0216891Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T09:50:06.4024239Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T09:50:45.5054203Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T09:51:29.7133685Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 4,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 4,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 4,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T09:52:09.3775759Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.2,
+            "overall": 4.1
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T09:52:47.6415866Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T09:53:21.778736Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T09:54:00.7993036Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T09:54:42.4636087Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 1,
+        "kind": "frozen_reward_checkpoint",
+        "reward_model_file": "experiments/llm_preference_checkpoints/5d3aabe9-2e20-455c-a9a9-43b7db28cd57/round_1.json",
+        "reward_model_sha256": "BC1DF63E749B6C4747FC659D9DFA035F1CB18CFFE2232AE493AB1D0047BA9B25"
+      },
+      "score_means": {
+        "text_clarity": 4.812273,
+        "coverage": 4.909091,
+        "label_label_occlusion": 4.721818,
+        "object_occlusion": 4.727273,
+        "object_penetration": 4.909091,
+        "leader_line_clarity": 3.863636,
+        "multiview_consistency": 4.227273,
+        "binocular_consistency": 4.182182,
+        "manual_style_similarity": 4.492364,
+        "spatial_balance": 4.027273,
+        "size_consistency": 4.4,
+        "visual_hierarchy": 4.045455,
+        "composition_harmony": 4.345455,
+        "overall": 4.263636
+      },
+      "composite_score": 4.227873,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.470636,
+        "objective_score": 0.912545,
+        "label_object_occlusion_ratio": 0.009545,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.910364
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.968,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T10:05:30.4875366Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.825,
+          "response_id": "2026-09-21T10:06:18.0936995Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.065,
+          "response_id": "2026-09-21T10:06:59.2299269Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:07:44.0247619Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 5,
+            "leader_line_clarity": 3.5,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 3.8
+          },
+          "composite_score": 3.765,
+          "response_id": "2026-09-21T10:08:23.4500619Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T10:09:05.1917113Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 4,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 4,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.8,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.08,
+          "response_id": "2026-09-21T10:09:45.6340836Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.2,
+            "overall": 4.1
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T10:10:27.6024474Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T10:11:03.2219067Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:11:46.6255982Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:12:35.460949Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 2,
+        "kind": "frozen_reward_checkpoint",
+        "reward_model_file": "experiments/llm_preference_checkpoints/5d3aabe9-2e20-455c-a9a9-43b7db28cd57/round_2.json",
+        "reward_model_sha256": "7F85ACF32C7BDAA950F2D604F8FDFB5B654A3030E8E4F27A8E0E5750D52409FE"
+      },
+      "score_means": {
+        "text_clarity": 4.853182,
+        "coverage": 4.909091,
+        "label_label_occlusion": 4.899273,
+        "object_occlusion": 4.909091,
+        "object_penetration": 4.909091,
+        "leader_line_clarity": 3.636364,
+        "multiview_consistency": 4.227273,
+        "binocular_consistency": 4.182182,
+        "manual_style_similarity": 4.565091,
+        "spatial_balance": 4.063636,
+        "size_consistency": 4.4,
+        "visual_hierarchy": 4.045455,
+        "composition_harmony": 4.345455,
+        "overall": 4.3
+      },
+      "composite_score": 4.251509,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.482273,
+        "objective_score": 0.883182,
+        "label_object_occlusion_ratio": 0.008364,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.907091
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.968,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T10:23:17.2475341Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.95,
+            "coverage": 5,
+            "label_label_occlusion": 4.952,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 3.965,
+          "response_id": "2026-09-21T10:23:57.5017991Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.065,
+          "response_id": "2026-09-21T10:24:40.4870307Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:25:32.6177562Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.885,
+          "response_id": "2026-09-21T10:26:13.4610342Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T10:26:55.6847255Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 4,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 4,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.8,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.08,
+          "response_id": "2026-09-21T10:27:35.0026128Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.2,
+            "overall": 4.1
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T10:28:14.1817634Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T10:28:54.7048847Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:29:29.3615885Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:30:17.6105193Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 3,
+        "kind": "frozen_reward_checkpoint",
+        "reward_model_file": "experiments/llm_preference_checkpoints/5d3aabe9-2e20-455c-a9a9-43b7db28cd57/round_3.json",
+        "reward_model_sha256": "C4392711895A26DB56D41A8730A77A4769AE26030763A83D4BE3F05006B46975"
+      },
+      "score_means": {
+        "text_clarity": 4.844091,
+        "coverage": 4.909091,
+        "label_label_occlusion": 4.810909,
+        "object_occlusion": 4.817818,
+        "object_penetration": 4.909091,
+        "leader_line_clarity": 3.590909,
+        "multiview_consistency": 4.163636,
+        "binocular_consistency": 4.091273,
+        "manual_style_similarity": 4.528727,
+        "spatial_balance": 4.018182,
+        "size_consistency": 4.4,
+        "visual_hierarchy": 3.936364,
+        "composition_harmony": 4.281818,
+        "overall": 4.281818
+      },
+      "composite_score": 4.197873,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.500091,
+        "objective_score": 0.896636,
+        "label_object_occlusion_ratio": 0.008182,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.902091
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T10:41:30.9901395Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.95,
+            "coverage": 5,
+            "label_label_occlusion": 4.952,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 3.965,
+          "response_id": "2026-09-21T10:42:11.4198974Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.996,
+            "object_occlusion": 4.996,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3,
+            "composition_harmony": 3.5,
+            "overall": 4
+          },
+          "composite_score": 3.65,
+          "response_id": "2026-09-21T10:42:49.4192684Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 4.9,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4.5,
+            "multiview_consistency": 4.3,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.2,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.34,
+          "response_id": "2026-09-21T10:43:42.1732381Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.825,
+          "response_id": "2026-09-21T10:44:30.0936183Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:45:10.7135503Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 4,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 4,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.8,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.08,
+          "response_id": "2026-09-21T10:45:49.8825414Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.2,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 4.02,
+          "response_id": "2026-09-21T10:46:31.9208047Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.455,
+          "response_id": "2026-09-21T10:47:12.1407826Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.6
+          },
+          "composite_score": 4.535,
+          "response_id": "2026-09-21T10:48:00.0367962Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:48:44.2499445Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 4,
+        "kind": "frozen_reward_checkpoint",
+        "reward_model_file": "experiments/llm_preference_checkpoints/5d3aabe9-2e20-455c-a9a9-43b7db28cd57/round_4.json",
+        "reward_model_sha256": "F5EA7F0AA452224DAEFFB18A0760037138F94150C2FB0C7F8752D857E2ADD34D"
+      },
+      "score_means": {
+        "text_clarity": 4.844091,
+        "coverage": 4.909091,
+        "label_label_occlusion": 4.810909,
+        "object_occlusion": 4.817818,
+        "object_penetration": 4.909091,
+        "leader_line_clarity": 3.590909,
+        "multiview_consistency": 4.163636,
+        "binocular_consistency": 4.091273,
+        "manual_style_similarity": 4.537818,
+        "spatial_balance": 4.018182,
+        "size_consistency": 4.4,
+        "visual_hierarchy": 3.936364,
+        "composition_harmony": 4.3,
+        "overall": 4.272727
+      },
+      "composite_score": 4.2006,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.489727,
+        "objective_score": 0.905909,
+        "label_object_occlusion_ratio": 0.008182,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.903909
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T10:56:40.8019661Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.95,
+            "coverage": 5,
+            "label_label_occlusion": 4.952,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 3.965,
+          "response_id": "2026-09-21T10:57:13.6747798Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.996,
+            "object_occlusion": 4.996,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3,
+            "composition_harmony": 3.5,
+            "overall": 4
+          },
+          "composite_score": 3.65,
+          "response_id": "2026-09-21T10:57:44.0390157Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 4.9,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4.5,
+            "multiview_consistency": 4.3,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.2,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.34,
+          "response_id": "2026-09-21T10:58:22.7554523Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.825,
+          "response_id": "2026-09-21T10:58:57.8703103Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T10:59:32.7853555Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 4,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 4,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.8,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.08,
+          "response_id": "2026-09-21T11:00:06.1321643Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.2,
+            "overall": 4.1
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T11:00:44.2049904Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T11:01:22.7724223Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:02:00.6157406Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:02:56.4522381Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 5,
+        "kind": "frozen_reward_checkpoint",
+        "reward_model_file": "experiments/llm_preference_checkpoints/5d3aabe9-2e20-455c-a9a9-43b7db28cd57/round_5.json",
+        "reward_model_sha256": "8F594BBC5A8E759D106DF62C35DAAB4279249BF18F03F12BE95F9CB6E973B8C4"
+      },
+      "score_means": {
+        "text_clarity": 4.812273,
+        "coverage": 4.909091,
+        "label_label_occlusion": 4.812727,
+        "object_occlusion": 4.818182,
+        "object_penetration": 4.909091,
+        "leader_line_clarity": 3.909091,
+        "multiview_consistency": 4.227273,
+        "binocular_consistency": 4.182182,
+        "manual_style_similarity": 4.519636,
+        "spatial_balance": 4.045455,
+        "size_consistency": 4.4,
+        "visual_hierarchy": 4.045455,
+        "composition_harmony": 4.345455,
+        "overall": 4.281818
+      },
+      "composite_score": 4.238782,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.471545,
+        "objective_score": 0.916091,
+        "label_object_occlusion_ratio": 0.009545,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.911182
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.968,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T11:14:18.9934473Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.825,
+          "response_id": "2026-09-21T11:15:08.2112387Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.065,
+          "response_id": "2026-09-21T11:15:55.1007431Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:16:49.7283852Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.885,
+          "response_id": "2026-09-21T11:17:34.0316672Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T11:18:19.0201509Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 4,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 4,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.8,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.08,
+          "response_id": "2026-09-21T11:19:01.547496Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.2,
+            "overall": 4.1
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T11:19:43.9698961Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T11:20:23.12242Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:21:01.0424011Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:21:57.2421202Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 6,
+        "kind": "frozen_reward_checkpoint",
+        "reward_model_file": "experiments/llm_preference_checkpoints/5d3aabe9-2e20-455c-a9a9-43b7db28cd57/round_6.json",
+        "reward_model_sha256": "267FB30AD145D40F520F87085D447E4540AC5D7DD54098187832FBCFCD4A1C87"
+      },
+      "score_means": {
+        "text_clarity": 4.812273,
+        "coverage": 4.909091,
+        "label_label_occlusion": 4.812727,
+        "object_occlusion": 4.818182,
+        "object_penetration": 4.909091,
+        "leader_line_clarity": 3.909091,
+        "multiview_consistency": 4.227273,
+        "binocular_consistency": 4.182182,
+        "manual_style_similarity": 4.519636,
+        "spatial_balance": 4.045455,
+        "size_consistency": 4.4,
+        "visual_hierarchy": 4.045455,
+        "composition_harmony": 4.345455,
+        "overall": 4.290909
+      },
+      "composite_score": 4.241509,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.471545,
+        "objective_score": 0.916091,
+        "label_object_occlusion_ratio": 0.009545,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.911182
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.968,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T11:34:00.4929864Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.825,
+          "response_id": "2026-09-21T11:34:49.6656545Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.065,
+          "response_id": "2026-09-21T11:35:33.8784889Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:36:23.6577589Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.885,
+          "response_id": "2026-09-21T11:37:09.2156727Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T11:37:56.6596017Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 4,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 4,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.8,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.08,
+          "response_id": "2026-09-21T11:38:40.2966034Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.2,
+            "overall": 4.1
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T11:39:22.7281943Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.455,
+          "response_id": "2026-09-21T11:40:06.4708947Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:40:54.7436551Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:41:45.7231825Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 7,
+        "kind": "frozen_reward_checkpoint",
+        "reward_model_file": "experiments/llm_preference_checkpoints/5d3aabe9-2e20-455c-a9a9-43b7db28cd57/round_7.json",
+        "reward_model_sha256": "EC446EB1A016ED837F2DA3FA1DE46DE8D4A7C4F624651D7C6421270148D36B92"
+      },
+      "score_means": {
+        "text_clarity": 4.812273,
+        "coverage": 4.909091,
+        "label_label_occlusion": 4.812727,
+        "object_occlusion": 4.818182,
+        "object_penetration": 4.909091,
+        "leader_line_clarity": 3.909091,
+        "multiview_consistency": 4.227273,
+        "binocular_consistency": 4.182182,
+        "manual_style_similarity": 4.519636,
+        "spatial_balance": 4.045455,
+        "size_consistency": 4.4,
+        "visual_hierarchy": 4.081818,
+        "composition_harmony": 4.363636,
+        "overall": 4.290909
+      },
+      "composite_score": 4.253327,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.471545,
+        "objective_score": 0.916091,
+        "label_object_occlusion_ratio": 0.009545,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.911182
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.968,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T11:52:50.0021886Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.825,
+          "response_id": "2026-09-21T11:53:40.0533972Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.065,
+          "response_id": "2026-09-21T11:54:24.4681258Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.475,
+          "response_id": "2026-09-21T11:55:21.327197Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.885,
+          "response_id": "2026-09-21T11:56:05.6411821Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.6,
+            "composition_harmony": 4.8,
+            "overall": 4.6
+          },
+          "composite_score": 4.615,
+          "response_id": "2026-09-21T11:56:55.2479354Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 4,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 4,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.8,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.08,
+          "response_id": "2026-09-21T11:57:37.7873694Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.2,
+            "overall": 4.1
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T11:58:20.0849632Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T11:58:58.2599967Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T11:59:38.2279745Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T12:00:31.0313544Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "status": "evaluated",
+      "sample_count": 11,
+      "scorer_model": "qwen3-vl:4b-instruct",
+      "checkpoint": {
+        "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+        "round": 8,
+        "kind": "frozen_reward_checkpoint",
+        "reward_model_file": "experiments/llm_preference_checkpoints/5d3aabe9-2e20-455c-a9a9-43b7db28cd57/round_8.json",
+        "reward_model_sha256": "FD51CCA2F880016649F3D2864F2958236E664A8847D8F29DAA47BEE2C13DDD30"
+      },
+      "score_means": {
+        "text_clarity": 4.812273,
+        "coverage": 5,
+        "label_label_occlusion": 4.903636,
+        "object_occlusion": 4.909091,
+        "object_penetration": 5,
+        "leader_line_clarity": 3.954545,
+        "multiview_consistency": 4.227273,
+        "binocular_consistency": 4.182182,
+        "manual_style_similarity": 4.519636,
+        "spatial_balance": 4.063636,
+        "size_consistency": 4.445455,
+        "visual_hierarchy": 4.045455,
+        "composition_harmony": 4.345455,
+        "overall": 4.281818
+      },
+      "composite_score": 4.241509,
+      "geometry_proxy_means": {
+        "multidimensional_quality_score": 4.471182,
+        "objective_score": 0.940182,
+        "label_object_occlusion_ratio": 0.009545,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "manual_style_distance": null,
+        "text_clarity": 4.909545
+      },
+      "sample_scores": [
+        {
+          "sample": {
+            "category": "Chair",
+            "sample_id": "41193"
+          },
+          "scores": {
+            "text_clarity": 4.655,
+            "coverage": 5,
+            "label_label_occlusion": 4.968,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 1,
+            "binocular_consistency": 1.004,
+            "manual_style_similarity": 4.616,
+            "spatial_balance": 3.7,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.3
+          },
+          "composite_score": 4.2966,
+          "response_id": "2026-09-21T12:11:54.6014816Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 17,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Dishwasher",
+            "sample_id": "12580"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 4,
+            "object_occlusion": 4,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4,
+            "spatial_balance": 3.5,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.825,
+          "response_id": "2026-09-21T12:12:43.9272088Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 21,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Door",
+            "sample_id": "9288"
+          },
+          "scores": {
+            "text_clarity": 4.98,
+            "coverage": 5,
+            "label_label_occlusion": 4.972,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 1,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.065,
+          "response_id": "2026-09-21T12:13:28.671789Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 25,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Earphone",
+            "sample_id": "11471"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T12:14:22.8825678Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 29,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Faucet",
+            "sample_id": "1758"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 3.7,
+            "size_consistency": 4,
+            "visual_hierarchy": 3.5,
+            "composition_harmony": 4,
+            "overall": 4
+          },
+          "composite_score": 3.885,
+          "response_id": "2026-09-21T12:15:07.4943414Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 33,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Lamp",
+            "sample_id": "16598"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T12:15:57.2663078Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 37,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Laptop",
+            "sample_id": "10302"
+          },
+          "scores": {
+            "text_clarity": 4.8,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4.5,
+            "multiview_consistency": 4,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.5,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4,
+            "overall": 4.2
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T12:16:39.9627682Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 41,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Microwave",
+            "sample_id": "7200"
+          },
+          "scores": {
+            "text_clarity": 4.5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 4,
+            "multiview_consistency": 4.5,
+            "binocular_consistency": 4,
+            "manual_style_similarity": 4.3,
+            "spatial_balance": 4,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4,
+            "composition_harmony": 4.2,
+            "overall": 4.1
+          },
+          "composite_score": 4.11,
+          "response_id": "2026-09-21T12:17:22.6347011Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 45,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Refrigerator",
+            "sample_id": "11712"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.3,
+            "size_consistency": 4.5,
+            "visual_hierarchy": 4.2,
+            "composition_harmony": 4.6,
+            "overall": 4.4
+          },
+          "composite_score": 4.425,
+          "response_id": "2026-09-21T12:18:01.0330219Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 49,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "Scissors",
+            "sample_id": "11036"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T12:18:38.6451837Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 53,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        },
+        {
+          "sample": {
+            "category": "TrashCan",
+            "sample_id": "11960"
+          },
+          "scores": {
+            "text_clarity": 5,
+            "coverage": 5,
+            "label_label_occlusion": 5,
+            "object_occlusion": 5,
+            "object_penetration": 5,
+            "leader_line_clarity": 5,
+            "multiview_consistency": 5,
+            "binocular_consistency": 5,
+            "manual_style_similarity": 4.7,
+            "spatial_balance": 4.5,
+            "size_consistency": 4.8,
+            "visual_hierarchy": 4.3,
+            "composition_harmony": 4.6,
+            "overall": 4.5
+          },
+          "composite_score": 4.505,
+          "response_id": "2026-09-21T12:19:25.0360278Z",
+          "generation_strategy": {
+            "generator": "annotation",
+            "viewPolicy": "binocular",
+            "groupPolicy": "all",
+            "sizePolicy": "relative",
+            "optimizer": "annealing",
+            "seed": 57,
+            "iterations": 180,
+            "preferenceRerank": true
+          }
+        }
+      ]
+    }
+  ]
+}

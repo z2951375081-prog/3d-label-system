@@ -1,0 +1,341 @@
+{
+  "version": "hedgehog_reproduction",
+  "name": "张航乐",
+  "layout_level": "layout1",
+  "layout_type": "manual",
+  "sample_id": "12045",
+  "category": "Refrigerator",
+  "hierarchy_file": "result_after_merging.json",
+  "normalization": {
+    "center_origin": [
+      -0.0078125,
+      -0.03295050000000005,
+      0.011498000000000008
+    ],
+    "center_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 0.9968907911045637
+  },
+  "groups": [
+    {
+      "group_id": "frame_2_14",
+      "id": 2,
+      "ori_id": 14,
+      "source_objs": [
+        "new-2.obj",
+        "new-0.obj"
+      ],
+      "target_g": [
+        "frame_new-2",
+        "frame_new-0"
+      ],
+      "anchor": {
+        "point": [
+          0.1538147419999909,
+          -0.23067973100001016,
+          -0.36498180500001
+        ]
+      },
+      "label": {
+        "text": "frame",
+        "box_size": [
+          0.5140864764689373,
+          0.15785620547031898,
+          0.02
+        ],
+        "center": [
+          0.34995315705441143,
+          1.2003616865418039,
+          -1.819423577568232
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.1538147419999909,
+          -0.23067973100001016,
+          -0.36498180500001
+        ],
+        "bend_points": [],
+        "end": [
+          0.34995315705441143,
+          1.2003616865418039,
+          -1.819423577568232
+        ]
+      }
+    },
+    {
+      "group_id": "door_frame_6_20",
+      "id": 6,
+      "ori_id": 20,
+      "source_objs": [
+        "original-17.obj",
+        "original-29.obj",
+        "original-27.obj",
+        "original-28.obj",
+        "original-20.obj",
+        "original-21.obj",
+        "original-23.obj",
+        "original-22.obj",
+        "original-25.obj",
+        "original-24.obj",
+        "original-26.obj"
+      ],
+      "target_g": [
+        "door_frame_original-17",
+        "door_frame_original-29",
+        "door_frame_original-27",
+        "door_frame_original-28",
+        "door_frame_original-20",
+        "door_frame_original-21",
+        "door_frame_original-23",
+        "door_frame_original-22",
+        "door_frame_original-25",
+        "door_frame_original-24",
+        "door_frame_original-26"
+      ],
+      "anchor": {
+        "point": [
+          -0.3259599815413843,
+          0.8752627724098119,
+          0.268661667107569
+        ]
+      },
+      "label": {
+        "text": "door_frame",
+        "box_size": [
+          1.0718962742618043,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -1.608642203000084,
+          1.5114004639782586,
+          1.1286727987766572
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.3259599815413843,
+          0.8752627724098119,
+          0.268661667107569
+        ],
+        "bend_points": [],
+        "end": [
+          -1.608642203000084,
+          1.5114004639782586,
+          1.1286727987766572
+        ]
+      }
+    },
+    {
+      "group_id": "shelf_4_22",
+      "id": 4,
+      "ori_id": 22,
+      "source_objs": [
+        "new-1.obj"
+      ],
+      "target_g": [
+        "shelf_new-1"
+      ],
+      "anchor": {
+        "point": [
+          -0.11531503900001017,
+          0.4008849349999899,
+          -0.08862856500001026
+        ]
+      },
+      "label": {
+        "text": "shelf",
+        "box_size": [
+          0.4142441548702041,
+          0.15785620547031898,
+          0.02
+        ],
+        "center": [
+          -0.6358269386496813,
+          1.6579756855719419,
+          -0.6358269386496813
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.11531503900001017,
+          0.4008849349999899,
+          -0.08862856500001026
+        ],
+        "bend_points": [],
+        "end": [
+          -0.6358269386496813,
+          1.6579756855719419,
+          -0.6358269386496813
+        ]
+      }
+    },
+    {
+      "group_id": "handle_7_21",
+      "id": 7,
+      "ori_id": 21,
+      "source_objs": [
+        "original-18.obj"
+      ],
+      "target_g": [
+        "handle_original-18"
+      ],
+      "anchor": {
+        "point": [
+          -0.2421823897864197,
+          0.5731982175084775,
+          0.37858806763081354
+        ]
+      },
+      "label": {
+        "text": "handle",
+        "box_size": [
+          0.5726846662681379,
+          0.1557359739809553,
+          0.02
+        ],
+        "center": [
+          -0.8908816855842332,
+          0.35137592194558565,
+          1.4221692474805803
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2421823897864197,
+          0.5731982175084775,
+          0.37858806763081354
+        ],
+        "bend_points": [],
+        "end": [
+          -0.8908816855842332,
+          0.35137592194558565,
+          1.4221692474805803
+        ]
+      }
+    },
+    {
+      "group_id": "door_frame_9_18",
+      "id": 9,
+      "ori_id": 18,
+      "source_objs": [
+        "original-15.obj",
+        "original-4.obj",
+        "original-5.obj",
+        "original-6.obj",
+        "original-7.obj",
+        "original-8.obj",
+        "original-9.obj",
+        "original-10.obj",
+        "original-11.obj",
+        "original-12.obj",
+        "original-14.obj",
+        "original-13.obj"
+      ],
+      "target_g": [
+        "door_frame_original-15",
+        "door_frame_original-4",
+        "door_frame_original-5",
+        "door_frame_original-6",
+        "door_frame_original-7",
+        "door_frame_original-8",
+        "door_frame_original-9",
+        "door_frame_original-10",
+        "door_frame_original-11",
+        "door_frame_original-12",
+        "door_frame_original-14",
+        "door_frame_original-13"
+      ],
+      "anchor": {
+        "point": [
+          0.3250310899999844,
+          -0.833844095000015,
+          0.2686613239999849
+        ]
+      },
+      "label": {
+        "text": "door_frame",
+        "box_size": [
+          1.0718962742618043,
+          0.184,
+          0.02
+        ],
+        "center": [
+          1.2889530400875113,
+          -1.3065681553105932,
+          -0.0318955571112749
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.3250310899999844,
+          -0.833844095000015,
+          0.2686613239999849
+        ],
+        "bend_points": [],
+        "end": [
+          1.2889530400875113,
+          -1.3065681553105932,
+          -0.0318955571112749
+        ]
+      }
+    },
+    {
+      "group_id": "handle_10_19",
+      "id": 10,
+      "ori_id": 19,
+      "source_objs": [
+        "original-2.obj"
+      ],
+      "target_g": [
+        "handle_original-2"
+      ],
+      "anchor": {
+        "point": [
+          -0.2120688660000125,
+          0.04959169099998828,
+          0.3765698339999881
+        ]
+      },
+      "label": {
+        "text": "handle",
+        "box_size": [
+          0.5726846662681379,
+          0.1557359739809553,
+          0.02
+        ],
+        "center": [
+          -0.3039969322829199,
+          -1.1261750183844024,
+          1.817323411276722
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2120688660000125,
+          0.04959169099998828,
+          0.3765698339999881
+        ],
+        "bend_points": [],
+        "end": [
+          -0.3039969322829199,
+          -1.1261750183844024,
+          1.817323411276722
+        ]
+      }
+    }
+  ],
+  "reproduction": {
+    "paper": "Tatzgern et al. 2014, Hedgehog Labeling",
+    "view": "down",
+    "method": "manual",
+    "parameters": {
+      "plane_count": 3,
+      "iterations": 80
+    }
+  }
+}

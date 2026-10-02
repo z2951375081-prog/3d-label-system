@@ -1,0 +1,2016 @@
+{
+  "version": "moe_style_routing_audit_v1",
+  "generated_at": "2026-09-28T17:19:30.600Z",
+  "source_manifest": "experiments/dataset_manifest.json",
+  "policy": {
+    "labels": "fixed_manual_contract_without_target_center_or_box_size",
+    "geometry": "clean_obj_contour_point_cloud_main_view",
+    "routing": "normalized_soft_probabilities_for_spherical_rectangular_surround"
+  },
+  "count": 55,
+  "summary": {
+    "by_split": {
+      "train": {
+        "count": 33,
+        "selected": {
+          "spherical": 19,
+          "rectangular": 14,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.366249,
+          "rectangular": 0.34556,
+          "surround": 0.288191
+        }
+      },
+      "val": {
+        "count": 11,
+        "selected": {
+          "spherical": 7,
+          "rectangular": 4,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.36829,
+          "rectangular": 0.340721,
+          "surround": 0.290989
+        }
+      },
+      "test": {
+        "count": 11,
+        "selected": {
+          "spherical": 6,
+          "rectangular": 5,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.356365,
+          "rectangular": 0.350233,
+          "surround": 0.293402
+        }
+      }
+    },
+    "by_category": {
+      "Chair": {
+        "count": 5,
+        "selected": {
+          "spherical": 5,
+          "rectangular": 0,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.44103,
+          "rectangular": 0.239363,
+          "surround": 0.319607
+        }
+      },
+      "Dishwasher": {
+        "count": 5,
+        "selected": {
+          "spherical": 5,
+          "rectangular": 0,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.478596,
+          "rectangular": 0.209344,
+          "surround": 0.312059
+        }
+      },
+      "Door": {
+        "count": 5,
+        "selected": {
+          "spherical": 0,
+          "rectangular": 5,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.091845,
+          "rectangular": 0.633299,
+          "surround": 0.274856
+        }
+      },
+      "Earphone": {
+        "count": 5,
+        "selected": {
+          "spherical": 2,
+          "rectangular": 3,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.312165,
+          "rectangular": 0.391602,
+          "surround": 0.296234
+        }
+      },
+      "Faucet": {
+        "count": 5,
+        "selected": {
+          "spherical": 4,
+          "rectangular": 1,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.375276,
+          "rectangular": 0.346228,
+          "surround": 0.278496
+        }
+      },
+      "Lamp": {
+        "count": 5,
+        "selected": {
+          "spherical": 2,
+          "rectangular": 3,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.316334,
+          "rectangular": 0.393001,
+          "surround": 0.290665
+        }
+      },
+      "Laptop": {
+        "count": 5,
+        "selected": {
+          "spherical": 5,
+          "rectangular": 0,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.534952,
+          "rectangular": 0.176513,
+          "surround": 0.288534
+        }
+      },
+      "Microwave": {
+        "count": 5,
+        "selected": {
+          "spherical": 5,
+          "rectangular": 0,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.541054,
+          "rectangular": 0.160222,
+          "surround": 0.298724
+        }
+      },
+      "Refrigerator": {
+        "count": 5,
+        "selected": {
+          "spherical": 2,
+          "rectangular": 3,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.317255,
+          "rectangular": 0.344451,
+          "surround": 0.338294
+        }
+      },
+      "Scissors": {
+        "count": 5,
+        "selected": {
+          "spherical": 0,
+          "rectangular": 5,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.235951,
+          "rectangular": 0.559595,
+          "surround": 0.204454
+        }
+      },
+      "TrashCan": {
+        "count": 5,
+        "selected": {
+          "spherical": 2,
+          "rectangular": 3,
+          "surround": 0
+        },
+        "average_weights": {
+          "spherical": 0.367026,
+          "rectangular": 0.347173,
+          "surround": 0.285801
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "split": "train",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.452178,
+        "rectangular": 0.230836,
+        "surround": 0.316985
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 2.026811,
+        "aspect_3d": 1.409268,
+        "contour_radial_cv": 0.202655,
+        "contour_regularity": 0.517488,
+        "anchor_angular_entropy": 0.908494,
+        "anchor_radial_uniformity": 0.608101,
+        "compactness": 0.533268,
+        "elongated_2d": 0.250671,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 29,
+        "projected_points": 226248,
+        "radial_cv": 0.202655,
+        "projected_aspect": 2.026811
+      },
+      "input": "data/Layout/Chair/38635/layout1/Obj-O/38635-main-O.obj",
+      "target": "data/Layout/Chair/38635/layout1/Annotation/38635.json"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "split": "train",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.408536,
+        "rectangular": 0.236921,
+        "surround": 0.354543
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 2.115606,
+        "aspect_3d": 1.475766,
+        "contour_radial_cv": 0.238593,
+        "contour_regularity": 0.431921,
+        "anchor_angular_entropy": 0.806461,
+        "anchor_radial_uniformity": 0.491048,
+        "compactness": 0.492906,
+        "elongated_2d": 0.283558,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 44,
+        "projected_points": 110832,
+        "radial_cv": 0.238593,
+        "projected_aspect": 2.115606
+      },
+      "input": "data/Layout/Chair/39299/layout1/Obj-O/39299-main-O.obj",
+      "target": "data/Layout/Chair/39299/layout1/Annotation/39299.json"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "split": "train",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.473919,
+        "rectangular": 0.213941,
+        "surround": 0.312139
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 1.912333,
+        "aspect_3d": 1.134931,
+        "contour_radial_cv": 0.125854,
+        "contour_regularity": 0.700348,
+        "anchor_angular_entropy": 0.834419,
+        "anchor_radial_uniformity": 0.454702,
+        "compactness": 0.585303,
+        "elongated_2d": 0.208271,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 51,
+        "projected_points": 64644,
+        "radial_cv": 0.125854,
+        "projected_aspect": 1.912333
+      },
+      "input": "data/Layout/Chair/40801/layout1/Obj-O/40801-main-O.obj",
+      "target": "data/Layout/Chair/40801/layout1/Annotation/40801.json"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "41193",
+      "split": "val",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.401559,
+        "rectangular": 0.289028,
+        "surround": 0.309412
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 2.45404,
+        "aspect_3d": 1.859804,
+        "contour_radial_cv": 0.162447,
+        "contour_regularity": 0.613221,
+        "anchor_angular_entropy": 0.806461,
+        "anchor_radial_uniformity": 0.63348,
+        "compactness": 0.339073,
+        "elongated_2d": 0.408904,
+        "elongated_3d": 0.076413
+      },
+      "contour": {
+        "hull_points": 42,
+        "projected_points": 56952,
+        "radial_cv": 0.162447,
+        "projected_aspect": 2.45404
+      },
+      "input": "data/Layout/Chair/41193/layout1/Obj-O/41193-main-O.obj",
+      "target": "data/Layout/Chair/41193/layout1/Annotation/41193.json"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "42397",
+      "split": "test",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.468959,
+        "rectangular": 0.226087,
+        "surround": 0.304954
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 1.978299,
+        "aspect_3d": 1.363285,
+        "contour_radial_cv": 0.19121,
+        "contour_regularity": 0.544738,
+        "anchor_angular_entropy": 0.908494,
+        "anchor_radial_uniformity": 0.677,
+        "compactness": 0.555319,
+        "elongated_2d": 0.232703,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 39,
+        "projected_points": 42420,
+        "radial_cv": 0.19121,
+        "projected_aspect": 1.978299
+      },
+      "input": "data/Layout/Chair/42397/layout1/Obj-O/42397-main-O.obj",
+      "target": "data/Layout/Chair/42397/layout1/Annotation/42397.json"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.48617,
+        "rectangular": 0.207841,
+        "surround": 0.305989
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.865836,
+        "aspect_3d": 1.36058,
+        "contour_radial_cv": 0.131403,
+        "contour_regularity": 0.687136,
+        "anchor_angular_entropy": 0.718546,
+        "anchor_radial_uniformity": 0.639085,
+        "compactness": 0.606438,
+        "elongated_2d": 0.19105,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 24,
+        "projected_points": 62040,
+        "radial_cv": 0.131403,
+        "projected_aspect": 1.865836
+      },
+      "input": "data/Layout/Dishwasher/11898/layout1/Obj-O/11898-main-O.obj",
+      "target": "data/Layout/Dishwasher/11898/layout1/Annotation/11898.json"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.527584,
+        "rectangular": 0.174515,
+        "surround": 0.297901
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.340184,
+        "aspect_3d": 1.833415,
+        "contour_radial_cv": 0.137121,
+        "contour_regularity": 0.673521,
+        "anchor_angular_entropy": 0.718546,
+        "anchor_radial_uniformity": 0.705752,
+        "compactness": 0.845371,
+        "elongated_2d": 0,
+        "elongated_3d": 0.068652
+      },
+      "contour": {
+        "hull_points": 45,
+        "projected_points": 258876,
+        "radial_cv": 0.137121,
+        "projected_aspect": 1.340184
+      },
+      "input": "data/Layout/Dishwasher/12572/layout1/Obj-O/12572-main-O.obj",
+      "target": "data/Layout/Dishwasher/12572/layout1/Annotation/12572.json"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.46323,
+        "rectangular": 0.216832,
+        "surround": 0.319938
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.957439,
+        "aspect_3d": 1.435447,
+        "contour_radial_cv": 0.147176,
+        "contour_regularity": 0.649581,
+        "anchor_angular_entropy": 0.583333,
+        "anchor_radial_uniformity": 0.694111,
+        "compactness": 0.5648,
+        "elongated_2d": 0.224977,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 28,
+        "projected_points": 56874,
+        "radial_cv": 0.147176,
+        "projected_aspect": 1.957439
+      },
+      "input": "data/Layout/Dishwasher/12575/layout1/Obj-O/12575-main-O.obj",
+      "target": "data/Layout/Dishwasher/12575/layout1/Annotation/12575.json"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12580",
+      "split": "val",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.44096,
+        "rectangular": 0.23218,
+        "surround": 0.32686
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 2.03084,
+        "aspect_3d": 1.896896,
+        "contour_radial_cv": 0.16489,
+        "contour_regularity": 0.607405,
+        "anchor_angular_entropy": 0.584238,
+        "anchor_radial_uniformity": 0.753688,
+        "compactness": 0.531436,
+        "elongated_2d": 0.252163,
+        "elongated_3d": 0.087322
+      },
+      "contour": {
+        "hull_points": 53,
+        "projected_points": 95328,
+        "radial_cv": 0.16489,
+        "projected_aspect": 2.03084
+      },
+      "input": "data/Layout/Dishwasher/12580/layout1/Obj-O/12580-main-O.obj",
+      "target": "data/Layout/Dishwasher/12580/layout1/Annotation/12580.json"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "13175",
+      "split": "test",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.475037,
+        "rectangular": 0.215353,
+        "surround": 0.309609
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.922731,
+        "aspect_3d": 1.528857,
+        "contour_radial_cv": 0.15343,
+        "contour_regularity": 0.63469,
+        "anchor_angular_entropy": 0.718546,
+        "anchor_radial_uniformity": 0.681881,
+        "compactness": 0.580577,
+        "elongated_2d": 0.212123,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 25,
+        "projected_points": 154056,
+        "radial_cv": 0.15343,
+        "projected_aspect": 1.922731
+      },
+      "input": "data/Layout/Dishwasher/13175/layout1/Obj-O/13175-main-O.obj",
+      "target": "data/Layout/Dishwasher/13175/layout1/Annotation/13175.json"
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "split": "train",
+      "label_count": 6,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.09361,
+        "rectangular": 0.642313,
+        "surround": 0.264076
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 4.125296,
+        "aspect_3d": 12.503127,
+        "contour_radial_cv": 0.158613,
+        "contour_regularity": 0.62235,
+        "anchor_angular_entropy": 0.484196,
+        "anchor_radial_uniformity": 0.503922,
+        "compactness": 0,
+        "elongated_2d": 1,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 6,
+        "projected_points": 23664,
+        "radial_cv": 0.158613,
+        "projected_aspect": 4.125296
+      },
+      "input": "data/Layout/Door/8944/layout1/Obj-O/8944-main-O.obj",
+      "target": "data/Layout/Door/8944/layout1/Annotation/8944.json"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "split": "train",
+      "label_count": 6,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.090002,
+        "rectangular": 0.622785,
+        "surround": 0.287213
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 4.766198,
+        "aspect_3d": 9.150416,
+        "contour_radial_cv": 0.132832,
+        "contour_regularity": 0.683733,
+        "anchor_angular_entropy": 0.693426,
+        "anchor_radial_uniformity": 0.009095,
+        "compactness": 0,
+        "elongated_2d": 1,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 7,
+        "projected_points": 114888,
+        "radial_cv": 0.132832,
+        "projected_aspect": 4.766198
+      },
+      "input": "data/Layout/Door/9164/layout1/Obj-O/9164-main-O.obj",
+      "target": "data/Layout/Door/9164/layout1/Annotation/9164.json"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "split": "train",
+      "label_count": 6,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.090942,
+        "rectangular": 0.639133,
+        "surround": 0.269924
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 3.804219,
+        "aspect_3d": 12.420819,
+        "contour_radial_cv": 0.201116,
+        "contour_regularity": 0.521152,
+        "anchor_angular_entropy": 0.355245,
+        "anchor_radial_uniformity": 0.676645,
+        "compactness": 0,
+        "elongated_2d": 0.90897,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 14,
+        "projected_points": 73188,
+        "radial_cv": 0.201116,
+        "projected_aspect": 3.804219
+      },
+      "input": "data/Layout/Door/9200/layout1/Obj-O/9200-main-O.obj",
+      "target": "data/Layout/Door/9200/layout1/Annotation/9200.json"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9288",
+      "split": "val",
+      "label_count": 6,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.096201,
+        "rectangular": 0.636703,
+        "surround": 0.267097
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 4.184046,
+        "aspect_3d": 13.521247,
+        "contour_radial_cv": 0.137519,
+        "contour_regularity": 0.672574,
+        "anchor_angular_entropy": 0.693426,
+        "anchor_radial_uniformity": 0.241203,
+        "compactness": 0,
+        "elongated_2d": 1,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 54,
+        "projected_points": 100395,
+        "radial_cv": 0.137519,
+        "projected_aspect": 4.184046
+      },
+      "input": "data/Layout/Door/9288/layout1/Obj-O/9288-main-O.obj",
+      "target": "data/Layout/Door/9288/layout1/Annotation/9288.json"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9290",
+      "split": "test",
+      "label_count": 6,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.088468,
+        "rectangular": 0.625562,
+        "surround": 0.28597
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 3.914358,
+        "aspect_3d": 10.875846,
+        "contour_radial_cv": 0.231047,
+        "contour_regularity": 0.449888,
+        "anchor_angular_entropy": 0.693426,
+        "anchor_radial_uniformity": 0.345789,
+        "compactness": 0,
+        "elongated_2d": 0.949762,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 37,
+        "projected_points": 115380,
+        "radial_cv": 0.231047,
+        "projected_aspect": 3.914358
+      },
+      "input": "data/Layout/Door/9290/layout1/Obj-O/9290-main-O.obj",
+      "target": "data/Layout/Door/9290/layout1/Annotation/9290.json"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "split": "train",
+      "label_count": 7,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.202372,
+        "rectangular": 0.548903,
+        "surround": 0.248726
+      },
+      "features": {
+        "view": "main",
+        "label_count": 7,
+        "projected_aspect": 1.330737,
+        "aspect_3d": 19.668382,
+        "contour_radial_cv": 0.068504,
+        "contour_regularity": 0.836895,
+        "anchor_angular_entropy": 0.409223,
+        "anchor_radial_uniformity": 0.322874,
+        "compactness": 0.849665,
+        "elongated_2d": 0,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 126,
+        "projected_points": 228348,
+        "radial_cv": 0.068504,
+        "projected_aspect": 1.330737
+      },
+      "input": "data/Layout/Earphone/10953/layout1/Obj-O/10953-main-O.obj",
+      "target": "data/Layout/Earphone/10953/layout1/Annotation/10953.json"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.470271,
+        "rectangular": 0.176987,
+        "surround": 0.352742
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.661836,
+        "aspect_3d": 1.570272,
+        "contour_radial_cv": 0.179783,
+        "contour_regularity": 0.571945,
+        "anchor_angular_entropy": 0.635213,
+        "anchor_radial_uniformity": 0.503225,
+        "compactness": 0.699165,
+        "elongated_2d": 0.115495,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 98,
+        "projected_points": 1201110,
+        "radial_cv": 0.179783,
+        "projected_aspect": 1.661836
+      },
+      "input": "data/Layout/Earphone/11197/layout1/Obj-O/11197-main-O.obj",
+      "target": "data/Layout/Earphone/11197/layout1/Annotation/11197.json"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "split": "train",
+      "label_count": 8,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.14019,
+        "rectangular": 0.587186,
+        "surround": 0.272625
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 2.351601,
+        "aspect_3d": 4.937665,
+        "contour_radial_cv": 0.312836,
+        "contour_regularity": 0.255152,
+        "anchor_angular_entropy": 0.718546,
+        "anchor_radial_uniformity": 0.718027,
+        "compactness": 0.385636,
+        "elongated_2d": 0.370963,
+        "elongated_3d": 0.981666
+      },
+      "contour": {
+        "hull_points": 79,
+        "projected_points": 84816,
+        "radial_cv": 0.312836,
+        "projected_aspect": 2.351601
+      },
+      "input": "data/Layout/Earphone/11446/layout1/Obj-O/11446-main-O.obj",
+      "target": "data/Layout/Earphone/11446/layout1/Annotation/11446.json"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11471",
+      "split": "val",
+      "label_count": 7,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.464989,
+        "rectangular": 0.198589,
+        "surround": 0.336422
+      },
+      "features": {
+        "view": "main",
+        "label_count": 7,
+        "projected_aspect": 1.784642,
+        "aspect_3d": 1.242879,
+        "contour_radial_cv": 0.247975,
+        "contour_regularity": 0.409583,
+        "anchor_angular_entropy": 0.796453,
+        "anchor_radial_uniformity": 0.727633,
+        "compactness": 0.643345,
+        "elongated_2d": 0.160979,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 140,
+        "projected_points": 221670,
+        "radial_cv": 0.247975,
+        "projected_aspect": 1.784642
+      },
+      "input": "data/Layout/Earphone/11471/layout1/Obj-O/11471-main-O.obj",
+      "target": "data/Layout/Earphone/11471/layout1/Annotation/11471.json"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11934",
+      "split": "test",
+      "label_count": 8,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.283003,
+        "rectangular": 0.446344,
+        "surround": 0.270653
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.48254,
+        "aspect_3d": 3.946619,
+        "contour_radial_cv": 0.233564,
+        "contour_regularity": 0.443895,
+        "anchor_angular_entropy": 0.833333,
+        "anchor_radial_uniformity": 0.629849,
+        "compactness": 0.780664,
+        "elongated_2d": 0.049089,
+        "elongated_3d": 0.690182
+      },
+      "contour": {
+        "hull_points": 114,
+        "projected_points": 508338,
+        "radial_cv": 0.233564,
+        "projected_aspect": 1.48254
+      },
+      "input": "data/Layout/Earphone/11934/layout1/Obj-O/11934-main-O.obj",
+      "target": "data/Layout/Earphone/11934/layout1/Annotation/11934.json"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.372808,
+        "rectangular": 0.367581,
+        "surround": 0.259611
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.524791,
+        "aspect_3d": 3.205582,
+        "contour_radial_cv": 0.144339,
+        "contour_regularity": 0.656336,
+        "anchor_angular_entropy": 0.718546,
+        "anchor_radial_uniformity": 0.731461,
+        "compactness": 0.761459,
+        "elongated_2d": 0.064737,
+        "elongated_3d": 0.47223
+      },
+      "contour": {
+        "hull_points": 66,
+        "projected_points": 229875,
+        "radial_cv": 0.144339,
+        "projected_aspect": 1.524791
+      },
+      "input": "data/Layout/Faucet/370/layout1/Obj-O/370-main-O.obj",
+      "target": "data/Layout/Faucet/370/layout1/Annotation/370.json"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "split": "train",
+      "label_count": 9,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.10215,
+        "rectangular": 0.657729,
+        "surround": 0.240121
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 4.703816,
+        "aspect_3d": 7.936904,
+        "contour_radial_cv": 0.168224,
+        "contour_regularity": 0.599467,
+        "anchor_angular_entropy": 0.584238,
+        "anchor_radial_uniformity": 0.700806,
+        "compactness": 0,
+        "elongated_2d": 1,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 55,
+        "projected_points": 273300,
+        "radial_cv": 0.168224,
+        "projected_aspect": 4.703816
+      },
+      "input": "data/Layout/Faucet/1507/layout1/Obj-O/1507-main-O.obj",
+      "target": "data/Layout/Faucet/1507/layout1/Annotation/1507.json"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "split": "train",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.534229,
+        "rectangular": 0.185219,
+        "surround": 0.280552
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 1.269241,
+        "aspect_3d": 1.909444,
+        "contour_radial_cv": 0.117655,
+        "contour_regularity": 0.719869,
+        "anchor_angular_entropy": 0.908494,
+        "anchor_radial_uniformity": 0.588399,
+        "compactness": 0.877618,
+        "elongated_2d": 0,
+        "elongated_3d": 0.091013
+      },
+      "contour": {
+        "hull_points": 46,
+        "projected_points": 257172,
+        "radial_cv": 0.117655,
+        "projected_aspect": 1.269241
+      },
+      "input": "data/Layout/Faucet/1708/layout1/Obj-O/1708-main-O.obj",
+      "target": "data/Layout/Faucet/1708/layout1/Annotation/1708.json"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1758",
+      "split": "val",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.4012,
+        "rectangular": 0.316914,
+        "surround": 0.281885
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.177794,
+        "aspect_3d": 2.977608,
+        "contour_radial_cv": 0.206648,
+        "contour_regularity": 0.507981,
+        "anchor_angular_entropy": 0.75,
+        "anchor_radial_uniformity": 0.74114,
+        "compactness": 0.919185,
+        "elongated_2d": 0,
+        "elongated_3d": 0.405179
+      },
+      "contour": {
+        "hull_points": 26,
+        "projected_points": 146376,
+        "radial_cv": 0.206648,
+        "projected_aspect": 1.177794
+      },
+      "input": "data/Layout/Faucet/1758/layout1/Obj-O/1758-main-O.obj",
+      "target": "data/Layout/Faucet/1758/layout1/Annotation/1758.json"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1988",
+      "split": "test",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.465995,
+        "rectangular": 0.203695,
+        "surround": 0.330311
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 1.807827,
+        "aspect_3d": 1.855205,
+        "contour_radial_cv": 0.182541,
+        "contour_regularity": 0.565379,
+        "anchor_angular_entropy": 0.686271,
+        "anchor_radial_uniformity": 0.705596,
+        "compactness": 0.632806,
+        "elongated_2d": 0.169566,
+        "elongated_3d": 0.07506
+      },
+      "contour": {
+        "hull_points": 66,
+        "projected_points": 112149,
+        "radial_cv": 0.182541,
+        "projected_aspect": 1.807827
+      },
+      "input": "data/Layout/Faucet/1988/layout1/Obj-O/1988-main-O.obj",
+      "target": "data/Layout/Faucet/1988/layout1/Annotation/1988.json"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "split": "train",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.519156,
+        "rectangular": 0.193559,
+        "surround": 0.287286
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 1.716936,
+        "aspect_3d": 1.403267,
+        "contour_radial_cv": 0.128395,
+        "contour_regularity": 0.694298,
+        "anchor_angular_entropy": 0.908494,
+        "anchor_radial_uniformity": 0.628193,
+        "compactness": 0.67412,
+        "elongated_2d": 0.135902,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 87,
+        "projected_points": 239328,
+        "radial_cv": 0.128395,
+        "projected_aspect": 1.716936
+      },
+      "input": "data/Layout/Lamp/14912/layout1/Obj-O/14912-main-O.obj",
+      "target": "data/Layout/Lamp/14912/layout1/Annotation/14912.json"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "split": "train",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.402364,
+        "rectangular": 0.297813,
+        "surround": 0.299823
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 1.467468,
+        "aspect_3d": 2.732891,
+        "contour_radial_cv": 0.149183,
+        "contour_regularity": 0.644802,
+        "anchor_angular_entropy": 0.686271,
+        "anchor_radial_uniformity": 0.531792,
+        "compactness": 0.787515,
+        "elongated_2d": 0.043507,
+        "elongated_3d": 0.333203
+      },
+      "contour": {
+        "hull_points": 41,
+        "projected_points": 41616,
+        "radial_cv": 0.149183,
+        "projected_aspect": 1.467468
+      },
+      "input": "data/Layout/Lamp/16297/layout1/Obj-O/16297-main-O.obj",
+      "target": "data/Layout/Lamp/16297/layout1/Annotation/16297.json"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "split": "train",
+      "label_count": 9,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.243156,
+        "rectangular": 0.454259,
+        "surround": 0.302585
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 2.896741,
+        "aspect_3d": 3.280982,
+        "contour_radial_cv": 0.221019,
+        "contour_regularity": 0.473764,
+        "anchor_angular_entropy": 0.806461,
+        "anchor_radial_uniformity": 0.664322,
+        "compactness": 0.137845,
+        "elongated_2d": 0.572867,
+        "elongated_3d": 0.494407
+      },
+      "contour": {
+        "hull_points": 60,
+        "projected_points": 126192,
+        "radial_cv": 0.221019,
+        "projected_aspect": 2.896741
+      },
+      "input": "data/Layout/Lamp/16499/layout1/Obj-O/16499-main-O.obj",
+      "target": "data/Layout/Lamp/16499/layout1/Annotation/16499.json"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16598",
+      "split": "val",
+      "label_count": 9,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.23742,
+        "rectangular": 0.460874,
+        "surround": 0.301706
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 3.815689,
+        "aspect_3d": 3.11614,
+        "contour_radial_cv": 0.087829,
+        "contour_regularity": 0.790883,
+        "anchor_angular_entropy": 0.510164,
+        "anchor_radial_uniformity": 0.585651,
+        "compactness": 0,
+        "elongated_2d": 0.913218,
+        "elongated_3d": 0.445924
+      },
+      "contour": {
+        "hull_points": 45,
+        "projected_points": 93654,
+        "radial_cv": 0.087829,
+        "projected_aspect": 3.815689
+      },
+      "input": "data/Layout/Lamp/16598/layout1/Obj-O/16598-main-O.obj",
+      "target": "data/Layout/Lamp/16598/layout1/Annotation/16598.json"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "17343",
+      "split": "test",
+      "label_count": 9,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.179576,
+        "rectangular": 0.5585,
+        "surround": 0.261924
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 3.872664,
+        "aspect_3d": 3.951214,
+        "contour_radial_cv": 0.123093,
+        "contour_regularity": 0.706921,
+        "anchor_angular_entropy": 0.658313,
+        "anchor_radial_uniformity": 0.638183,
+        "compactness": 0,
+        "elongated_2d": 0.93432,
+        "elongated_3d": 0.691534
+      },
+      "contour": {
+        "hull_points": 53,
+        "projected_points": 310944,
+        "radial_cv": 0.123093,
+        "projected_aspect": 3.872664
+      },
+      "input": "data/Layout/Lamp/17343/layout1/Obj-O/17343-main-O.obj",
+      "target": "data/Layout/Lamp/17343/layout1/Annotation/17343.json"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "9878",
+      "split": "train",
+      "label_count": 5,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.505106,
+        "rectangular": 0.188143,
+        "surround": 0.306751
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.711381,
+        "aspect_3d": 1.028517,
+        "contour_radial_cv": 0.161004,
+        "contour_regularity": 0.616657,
+        "anchor_angular_entropy": 0.655459,
+        "anchor_radial_uniformity": 0.809672,
+        "compactness": 0.676645,
+        "elongated_2d": 0.133845,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 24,
+        "projected_points": 57108,
+        "radial_cv": 0.161004,
+        "projected_aspect": 1.711381
+      },
+      "input": "data/Layout/Laptop/9878/layout1/Obj-O/9878-main-O.obj",
+      "target": "data/Layout/Laptop/9878/layout1/Annotation/9878.json"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10203",
+      "split": "train",
+      "label_count": 5,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.535907,
+        "rectangular": 0.186888,
+        "surround": 0.277205
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.65888,
+        "aspect_3d": 1.148219,
+        "contour_radial_cv": 0.151014,
+        "contour_regularity": 0.640443,
+        "anchor_angular_entropy": 0.827729,
+        "anchor_radial_uniformity": 0.870561,
+        "compactness": 0.700509,
+        "elongated_2d": 0.1144,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 22,
+        "projected_points": 49704,
+        "radial_cv": 0.151014,
+        "projected_aspect": 1.65888
+      },
+      "input": "data/Layout/Laptop/10203/layout1/Obj-O/10203-main-O.obj",
+      "target": "data/Layout/Laptop/10203/layout1/Annotation/10203.json"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10285",
+      "split": "train",
+      "label_count": 5,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.553702,
+        "rectangular": 0.162794,
+        "surround": 0.283504
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.479487,
+        "aspect_3d": 1.523735,
+        "contour_radial_cv": 0.132864,
+        "contour_regularity": 0.683657,
+        "anchor_angular_entropy": 0.827729,
+        "anchor_radial_uniformity": 0.767153,
+        "compactness": 0.782051,
+        "elongated_2d": 0.047958,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 57,
+        "projected_points": 43128,
+        "radial_cv": 0.132864,
+        "projected_aspect": 1.479487
+      },
+      "input": "data/Layout/Laptop/10285/layout1/Obj-O/10285-main-O.obj",
+      "target": "data/Layout/Laptop/10285/layout1/Annotation/10285.json"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10302",
+      "split": "val",
+      "label_count": 5,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.564791,
+        "rectangular": 0.18483,
+        "surround": 0.250379
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.600431,
+        "aspect_3d": 1.304244,
+        "contour_radial_cv": 0.14783,
+        "contour_regularity": 0.648024,
+        "anchor_angular_entropy": 1,
+        "anchor_radial_uniformity": 0.937307,
+        "compactness": 0.727077,
+        "elongated_2d": 0.092752,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 31,
+        "projected_points": 43188,
+        "radial_cv": 0.14783,
+        "projected_aspect": 1.600431
+      },
+      "input": "data/Layout/Laptop/10302/layout1/Obj-O/10302-main-O.obj",
+      "target": "data/Layout/Laptop/10302/layout1/Annotation/10302.json"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "11075",
+      "split": "test",
+      "label_count": 5,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.515254,
+        "rectangular": 0.159912,
+        "surround": 0.324833
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.542491,
+        "aspect_3d": 1.39896,
+        "contour_radial_cv": 0.14665,
+        "contour_regularity": 0.650833,
+        "anchor_angular_entropy": 0.418166,
+        "anchor_radial_uniformity": 0.842448,
+        "compactness": 0.753413,
+        "elongated_2d": 0.071293,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 82,
+        "projected_points": 274698,
+        "radial_cv": 0.14665,
+        "projected_aspect": 1.542491
+      },
+      "input": "data/Layout/Laptop/11075/layout1/Obj-O/11075-main-O.obj",
+      "target": "data/Layout/Laptop/11075/layout1/Annotation/11075.json"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.537745,
+        "rectangular": 0.156213,
+        "surround": 0.306043
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.393922,
+        "aspect_3d": 1.66951,
+        "contour_radial_cv": 0.123485,
+        "contour_regularity": 0.705988,
+        "anchor_angular_entropy": 0.833333,
+        "anchor_radial_uniformity": 0.535763,
+        "compactness": 0.820945,
+        "elongated_2d": 0.016267,
+        "elongated_3d": 0.020444
+      },
+      "contour": {
+        "hull_points": 51,
+        "projected_points": 287796,
+        "radial_cv": 0.123485,
+        "projected_aspect": 1.393922
+      },
+      "input": "data/Layout/Microwave/7177/layout1/Obj-O/7177-main-O.obj",
+      "target": "data/Layout/Microwave/7177/layout1/Annotation/7177.json"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.547792,
+        "rectangular": 0.157785,
+        "surround": 0.294423
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.449306,
+        "aspect_3d": 1.562716,
+        "contour_radial_cv": 0.123217,
+        "contour_regularity": 0.706626,
+        "anchor_angular_entropy": 0.833333,
+        "anchor_radial_uniformity": 0.637163,
+        "compactness": 0.79577,
+        "elongated_2d": 0.03678,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 30,
+        "projected_points": 94740,
+        "radial_cv": 0.123217,
+        "projected_aspect": 1.449306
+      },
+      "input": "data/Layout/Microwave/7183/layout1/Obj-O/7183-main-O.obj",
+      "target": "data/Layout/Microwave/7183/layout1/Annotation/7183.json"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.547883,
+        "rectangular": 0.159133,
+        "surround": 0.292985
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.400699,
+        "aspect_3d": 1.67844,
+        "contour_radial_cv": 0.126633,
+        "contour_regularity": 0.698493,
+        "anchor_angular_entropy": 0.833333,
+        "anchor_radial_uniformity": 0.658766,
+        "compactness": 0.817864,
+        "elongated_2d": 0.018777,
+        "elongated_3d": 0.023071
+      },
+      "contour": {
+        "hull_points": 28,
+        "projected_points": 44820,
+        "radial_cv": 0.126633,
+        "projected_aspect": 1.400699
+      },
+      "input": "data/Layout/Microwave/7184/layout1/Obj-O/7184-main-O.obj",
+      "target": "data/Layout/Microwave/7184/layout1/Annotation/7184.json"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7200",
+      "split": "val",
+      "label_count": 7,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.540543,
+        "rectangular": 0.154078,
+        "surround": 0.305379
+      },
+      "features": {
+        "view": "main",
+        "label_count": 7,
+        "projected_aspect": 1.430845,
+        "aspect_3d": 1.509627,
+        "contour_radial_cv": 0.135786,
+        "contour_regularity": 0.6767,
+        "anchor_angular_entropy": 0.796453,
+        "anchor_radial_uniformity": 0.623049,
+        "compactness": 0.804161,
+        "elongated_2d": 0.029943,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 32,
+        "projected_points": 53124,
+        "radial_cv": 0.135786,
+        "projected_aspect": 1.430845
+      },
+      "input": "data/Layout/Microwave/7200/layout1/Obj-O/7200-main-O.obj",
+      "target": "data/Layout/Microwave/7200/layout1/Annotation/7200.json"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7346",
+      "split": "test",
+      "label_count": 7,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.531309,
+        "rectangular": 0.173901,
+        "surround": 0.29479
+      },
+      "features": {
+        "view": "main",
+        "label_count": 7,
+        "projected_aspect": 1.406446,
+        "aspect_3d": 1.790309,
+        "contour_radial_cv": 0.127508,
+        "contour_regularity": 0.69641,
+        "anchor_angular_entropy": 0.796453,
+        "anchor_radial_uniformity": 0.651539,
+        "compactness": 0.815252,
+        "elongated_2d": 0.020906,
+        "elongated_3d": 0.055973
+      },
+      "contour": {
+        "hull_points": 25,
+        "projected_points": 46608,
+        "radial_cv": 0.127508,
+        "projected_aspect": 1.406446
+      },
+      "input": "data/Layout/Microwave/7346/layout1/Obj-O/7346-main-O.obj",
+      "target": "data/Layout/Microwave/7346/layout1/Annotation/7346.json"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "split": "train",
+      "label_count": 8,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.470275,
+        "rectangular": 0.180839,
+        "surround": 0.348885
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 1.675672,
+        "aspect_3d": 1.349309,
+        "contour_radial_cv": 0.181025,
+        "contour_regularity": 0.568988,
+        "anchor_angular_entropy": 0.75,
+        "anchor_radial_uniformity": 0.42842,
+        "compactness": 0.692876,
+        "elongated_2d": 0.120619,
+        "elongated_3d": 0
+      },
+      "contour": {
+        "hull_points": 9,
+        "projected_points": 17196,
+        "radial_cv": 0.181025,
+        "projected_aspect": 1.675672
+      },
+      "input": "data/Layout/Refrigerator/10649/layout1/Obj-O/10649-main-O.obj",
+      "target": "data/Layout/Refrigerator/10649/layout1/Annotation/10649.json"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "split": "train",
+      "label_count": 9,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.199753,
+        "rectangular": 0.471167,
+        "surround": 0.32908
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 3.513182,
+        "aspect_3d": 3.31323,
+        "contour_radial_cv": 0.230619,
+        "contour_regularity": 0.450907,
+        "anchor_angular_entropy": 0.704428,
+        "anchor_radial_uniformity": 0.574294,
+        "compactness": 0,
+        "elongated_2d": 0.801179,
+        "elongated_3d": 0.503891
+      },
+      "contour": {
+        "hull_points": 44,
+        "projected_points": 158598,
+        "radial_cv": 0.230619,
+        "projected_aspect": 3.513182
+      },
+      "input": "data/Layout/Refrigerator/11585/layout1/Obj-O/11585-main-O.obj",
+      "target": "data/Layout/Refrigerator/11585/layout1/Annotation/11585.json"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "split": "train",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.373833,
+        "rectangular": 0.316919,
+        "surround": 0.309248
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 2.594599,
+        "aspect_3d": 2.2513,
+        "contour_radial_cv": 0.160222,
+        "contour_regularity": 0.618519,
+        "anchor_angular_entropy": 0.732387,
+        "anchor_radial_uniformity": 0.750619,
+        "compactness": 0.275182,
+        "elongated_2d": 0.460963,
+        "elongated_3d": 0.191559
+      },
+      "contour": {
+        "hull_points": 39,
+        "projected_points": 33516,
+        "radial_cv": 0.160222,
+        "projected_aspect": 2.594599
+      },
+      "input": "data/Layout/Refrigerator/11666/layout1/Obj-O/11666-main-O.obj",
+      "target": "data/Layout/Refrigerator/11666/layout1/Annotation/11666.json"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11712",
+      "split": "val",
+      "label_count": 6,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.270582,
+        "rectangular": 0.374259,
+        "surround": 0.355159
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 2.943991,
+        "aspect_3d": 2.64815,
+        "contour_radial_cv": 0.212455,
+        "contour_regularity": 0.494155,
+        "anchor_angular_entropy": 0.693426,
+        "anchor_radial_uniformity": 0.510865,
+        "compactness": 0.116368,
+        "elongated_2d": 0.590367,
+        "elongated_3d": 0.30828
+      },
+      "contour": {
+        "hull_points": 21,
+        "projected_points": 1440,
+        "radial_cv": 0.212455,
+        "projected_aspect": 2.943991
+      },
+      "input": "data/Layout/Refrigerator/11712/layout1/Obj-O/11712-main-O.obj",
+      "target": "data/Layout/Refrigerator/11712/layout1/Annotation/11712.json"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "12045",
+      "split": "test",
+      "label_count": 6,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.271831,
+        "rectangular": 0.379073,
+        "surround": 0.349096
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 2.959766,
+        "aspect_3d": 2.670522,
+        "contour_radial_cv": 0.20216,
+        "contour_regularity": 0.518667,
+        "anchor_angular_entropy": 0.693426,
+        "anchor_radial_uniformity": 0.521989,
+        "compactness": 0.109197,
+        "elongated_2d": 0.59621,
+        "elongated_3d": 0.314859
+      },
+      "contour": {
+        "hull_points": 38,
+        "projected_points": 61350,
+        "radial_cv": 0.20216,
+        "projected_aspect": 2.959766
+      },
+      "input": "data/Layout/Refrigerator/12045/layout1/Obj-O/12045-main-O.obj",
+      "target": "data/Layout/Refrigerator/12045/layout1/Annotation/12045.json"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10429",
+      "split": "train",
+      "label_count": 5,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.215896,
+        "rectangular": 0.540148,
+        "surround": 0.243956
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.058083,
+        "aspect_3d": 17.366217,
+        "contour_radial_cv": 0.210079,
+        "contour_regularity": 0.499812,
+        "anchor_angular_entropy": 1,
+        "anchor_radial_uniformity": 0.389337,
+        "compactness": 0.973599,
+        "elongated_2d": 0,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 87,
+        "projected_points": 206184,
+        "radial_cv": 0.210079,
+        "projected_aspect": 1.058083
+      },
+      "input": "data/Layout/Scissors/10429/layout1/Obj-O/10429-main-O.obj",
+      "target": "data/Layout/Scissors/10429/layout1/Annotation/10429.json"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10994",
+      "split": "train",
+      "label_count": 5,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.230961,
+        "rectangular": 0.557727,
+        "surround": 0.211312
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.091273,
+        "aspect_3d": 31.648759,
+        "contour_radial_cv": 0.149032,
+        "contour_regularity": 0.645162,
+        "anchor_angular_entropy": 0.827729,
+        "anchor_radial_uniformity": 0.64812,
+        "compactness": 0.958512,
+        "elongated_2d": 0,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 60,
+        "projected_points": 236124,
+        "radial_cv": 0.149032,
+        "projected_aspect": 1.091273
+      },
+      "input": "data/Layout/Scissors/10994/layout1/Obj-O/10994-main-O.obj",
+      "target": "data/Layout/Scissors/10994/layout1/Annotation/10994.json"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11002",
+      "split": "train",
+      "label_count": 5,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.236581,
+        "rectangular": 0.557458,
+        "surround": 0.205961
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.072278,
+        "aspect_3d": 18.821029,
+        "contour_radial_cv": 0.08738,
+        "contour_regularity": 0.791952,
+        "anchor_angular_entropy": 0.827729,
+        "anchor_radial_uniformity": 0.495292,
+        "compactness": 0.967146,
+        "elongated_2d": 0,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 16,
+        "projected_points": 2400,
+        "radial_cv": 0.08738,
+        "projected_aspect": 1.072278
+      },
+      "input": "data/Layout/Scissors/11002/layout1/Obj-O/11002-main-O.obj",
+      "target": "data/Layout/Scissors/11002/layout1/Annotation/11002.json"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11036",
+      "split": "val",
+      "label_count": 5,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.247443,
+        "rectangular": 0.57022,
+        "surround": 0.182337
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.038743,
+        "aspect_3d": 29.697079,
+        "contour_radial_cv": 0.139706,
+        "contour_regularity": 0.667367,
+        "anchor_angular_entropy": 0.827729,
+        "anchor_radial_uniformity": 0.894075,
+        "compactness": 0.98239,
+        "elongated_2d": 0,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 55,
+        "projected_points": 92226,
+        "radial_cv": 0.139706,
+        "projected_aspect": 1.038743
+      },
+      "input": "data/Layout/Scissors/11036/layout1/Obj-O/11036-main-O.obj",
+      "target": "data/Layout/Scissors/11036/layout1/Annotation/11036.json"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11111",
+      "split": "test",
+      "label_count": 5,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.248874,
+        "rectangular": 0.572421,
+        "surround": 0.178706
+      },
+      "features": {
+        "view": "main",
+        "label_count": 5,
+        "projected_aspect": 1.164635,
+        "aspect_3d": 19.219053,
+        "contour_radial_cv": 0.058384,
+        "contour_regularity": 0.86099,
+        "anchor_angular_entropy": 1,
+        "anchor_radial_uniformity": 0.535223,
+        "compactness": 0.925166,
+        "elongated_2d": 0,
+        "elongated_3d": 1
+      },
+      "contour": {
+        "hull_points": 51,
+        "projected_points": 116076,
+        "radial_cv": 0.058384,
+        "projected_aspect": 1.164635
+      },
+      "input": "data/Layout/Scissors/11111/layout1/Obj-O/11111-main-O.obj",
+      "target": "data/Layout/Scissors/11111/layout1/Annotation/11111.json"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "split": "train",
+      "label_count": 9,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.354144,
+        "rectangular": 0.358436,
+        "surround": 0.28742
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 2.930073,
+        "aspect_3d": 2.177679,
+        "contour_radial_cv": 0.091685,
+        "contour_regularity": 0.781702,
+        "anchor_angular_entropy": 0.732387,
+        "anchor_radial_uniformity": 0.633452,
+        "compactness": 0.122694,
+        "elongated_2d": 0.585212,
+        "elongated_3d": 0.169906
+      },
+      "contour": {
+        "hull_points": 107,
+        "projected_points": 540732,
+        "radial_cv": 0.091685,
+        "projected_aspect": 2.930073
+      },
+      "input": "data/Layout/TrashCan/10425/layout1/Obj-O/10425-main-O.obj",
+      "target": "data/Layout/TrashCan/10425/layout1/Annotation/10425.json"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "split": "train",
+      "label_count": 8,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.364891,
+        "rectangular": 0.36827,
+        "surround": 0.266839
+      },
+      "features": {
+        "view": "main",
+        "label_count": 8,
+        "projected_aspect": 3.018388,
+        "aspect_3d": 1.960496,
+        "contour_radial_cv": 0.073239,
+        "contour_regularity": 0.825621,
+        "anchor_angular_entropy": 0.583333,
+        "anchor_radial_uniformity": 0.821725,
+        "compactness": 0.082551,
+        "elongated_2d": 0.617921,
+        "elongated_3d": 0.106028
+      },
+      "contour": {
+        "hull_points": 38,
+        "projected_points": 41184,
+        "radial_cv": 0.073239,
+        "projected_aspect": 3.018388
+      },
+      "input": "data/Layout/TrashCan/11183/layout1/Obj-O/11183-main-O.obj",
+      "target": "data/Layout/TrashCan/11183/layout1/Annotation/11183.json"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "split": "train",
+      "label_count": 6,
+      "selected": "rectangular",
+      "weights": {
+        "spherical": 0.338879,
+        "rectangular": 0.387194,
+        "surround": 0.273926
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 3.158169,
+        "aspect_3d": 2.108922,
+        "contour_radial_cv": 0.080161,
+        "contour_regularity": 0.80914,
+        "anchor_angular_entropy": 0.742098,
+        "anchor_radial_uniformity": 0.655656,
+        "compactness": 0.019014,
+        "elongated_2d": 0.669692,
+        "elongated_3d": 0.149683
+      },
+      "contour": {
+        "hull_points": 38,
+        "projected_points": 81768,
+        "radial_cv": 0.080161,
+        "projected_aspect": 3.158169
+      },
+      "input": "data/Layout/TrashCan/11659/layout1/Obj-O/11659-main-O.obj",
+      "target": "data/Layout/TrashCan/11659/layout1/Annotation/11659.json"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11960",
+      "split": "val",
+      "label_count": 9,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.3855,
+        "rectangular": 0.330251,
+        "surround": 0.284248
+      },
+      "features": {
+        "view": "main",
+        "label_count": 9,
+        "projected_aspect": 2.742996,
+        "aspect_3d": 1.977608,
+        "contour_radial_cv": 0.086521,
+        "contour_regularity": 0.793998,
+        "anchor_angular_entropy": 0.630354,
+        "anchor_radial_uniformity": 0.721841,
+        "compactness": 0.207729,
+        "elongated_2d": 0.515924,
+        "elongated_3d": 0.111061
+      },
+      "contour": {
+        "hull_points": 89,
+        "projected_points": 299346,
+        "radial_cv": 0.086521,
+        "projected_aspect": 2.742996
+      },
+      "input": "data/Layout/TrashCan/11960/layout1/Obj-O/11960-main-O.obj",
+      "target": "data/Layout/TrashCan/11960/layout1/Annotation/11960.json"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "12366",
+      "split": "test",
+      "label_count": 6,
+      "selected": "spherical",
+      "weights": {
+        "spherical": 0.391714,
+        "rectangular": 0.291712,
+        "surround": 0.316574
+      },
+      "features": {
+        "view": "main",
+        "label_count": 6,
+        "projected_aspect": 2.449397,
+        "aspect_3d": 2.081615,
+        "contour_radial_cv": 0.14255,
+        "contour_regularity": 0.660595,
+        "anchor_angular_entropy": 0.742098,
+        "anchor_radial_uniformity": 0.603728,
+        "compactness": 0.341183,
+        "elongated_2d": 0.407184,
+        "elongated_3d": 0.141651
+      },
+      "contour": {
+        "hull_points": 31,
+        "projected_points": 60264,
+        "radial_cv": 0.14255,
+        "projected_aspect": 2.449397
+      },
+      "input": "data/Layout/TrashCan/12366/layout1/Obj-O/12366-main-O.obj",
+      "target": "data/Layout/TrashCan/12366/layout1/Annotation/12366.json"
+    }
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "version": "hedgehog_reproduction",
+  "name": "宋治桥",
+  "layout_level": "layout1",
+  "layout_type": "plane",
+  "sample_id": "11075",
+  "category": "Laptop",
+  "hierarchy_file": "result_after_merging.json",
+  "normalization": {
+    "center_origin": [
+      -0.01308999999999999,
+      0.260726,
+      0.210325
+    ],
+    "center_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 0.9640444671075934
+  },
+  "groups": [
+    {
+      "group_id": "screen_frame_3_10",
+      "id": 3,
+      "ori_id": 10,
+      "source_objs": [
+        "new-7.obj"
+      ],
+      "target_g": [
+        "screen_frame_new-7"
+      ],
+      "anchor": {
+        "point": [
+          0.6657514601260859,
+          0.1130470915025743,
+          -0.5388714096626286
+        ]
+      },
+      "label": {
+        "text": "screen_frame",
+        "box_size": [
+          1.0947193461893745,
+          0.16471377132548823,
+          0.02
+        ],
+        "center": [
+          1.1845556126023,
+          0.38104748570423563,
+          -0.7928213173065393
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.6657514601260859,
+          0.1130470915025743,
+          -0.5388714096626286
+        ],
+        "bend_points": [],
+        "end": [
+          1.1845556126023,
+          0.38104748570423563,
+          -0.7928213173065393
+        ]
+      }
+    },
+    {
+      "group_id": "screen_2_9",
+      "id": 2,
+      "ori_id": 9,
+      "source_objs": [
+        "new-4.obj"
+      ],
+      "target_g": [
+        "screen_new-4"
+      ],
+      "anchor": {
+        "point": [
+          0.1854740785607536,
+          0.15441206917115746,
+          -0.48994583354726196
+        ]
+      },
+      "label": {
+        "text": "screen",
+        "box_size": [
+          0.5195175673568386,
+          0.094219299590571,
+          0.02
+        ],
+        "center": [
+          0.3153928503090029,
+          0.5609230032973436,
+          -1.34239808910635
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.1854740785607536,
+          0.15441206917115746,
+          -0.48994583354726196
+        ],
+        "bend_points": [],
+        "end": [
+          0.3153928503090029,
+          0.5609230032973436,
+          -1.34239808910635
+        ]
+      }
+    },
+    {
+      "group_id": "base_frame_7_7",
+      "id": 7,
+      "ori_id": 7,
+      "source_objs": [
+        "new-3.obj"
+      ],
+      "target_g": [
+        "base_frame_new-3"
+      ],
+      "anchor": {
+        "point": [
+          -0.0435883291934136,
+          -0.4805336458764051,
+          0.5092263381246678
+        ]
+      },
+      "label": {
+        "text": "base_frame",
+        "box_size": [
+          0.9123333363397077,
+          0.16471377132548823,
+          0.02
+        ],
+        "center": [
+          -0.34047606832732136,
+          -0.9906325039453066,
+          0.8650263367726243
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.0435883291934136,
+          -0.4805336458764051,
+          0.5092263381246678
+        ],
+        "bend_points": [],
+        "end": [
+          -0.34047606832732136,
+          -0.9906325039453066,
+          0.8650263367726243
+        ]
+      }
+    },
+    {
+      "group_id": "keyboard_5_5",
+      "id": 5,
+      "ori_id": 5,
+      "source_objs": [
+        "original-75.obj",
+        "original-76.obj",
+        "original-72.obj",
+        "original-77.obj",
+        "original-73.obj",
+        "original-71.obj",
+        "original-74.obj",
+        "original-70.obj",
+        "original-94.obj",
+        "original-78.obj",
+        "original-79.obj",
+        "original-93.obj",
+        "original-92.obj",
+        "original-91.obj",
+        "original-80.obj",
+        "original-81.obj",
+        "original-82.obj",
+        "original-83.obj",
+        "original-84.obj",
+        "original-85.obj",
+        "original-87.obj",
+        "original-86.obj",
+        "original-88.obj",
+        "original-89.obj",
+        "original-69.obj",
+        "original-11.obj",
+        "original-63.obj",
+        "original-90.obj",
+        "original-60.obj",
+        "original-67.obj",
+        "original-44.obj",
+        "original-12.obj",
+        "original-13.obj",
+        "original-14.obj",
+        "original-15.obj",
+        "original-20.obj",
+        "original-19.obj",
+        "original-16.obj",
+        "original-17.obj",
+        "original-18.obj",
+        "original-29.obj",
+        "original-35.obj",
+        "original-66.obj",
+        "original-45.obj",
+        "original-34.obj",
+        "original-33.obj",
+        "original-41.obj",
+        "original-56.obj",
+        "original-54.obj",
+        "original-43.obj",
+        "original-50.obj",
+        "original-65.obj",
+        "new-1.obj",
+        "original-58.obj",
+        "original-57.obj",
+        "original-68.obj",
+        "original-40.obj",
+        "original-47.obj",
+        "original-55.obj",
+        "original-53.obj",
+        "original-61.obj",
+        "original-59.obj",
+        "original-49.obj",
+        "original-64.obj",
+        "original-48.obj",
+        "original-62.obj",
+        "original-52.obj",
+        "original-46.obj",
+        "original-51.obj",
+        "original-39.obj",
+        "original-37.obj",
+        "original-42.obj",
+        "original-38.obj",
+        "original-36.obj",
+        "original-26.obj",
+        "original-23.obj",
+        "original-28.obj",
+        "original-21.obj",
+        "original-32.obj",
+        "original-25.obj",
+        "original-24.obj",
+        "original-31.obj",
+        "original-22.obj",
+        "original-30.obj",
+        "original-27.obj"
+      ],
+      "target_g": [
+        "keyboard_original-75",
+        "keyboard_original-76",
+        "keyboard_original-72",
+        "keyboard_original-77",
+        "keyboard_original-73",
+        "keyboard_original-71",
+        "keyboard_original-74",
+        "keyboard_original-70",
+        "keyboard_original-94",
+        "keyboard_original-78",
+        "keyboard_original-79",
+        "keyboard_original-93",
+        "keyboard_original-92",
+        "keyboard_original-91",
+        "keyboard_original-80",
+        "keyboard_original-81",
+        "keyboard_original-82",
+        "keyboard_original-83",
+        "keyboard_original-84",
+        "keyboard_original-85",
+        "keyboard_original-87",
+        "keyboard_original-86",
+        "keyboard_original-88",
+        "keyboard_original-89",
+        "keyboard_original-69",
+        "keyboard_original-11",
+        "keyboard_original-63",
+        "keyboard_original-90",
+        "keyboard_original-60",
+        "keyboard_original-67",
+        "keyboard_original-44",
+        "keyboard_original-12",
+        "keyboard_original-13",
+        "keyboard_original-14",
+        "keyboard_original-15",
+        "keyboard_original-20",
+        "keyboard_original-19",
+        "keyboard_original-16",
+        "keyboard_original-17",
+        "keyboard_original-18",
+        "keyboard_original-29",
+        "keyboard_original-35",
+        "keyboard_original-66",
+        "keyboard_original-45",
+        "keyboard_original-34",
+        "keyboard_original-33",
+        "keyboard_original-41",
+        "keyboard_original-56",
+        "keyboard_original-54",
+        "keyboard_original-43",
+        "keyboard_original-50",
+        "keyboard_original-65",
+        "keyboard_new-1",
+        "keyboard_original-58",
+        "keyboard_original-57",
+        "keyboard_original-68",
+        "keyboard_original-40",
+        "keyboard_original-47",
+        "keyboard_original-55",
+        "keyboard_original-53",
+        "keyboard_original-61",
+        "keyboard_original-59",
+        "keyboard_original-49",
+        "keyboard_original-64",
+        "keyboard_original-48",
+        "keyboard_original-62",
+        "keyboard_original-52",
+        "keyboard_original-46",
+        "keyboard_original-51",
+        "keyboard_original-39",
+        "keyboard_original-37",
+        "keyboard_original-42",
+        "keyboard_original-38",
+        "keyboard_original-36",
+        "keyboard_original-26",
+        "keyboard_original-23",
+        "keyboard_original-28",
+        "keyboard_original-21",
+        "keyboard_original-32",
+        "keyboard_original-25",
+        "keyboard_original-24",
+        "keyboard_original-31",
+        "keyboard_original-22",
+        "keyboard_original-30",
+        "keyboard_original-27"
+      ],
+      "anchor": {
+        "point": [
+          0.19185007199996118,
+          -0.4260425880000396,
+          0.14974724199996015
+        ]
+      },
+      "label": {
+        "text": "keyboard",
+        "box_size": [
+          0.7384210694039837,
+          0.184,
+          0.02
+        ],
+        "center": [
+          0.24499033466119347,
+          -0.9971565819437851,
+          0.28608401178258713
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.19185007199996118,
+          -0.4260425880000396,
+          0.14974724199996015
+        ],
+        "bend_points": [],
+        "end": [
+          0.24499033466119347,
+          -0.9971565819437851,
+          0.28608401178258713
+        ]
+      }
+    },
+    {
+      "group_id": "touchpad_6_6",
+      "id": 6,
+      "ori_id": 6,
+      "source_objs": [
+        "new-2.obj"
+      ],
+      "target_g": [
+        "touchpad_new-2"
+      ],
+      "anchor": {
+        "point": [
+          -0.14158371800004144,
+          -0.4244638230000417,
+          0.3435941089999579
+        ]
+      },
+      "label": {
+        "text": "touchpad",
+        "box_size": [
+          0.7466929763642763,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -0.6577274310410886,
+          -0.8508290979795676,
+          1.0424742935206535
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.14158371800004144,
+          -0.4244638230000417,
+          0.3435941089999579
+        ],
+        "bend_points": [],
+        "end": [
+          -0.6577274310410886,
+          -0.8508290979795676,
+          1.0424742935206535
+        ]
+      }
+    }
+  ],
+  "reproduction": {
+    "paper": "Tatzgern et al. 2014, Hedgehog Labeling",
+    "view": "main",
+    "method": "plane",
+    "parameters": {
+      "plane_count": 3,
+      "iterations": 80
+    }
+  }
+}

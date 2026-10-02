@@ -1,0 +1,237 @@
+{
+  "version": "v10_safe_preference_run_manifest_v1",
+  "generated_at": "2026-09-21T12:29:21.351Z",
+  "run_id": "5d3aabe9-2e20-455c-a9a9-43b7db28cd57",
+  "base_model": {
+    "file": "experiments/layout_model.json",
+    "version": "layout_model_v10_anchor_frame_heterogeneous_graph_moe",
+    "sha256": "3D4AAD72F9EAD8CD29D61B65D5AC4DA4368FE7A2CC1C4DE01046516C981A8A29",
+    "status": "active_val_selected_v10_anchor_frame"
+  },
+  "llm_reward": {
+    "status": "trained_rejected_val_not_activated",
+    "candidate": "experiments/preference_model_candidate.json",
+    "candidate_sha256": "FD51CCA2F880016649F3D2864F2958236E664A8847D8F29DAA47BEE2C13DDD30",
+    "active": "experiments/preference_model.json",
+    "active_run_id": "15eb60ec-bcc3-4428-88ed-408ba5d245ce",
+    "active_sha256": "62F0EC9F576CB1DBEB1832052619F57815A87C9D55ECE631437956F98D18A1BD"
+  },
+  "validation": {
+    "rounds": [
+      {
+        "round": 0,
+        "samples": 11,
+        "composite_score": 4.351509
+      },
+      {
+        "round": 1,
+        "samples": 11,
+        "composite_score": 4.227873
+      },
+      {
+        "round": 2,
+        "samples": 11,
+        "composite_score": 4.251509
+      },
+      {
+        "round": 3,
+        "samples": 11,
+        "composite_score": 4.197873
+      },
+      {
+        "round": 4,
+        "samples": 11,
+        "composite_score": 4.2006
+      },
+      {
+        "round": 5,
+        "samples": 11,
+        "composite_score": 4.238782
+      },
+      {
+        "round": 6,
+        "samples": 11,
+        "composite_score": 4.241509
+      },
+      {
+        "round": 7,
+        "samples": 11,
+        "composite_score": 4.253327
+      },
+      {
+        "round": 8,
+        "samples": 11,
+        "composite_score": 4.241509
+      }
+    ],
+    "checked_records": 99,
+    "crossing_violations": 0,
+    "penetration_violations": 0,
+    "checkpoint_hashes_verified": true,
+    "rise_then_stable": false
+  },
+  "train": {
+    "safe_pair_count": 60,
+    "crossing_violations": 0
+  },
+  "test": {
+    "samples": 11,
+    "diagnostic_only": true,
+    "selected_round": 7,
+    "baseline_worst_crossing_count_available": false
+  },
+  "screenshot": "experiments/final_v10_visual_5d3aabe9-2e20-455c-a9a9-43b7db28cd57/headless_six_view_check.png",
+  "metric_cards": [
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "cards": {
+        "v10SilhouetteOverlap": {
+          "exists": true,
+          "value": "7.4%"
+        },
+        "v10WorstDepth": {
+          "exists": true,
+          "value": "9.7%"
+        },
+        "v10WorstPenetration": {
+          "exists": true,
+          "value": "0.0%"
+        },
+        "v10CvarOcclusion": {
+          "exists": true,
+          "value": "0.090"
+        },
+        "v10CvarFreeSpace": {
+          "exists": true,
+          "value": "0.344"
+        },
+        "v10WorstTextLoss": {
+          "exists": true,
+          "value": "0.070"
+        },
+        "v10FreeSpaceMismatch": {
+          "exists": true,
+          "value": "0.267"
+        },
+        "v10WeightedLeaderCrossing": {
+          "exists": true,
+          "value": "0.004"
+        },
+        "v10WorstLeaderCrossing": {
+          "exists": true,
+          "value": "0.013"
+        },
+        "v10CvarLeaderCrossing": {
+          "exists": true,
+          "value": "0.009"
+        },
+        "v10ViewObjective": {
+          "exists": true,
+          "value": "2.684"
+        }
+      }
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "cards": {
+        "v10SilhouetteOverlap": {
+          "exists": true,
+          "value": "10.1%"
+        },
+        "v10WorstDepth": {
+          "exists": true,
+          "value": "22.9%"
+        },
+        "v10WorstPenetration": {
+          "exists": true,
+          "value": "0.0%"
+        },
+        "v10CvarOcclusion": {
+          "exists": true,
+          "value": "0.177"
+        },
+        "v10CvarFreeSpace": {
+          "exists": true,
+          "value": "0.449"
+        },
+        "v10WorstTextLoss": {
+          "exists": true,
+          "value": "0.028"
+        },
+        "v10FreeSpaceMismatch": {
+          "exists": true,
+          "value": "0.383"
+        },
+        "v10WeightedLeaderCrossing": {
+          "exists": true,
+          "value": "0.009"
+        },
+        "v10WorstLeaderCrossing": {
+          "exists": true,
+          "value": "0.014"
+        },
+        "v10CvarLeaderCrossing": {
+          "exists": true,
+          "value": "0.013"
+        },
+        "v10ViewObjective": {
+          "exists": true,
+          "value": "3.545"
+        }
+      }
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "cards": {
+        "v10SilhouetteOverlap": {
+          "exists": true,
+          "value": "4.5%"
+        },
+        "v10WorstDepth": {
+          "exists": true,
+          "value": "13.9%"
+        },
+        "v10WorstPenetration": {
+          "exists": true,
+          "value": "0.0%"
+        },
+        "v10CvarOcclusion": {
+          "exists": true,
+          "value": "0.108"
+        },
+        "v10CvarFreeSpace": {
+          "exists": true,
+          "value": "0.519"
+        },
+        "v10WorstTextLoss": {
+          "exists": true,
+          "value": "0.004"
+        },
+        "v10FreeSpaceMismatch": {
+          "exists": true,
+          "value": "0.410"
+        },
+        "v10WeightedLeaderCrossing": {
+          "exists": true,
+          "value": "0.060"
+        },
+        "v10WorstLeaderCrossing": {
+          "exists": true,
+          "value": "0.070"
+        },
+        "v10CvarLeaderCrossing": {
+          "exists": true,
+          "value": "0.066"
+        },
+        "v10ViewObjective": {
+          "exists": true,
+          "value": "3.005"
+        }
+      }
+    }
+  ],
+  "report": "experiments/最终v10安全偏好实验报告_5d3aabe9-2e20-455c-a9a9-43b7db28cd57.md"
+}

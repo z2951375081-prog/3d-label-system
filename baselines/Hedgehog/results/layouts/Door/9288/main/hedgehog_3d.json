@@ -1,0 +1,329 @@
+{
+  "version": "hedgehog_reproduction",
+  "name": "陈庆堃-F",
+  "layout_level": "layout1",
+  "layout_type": "hedgehog_3d",
+  "sample_id": "9288",
+  "category": "Door",
+  "hierarchy_file": "result_after_merging.json",
+  "normalization": {
+    "center_origin": [
+      -0.0047529999999999795,
+      0.002193500000000015,
+      0.0148925
+    ],
+    "center_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0227223886585364
+  },
+  "groups": [
+    {
+      "group_id": "outside_frame_1_1",
+      "id": 1,
+      "ori_id": 1,
+      "source_objs": [
+        "original-4.obj"
+      ],
+      "target_g": [
+        "outside_frame_original-4"
+      ],
+      "anchor": {
+        "point": [
+          0.3671230869999915,
+          0.9057076589999928,
+          -0.04871654400000924
+        ]
+      },
+      "label": {
+        "text": "outside_frame",
+        "box_size": [
+          1.1446489300619485,
+          0.16303207394797423,
+          0.02
+        ],
+        "center": [
+          0.47936153787227864,
+          1.2961346601392667,
+          -0.14657601480081878
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.3671230869999915,
+          0.9057076589999928,
+          -0.04871654400000924
+        ],
+        "bend_points": [],
+        "end": [
+          0.47936153787227864,
+          1.2961346601392667,
+          -0.14657601480081878
+        ]
+      }
+    },
+    {
+      "group_id": "surface_board_4_7",
+      "id": 4,
+      "ori_id": 7,
+      "source_objs": [
+        "original-8.obj",
+        "original-9.obj",
+        "original-5.obj"
+      ],
+      "target_g": [
+        "surface_board_original-8",
+        "surface_board_original-9",
+        "surface_board_original-5"
+      ],
+      "anchor": {
+        "point": [
+          0.22577583399999135,
+          -0.6926478860000085,
+          -0.0016861860000076945
+        ]
+      },
+      "label": {
+        "text": "surface_board",
+        "box_size": [
+          1.1302708256838954,
+          0.16303207394797423,
+          0.02
+        ],
+        "center": [
+          0.34022642040256573,
+          -1.0353705209954236,
+          0.009821275603579673
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.22577583399999135,
+          -0.6926478860000085,
+          -0.0016861860000076945
+        ],
+        "bend_points": [],
+        "end": [
+          0.34022642040256573,
+          -1.0353705209954236,
+          0.009821275603579673
+        ]
+      }
+    },
+    {
+      "group_id": "fixed_part_9_10",
+      "id": 9,
+      "ori_id": 10,
+      "source_objs": [
+        "original-15.obj",
+        "original-18.obj",
+        "original-17.obj",
+        "original-16.obj",
+        "original-35.obj",
+        "original-31.obj",
+        "original-33.obj",
+        "original-30.obj"
+      ],
+      "target_g": [
+        "fixed_part_original-15",
+        "fixed_part_original-18",
+        "fixed_part_original-17",
+        "fixed_part_original-16",
+        "fixed_part_original-35",
+        "fixed_part_original-31",
+        "fixed_part_original-33",
+        "fixed_part_original-30"
+      ],
+      "anchor": {
+        "point": [
+          -0.2567529590000115,
+          -0.04526203800001216,
+          -0.002199522000011278
+        ]
+      },
+      "label": {
+        "text": "fixed_part",
+        "box_size": [
+          0.8195462362436259,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -0.8737589942367969,
+          -0.13546380729825175,
+          0.14712355550205378
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2567529590000115,
+          -0.04526203800001216,
+          -0.002199522000011278
+        ],
+        "bend_points": [],
+        "end": [
+          -0.8737589942367969,
+          -0.13546380729825175,
+          0.14712355550205378
+        ]
+      }
+    },
+    {
+      "group_id": "movable_part_10_11",
+      "id": 10,
+      "ori_id": 11,
+      "source_objs": [
+        "original-29.obj"
+      ],
+      "target_g": [
+        "movable_part_original-29"
+      ],
+      "anchor": {
+        "point": [
+          -0.2507982640000117,
+          0.013792109999989144,
+          -0.02331473400001105
+        ]
+      },
+      "label": {
+        "text": "movable_part",
+        "box_size": [
+          1.0947253056734831,
+          0.18212139376706324,
+          0.02
+        ],
+        "center": [
+          -1.2416921216242875,
+          0.19527363555291177,
+          -0.029408896416339605
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2507982640000117,
+          0.013792109999989144,
+          -0.02331473400001105
+        ],
+        "bend_points": [],
+        "end": [
+          -1.2416921216242875,
+          0.19527363555291177,
+          -0.029408896416339605
+        ]
+      }
+    },
+    {
+      "group_id": "fixed_part_6_5",
+      "id": 6,
+      "ori_id": 5,
+      "source_objs": [
+        "original-24.obj",
+        "original-13.obj",
+        "original-14.obj",
+        "original-11.obj",
+        "original-26.obj",
+        "original-22.obj",
+        "original-12.obj",
+        "original-21.obj"
+      ],
+      "target_g": [
+        "fixed_part_original-24",
+        "fixed_part_original-13",
+        "fixed_part_original-14",
+        "fixed_part_original-11",
+        "fixed_part_original-26",
+        "fixed_part_original-22",
+        "fixed_part_original-12",
+        "fixed_part_original-21"
+      ],
+      "anchor": {
+        "point": [
+          -0.2528887630000094,
+          -0.08244221600000845,
+          0.025658477999992435
+        ]
+      },
+      "label": {
+        "text": "fixed_part",
+        "box_size": [
+          0.8195462362436259,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -0.743335610147844,
+          -0.355174553868537,
+          0.27683947827364436
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2528887630000094,
+          -0.08244221600000845,
+          0.025658477999992435
+        ],
+        "bend_points": [],
+        "end": [
+          -0.743335610147844,
+          -0.355174553868537,
+          0.27683947827364436
+        ]
+      }
+    },
+    {
+      "group_id": "movable_part_7_6",
+      "id": 7,
+      "ori_id": 6,
+      "source_objs": [
+        "original-20.obj"
+      ],
+      "target_g": [
+        "movable_part_original-20"
+      ],
+      "anchor": {
+        "point": [
+          -0.24574215100001062,
+          0.012590415999988558,
+          0.05507604099998886
+        ]
+      },
+      "label": {
+        "text": "movable_part",
+        "box_size": [
+          1.0947253056734831,
+          0.18212139376706324,
+          0.02
+        ],
+        "center": [
+          -0.9672889848560349,
+          0.08343746792470914,
+          0.23747128415827154
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.24574215100001062,
+          0.012590415999988558,
+          0.05507604099998886
+        ],
+        "bend_points": [],
+        "end": [
+          -0.9672889848560349,
+          0.08343746792470914,
+          0.23747128415827154
+        ]
+      }
+    }
+  ],
+  "reproduction": {
+    "paper": "Tatzgern et al. 2014, Hedgehog Labeling",
+    "view": "main",
+    "method": "hedgehog_3d",
+    "parameters": {
+      "plane_count": 3,
+      "iterations": 80
+    }
+  }
+}

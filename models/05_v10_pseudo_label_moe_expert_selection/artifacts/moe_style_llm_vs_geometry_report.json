@@ -1,0 +1,1433 @@
+{
+  "version": "moe_style_llm_vs_geometry_report_v1",
+  "generated_at": "2026-09-28T17:43:52.172Z",
+  "n": 55,
+  "agreement": 0.090909,
+  "dimensions": {
+    "spherical": {
+      "pearson_r": -0.05292,
+      "spearman_rho": -0.168962,
+      "geometry_mean": 0.36468,
+      "llm_mean": 0.124068
+    },
+    "rectangular": {
+      "pearson_r": -0.25043,
+      "spearman_rho": -0.22037,
+      "geometry_mean": 0.345526,
+      "llm_mean": 0.260785
+    },
+    "surround": {
+      "pearson_r": -0.46144,
+      "spearman_rho": -0.507255,
+      "geometry_mean": 0.289793,
+      "llm_mean": 0.615147
+    }
+  },
+  "confusion": {
+    "spherical": {
+      "spherical": 1,
+      "rectangular": 9,
+      "surround": 22
+    },
+    "rectangular": {
+      "spherical": 0,
+      "rectangular": 4,
+      "surround": 19
+    },
+    "surround": {
+      "spherical": 0,
+      "rectangular": 0,
+      "surround": 0
+    }
+  },
+  "counts": {
+    "geometry": {
+      "spherical": 32,
+      "rectangular": 23,
+      "surround": 0
+    },
+    "llm": {
+      "spherical": 1,
+      "rectangular": 13,
+      "surround": 41
+    }
+  },
+  "interpretation": "This compares LLM visual style labels with geometry-router priors only; it is a calibration screen, not a replacement for the requested human-vs-LLM significance test.",
+  "rows": [
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.452178,
+        "rectangular": 0.230836,
+        "surround": 0.316985
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为椅子，非圆柱形，标签分布不规则且自由围绕各部件，符合surround风格。"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.408536,
+        "rectangular": 0.236921,
+        "surround": 0.354543
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为不规则形状的椅子，标签分布不拘泥于矩形或圆形，而是围绕各部件自由分布，符合surround风格。"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.473919,
+        "rectangular": 0.213941,
+        "surround": 0.312139
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为不规则形状的扶手椅，标签分布自由围绕各部件，符合surround风格。"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "41193",
+      "split": "val",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.401559,
+        "rectangular": 0.289028,
+        "surround": 0.309412
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为椅子，结构不规则，标签围绕其各部件自由分布，符合surround风格。"
+    },
+    {
+      "category": "Chair",
+      "sample_id": "42397",
+      "split": "test",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.468959,
+        "rectangular": 0.226087,
+        "surround": 0.304954
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为椅子，非圆柱或矩形，标签围绕其不规则结构自由分布，符合surround风格。"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.48617,
+        "rectangular": 0.207841,
+        "surround": 0.305989
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为柜体，非圆柱形，标签分布不规则且自由围绕，符合surround风格。"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.527584,
+        "rectangular": 0.174515,
+        "surround": 0.297901
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为不规则形状，标签分布不拘泥于矩形或圆形，而是自由围绕锚点，符合surround风格。"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.46323,
+        "rectangular": 0.216832,
+        "surround": 0.319938
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为矩形，标签沿其四边分布，符合矩形布局风格。"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12580",
+      "split": "val",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.44096,
+        "rectangular": 0.23218,
+        "surround": 0.32686
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体呈矩形，标签沿其四边分布，符合矩形物体的标签布局风格。"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "13175",
+      "split": "test",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.475037,
+        "rectangular": 0.215353,
+        "surround": 0.309609
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为矩形，标签沿其四边分布，符合矩形布局风格。"
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.09361,
+        "rectangular": 0.642313,
+        "surround": 0.264076
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为门，非圆柱形，标签分布不规则且自由围绕，符合surround风格。"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.090002,
+        "rectangular": 0.622785,
+        "surround": 0.287213
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": true,
+      "confidence": 4,
+      "rationale": "物体呈矩形板状，标签沿其外框四边分布，符合矩形布局风格。"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.090942,
+        "rectangular": 0.639133,
+        "surround": 0.269924
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为门，非圆柱形，标签分布不规则且自由围绕，符合surround风格。"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9288",
+      "split": "val",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.096201,
+        "rectangular": 0.636703,
+        "surround": 0.267097
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为门，非圆柱形，标签分布不规则且自由围绕，符合surround风格。"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9290",
+      "split": "test",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.088468,
+        "rectangular": 0.625562,
+        "surround": 0.28597
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为门，非标准矩形，标签分布不规则且自由围绕，符合surround风格。"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.202372,
+        "rectangular": 0.548903,
+        "surround": 0.248726
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为不规则形状，标签围绕其自由分布，符合surround风格。"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.470271,
+        "rectangular": 0.176987,
+        "surround": 0.352742
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为不规则形状的耳机，标签围绕其结构自由分布，符合surround风格。"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.14019,
+        "rectangular": 0.587186,
+        "surround": 0.272625
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为不规则形状的耳机，标签围绕其结构自由分布，符合surround风格。"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11471",
+      "split": "val",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.464989,
+        "rectangular": 0.198589,
+        "surround": 0.336422
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "耳机为不规则形状，标签自由分布于各部件，符合surround风格。"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11934",
+      "split": "test",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.283003,
+        "rectangular": 0.446344,
+        "surround": 0.270653
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为不规则形状，标签自由分布，符合surround风格。"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.372808,
+        "rectangular": 0.367581,
+        "surround": 0.259611
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体形状不规则，标签围绕其不同锚点自由分布，符合surround风格。"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.10215,
+        "rectangular": 0.657729,
+        "surround": 0.240121
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体结构不规则，标签围绕其锚点自由分布，符合surround风格。"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.534229,
+        "rectangular": 0.185219,
+        "surround": 0.280552
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为水龙头，结构不规则，标签围绕其不同方向自由分布，符合surround风格。"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1758",
+      "split": "val",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.4012,
+        "rectangular": 0.316914,
+        "surround": 0.281885
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为不规则形状，标签围绕其不同方向锚点自由分布，符合surround风格。"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1988",
+      "split": "test",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.465995,
+        "rectangular": 0.203695,
+        "surround": 0.330311
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为水龙头，形状不规则，标签围绕其不同方向自由分布，符合surround风格。"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "spherical",
+      "geometry_weights": {
+        "spherical": 0.519156,
+        "rectangular": 0.193559,
+        "surround": 0.287286
+      },
+      "llm_scores": {
+        "spherical": 5,
+        "rectangular": 1,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.6660013306719894,
+        "rectangular": 0.0006653359946773122,
+        "surround": 0.3333333333333334
+      },
+      "match": true,
+      "confidence": 5,
+      "rationale": "物体呈近圆柱形，标签环绕其轮廓呈圆弧分布，符合 spherical 风格。"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.402364,
+        "rectangular": 0.297813,
+        "surround": 0.299823
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为不规则形状，标签围绕其自由分布，符合surround风格。"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.243156,
+        "rectangular": 0.454259,
+        "surround": 0.302585
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为不规则台灯结构，标签分布无固定几何约束，符合自由环绕布局。"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16598",
+      "split": "val",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.23742,
+        "rectangular": 0.460874,
+        "surround": 0.301706
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为街灯结构，标签分布不规则且围绕各部件自由分布，符合‘surround’风格。"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "17343",
+      "split": "test",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.179576,
+        "rectangular": 0.5585,
+        "surround": 0.261924
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为吊灯结构，标签分布不规则且围绕中心锚点自由延伸，符合‘surround’风格。"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "9878",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.505106,
+        "rectangular": 0.188143,
+        "surround": 0.306751
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为笔记本电脑，非圆柱形，标签分布不拘泥于矩形或环状，而是自由围绕各部件，符合surround风格。"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10203",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.535907,
+        "rectangular": 0.186888,
+        "surround": 0.277205
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为笔记本电脑，非标准矩形，标签分布不规则且自由围绕各部件，符合surround风格。"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10285",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.553702,
+        "rectangular": 0.162794,
+        "surround": 0.283504
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为笔记本电脑，非圆柱形，标签分布不拘泥于矩形或环状，而是自由围绕各部件，符合‘surround’风格。"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10302",
+      "split": "val",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.564791,
+        "rectangular": 0.18483,
+        "surround": 0.250379
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为笔记本电脑，非标准矩形，标签分布不拘泥于矩形或圆形，而是自由围绕各部件，符合‘surround’风格。"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "11075",
+      "split": "test",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.515254,
+        "rectangular": 0.159912,
+        "surround": 0.324833
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为笔记本电脑，非标准矩形，标签分布不规则且自由围绕各部件，符合surround风格。"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.537745,
+        "rectangular": 0.156213,
+        "surround": 0.306043
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体呈矩形，标签沿其四边分布，符合矩形物体的标签布局风格。"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.547792,
+        "rectangular": 0.157785,
+        "surround": 0.294423
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体呈矩形，标签沿其四边分布，符合矩形物体的标签布局风格。"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.547883,
+        "rectangular": 0.159133,
+        "surround": 0.292985
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为矩形微波炉，标签沿其四边分布，符合矩形物体的标签布局风格。"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7200",
+      "split": "val",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.540543,
+        "rectangular": 0.154078,
+        "surround": 0.305379
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为不规则形状，标签分布不拘泥于矩形或圆形，而是自由围绕锚点，符合surround风格。"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7346",
+      "split": "test",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.531309,
+        "rectangular": 0.173901,
+        "surround": 0.29479
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为矩形微波炉，标签沿其四边分布符合矩形布局，且多数标签位置与物体边缘对齐，体现矩形物体的结构特征。"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.470275,
+        "rectangular": 0.180839,
+        "surround": 0.348885
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773121,
+        "rectangular": 0.33333333333333337,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为不规则形状，标签分布不拘泥于矩形或圆形，而是自由围绕锚点，符合surround风格。"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.199753,
+        "rectangular": 0.471167,
+        "surround": 0.32908
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": true,
+      "confidence": 4,
+      "rationale": "物体呈长条形，标签沿其长边分布，符合矩形物体的标签布局风格。"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "split": "train",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.373833,
+        "rectangular": 0.316919,
+        "surround": 0.309248
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体呈长方体结构，标签沿其四边分布，符合矩形物体的标签布局风格。"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11712",
+      "split": "val",
+      "geometry_selected": "rectangular",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.270582,
+        "rectangular": 0.374259,
+        "surround": 0.355159
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": true,
+      "confidence": 4,
+      "rationale": "物体呈长方体结构，标签沿其四边分布，符合矩形物体的标签布局风格。"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "12045",
+      "split": "test",
+      "geometry_selected": "rectangular",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.271831,
+        "rectangular": 0.379073,
+        "surround": 0.349096
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": true,
+      "confidence": 4,
+      "rationale": "物体呈长方体结构，标签沿其四周边缘分布，符合矩形物体的标签布局风格。"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10429",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.215896,
+        "rectangular": 0.540148,
+        "surround": 0.243956
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "剪刀是不规则物体，标签自由围绕其各部分，符合surround风格。"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10994",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.230961,
+        "rectangular": 0.557727,
+        "surround": 0.211312
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "剪刀为不规则形状，标签自由分布于各部件周围，符合surround风格。"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11002",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.236581,
+        "rectangular": 0.557458,
+        "surround": 0.205961
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "剪刀为不规则物体，标签自由分布于各部件，符合surround风格。"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11036",
+      "split": "val",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.247443,
+        "rectangular": 0.57022,
+        "surround": 0.182337
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "剪刀为不规则物体，标签自由围绕锚点分布，符合surround风格。"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11111",
+      "split": "test",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.248874,
+        "rectangular": 0.572421,
+        "surround": 0.178706
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.20031923383878694,
+        "rectangular": 0.0007980845969672786,
+        "surround": 0.7988826815642458
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "剪刀为不规则物体，标签自由围绕各部件，符合surround风格。"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.354144,
+        "rectangular": 0.358436,
+        "surround": 0.28742
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 5,
+      "rationale": "物体为圆柱形，标签分布不规则且自由围绕，符合surround风格。"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.364891,
+        "rectangular": 0.36827,
+        "surround": 0.266839
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为圆柱形，但标签分布不规则，非对称环绕，符合自由围绕锚点的布局风格。"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "split": "train",
+      "geometry_selected": "rectangular",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.338879,
+        "rectangular": 0.387194,
+        "surround": 0.273926
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体为圆柱形，标签分布不规则且自由围绕，符合surround风格；其他风格不匹配物体形态。"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11960",
+      "split": "val",
+      "geometry_selected": "spherical",
+      "llm_selected": "surround",
+      "geometry_weights": {
+        "spherical": 0.3855,
+        "rectangular": 0.330251,
+        "surround": 0.284248
+      },
+      "llm_scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "llm_weights": {
+        "spherical": 0.33333333333333337,
+        "rectangular": 0.0006653359946773121,
+        "surround": 0.6660013306719893
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体呈圆柱形，标签分布不规则且自由围绕，符合surround风格；非矩形或球形，故排除其他选项。"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "12366",
+      "split": "test",
+      "geometry_selected": "spherical",
+      "llm_selected": "rectangular",
+      "geometry_weights": {
+        "spherical": 0.391714,
+        "rectangular": 0.291712,
+        "surround": 0.316574
+      },
+      "llm_scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "llm_weights": {
+        "spherical": 0.0006653359946773122,
+        "rectangular": 0.6660013306719894,
+        "surround": 0.3333333333333334
+      },
+      "match": false,
+      "confidence": 4,
+      "rationale": "物体呈近似矩形，标签沿其四边分布，符合矩形物体的标签布局风格。"
+    }
+  ]
+}

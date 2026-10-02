@@ -1,0 +1,173 @@
+{
+  "version": "moe_style_llm_scores_v1",
+  "generated_at": "2026-09-28T17:36:57.479Z",
+  "model": "qwen3-vl:4b-instruct",
+  "count": 11,
+  "rows": [
+    {
+      "category": "Chair",
+      "sample_id": "41193",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "selected": "surround",
+      "confidence": 4,
+      "rationale": "物体为椅子，结构不规则，标签围绕其各部件自由分布，符合surround风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:05.8854373Z"
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12580",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "selected": "rectangular",
+      "confidence": 4,
+      "rationale": "物体呈矩形，标签沿其四边分布，符合矩形物体的标签布局风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:10.8498531Z"
+    },
+    {
+      "category": "Door",
+      "sample_id": "9288",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "selected": "surround",
+      "confidence": 4,
+      "rationale": "物体为门，非圆柱形，标签分布不规则且自由围绕，符合surround风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:15.8500709Z"
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11471",
+      "split": "val",
+      "scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "selected": "surround",
+      "confidence": 5,
+      "rationale": "耳机为不规则形状，标签自由分布于各部件，符合surround风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:20.8483478Z"
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1758",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "selected": "surround",
+      "confidence": 4,
+      "rationale": "物体为不规则形状，标签围绕其不同方向锚点自由分布，符合surround风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:26.2433185Z"
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16598",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "selected": "surround",
+      "confidence": 5,
+      "rationale": "物体为街灯结构，标签分布不规则且围绕各部件自由分布，符合‘surround’风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:31.4675531Z"
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10302",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "selected": "surround",
+      "confidence": 4,
+      "rationale": "物体为笔记本电脑，非标准矩形，标签分布不拘泥于矩形或圆形，而是自由围绕各部件，符合‘surround’风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:36.7147861Z"
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7200",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 3,
+        "surround": 4
+      },
+      "selected": "surround",
+      "confidence": 4,
+      "rationale": "物体为不规则形状，标签分布不拘泥于矩形或圆形，而是自由围绕锚点，符合surround风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:42.2742262Z"
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11712",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 4,
+        "surround": 3
+      },
+      "selected": "rectangular",
+      "confidence": 4,
+      "rationale": "物体呈长方体结构，标签沿其四边分布，符合矩形物体的标签布局风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:47.3118187Z"
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11036",
+      "split": "val",
+      "scores": {
+        "spherical": 2,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "selected": "surround",
+      "confidence": 5,
+      "rationale": "剪刀为不规则物体，标签自由围绕锚点分布，符合surround风格。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:52.2924619Z"
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11960",
+      "split": "val",
+      "scores": {
+        "spherical": 3,
+        "rectangular": 1,
+        "surround": 5
+      },
+      "selected": "surround",
+      "confidence": 4,
+      "rationale": "物体呈圆柱形，标签分布不规则且自由围绕，符合surround风格；非矩形或球形，故排除其他选项。",
+      "model": "qwen3-vl:4b-instruct",
+      "response_id": "2026-09-28T17:36:57.4778636Z"
+    }
+  ]
+}

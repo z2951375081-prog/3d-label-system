@@ -1,0 +1,104 @@
+{
+  "version": "layout_model_config_v1",
+  "status": "legacy_config_use_model_v1",
+  "task": "3d_label_layout_preference_optimization",
+  "default_encoder": "moe_v1",
+  "runtime_defaults": {
+    "view_policy": "binocular",
+    "group_policy": "semantic-once",
+    "size_policy": "relative",
+    "optimizer": "annealing",
+    "seed": 17,
+    "iterations": 180,
+    "camera_radius_factor": 1.8,
+    "camera_height_factor": 0.9,
+    "camera_depth_factor": 2.8,
+    "objective_weights": {
+      "overlap": 2.8,
+      "viewport_overflow": 4.0,
+      "leader_crossing": 1.6,
+      "anchor_distance": 0.08,
+      "binocular_disparity": 3.5
+    }
+  },
+  "training_defaults": {
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "epochs": 80,
+    "warmup_epochs": 5,
+    "preference_loss_weight": 1.0,
+    "gpt_auxiliary_loss_weight": 0.15,
+    "human_pairwise_loss_weight": 1.0,
+    "early_stopping_patience": 10
+  },
+  "encoder_options": {
+    "mlp_graph": {
+      "description": "候选标签节点特征 + 约束边消息聚合，适合作为第一版基线",
+      "node_features": [
+        "anchor_xyz_normalized",
+        "label_center_xyz_normalized",
+        "box_size_normalized",
+        "semantic_embedding",
+        "source_object_count",
+        "visibility_left",
+        "visibility_right",
+        "anchor_distance",
+        "local_geometry_descriptor"
+      ],
+      "edge_types": [
+        "same_semantic",
+        "spatial_overlap",
+        "leader_crossing",
+        "symmetric_pair",
+        "binocular_visibility",
+        "anchor_distance"
+      ],
+      "hidden_dim": 256,
+      "layers": 4
+    },
+    "cnn_voxel": {
+      "description": "将 clean OBJ 体素化后提取局部几何特征，再与候选节点融合",
+      "input": "multi_resolution_voxel_grid",
+      "channels": [32, 64, 128],
+      "fusion": "candidate_mlp"
+    },
+    "transformer_set": {
+      "description": "把候选标签作为集合 token，建模候选间全局关系",
+      "token_features": "same_as_mlp_graph_node_features",
+      "heads": 8,
+      "layers": 4,
+      "hidden_dim": 256
+    }
+  },
+  "expert_heads": [
+    "readability",
+    "coverage",
+    "occlusion_control",
+    "spatial_balance",
+    "binocular_consistency",
+    "size_consistency",
+    "group_economy"
+  ],
+  "decoder": {
+    "default": "simulated_annealing",
+    "alternatives": ["rules_baseline", "beam_search"],
+    "objective_terms": [
+      "main_view_overlap",
+      "main_view_overflow",
+      "leader_crossing",
+      "anchor_distance",
+      "left_view_visibility",
+      "right_view_visibility",
+      "binocular_disparity",
+      "expert_preference_score"
+    ]
+  },
+  "preference_training": {
+    "source": "experiments/preferences.jsonl",
+    "format": "chosen_rejected",
+    "stage": "after_base_layout_model",
+    "human_preference_is_primary": true,
+    "gpt_scores_are_auxiliary": true
+  }
+}

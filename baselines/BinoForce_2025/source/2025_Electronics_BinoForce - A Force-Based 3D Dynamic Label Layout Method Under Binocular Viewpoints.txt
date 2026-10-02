@@ -1,0 +1,911 @@
+Academic Editors: Juan Ernesto
+Solanes Galbis and Jean-Baptiste
+Barreau
+Received: 15 April 2025
+Revised: 7 May 2025
+Accepted: 13 May 2025
+Published: 29 May 2025
+Citation: Zheng, Z.; He, Y.; Yu, G.;
+Xu, X. BinoForce: A Force-Based 3D
+Dynamic Label Layout Method Under
+Binocular Viewpoints. Electronics 2025,
+14, 2199. https://doi.org/10.3390/
+electronics14112199
+Copyright: © 2025 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license
+(https://creativecommons.org/
+licenses/by/4.0/).
+Article
+BinoForce: A Force-Based 3D Dynamic Label Layout Method
+Under Binocular Viewpoints †
+Zijie Zheng 1,2
+ , Yu He 2,*, Ge Yu 2 and Xi Xu 1,2
+1 University of Chinese Academy of Sciences, Beijing 100094, China; zhengzijie23@mails.ucas.ac.cn (Z.Z.);
+xuxi23@mails.ucas.ac.cn (X.X.)
+2 Technology and Engineering Center for Space Utilization, Chinese Academy of Sciences,
+Beijing 101408, China; yuge@csu.ac.cn
+* Correspondence: heyu@csu.ac.cn
+† This article is a revised and expanded version of a poster entitled ‘3D Label Layout with Binocular
+Optimization’, which was presented at the 2025 ACM SIGGRAPH Symposium on Interactive 3D Graphics
+and Games, Jersey City, NJ, USA, 7–9 May 2025. The current version contains substantially more detailed
+experiments and analysis compared to the conference version.
+Abstract: In 3D virtual environments, effective information presentation relies on clear
+label layouts to annotate complex objects. As label density increases, structured and
+adaptive layouts become critical to prevent visual clutter and maintain clarity. However,
+existing label layout methods often overlook the issue of double vision between labels
+caused by binocular disparity. Additionally, discrete update strategies in 3D label layouts
+struggle to maintain layout quality during viewpoint changes due to their limited real-time
+adaptability. To address these issues, this paper presents a binocular 3D dynamic label
+layout method based on a continuous updating strategy within a force-based framework,
+generating real-time binocular layouts to minimize visual confusion. Computational
+evaluation and a user study demonstrate that the proposed method significantly reduces
+double vision, as quantified by a reduction in double vision degree of up to 15.74%, along
+with label overlap and leader line crossings. The results further indicate that our approach
+surpasses existing methods in clarity, aesthetics, adaptability, and user satisfaction, while
+reducing label reading time and alleviating users’ physical and effort demands, particularly
+in high-density label environments.
+Keywords: 3D label layout; virtual reality; information visualization; user studies
+1. Introduction
+Clear information presentation is critical for users in 3D environments, particularly in
+immersive virtual reality (VR) or augmented reality (AR) applications. Labeling complex
+3D structures or compositions allows users to quickly understand the functionality or
+attributes of objects. A common approach to improving visual clarity is through textual
+annotations, which provide additional details about objects in the scene. As shown in
+Figure 1, these labels typically consist of three key components: the text label itself, an
+anchor point marking the specific object being described, and a connecting line, commonly
+referred to as a “leader line”. An effective label layout enhances interaction efficiency
+by providing key information at a glance, reducing the time and effort needed to search
+for relevant details. However, despite ongoing advancements, existing methods still
+face significant challenges when dealing with label layout in dynamic 3D scenes with
+changing viewpoints.
+Electronics 2025, 14, 2199 https://doi.org/10.3390/electronics14112199
+
+Electronics 2025, 14, 2199 2 of 20
+A critical yet largely unaddressed challenge in 3D label layouts is the detrimental
+impact of binocular double vision—both between labels themselves and between labels and
+scene objects—on user experience. Current label placement methods primarily eliminate
+overlaps in monocular optimization. While this achieves label separation in the central view
+(Figure 2e), it inevitably causes residual overlap in the right-eye view (Figure 2f) due to
+ignored binocular disparity. This phenomenon mirrors how holding a finger close to your
+eyes makes it appear to “jump” sideways when alternating between left-/right-eye views.
+Recent work has begun exploring binocular vision for label optimization. Peterson et al. [1]
+improved label clarity and readability by distributing overlapping labels at different depths,
+while Emsenhuber et al. [2] optimized label layouts under binocular viewpoints to prevent
+double vision caused by differing backgrounds. However, these approaches still neglect
+label–label and label–object double vision. To the best of our knowledge, no prior work
+has addressed the negative effects of binocular double vision on user experience within the
+specific context of 3D label placement.
+Figure 1. A 3D model with a label illustrating the typical labeling structure. It consists of three key
+components: the label itself, an anchor point on the object, and a leader line connecting the label to
+the anchor point.
+Figure 2. The results of handling label overlap under different perspective conditions are presented.
+Three virtual cameras are placed at the left eye, right eye, and the midpoint between the two eyes to
+simulate the views from each perspective. Subfigures (a–c) show a comparison of the same overlap-
+ping label layout as observed from the left-eye, center, and right-eye perspectives. In subfigures (d–f),
+the results of label layout optimization from a monocular perspective are displayed. Although the
+overlap issue is resolved in the center view, the labels still overlap in the right-eye view. In contrast,
+subfigures (g–i) present the label layout optimization results from binocular viewpoints. These results
+show no overlap across all perspectives.
+
+Electronics 2025, 14, 2199 3 of 20
+Another challenge in dynamic 3D label layout lies in maintaining the efficacy of
+discrete update strategies when the number of labels in the scene increases. While label
+layout optimization under variable user viewpoints has garnered attention [ 3–5], many
+image-space methods exhibit unpredictable layout changes with viewpoint shifts, dimin-
+ishing consistency and user experience. To tackle this, Tatzgern et al. [ 6] proposed a
+view management method for placing external labels in 3D object space, representing a
+significant advancement in the labeling of static 3D objects. While Tatzgern et al. employed
+a discrete update strategy, it still suffers from suboptimal layouts at certain moments due
+to its discrete nature. Madsen et al. [7] further demonstrated that a discrete update strategy,
+calculated from a single initial viewpoint, generally outperforms continuous strategies.
+However, Madsen et al.’s approach, for instance, addressed label overlap primarily through
+parallax effects between label planes, inadvertently introducing double vision and reducing
+user comfort. More importantly, as label density increases, accurately positioning these
+planes to eliminate overlap across numerous viewpoints becomes exponentially more
+complex. This raises a critical question: can discrete update strategies remain advantageous
+when a high label count requires intricate and potentially conflicting arrangements to
+prevent overlap across multiple viewpoints? Therefore, when the number of labels in the
+scene increases, these limitations present a significant hurdle to realizing the full potential
+of discrete update strategies in dynamic 3D label layouts.
+To address these challenges, our work has two primary goals: first, to reduce the
+double vision effect between labels and between labels and objects and improve user
+experience; and second, to alleviate the limitations of discrete update strategies when the
+number of labels increases. In this paper, we present a 3D dynamic label layout method
+based on a continuous updating strategy [8]. Our method simultaneously optimizes label
+positions for both left- and right-eye viewpoints, effectively reducing double vision between
+labels and between labels and objects caused by binocular disparity. To achieve smooth
+and adaptive label movement, we adopt a force-based placement mechanism, where labels
+dynamically adjust their positions under the influence of calculated forces in each frame.
+As double vision between labels caused by binocular disparity has rarely been explored in
+the existing literature, we conducted a user study to investigate its impact on users.
+In the computational assessment, our method was evaluated in three scenarios, ef-
+fectively mitigating double vision and outperforming baseline methods in reducing label
+overlap and leader line crossings. We further conducted a user study where participants
+completed a label-reading task while their task completion time, workload scores (NASA-
+TLX [9]), and subjective questionnaire were collected. The results indicate that, compared
+to the baseline methods, our approach enables users to read the label more quickly, par-
+ticularly in high-density label environments. Moreover, it achieved significantly better
+performance in workload scores and subjective questionnaire responses.
+In summary, our main contributions are as follows:
+• We demonstrate that double vision between labels caused by binocular disparity
+negatively impacts user experience, introducing a binocular optimization strategy to
+address this issue under dynamic viewpoints.
+• We propose a 3D dynamic label layout method based on a continuous updating strat-
+egy, enabling labels to update their positions under the influence of multiple forces.
+• We evaluate the proposed method through computational assessment and a user study,
+demonstrating its overall superiority over baseline methods.
+2. Related Work
+The study of label layout can be traced back to the 1970s. In 1975, Imhof et al. [ 10]
+provided foundational guidelines for placing names on maps to improve both readability
+
+Electronics 2025, 14, 2199 4 of 20
+and aesthetic quality. In recent years, automatic label layout has become an increasingly
+active research area. However, many label layout problems have been proven to be NP-
+hard [11], which means it is computationally infeasible to find exact solutions within
+polynomial time. As a result, researchers commonly rely on heuristic or approximation
+algorithms to address these challenges rather than seeking exact polynomial-time solutions.
+Existing label layout methods can generally be classified into two categories based on
+the space in which labels are placed: image space (2D) and world space (3D). In image space,
+elements are positioned on the screen for readability and clarity (Section 2.1). In world
+space, labels adjust dynamically based on the viewer’s distance and viewpoint, providing a
+more immersive and context-aware user experience (Section 2.2). The respective advantages
+and challenges of 2D and 3D label layouts will be presented in Section 2.3. For a more
+comprehensive review of label layout methods, we recommend referring to [11,12].
+2.1. Label Layouts in Image Space
+Hartmann et al. [13] introduced an image-space floating label system using dynamic
+potential fields. Although this system was effective, it did not address leader line crossings
+or maintain label coherence in dynamic scenes. They later implemented real-time label
+arrangements by projecting 3D scenes onto 2D space [4].
+Image-driven methods are frequently used for 2D boundary labeling. Bekoset al. [14]
+proposed placing labels along polygonal boundaries, connecting them with non-overlapping
+leader lines. Their subsequent work [ 15] explored variations to improve aesthetic label
+placement. Heinsohn et al. [ 16] developed a boundary labeling system for 2D biological
+networks, offering four distinct label arrangement strategies and allowing dynamic focus
+region movement.
+Deep learning has also been applied to 2D label placement. Qu et al. [ 17] proposed
+a Label Placement Graph Transformer (LPGT), formulating label placement as a node
+prediction problem on a graph. Their method uses attention mechanisms to capture label
+interactions and outperforms existing approaches on the AMIL dataset.
+In mobile mixed reality, Shibata et al. [18] proposed an image-space labeling method
+tailored for mobile devices. ˇCmolík et al. [ 5] introduced a real-time labeling technique
+for illustrations, combining fuzzy logic with greedy optimization. Despite dealing with
+3D objects, both methods relied heavily on image-space view management. Ekman [ 19]
+presented a force-based method for real-time labeling of moving objects on maps, which
+He et al. [ 20] later extended with a hybrid optimization approach to achieve smoother
+dynamic label movements.
+Image-space methods are also extensively used in augmented reality . Tatzgernet al. [21]
+utilized hierarchical clustering to build a multi-level structure for efficiently managing large
+datasets within the user’s field of view. Labels are dynamically selected based on user
+preferences and visual clutter. Similarly , Grasset et al. [3] proposed an image-driven approach
+that identifies significant regions within the image, applying geometric constraints derived
+from visual saliency detection and edge analysis.
+2.2. Label Layouts in World Space
+World-space label layouts offer significant advantages in enhancing users’ spatial
+awareness and immersion. Tatzgern et al. [ 6] introduced a view management method
+arranging labels in 3D world space, addressing floating label issues, but its discrete updates
+can cause constraint violations with viewpoint changes. Sirk et al. [ 22] built on this,
+developing a label layout method for translucent scenarios (common in forensics) by
+constraining the search space to finite planes at varying depths, improving search efficiency.
+Pick et al. [23] presented an automated labeling system for immersive VR using shadow
+
+Electronics 2025, 14, 2199 5 of 20
+volumes to detect occlusions and a force-based approach to reposition labels, though it did
+not address leader line crossings.
+In augmented reality and mixed reality environments, world-space label layouts have
+also been widely explored. Zhou et al. [ 24] arranged labels alphabetically on multiple
+concentric circles surrounding 3D objects, allowing users to locate specific labels more
+efficiently. Building on this, Wei et al. [ 25] introduced a label-guided target localization
+method, further enhancing object identification efficiency in VR settings. Köpper et al. [26]
+proposed a comprehensive label layout strategy that integrates occlusion management,
+level-of-detail control, and temporal consistency, treating labels as integral 3D scene ele-
+ments. More recently, Chen et al. [27] became the first to apply reinforcement learning to
+optimize moving object label layouts in AR environments, accounting for both the current
+and predicted future states of objects and labels to dynamically adjust layouts. Employing
+reinforcement learning, Gebhardt et al. [28] presented an approach to learn personalized
+cooperative labeling policies for mixed-reality systems, optimizing for minimal visual
+overload during visual search tasks by observing users’ gaze patterns.
+Furthermore, labels can be considered a form of user interface element. In recent
+years, the field of adaptive user interfaces (AUIs) has seen a surge in research. Adaptive
+user interfaces are defined as user interfaces that dynamically adjust their behavior and
+presentation based on changes in the user, environment, or task. Within MR environ-
+ments, common approaches to implementing adaptive user interfaces include optimization-
+based methods [29–32], supervised learning methods [ 33], and reinforcement learning
+methods [27,34,35].
+In the context of depth perception, binocular disparity provides users with an intuitive
+understanding of object positions within a scene. Peterson et al. [ 1] demonstrated that
+increasing the depth difference between overlapping labels could reduce visual search time
+by 24%. Subsequently, Peterson et al. [ 36] extended their research to far-field scenarios
+(100–120 m), revealing that separating overlapping labels in distant views significantly
+improved response times. Additionally, Emsenhuber et al. [2] optimized label layouts by
+rendering images from the user’s binocular perspective, effectively utilizing scene infor-
+mation from both eyes. However, our experimental findings reveal that while binocular
+disparity enhances depth perception, it simultaneously introduces double vision, which
+degrades the overall visual experience.
+2.3. Two-Dimensional vs. Three-Dimensional Label Layouts
+While label placement in image space is generally simpler than in world space, it
+introduces inherent limitations. For instance, when users change their viewpoints, un-
+predictable layout changes can occur due to the transformation of projected 3D points.
+Tatzgern et al. [6] observed that label reordering often happens when users move through
+the environment. Moreover, image-space labels lack depth information, which can result in
+poor integration between labels and the 3D environment, ultimately reducing the quality
+of user interaction.
+Three-dimensional label layouts, by contrast, offer the potential for more intuitive
+and spatially consistent labeling, better leveraging the user’s understanding of the 3D
+environment. This is especially true for dynamic 3D label layouts, where labels can adapt
+and move within the 3D scene. However, this approach presents significant challenges.
+Algorithms must consider the complexity of the scene, the user’s viewpoint, and the
+potential for label overlap [ 37]. Furthermore, ensuring label stability and preventing
+visual clutter becomes increasingly difficult as the number of labels increases [21]. Finally,
+adapting UI element layouts in real time to dynamic viewpoints while preserving spatial
+
+Electronics 2025, 14, 2199 6 of 20
+relationships and minimizing cognitive load on the user remains a complex optimization
+problem [38].
+To address the limitations of existing label layout methods in adapting to dynamic
+viewpoints and mitigating double vision caused by binocular disparity, this paper proposes
+a force-based real-time dynamic 3D label layout method under binocular viewpoints. This
+approach allows labels to move freely within 3D scenes, ensuring visual consistency and
+reducing occlusions for an enhanced user experience.
+3. Preliminary Study
+Binocular disparity arises from the slight difference in images captured by the left
+and right eyes due to their distinct viewpoints. In a 3D environment, each eye perceives a
+slightly offset view, and the brain integrates these images to construct a stereoscopic per-
+ception. Figure 2 illustrates label layouts from left-eye, central, and right-eye perspectives.
+Binocular disparity can cause double vision between labels or between labels and
+objects. This occurs when depth differences result in the left and right eyes perceiving
+labels at misaligned positions, making visual fusion difficult. When two labels (or a label
+and an object) are positioned at significantly different depths, their disparity increases,
+preventing the visual system from merging them into a single coherent image. As a result,
+users may perceive duplicated or misaligned labels, leading to visual discomfort and
+reduced readability.
+However, most existing layout methods optimize label placement only from a central
+viewpoint. As shown in Figure 2d–f, while overlap is resolved in the central view, it persists
+in the right-eye view. Consequently, when the brain combines both eye images into a
+unified 3D perception, users still experience double vision [39].
+To investigate the impact of binocular parallax-induced double vision between labels
+on users, we conducted an exploratory user study. The evaluation considered readability,
+visual comfort, aesthetics, and interactivity of labels. In this work, the interactivity of labels
+refers to the ability of users to select a specific label within the 3D scene. User perceptions
+of this interactivity were qualitatively evaluated using Likert-scale questions, the specific
+design of which is detailed in the “Measures” Section of this chapter. This study was
+approved by our institution’s ethics committee.
+Study design. We designed two scenes to compare the effects of double vision
+between labels. Scene 1 (Figure 3(left, b)): in the left-eye viewpoint, labels do not overlap,
+whereas in the right-eye viewpoint, labels overlap, resulting in double vision. Scene 2
+(Figure 3(left, a)): labels do not overlap in either eye’s viewpoint, eliminating double
+vision. To ensure that the label overlap caused by binocular disparity was consistent across
+participants, we marked a fixed observation point in the scenes, requiring all users to stand
+at the same position. Additionally, label height was adjusted based on each participant’s
+height to align with their eye level. To mitigate potential order effects, we counterbalanced
+the order in which participants completed the two scenes. After observing both scenes,
+participants completed a Likert-scale questionnaire to assess readability, visual comfort,
+aesthetic appeal, and interactivity of the labels.
+Participants. A total of 19 participants (11 female, 8 male) were recruited for this
+study. They range in the age from 20 to 45 (M = 27.2). Among them, 15 participants had
+prior experience using VR systems, while 4 had little to no experience. All participants had
+normal or corrected-to-normal vision and reported no significant prior history of motion
+sickness in VR environments. Informed consent was obtained from all participants before
+the study.
+
+Electronics 2025, 14, 2199 7 of 20
+Study flow.In the study flow, participants were given a brief overview of the study’s
+purpose. Participants observed layouts in both scenarios. In scene 1, double vision between
+labels occurs due to binocular disparity, whereas in scene 2, it is absent.
+Figure 3. Scene of the preliminary study ( left): ( a) double vision is eliminated; ( b) double vision
+occurs between labels. User evaluation results under the two experimental conditions (with and
+without double vision) are shown on the (right). Error bars indicate the 95% confidence intervals. ***,
+**, and * represent 0.1%, 1%, and 5% significance levels, respectively.
+Measures. A five-point Likert scale was used to collect user feedback, with the
+following questions: Is the text on the labels easy to read (Q1, Readability)? Is reading the
+labels visually comfortable (Q2, Visual Comfort)? Does the label layout affect aesthetic
+appeal (Q3, Aesthetics)? In this context, are the speed and accuracy of selecting labels with
+a controller affected (Q4, Interactivity)?
+Methods for data analysis. A paired-sample t-test was employed to assess whether
+significant differences exist in readability, visual comfort, aesthetic appeal, and interactivity.
+First, the Shapiro–Wilk test was conducted to assess whether our data approximately
+followed a normal distribution. Subsequently, a paired-sample t-test [40] was performed
+to evaluate the significance of the p-values. If significant differences were found, further
+analysis of effect sizes was conducted. Cohen’s d [41] was used to evaluate the effect size of
+the differences, where values in the range of [0.5, 0.8) indicate a medium effect, and values
+greater than 0.8 signify a large effect.
+Results. Prior to analysis, we conducted the Shapiro–Wilk test, confirming that the
+data approximately followed a normal distribution. As is shown in Figure 3(right), a
+paired-sample t-test showed significant differences between the two conditions across all
+measures. The experimental results (as shown in Table 1) indicate that the most significant
+differences between the two experimental conditions were observed for visual comfort and
+interactivity, followed by readability and aesthetics.
+Table 1. Results of paired-sample t-tests for the preliminary study. ***, **, and * represent 0.1%, 1%,
+and 5% significance levels, respectively.
+Dimension t p Cohen’sd
+Readability −3.545 0.002 ** 0.813
+Visual Comfort −4.748 <0.001 *** 1.089
+Aesthetics −2.446 0.025 * 0.561
+Interactivity −4.595 <0.001 *** 1.054
+Discussion. Compared to labels with double vision, those without double vision sig-
+nificantly enhance visual comfort and interactivity, while moderately improving readability
+and aesthetics. These results suggest that eliminating double vision is crucial for improving
+user experience.
+
+Electronics 2025, 14, 2199 8 of 20
+4. Method
+We propose a force-based continuous updating strategy designed to address the
+challenges of 3D dynamic label layouts under binocular viewpoints. This section elaborates
+on our method from two perspectives: binocular optimization (Section 4.1) and the force-
+based strategy (Section 4.2).
+4.1. Optimization Under Binocular Viewpoints
+The double vision between labels arises due to binocular disparity, as traditional
+layout optimization strategies rely on a single-camera viewpoint (as shown in Figure 4a).
+To address this issue, we optimize the layout from a binocular perspective by simulating
+the user’s left- and right-eye views using two virtual cameras positioned on either side
+of the main camera (as shown in Figure 4b). Following MacLachlan et al.’s [42] study on
+the average interpupillary distance, we set the distance between the virtual cameras to a
+fixed value of 6.4 cm. In each viewpoint, scene information is processed independently,
+and the results are then jointly optimized to obtain the final outcome. For example, when
+calculating label overlap, we compute the overlapping area ratio between labels and use the
+larger result from the two viewpoints as the final measure, integrating it into the force-based
+layout update.
+Figure 4. Monocular and binocular label layout optimization methods. The monoscopic optimization
+strategy computes the 3D scene from the perspective of the main camera only (a). In contrast, the
+binocular optimization strategy employs two virtual cameras to simulate the left- and right-eye
+perspectives, allowing the scene to be perceived and computed from both viewpoints ( b). Both
+monocular and binocular optimization methods output optimized 3D label layouts—arranging labels
+in 3D space to ensure clarity and avoid occlusion. Monocular methods, relying on a single viewpoint,
+may produce double vision, while binocular methods leverage dual-view information to mitigate
+this issue.
+Figure 2g–i illustrate the effectiveness of this approach in mitigating label overlap
+from a binocular perspective. The results show that no overlap occurs in either the left-eye
+or right-eye view, thereby eliminating potential ghosting when users perceive the scene
+binocularly. Given that similar double vision issues also occur between labels and objects,
+we further extend this binocular optimization strategy to address label–object overlap.
+
+Electronics 2025, 14, 2199 9 of 20
+4.2. Force-Based Updates
+Each label is initially positioned at its corresponding anchor point and then continu-
+ously updated under the influence of forces. Figure 5 shows the forces applied to labels.
+Repulsive force. To ensure a more even distribution of labels in the space, each label
+experiences a repulsive force from all other labels. As shown in Figure 5a,label i experiences
+repulsive forces from label j and label k. The repulsive force exerted on label i by label j is
+inversely related to the distance between them, which is calculated as follows:
+Fi
+repulse = 1
+n − 1 ∑
+j̸=i
+1
+||li − lj|| · ⃗dij
+where
+• Fi
+repulse is the repulsive force experienced by label i.
+• n is the total number of labels in the space.
+• li represents the coordinates of label i.
+• lj represents the coordinates of label j.
+• ||li − lj|| is the Euclidean distance between label i and label j.
+• ⃗dij is the unit vector pointing from label j to label i.
+Figure 5. Illustration of the five forces applied to labels. (a) The repulsive force exerted on a label by
+other labels; (b) the attractive force pulling a label towards its corresponding anchor point; (c) the
+repulsive force between overlapping labels; (d) the repulsive force on a label due to overlap with
+an object; (e) the force introduced to resolve leader line crossings; (f) the method for calculating the
+magnitude of the force resolving leader line crossings.
+Attractive force. To prevent labels from being too far from their corresponding anchor
+points, each label is subjected to an attractive force (Figure 5b) from its anchor point. The
+attractive force exerted on label i by its corresponding anchor point is positively correlated
+with the distance between them, which is calculated as follows:
+Fi
+attract = ||li − ai|| · ⃗di
+where
+• Fi
+attract is the attractive force experienced by label i.
+• li represents the coordinates of label i.
+• ai represents the coordinates of the anchor point corresponding to label i.
+• ⃗di is the unit vector pointing from li to ai.
+
+Electronics 2025, 14, 2199 10 of 20
+Overlapping force. If labels overlap with each other or with an object, a repulsive
+force (Figure 5c,d) is applied to minimize visual interference. Adapting Pick et al. [ 23], we
+calculate the overlap area and introduce the overlapping ratio—the proportion of a label’s
+overlap to its total area—ensuring size-independent measurement. Then, we define Ri,j ,
+the label overlapping ratio between label i and label j, or label i and object j, under binocular
+viewpoints, which is calculated as follows:
+Ri,j = max
+
+Rle f t
+i,j , Rright
+i,j
+
+where
+• Rle f t
+i,j is the overlapping ratio from the viewpoint of the left eye.
+• Rright
+i,j is the overlapping ratio from the viewpoint of the right eye.
+The magnitude of the overlapping force Fi,j
+overlap is directly proportional to Ri,j, which
+is calculated as follows:
+Fi,j
+overlap = m · Ri,j · ⃗dij
+where
+• m is a constant empirically set to 4 to enhance the effect of the overlapping force.
+This value was determined through a series of experiments where we varied m and
+observed the resulting label layouts. Values significantly below 4 caused insuffi-
+cient label separation, while values much higher than 4 pushed labels too far apart,
+compromising visual coherence.
+• Ri,j is the label overlapping ratio between label i and label j (or label i and object j).
+• ⃗dij represents a unit direction vector pointing from label j to label i (or object j to label i),
+projected onto the plane defined by the normal vector of the line connecting the user’s
+position to the midpoint of the two labels (or a label and an object).
+Leader line intersection force. Leader lines intersect when the user moves or changes
+viewpoint in a VR environment. To address this, a new force (Figure 5e) that acts on the
+labels associated with intersecting leader lines is introduced. The magnitude of the force is
+as follows:
+||Fi,j
+line −intersection || = Di,j = min(area1, area2)
+(area1 + area2)
+where
+• Di,j represents the degree of leader line crossings between label i and label j.
+• area1 denotes the area of the triangle formed by u, l pi, and l pj, where the intersecting
+leader lines are projected from world space into the main camera’s screen space; the
+intersection point of the two lines is denoted as u, with l pi and l pj corresponding to
+label i and label j, respectively (Figure 5f).
+• area2 corresponds to the area of the triangle formed by u, ap i, and ap j, where ap i and
+ap j represent their associated anchor points.
+The force direction of label i is denoted as diri, which is calculated as follows:
+⃗diri =
+
+
+
+−⃗ni, if θ2 > θ1
+⃗ni, otherwise
+where
+• ⃗diri is the force direction of label i.
+• ⃗ni is the normal vector of the plane defined by the position of anchor points ai, aj, and
+label li.
+
+Electronics 2025, 14, 2199 11 of 20
+• ⃗nj is the normal vector of the plane defined by the position of anchor points ai, aj, and
+label lj.
+• θ1 represents the angle between vectors ⃗ni and ⃗nj.
+• θ2 represents the angle between ⃗ni and −⃗nj.
+θ1 and θ2 are calculated as follows:
+θ1 = cos−1
+ 
+⃗ni · ⃗nj
+|⃗ni||⃗nj|
+!
+θ2 = cos−1
+ 
+⃗ni · (−⃗nj)
+|⃗ni|| − ⃗nj|
+!
+We introduce the force Fcirc proposed by Pick et al. [23], aimed at generating a circular
+layout for the labels to enhance aesthetic appeal. After computing the aforementioned
+forces, we obtain the resultant force acting on label i by calculating the weighted sum of its
+individual force components, as shown in the equation below.
+Fi = w1Fi
+repulse + w2Fi
+attract + w3 ∑
+j̸=i
+Fi,j
+overlap
++ w4 ∑
+k̸=i
+Fi,k
+line −intersection + w5Fi
+circ
+(1)
+where j represents other labels and objects in the scene, while k refers specifically to other
+labels. The weights are empirically set as follows: w1 = 0.02, w2 = 0.09, w3 = 0.06,
+w4 = 0.8, and w5 = 0.03.
+In each frame, the resultant force Fi is computed for each label label i in each scene.
+The label’s displacementx is then determined based on Fi, and its coordinate li is updated
+as follows:
+li = li + x
+To enhance stability, the computed displacement is further scaled by an empirical
+factor of 0.01. Additionally, to enhance readability for users on the move, we adjusted the
+label orientation in each frame so that it consistently faces the user.
+5. Computational Assessment
+5.1. Evaluating Double Vision in Binocular and Monocular Viewpoints
+To assess the effectiveness of the binocular optimization strategy, we propose a novel
+metric, double vision degree (DBV), to compare scenarios with and without binocular
+optimization. DBV quantifies the proportion of double vision area to the total label area for
+each label, averaged over each time step. The double vision area is estimated as the absolute
+difference between the overlapping label area in the left-eye and right-eye viewpoints.
+We conducted experiments in three different scenes: fruit, virus, and helicopter
+(Figure 6). The virus scene exemplifies the challenges of label placement at a small scale,
+demanding precise label localization. Conversely, the helicopter scene represents the chal-
+lenges associated with labeling a large-scale object, requiring an effective approach for
+managing labels and clearly presenting its components. Finally, the fruit scene, comprising
+multiple independent models, is designed to evaluate our method’s performance in multi-
+object scenes. For the label layout results, please refer to the supplementary materials. To
+simulate dynamic conditions, we set the camera to continuously move within the scene.
+It followed a circular trajectory parallel to the ground around the scene center. Every five
+seconds, the camera had a 50% probability of stopping for five seconds or continuing with
+linear motion in a random direction parallel to the ground for another five seconds.
+
+Electronics 2025, 14, 2199 12 of 20
+Figure 6. Three scenes (virus, fruit, and helicopter) in the computational assessment, visualized using
+our BinoForce layout method.
+The results shown in Table 2 indicate that the binocular optimization strategy reduces
+the proportion of double vision per label. In the fruit scene, the DBV value without the
+binocular optimization strategy is 0.01112, while with the binocular optimization strategy,
+it decreases to 0.00937, a reduction of 15.74%. In the virus and helicopter scenes, the DBV
+values decrease by 11.19% and 13.39%, respectively.
+Table 2. Comparison of performance with the binocular optimization strategy (w/ B-Opt) versus with-
+out the binocular optimization strategy (w/o B-Opt) in reducing double vision across three scenes.
+Scene w/ B-Opt w/o B-Opt
+Fruit 0.00937 0.01112
+Virus 0.05151 0.05800
+Helicopter 0.02530 0.02921
+5.2. Analysis of Overlap and Leader Line Crossings
+Since leader line crossings and label overlap are two critical factors affecting label
+layout quality, we introduce two metrics: Line Crossing Degree (LCD) and Overlap Ratio
+(OLR). LCD measures the average degree of leader line crossings per time step, with
+the definition of leader line crossing degree provided in Section 4. OLR quantifies the
+proportion of each label’s overlapped area to its total area, averaged over each time step.
+The experiments were conducted in three scenes (fruit, virus, and helicopter) under
+the same settings described in Section 5.1. Additionally, we compared our method with
+two methods: (1) Baseline: Labels were positioned at a fixed distance along the vector
+extending from the scene center to each object, with their orientations dynamically adjusted
+to face the user in each frame. (2) Hedgehog [6]: A state-of-the-art 3D label layout method for
+static objects that employs a discrete update strategy, updating label positions only when
+the angle between the view vector and label plane normal exceeds a predefined threshold.
+The results shown in Table 3 demonstrate that our method achieves the lowest overlap
+among the three approaches. In the fruit scene, the OLR produced by our method was
+0.02005, which is only 15.32% of Baseline and 23.87% of Hedgehog. In both the virus and
+helicopter scenes, our method also significantly reduced the OLR compared to the other
+two methods. Moreover, our method achieved the best performance in reducing leader
+line crossings. The Baseline inherently avoids leader line crossings due to its radial label
+placement. The LCD values for Hedgehog in the three scenes are 0.01998, 0.02048, and
+0.02748, respectively. This is likely due to Hedgehog’s plane-based occlusion management
+strategy, which causes leader line crossings between different planes as the user’s viewpoint
+changes. Compared to Hedgehog, our method produced lower LCD values of 0.00285,
+0.01747, and 0.01287 in the fruit, virus, and helicopter scenes, respectively, all of which are
+lower than the corresponding results obtained with Hedgehog.
+
+Electronics 2025, 14, 2199 13 of 20
+Table 3. The comparison of three methods in terms of leader line crossings and label overlap.
+Scene OLR LCD
+Baseline Hedgehog BinoForce Baseline Hedgehog BinoForce
+Fruit 0.13079 0.08397 0.02005 0.00004 0.01998 0.00285
+Virus 0.40784 0.32541 0.20177 0.00118 0.02048 0.01747
+Helicopter 0.69942 0.32311 0.15847 0.00020 0.02748 0.01287
+6. User Study
+We conducted a user study to evaluate whether our method facilitates faster compre-
+hension of scene information in dynamic environments. This study was approved by our
+institution’s ethics committee.
+6.1. Methods
+Apparatus. Our label layout application was developed using the Unity game engine
+(version 2022.3.8f1c1), utilizing the XR Interaction Toolkit (version 2.4.3) to manage virtual
+reality interactions. The application was tested on a Nolo VR headset, which was connected
+to a laptop equipped with an Intel i9-13900 2.20 GHz CPU, an NVIDIA GeForce RTX 4090
+GPU, and 32 GB of RAM.
+Participants. We recruited 24 participants (13 female, 11 male) aged between 20 and
+45 years (M = 26.5). Among them, 17 had prior experience with VR systems, while 7 had
+little to no experience. All participants had normal or corrected-to-normal vision and
+reported no significant history of motion sickness in VR environments. Informed consent
+was obtained from all participants prior to the study.
+Study design. We employed a within-subject design with nine scenes, defined by
+two independent variables: METHOD (Baseline, Hedgehog, BinoForce) and DENSITY (Low,
+Medium, High). Each scene consisted of a 1 m × 1 m × 1 m cube, where 10, 17, and
+24 objects were placed in the cube in the low-, medium-, and high-density conditions,
+respectively (Figure 7). Each object was associated with a label displaying a randomly
+generated six-letter English string, as is illustrated in Figure 8(left). Participants were
+asked to move freely within a range of 1 to 2 m from the cube, observing the gener-
+ated label layout from any perspective. In each scene, participants performed a label-
+reading task: at random intervals, a randomly selected object was highlighted in blue.
+Upon seeing the highlight, the participant was required to read the corresponding label
+aloud. Each scene included seven repetitions of this task. In total, we collected 1512 trials
+(24 participants × 3 methods × 3 density levels × 7 repetitions) of data. A Latin Square
+design was employed to counterbalance the presentation order and mitigate learning and
+fatigue effects.
+Figure 7. User study scenarios under three density conditions: the low-density scenario contains
+10 labels ( left), the medium-density scenario contains 17 labels ( middle), and the high-density
+scenario contains 24 labels (right). All illustrated scenarios utilize our label layout method.
+Study flow.Participants first completed an informed consent form and a demographic
+questionnaire, followed by a brief introduction to the study’s purpose. Before the main ex-
+periment, they underwent a short training session in a simple virtual scene to familiarize
+
+Electronics 2025, 14, 2199 14 of 20
+themselves with the equipment and tasks. Once they confirmed readiness, the experiment com-
+menced. Each participant completed a total of 63(3 methods × 3 density levels × 7 repetitions)
+label-reading trials. Participants were instructed to complete the task as quickly and accurately
+as possible.
+Figure 8. Example of the user study scenario (left) and task completion time across different label
+densities for the three methods (right). Error bars indicate the 95% confidence interval. ***, **, and *
+represent 0.1%, 1%, and 5% significance levels, respectively.
+Measures. We recorded the task completion time (TCT), measured from the moment
+an object was highlighted until the participant read its label correctly. After the experiment,
+participants provided subjective feedback through two questionnaires: a standard NASA-
+TLX survey [9] to assess perceived workload and a five-point Likert scale evaluating the
+effectiveness of each method. For each method, users were required to answer the following
+five questions: Are the labels clear and easy to read? (Q1, Clarity) Is the label layout visually
+appealing? (Q2, Aesthetics) Does the label layout remain stable? (Q3, Stability) Does the
+algorithm effectively adjust the layout when quality deteriorates? (Q4, Adaptability) How
+satisfied are you with the overall layout? (Q5, Satisfaction) Finally, participants were asked
+to provide qualitative feedback on the strengths and weaknesses of each method.
+Methods for data analysis. A one-way repeated measures ANOVA was conducted
+to compare task completion time across the three label density conditions. First, the
+Shapiro–Wilk test [40] was used to assess the normality of the data, which confirmed
+that our data followed a normal distribution. Next, we tested the sphericity assumption
+to evaluate the correlation among conditions. After confirming sphericity, we examined
+whether significant differences existed among the three methods. Finally, the Bonferroni
+method was applied for post hoc multiple comparisons to identify specific differences.
+To analyze the NASA-TLX survey and user questionnaire, the Friedman non-parametric
+test was used to determine whether significant differences existed among the methods for
+each metric. The Wilcoxon signed-rank test was then applied to assess the magnitude of
+these differences.
+6.2. Results
+Figure 8 presents the results of task completion times under varying label density
+conditions. For low density, METHOD was found to have a statistically significant effect on
+completion time, with a large effect size (F2,46 = 34.898, p < 0.001). For task completion time
+across methods, we found significant differences between Baseline and Hedgehog (p < 0.05),
+as well as between Baseline and BinoForce (p < 0.001). For medium density, METHOD was
+found to have a statistically significant effect on task completion time, with a large effect
+size (F2,46 = 16.375, p < 0.001). Our method took the least time to complete when compared
+to Baseline (p < 0.01) and Hedgehog (p < 0.001). The difference between Baseline and Hedgehog
+was not significant. For high density, METHOD was found to have a statistically significant
+
+Electronics 2025, 14, 2199 15 of 20
+effect on completion time, with a large effect size (F2,46 = 25.103, p < 0.001). Our method took
+the least time to complete when compared to Baseline (p < 0.001) and Hedgehog (p < 0.001).
+The difference between Baseline and Hedgehog was not significant.
+Figure 9 and Table 4 present the results of the NASA TLX survey. The Friedman
+test indicates that the method significantly affects mental demands, physical demands,
+temporal demands, and effort. However, there is no significant effect on performance and
+frustrations. In terms of mental demands, Hedgehog has a significant effect compared to
+Baseline (Z = −2.818, p < 0.01) and BinoForce (Z = −3.707, p < 0.001). For physical demands,
+BinoForce significantly affects bothBaseline (Z = −3.225, p = 0.001) and Hedgehog (Z = −3.659,
+p < 0.001). Regarding temporal demands, our method shows a significant effect compared
+to Baseline (Z = −3.216, p < 0.001) and Hedgehog (Z = −3.289, p < 0.001). For effort demands,
+our method shows a significant effect compared to both Baseline (Z = −2.708, p = 0.007) and
+Hedgehog (Z = −3.686, p < 0.001).
+Figure 9. The results of the standard NASA-TLX survey ( left) and the user questionnaire ( right).
+Error bars indicate the 95% confidence interval. ***, **, and * represent 0.1%, 1%, and 5% significance
+levels, respectively.
+Table 4. Friedman test results for the NASA-TLX survey (top) and user questionnaire (bottom).
+Dimension χ2
+2 p W
+Mental 15.929 <0.001 0.332
+Physical 14.990 <0.001 0.300
+Temporal 15.741 <0.001 0.328
+Performance 2.141 0.343 0.045
+Effort 8.458 0.015 0.176
+Frustration 3.928 0.140 0.082
+Dimension χ2
+2 p W
+Clarity 24.376 <0.001 0.508
+Aesthetics 16.088 <0.001 0.335
+Stability 11.425 0.003 0.238
+Adaptability 23.928 <0.001 0.498
+Satisfaction 24.442 <0.001 0.509
+Figure 9 and Table 4 shows the results of the user questionnaire. The Friedman test
+indicates that the method significantly affects clarity, aesthetics, stability, adaptability,
+and satisfaction. In terms of clarity, our method has a significant effect compared to
+Baseline (Z = −3.957, p < 0.001) and Hedgehog (Z = −3.364, p < 0.001). For aesthetics,
+BinoForce significantly affects both Baseline (Z = −3.107, p = 0.002) and Hedgehog (Z = −3.520,
+p < 0.001). Regarding stability, Hedgehog shows a significant effect compared to Baseline
+(Z = −2.137, p = 0.033) and BinoForce (Z = −3.101, p = 0.002). For adaptability, the data
+indicated significant differences between Baseline and Hedgehog (Z = −2.671, p = 0.008),
+
+Electronics 2025, 14, 2199 16 of 20
+Baseline and BinoForce (Z = −3.973, p < 0.001), as well as Hedgehog and BinoForce (Z = −2.979,
+p = 0.003). For satisfaction, our method significantly affects both Baseline (Z = −4.001,
+p < 0.001) and Hedgehog (Z = −3.079, p = 0.002).
+6.3. User Feedback
+After completing the experiment, participants were asked to provide feedback on each
+method, highlighting its strengths and weaknesses.
+For the Baseline method, several participants positively evaluated the method’s stabil-
+ity, with representative comments including the following: “Highly stable and intuitive”
+(P9) and “The fixed relative positions between labels and objects allow rapid visual search
+once leader lines are established” (P10). One participant explicitly noted “This approach
+enhances label positional stability” (P20). Additionally, some participants (P6, P16) reported
+that the stability facilitated easier memorization of label locations. However, this stability
+also introduced occlusion issues, making label reading more challenging. For example, in
+terms of physical effort, some participants reported that “constantly adjusting the viewing
+angle to read labels was tiring” (P4) and “It took too much energy to read occluded labels”
+(P18). In terms of accuracy, one participant mentioned occasional misreading, such as
+mistaking “h” for “n” (P10).
+Regarding the Hedgehog method, approximately half of the participants appreciated
+its adaptive nature, with comments such as the following: “The dynamic label adjustment
+effectively mitigates occlusion issues” (P17) and “Real-time label repositioning improves
+readability” (P5). However, several issues were raised: (1) Abrupt label movements.
+Some participants found that label positions changed too drastically, making it difficult to
+memorize their locations (P16, P19). Additionally, sudden updates during label reading
+forced participants to “constantly shift their gaze” (P12, P13), making it hard to keep up
+with the moving labels. (2) Unnecessary updates. Two participants mentioned that layout
+updates occasionally occurred even when not needed (P8, P11). (3) Occlusion. Since the
+layout was updated discretely rather than continuously, occlusion issues still occurred
+during movement (P1, P2, P11).
+Compared to the other two methods, most participants found BinoForce to provide
+a clearer and more intuitive label layout, with representative comments including the
+following: “The labels update their positions smoothly in real time without disruptive
+jumps” (P12), “Adaptive label movement according to viewpoint changes significantly
+improves legibility” (P2), and “The system responds instantaneously to user viewpoint
+changes” (P18). Some participants mentioned that the real-time updates occasionally felt
+unstable and distracting (P1, P20). However, others considered these updates to be “within
+an acceptable range” (P4, P6, P11).
+6.4. Discussion
+Figure 8 shows that our method consistently outperforms Baseline in task completion
+time, achieving statistically significant improvements. This indicates that our approach
+provides a tangible benefit to users regardless of the complexity of the scene. While its
+performance is comparable to Hedgehog in low-density conditions, it enables faster label
+reading in medium- and high-density scenes, highlighting the advantage of our method
+in more complex environments. As label density increases, the advantages of Hedgehog’s
+discrete update strategy gradually diminish. This is likely because labels cannot update
+their positions in real time, leading to constraint violations during viewpoint changes—an
+issue that becomes more frequent with higher density. Therefore, we recommend adopting
+our continuous update strategy in such scenarios, especially when dealing with medium to
+
+Electronics 2025, 14, 2199 17 of 20
+high label densities where real-time adaptation is crucial for maintaining label clarity and
+minimizing occlusion.
+Figure 9 shows that, compared to the two baseline methods, our approach demon-
+strates lower physical demands, temporal demands, and effort. The statistically significant
+improvements in these categories suggest that our method is perceived as less physically
+taxing, allows users to complete tasks more quickly, and requires less overall exertion. This
+is a crucial finding, as reduced workload can lead to improved user satisfaction and reduced
+fatigue, particularly in demanding tasks. Regarding performance and frustration, no signif-
+icant differences were observed among the three methods, suggesting that a larger-scale
+user study is needed to enhance statistical power and confirm significance. Additionally,
+user questionnaire results indicate that our method outperforms the baselines in terms
+of layout clarity, aesthetics, adaptability, and satisfaction. The statistically significant im-
+provements across these categories suggest that users perceive our method as providing a
+more understandable, visually appealing, flexible, and ultimately more pleasing experience.
+These findings reflect the subjective preferences and overall impression of the users, which
+can significantly impact the adoption and acceptance of the system.
+However, both user feedback and questionnaire responses highlight a limitation of our
+approach in terms of layout stability—a common challenge for continuous update strategies.
+Nonetheless, some participants noted that while the layout stability of our method is
+slightly weaker, it remains within an acceptable range. Furthermore, as we have so far only
+tested our method within a controlled VR environment, future development must address
+the complexities of real-world AR scenarios. These scenarios present significantly more
+complex challenges, including greater environmental variability, more unpredictable user
+movements, and a wider range of potential occlusions. Therefore, future work adapting
+our method to these more complex real-world settings should focus on robustifying the
+algorithm against these factors. This includes developing techniques to maintain label
+clarity and stability even in the presence of significant noise and occlusion. Additionally, we
+plan to develop an adaptive parameter adjustment mechanism to streamline the parameter
+tuning process.
+In summary, we introduce a binocular 3D dynamic label layout method leveraging
+a continuous update strategy. Our approach improves task completion time, particularly
+in dense labeling scenarios, while simultaneously reducing user workload (physical and
+temporal demands, and effort). User feedback confirms that our method excels in layout
+clarity, aesthetics, adaptability, and overall satisfaction. While layout stability presents a
+minor limitation, it remains within acceptable parameters. Overall, our method offers a
+solution for dynamic 3D labeling, especially where high label density and user experience
+are paramount.
+7. Conclusions
+In this paper, we demonstrate that double vision between labels caused by binocular
+disparity negatively impacts user experience and introduce a binocular optimization strat-
+egy to address this issue. Building on this, we propose a 3D dynamic label layout method
+based on a continuous updating strategy that incorporates a binocular optimization strat-
+egy. This method simultaneously optimizes label layouts from both the left- and right-eye
+perspectives while applying force-based adjustments to dynamically refine the layout.
+Experimental results show that our method effectively reduces the occurrence of
+double vision, label overlap, and leader line crossings in 3D scenes. Subjective and objective
+evaluations confirmed that our method significantly improves layout clarity, aesthetics,
+adaptability, and overall user satisfaction compared to baseline methods. Users were able
+
+Electronics 2025, 14, 2199 18 of 20
+to comprehend scene information more efficiently, while experiencing reduced workload,
+particularly in high-density labeling environments.
+This work offers a solution for dynamic 3D labeling, particularly where high label
+density, binocular viewing, and user experience are important. Future research will focus
+on extending the applicability of our method to more complex real-world AR scenarios and
+developing adaptive parameter adjustment mechanisms to further enhance its robustness
+and usability.
+Supplementary Materials: The following supporting information can be downloaded at: https:
+//www.mdpi.com/article/10.3390/electronics14112199/s1, The supplementary materials contain
+label layout results under different scenes and viewpoints.
+Author Contributions: Conceptualization, Z.Z. and Y.H.; Methodology, Z.Z. and Y.H.; Software,
+Z.Z.; Investigation, Z.Z. and X.X.; Formal Analysis, Z.Z. and X.X.; Visualization, Z.Z. and X.X.;
+Writing—Original Draft, Z.Z.; Writing—Review and Editing, Y.H.; Supervision, G.Y. All authors have
+read and agreed to the published version of the manuscript.
+Funding: This research was funded by Technology and Engineering Center for Space Utilization,
+Chinese Academy of Sciences, grant number No.T403461.
+Institutional Review Board Statement: The study was conducted in accordance with the Declaration
+of Helsinki and approved by the Institutional Review Board of University of Chinese Academy of
+Sciences (protocol code UCASSTEC25-019). Date of approval: 14 April 2025.
+Informed Consent Statement: Informed consent was obtained from all subjects involved in the study.
+Data Availability Statement: The data presented in this study are available on request from the
+corresponding author.
+Conflicts of Interest: The authors declare no conflicts of interest.
+References
+1. Peterson, S.; Axholt, M.; Ellis, S.R. Managing visual clutter: A generalized technique for label segregation using stereoscopic
+disparity. In Proceedings of the 2008 IEEE Virtual Reality Conference, Reno, NV , USA, 8–12 March 2008; pp. 169–176.
+2. Emsenhuber, G.; Langlotz, T.; Kalkofen, D.; Sutton, J.; Tatzgern, M. Eye-perspective view management for optical see-through
+head-mounted displays. In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems, Hamburg,
+Germany, 23–28 April 2023; pp. 1–16.
+3. Grasset, R.; Langlotz, T.; Kalkofen, D.; Tatzgern, M.; Schmalstieg, D. Image-driven view management for augmented reality
+browsers. In Proceedings of the 2012 IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Atlanta, GA,
+USA, 5–8 November 2012; pp. 177–186.
+4. Ali, K.; Hartmann, K.; Strothotte, T. Label Layout for Interactive 3D Illustrations. J. WSCG 2005, 13, 1–8.
+5. ˇCmolík, L.; Bittner, J. Layout-aware optimization for interactive labeling of 3D models. Comput. Graph. 2010, 34, 378–387.
+6. Tatzgern, M.; Kalkofen, D.; Grasset, R.; Schmalstieg, D. Hedgehog labeling: View management techniques for external labels in
+3D space. In Proceedings of the 2014 IEEE Virtual Reality (VR), Minneapolis, MN, USA, 29 March–2 April 2014; pp. 27–32.
+7. Madsen, J.B.; Tatzgern, M.; Madsen, C.B.; Schmalstieg, D.; Kalkofen, D. Temporal coherence strategies for augmented reality
+labeling. IEEE T rans. Vis. Comput. Graph. 2016, 22, 1415–1423.
+8. Zheng, Z.; He, Y.; Yu, G.; Xu, X. 3D Label Layout with Binocular Optimization. In Proceedings of the ACM SIGGRAPH
+Symposium on Interactive 3D Graphics and Games, Jersey City, NJ, USA, 7–9 May 2025.
+9. Hart, S. Development of NASA-TLX (Task Load Index): Results of empirical and theoretical research. Hum. Ment. Workload. 1988,
+52, 139–183.
+10. Imhof, E. Positioning names on maps. Am. Cartogr. 1975, 2, 128–144.
+11. Bekos, M.A.; Niedermann, B.; Nöllenburg, M. External labeling techniques: A taxonomy and survey. In Proceedings of the
+Computer Graphics Forum; Wiley Online Library: Hoboken, NJ, USA, 2019; Volume 38, pp. 833–860.
+12. Oeltze-Jafra, S.; Preim, B. Survey of labeling techniques in medical visualizations. In Proceedings of the 4th Eurographics
+Workshop on Visual Computing for Biology and Medicine, Vienna, Austria, 4–5 September 2014; pp. 199–208.
+
+Electronics 2025, 14, 2199 19 of 20
+13. Hartmann, K.; Ali, K.; Strothotte, T. Floating labels: Applying dynamic potential fields for label layout. In Proceedings of the Smart
+Graphics: 4th International Symposium, SG 2004, Banff, Canada, 23–25 May 2004; Proceedings 4; Springer: Berlin/Heidelberg,
+Germany, 2004; pp. 101–113.
+14. Bekos, M.A.; Kaufmann, M.; Potika, K.; Symvonis, A. Polygon labelling of minimum leader length. In Proceedings of the APVis,
+Tokyo, Japan, 1 February 2006; pp. 15–21.
+15. Bekos, M.A.; Kaufmann, M.; Symvonis, A.; Wolff, A. Boundary labeling: Models and efficient algorithms for rectangular maps.
+Comput. Geom. 2007, 36, 215–236.
+16. Heinsohn, N.; Gerasch, A.; Kaufmann, M. Boundary labeling methods for dynamic focus regions. In Proceedings of the 2014
+IEEE Pacific Visualization Symposium, Yokohama, Japan, 4–7 March 2014; pp. 243–247.
+17. Qu, J.; Zhang, P .; Che, E.; Chen, Y.; Ling, H. Graph Transformer for Label Placement.IEEE T rans. Vis. Comput. Graph. 2024, 31,
+1257–1267.
+18. Shibata, F.; Nakamoto, H.; Sasaki, R.; Kimura, A.; Tamura, H. A View Management Method for Mobile Mixed Reality Systems. In
+Proceedings of the IPT/EGVE, Eindhoven, The Netherlands, 29–30 May 2008; pp. 17–24.
+19. Ekman, S. Force-Based Label Placement for Dynamic Data. Master’s Thesis, Chalmers University of Technology, University of
+Gothenburg, Gothenburg, Sweden, 2018.
+20. He, Y.; Zhao, G.D.; Zhang, S.H. Smoothness preserving layout for dynamic labels by hybrid optimization. Comput. Vis. Media
+2022, 8, 149–163.
+21. Tatzgern, M.; Orso, V .; Kalkofen, D.; Jacucci, G.; Gamberini, L.; Schmalstieg, D. Adaptive information density for augmented
+reality displays. In Proceedings of the 2016 IEEE Virtual Reality (VR), Greenville, SC, USA, 19–23 March 2016; pp. 83–92.
+22. Sirk, C.; Kalkofen, D.; Schmalstieg, D.; Bornik, A. Dynamic Label Placement for Forensic Case Visualization. In Proceedings of
+the Eurographics Conference on Visualization, Barcelona, Spain, 12–16 June 2017.
+23. Pick, S.; Hentschel, B.; Tedjo-Palczynski, I.; Wolter, M.; Kuhlen, T.W. Automated Positioning of Annotations in Immersive Virtual
+Environments. In Proceedings of the EGVE/EuroVR/VEC, Stuttgart, Germany, 27 September–1 October 2010; pp. 1–8.
+24. Zhou, Z.; Wang, L.; Popescu, V . A partially-sorted concentric layout for efficient label localization in augmented reality.IEEE
+T rans. Vis. Comput. Graph. 2021, 27, 4087–4096.
+25. Wei, X.; Shi, X.; Wang, L. Label guidance based object locating in virtual reality. In Proceedings of the 2022 IEEE International
+Symposium on Mixed and Augmented Reality (ISMAR), Singapore, 17–21 October 2022; pp. 441–449.
+26. Köppel, T.; Gröller, M.E.; Wu, H.Y. Context-responsive labeling in augmented reality. In Proceedings of the 2021 IEEE 14th Pacific
+Visualization Symposium (PacificVis), Tianjin, China, 19–21 April 2021; pp. 91–100.
+27. Chen, Z.; Chiappalupi, D.; Lin, T.; Yang, Y.; Beyer, J.; Pfister, H. RL-LABEL: A Deep Reinforcement Learning Approach Intended
+for AR Label Placement in Dynamic Scenarios. IEEE T rans. Vis. Comput. Graph. 2023, 30, 1347–1357.
+28. Gebhardt, C.; Hecox, B.; Van Opheusden, B.; Wigdor, D.; Hillis, J.; Hilliges, O.; Benko, H. Learning cooperative personalized
+policies from gaze data. In Proceedings of the 32nd Annual ACM Symposium on User Interface Software and Technology, New
+Orleans, LA, USA, 20–23 October 2019; pp. 197–208.
+29. Cheng, Y.F.; Gebhardt, C.; Holz, C. Interactionadapt: Interaction-driven workspace adaptation for situated virtual reality
+environments. In Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology, San Francisco,
+CA, USA, 29 October–1 November 2023; pp. 1–14.
+30. Cheng, Y.; Yan, Y.; Yi, X.; Shi, Y.; Lindlbauer, D. Semanticadapt: Optimization-based adaptation of mixed reality layouts leveraging
+virtual-physical semantic connections. In Proceedings of the 34th Annual ACM Symposium on User Interface Software and
+Technology, Virtual Event, 10–14 October 2021; pp. 282–297.
+31. Fender, A.; Herholz, P .; Alexa, M.; Müller, J. Optispace: Automated placement of interactive 3d projection mapping content. In
+Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, Montreal, QC, Canada, 21–26 April 2018;
+pp. 1–11.
+32. Evangelista Belo, J.M.; Lystbæk, M.N.; Feit, A.M.; Pfeuffer, K.; Kán, P .; Oulasvirta, A.; Grønbæk, K. Auit–the adaptive user
+interfaces toolkit for designing xr applications. In Proceedings of the 35th Annual ACM Symposium on User Interface Software
+and Technology, Bend, OR, USA, 29 October–2 November 2022; pp. 1–16.
+33. Zhou, S.; Zheng, W.; Xu, Y.; Liu, Y. Enhancing user experience in VR environments through AI-driven adaptive UI design. J. Artif.
+Intell. Gen. Sci. (JAIGS) 2024, 6, 59–82.
+34. Lu, F.; Chen, M.; Hsu, H.; Deshpande, P .; Wang, C.Y.; MacIntyre, B. Adaptive 3d ui placement in mixed reality using deep
+reinforcement learning. In Proceedings of the Extended Abstracts of the CHI Conference on Human Factors in Computing
+Systems, Honolulu, HI, USA, 11–16 May 2024; pp. 1–7.
+35. Debard, Q.; Dibangoye, J.S.; Canu, S.; Wolf, C. Learning 3d navigation protocols on touch interfaces with cooperative multi-agent
+reinforcement learning. In Proceedings of the Joint European Conference on Machine Learning and Knowledge Discovery in Databases ;
+Springer: Berlin/Heidelberg, Germany, 2019; pp. 35–52.
+
+Electronics 2025, 14, 2199 20 of 20
+36. Peterson, S.D.; Axholt, M.; Ellis, S.R. Label segregation by remapping stereoscopic depth in far-field augmented reality. In
+Proceedings of the 2008 7th IEEE/ACM International Symposium on Mixed and Augmented Reality, Cambridge, UK, 15–18
+September 2008; pp. 143–152.
+37. Lin, T.; Yang, Y.; Beyer, J.; Pfister, H. Labeling out-of-view objects in immersive analytics to support situated visual searching.
+IEEE T rans. Vis. Comput. Graph. 2021, 29, 1831–1844.
+38. Lindlbauer, D.; Feit, A.M.; Hilliges, O. Context-aware online adaptation of mixed reality interfaces. In Proceedings of the 32nd
+Annual ACM Symposium on User Interface Software and Technology, New Orleans, LA, USA, 20–23 October 2019; pp. 147–160.
+39. Shibata, T.; Kim, J.; Hoffman, D.M.; Banks, M.S. The zone of comfort: Predicting visual discomfort with stereo displays. J. Vis.
+2011, 11, 11.
+40. Shaphiro, S.; Wilk, M. An analysis of variance test for normality. Biometrika 1965, 52, 591–611.
+41. Cohen, J. Statistical Power Analysis for the Behavioral Sciences ; Routledge: London, UK, 2013.
+42. MacLachlan, C.; Howland, H.C. Normal values and standard deviations for pupil diameter and interpupillary distance in
+subjects aged 1 month to 19 years. Ophthalmic Physiol. Opt. 2002, 22, 175–182.
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.

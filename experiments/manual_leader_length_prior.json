@@ -1,0 +1,1884 @@
+{
+  "version": "manual_leader_length_prior_v1",
+  "generated_at": "2026-09-20T02:12:14.530Z",
+  "enabled": true,
+  "source": {
+    "split": "train_only",
+    "annotation_contract": "after_mannual_adjust/manual_adjusted",
+    "sample_count": 33,
+    "label_count": 248,
+    "normalization": "euclidean(anchor, label.center) / clean_obj_bounds.radius",
+    "manifest_sha256": "E87A4108A2A3C1DE320514F5418F94997696E86D41C468219EDEB174E7A6E4D3",
+    "val_used_for_distribution": false,
+    "test_used_for_distribution": false
+  },
+  "selected_policy": {
+    "id": "train_p10_p90_v1",
+    "hard_min_quantile": "p10",
+    "preferred_min_quantile": "p10",
+    "target_quantile": "p50",
+    "preferred_max_quantile": "p90",
+    "hard_max_quantile": "p95",
+    "minimum_category_labels": 12,
+    "rationale": "P10 lower bound and P90 preferred upper bound were selected on val11 from predeclared P10/P20/P25 candidates. Test11 was evaluated only after selection."
+  },
+  "global": {
+    "count": 248,
+    "min": 0.450383,
+    "p05": 0.808545,
+    "p10": 0.955536,
+    "p20": 1.173239,
+    "p25": 1.232393,
+    "p50": 1.502738,
+    "p75": 1.791898,
+    "p90": 2.052057,
+    "p95": 2.31321,
+    "max": 2.79748,
+    "mean": 1.521357,
+    "std": 0.427385
+  },
+  "categories": {
+    "Chair": {
+      "count": 27,
+      "min": 0.450383,
+      "p05": 0.752068,
+      "p10": 0.859916,
+      "p20": 1.192229,
+      "p25": 1.280257,
+      "p50": 1.428553,
+      "p75": 1.797216,
+      "p90": 2.007526,
+      "p95": 2.283374,
+      "max": 2.462821,
+      "mean": 1.485602,
+      "std": 0.464072
+    },
+    "Dishwasher": {
+      "count": 24,
+      "min": 0.736396,
+      "p05": 1.007737,
+      "p10": 1.071015,
+      "p20": 1.170648,
+      "p25": 1.208612,
+      "p50": 1.529048,
+      "p75": 1.682709,
+      "p90": 1.920324,
+      "p95": 2.290874,
+      "max": 2.79748,
+      "mean": 1.528338,
+      "std": 0.43199
+    },
+    "Door": {
+      "count": 18,
+      "min": 1.236424,
+      "p05": 1.391379,
+      "p10": 1.476679,
+      "p20": 1.52623,
+      "p25": 1.563075,
+      "p50": 1.688027,
+      "p75": 1.891455,
+      "p90": 2.097574,
+      "p95": 2.196827,
+      "max": 2.527869,
+      "mean": 1.747994,
+      "std": 0.294155
+    },
+    "Earphone": {
+      "count": 23,
+      "min": 0.81248,
+      "p05": 0.840813,
+      "p10": 0.896546,
+      "p20": 1.147,
+      "p25": 1.283955,
+      "p50": 1.631691,
+      "p75": 1.895348,
+      "p90": 2.072208,
+      "p95": 2.250881,
+      "max": 2.37692,
+      "mean": 1.591076,
+      "std": 0.440851
+    },
+    "Faucet": {
+      "count": 26,
+      "min": 0.730102,
+      "p05": 0.846398,
+      "p10": 1.026084,
+      "p20": 1.195985,
+      "p25": 1.244444,
+      "p50": 1.604083,
+      "p75": 1.813075,
+      "p90": 2.115807,
+      "p95": 2.301895,
+      "max": 2.40726,
+      "mean": 1.579286,
+      "std": 0.433291
+    },
+    "Lamp": {
+      "count": 27,
+      "min": 0.611559,
+      "p05": 0.758191,
+      "p10": 0.794139,
+      "p20": 1.042704,
+      "p25": 1.11917,
+      "p50": 1.370908,
+      "p75": 1.894437,
+      "p90": 2.321747,
+      "p95": 2.379405,
+      "max": 2.530588,
+      "mean": 1.497612,
+      "std": 0.530013
+    },
+    "Laptop": {
+      "count": 15,
+      "min": 1.126943,
+      "p05": 1.194915,
+      "p10": 1.232967,
+      "p20": 1.284071,
+      "p25": 1.346528,
+      "p50": 1.678419,
+      "p75": 1.853655,
+      "p90": 2.281703,
+      "p95": 2.317776,
+      "max": 2.396319,
+      "mean": 1.674187,
+      "std": 0.39106
+    },
+    "Microwave": {
+      "count": 24,
+      "min": 0.747476,
+      "p05": 0.798297,
+      "p10": 0.974877,
+      "p20": 1.169899,
+      "p25": 1.270608,
+      "p50": 1.447395,
+      "p75": 1.685491,
+      "p90": 1.82869,
+      "p95": 1.979346,
+      "max": 2.248652,
+      "mean": 1.447728,
+      "std": 0.361547
+    },
+    "Refrigerator": {
+      "count": 26,
+      "min": 0.762716,
+      "p05": 0.932285,
+      "p10": 0.948747,
+      "p20": 1.066038,
+      "p25": 1.19431,
+      "p50": 1.401155,
+      "p75": 1.685039,
+      "p90": 1.956373,
+      "p95": 2.026347,
+      "max": 2.149827,
+      "mean": 1.447297,
+      "std": 0.369107
+    },
+    "Scissors": {
+      "count": 15,
+      "min": 0.911948,
+      "p05": 0.91545,
+      "p10": 0.940877,
+      "p20": 1.028519,
+      "p25": 1.065758,
+      "p50": 1.350964,
+      "p75": 1.548226,
+      "p90": 1.733877,
+      "p95": 1.8064,
+      "max": 1.912563,
+      "mean": 1.354669,
+      "std": 0.306245
+    },
+    "TrashCan": {
+      "count": 23,
+      "min": 0.766917,
+      "p05": 0.826868,
+      "p10": 0.884041,
+      "p20": 1.182774,
+      "p25": 1.210126,
+      "p50": 1.356133,
+      "p75": 1.716473,
+      "p90": 1.864664,
+      "p95": 2.229055,
+      "max": 2.354478,
+      "mean": 1.440939,
+      "std": 0.404796
+    }
+  },
+  "security": {
+    "contains_label_coordinates": false,
+    "contains_api_key": false
+  },
+  "training_rows": [
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "back_frame_vertical_bar_5_14",
+      "normalized_length": 1.035729
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "back_single_surface_3_16",
+      "normalized_length": 1.70612
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "back_frame_vertical_bar_6_15",
+      "normalized_length": 1.413122
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "leg_16_8",
+      "normalized_length": 1.36885
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "seat_support_10_10",
+      "normalized_length": 1.458763
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "seat_single_surface_9_11",
+      "normalized_length": 1.425866
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "leg_13_5",
+      "normalized_length": 2.310558
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "leg_15_7",
+      "normalized_length": 1.357453
+    },
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "label_id": "leg_14_6",
+      "normalized_length": 1.778264
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "back_single_surface_3_21",
+      "normalized_length": 1.283796
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "leg_14_10",
+      "normalized_length": 2.219946
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "seat_single_surface_6_19",
+      "normalized_length": 1.816168
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "seat_frame_bar_9_24",
+      "normalized_length": 1.853298
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "leg_13_9",
+      "normalized_length": 0.731018
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "leg_15_11",
+      "normalized_length": 1.334277
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "seat_frame_bar_10_25",
+      "normalized_length": 1.865913
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "seat_frame_bar_8_23",
+      "normalized_length": 1.428553
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "label_id": "leg_16_12",
+      "normalized_length": 0.801182
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "back_single_surface_3_17",
+      "normalized_length": 1.859085
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "arm_sofa_style_7_14",
+      "normalized_length": 0.899073
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "arm_sofa_style_5_15",
+      "normalized_length": 1.276718
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "seat_support_11_12",
+      "normalized_length": 1.454976
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "seat_single_surface_10_13",
+      "normalized_length": 2.462821
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "leg_15_8",
+      "normalized_length": 1.684667
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "leg_14_7",
+      "normalized_length": 1.663542
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "leg_17_10",
+      "normalized_length": 1.171107
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "label_id": "leg_16_9",
+      "normalized_length": 0.450383
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "label_id": "frame_2_8",
+      "normalized_length": 1.584708
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "label_id": "door_frame_4_10",
+      "normalized_length": 1.699275
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "label_id": "handle_5_11",
+      "normalized_length": 1.41184
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "label_id": "surface_12_17",
+      "normalized_length": 1.818924
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "label_id": "foot_8_13",
+      "normalized_length": 2.79748
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "label_id": "foot_9_14",
+      "normalized_length": 1.677187
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "label_id": "foot_10_15",
+      "normalized_length": 1.940709
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "label_id": "foot_11_16",
+      "normalized_length": 1.198375
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "label_id": "frame_2_9",
+      "normalized_length": 1.129059
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "label_id": "surface_12_8",
+      "normalized_length": 1.212024
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "label_id": "door_frame_4_15",
+      "normalized_length": 0.998341
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "label_id": "foot_11_7",
+      "normalized_length": 1.587894
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "label_id": "handle_5_16",
+      "normalized_length": 1.36198
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "label_id": "foot_10_6",
+      "normalized_length": 1.060977
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "label_id": "foot_9_5",
+      "normalized_length": 1.094436
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "label_id": "foot_8_4",
+      "normalized_length": 0.736396
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "label_id": "frame_2_9",
+      "normalized_length": 1.495858
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "label_id": "door_frame_4_15",
+      "normalized_length": 2.352668
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "label_id": "handle_5_16",
+      "normalized_length": 1.562239
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "label_id": "surface_12_8",
+      "normalized_length": 1.59382
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "label_id": "foot_8_4",
+      "normalized_length": 1.872759
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "label_id": "foot_11_7",
+      "normalized_length": 1.408363
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "label_id": "foot_9_5",
+      "normalized_length": 1.618796
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "label_id": "foot_10_6",
+      "normalized_length": 1.466
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "label_id": "outside_frame_1_1",
+      "normalized_length": 1.588097
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "label_id": "surface_board_4_8",
+      "normalized_length": 1.418725
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "label_id": "movable_part_10_14",
+      "normalized_length": 2.080075
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "label_id": "fixed_part_9_13",
+      "normalized_length": 1.770159
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "label_id": "fixed_part_6_15",
+      "normalized_length": 2.138408
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "label_id": "movable_part_7_16",
+      "normalized_length": 1.872547
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "label_id": "surface_board_4_25",
+      "normalized_length": 1.559638
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "label_id": "outside_frame_1_13",
+      "normalized_length": 1.501517
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "label_id": "fixed_part_6_23",
+      "normalized_length": 1.9085
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "label_id": "movable_part_7_24",
+      "normalized_length": 1.887304
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "label_id": "fixed_part_9_21",
+      "normalized_length": 1.573384
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "label_id": "movable_part_10_22",
+      "normalized_length": 1.892839
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "label_id": "outside_frame_1_1",
+      "normalized_length": 1.236424
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "label_id": "surface_board_7_11",
+      "normalized_length": 1.503958
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "label_id": "movable_part_10_10",
+      "normalized_length": 1.666015
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "label_id": "fixed_part_9_9",
+      "normalized_length": 2.527869
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "label_id": "fixed_part_4_5",
+      "normalized_length": 1.628394
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "label_id": "movable_part_5_6",
+      "normalized_length": 1.710039
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "label_id": "earbud_pad_9_6",
+      "normalized_length": 0.837637
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "label_id": "earbud_frame_8_5",
+      "normalized_length": 1.690553
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "label_id": "earbud_connector_10_7",
+      "normalized_length": 2.04005
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "label_id": "earbud_connector_wire_2_2",
+      "normalized_length": 1.817166
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "label_id": "earbud_pad_5_9",
+      "normalized_length": 2.269841
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "label_id": "earbud_frame_4_8",
+      "normalized_length": 2.080247
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "label_id": "earbud_connector_6_10",
+      "normalized_length": 1.719096
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "label_id": "top_band_4_12",
+      "normalized_length": 1.867663
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "label_id": "earcup_connector_8_11",
+      "normalized_length": 0.81248
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "label_id": "earcup_pad_7_10",
+      "normalized_length": 1.603868
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "label_id": "earcup_frame_6_9",
+      "normalized_length": 1.923033
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "label_id": "earcup_connector_12_8",
+      "normalized_length": 1.844294
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "label_id": "earcup_pad_11_7",
+      "normalized_length": 1.557325
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "label_id": "earcup_frame_10_6",
+      "normalized_length": 1.201409
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "label_id": "connector_wire_2_2",
+      "normalized_length": 1.421275
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "label_id": "top_band_4_12",
+      "normalized_length": 0.869391
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "label_id": "earcup_connector_12_19",
+      "normalized_length": 1.611683
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "label_id": "earcup_frame_10_16",
+      "normalized_length": 1.110728
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "label_id": "earcup_pad_11_17",
+      "normalized_length": 1.93673
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "label_id": "earcup_connector_8_18",
+      "normalized_length": 2.37692
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "label_id": "earcup_pad_7_15",
+      "normalized_length": 1.366502
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "label_id": "earcup_frame_6_14",
+      "normalized_length": 1.631691
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "label_id": "connector_wire_2_2",
+      "normalized_length": 1.005167
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "label_id": "tube_13_24",
+      "normalized_length": 2.036502
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "label_id": "switch_2_18",
+      "normalized_length": 1.450921
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "label_id": "vertical_support_9_29",
+      "normalized_length": 1.678569
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "label_id": "surface_base_8_28",
+      "normalized_length": 1.200895
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "label_id": "switch_3_19",
+      "normalized_length": 0.966315
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "label_id": "vertical_support_6_31",
+      "normalized_length": 1.692991
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "label_id": "surface_base_11_27",
+      "normalized_length": 1.529597
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "label_id": "surface_base_5_30",
+      "normalized_length": 0.730102
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "switch_3_3",
+      "normalized_length": 0.806426
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "vertical_support_6_6",
+      "normalized_length": 1.38085
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "horizontal_support_11_11",
+      "normalized_length": 1.783664
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "horizontal_support_9_9",
+      "normalized_length": 2.40726
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "vertical_support_7_7",
+      "normalized_length": 1.195985
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "horizontal_support_10_10",
+      "normalized_length": 2.337489
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "switch_2_2",
+      "normalized_length": 1.813614
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "surface_base_5_5",
+      "normalized_length": 1.441909
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "label_id": "vertical_support_8_8",
+      "normalized_length": 1.786832
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "tube_5_6",
+      "normalized_length": 1.085853
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "switch_3_3",
+      "normalized_length": 1.994466
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "vertical_support_8_22",
+      "normalized_length": 1.7651
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "vertical_support_11_20",
+      "normalized_length": 2.195112
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "surface_base_7_21",
+      "normalized_length": 1.891545
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "switch_2_2",
+      "normalized_length": 1.176437
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "surface_base_10_19",
+      "normalized_length": 1.37509
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "vertical_support_14_18",
+      "normalized_length": 1.811455
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "label_id": "surface_base_13_17",
+      "normalized_length": 1.526445
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "lamp_base_part_5_22",
+      "normalized_length": 0.611559
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "chain_19_9",
+      "normalized_length": 1.804599
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "lamp_base_part_8_20",
+      "normalized_length": 1.334625
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "chain_20_10",
+      "normalized_length": 0.761056
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "lamp_base_part_14_16",
+      "normalized_length": 1.09207
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "chain_22_12",
+      "normalized_length": 1.423364
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "lamp_shade_18_14",
+      "normalized_length": 1.201526
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "lamp_base_part_11_18",
+      "normalized_length": 1.928796
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "label_id": "chain_21_11",
+      "normalized_length": 0.986348
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "lamp_base_part_5_23",
+      "normalized_length": 1.305434
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "lamp_shade_13_21",
+      "normalized_length": 1.146271
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "chain_9_11",
+      "normalized_length": 1.49108
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "chain_8_10",
+      "normalized_length": 1.030362
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "cord_19_6",
+      "normalized_length": 1.981054
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "chain_7_9",
+      "normalized_length": 2.314639
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "chain_10_12",
+      "normalized_length": 2.530588
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "lamp_shade_15_20",
+      "normalized_length": 2.399547
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "label_id": "lamp_shade_17_19",
+      "normalized_length": 1.320393
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "cord_18_6",
+      "normalized_length": 0.816194
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "lamp_arm_straight_bar_16_9",
+      "normalized_length": 1.725984
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "lamp_pole_8_13",
+      "normalized_length": 2.332409
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "lamp_shade_14_11",
+      "normalized_length": 1.370908
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "lamp_body_vertical_panel_10_15",
+      "normalized_length": 1.860077
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "lamp_body_vertical_panel_9_14",
+      "normalized_length": 2.004175
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "leg_4_17",
+      "normalized_length": 0.756964
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "leg_6_19",
+      "normalized_length": 1.266462
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "label_id": "leg_5_18",
+      "normalized_length": 1.639035
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "9878",
+      "label_id": "screen_frame_3_11",
+      "normalized_length": 1.732162
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "9878",
+      "label_id": "screen_2_10",
+      "normalized_length": 1.678419
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "9878",
+      "label_id": "base_frame_7_7",
+      "normalized_length": 1.126943
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "9878",
+      "label_id": "keyboard_5_5",
+      "normalized_length": 1.877787
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "9878",
+      "label_id": "touchpad_6_6",
+      "normalized_length": 2.396319
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10203",
+      "label_id": "screen_frame_3_13",
+      "normalized_length": 1.224045
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10203",
+      "label_id": "screen_2_12",
+      "normalized_length": 1.399554
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10203",
+      "label_id": "base_frame_7_5",
+      "normalized_length": 1.512724
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10203",
+      "label_id": "keyboard_5_3",
+      "normalized_length": 2.284115
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10203",
+      "label_id": "touchpad_6_4",
+      "normalized_length": 2.278084
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10285",
+      "label_id": "screen_frame_3_10",
+      "normalized_length": 1.293502
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10285",
+      "label_id": "screen_2_9",
+      "normalized_length": 1.246351
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10285",
+      "label_id": "base_frame_7_5",
+      "normalized_length": 1.497074
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10285",
+      "label_id": "keyboard_5_3",
+      "normalized_length": 1.829524
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10285",
+      "label_id": "touchpad_6_4",
+      "normalized_length": 1.736203
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "label_id": "frame_2_8",
+      "normalized_length": 2.248652
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "label_id": "door_frame_6_28",
+      "normalized_length": 1.326934
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "label_id": "glass_7_29",
+      "normalized_length": 1.762151
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "label_id": "tray_4_30",
+      "normalized_length": 1.337051
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "label_id": "foot_12_6",
+      "normalized_length": 1.500253
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "label_id": "foot_13_7",
+      "normalized_length": 1.665308
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "label_id": "foot_11_5",
+      "normalized_length": 0.957008
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "label_id": "foot_10_4",
+      "normalized_length": 1.400765
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "label_id": "frame_2_8",
+      "normalized_length": 1.746041
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "label_id": "door_frame_4_17",
+      "normalized_length": 1.300705
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "label_id": "glass_5_18",
+      "normalized_length": 1.180316
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "label_id": "handle_6_19",
+      "normalized_length": 1.345562
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "label_id": "foot_9_4",
+      "normalized_length": 1.748837
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "label_id": "foot_12_7",
+      "normalized_length": 1.016572
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "label_id": "foot_10_5",
+      "normalized_length": 0.77029
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "label_id": "foot_11_6",
+      "normalized_length": 1.616372
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "label_id": "frame_2_8",
+      "normalized_length": 2.0009
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "label_id": "door_frame_4_15",
+      "normalized_length": 1.857207
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "label_id": "glass_5_16",
+      "normalized_length": 0.747476
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "label_id": "foot_11_6",
+      "normalized_length": 1.58216
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "label_id": "handle_6_17",
+      "normalized_length": 1.154274
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "label_id": "foot_12_7",
+      "normalized_length": 1.341794
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "label_id": "foot_10_5",
+      "normalized_length": 1.494025
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "label_id": "foot_9_4",
+      "normalized_length": 1.644813
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "label_id": "frame_2_11",
+      "normalized_length": 1.674756
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "label_id": "shelf_6_17",
+      "normalized_length": 1.526438
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "label_id": "door_frame_4_14",
+      "normalized_length": 1.903258
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "label_id": "shelf_7_18",
+      "normalized_length": 2.009487
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "label_id": "foot_11_8",
+      "normalized_length": 1.321754
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "label_id": "foot_10_7",
+      "normalized_length": 1.456948
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "label_id": "foot_12_9",
+      "normalized_length": 1.383214
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "label_id": "foot_13_10",
+      "normalized_length": 0.945392
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "frame_2_8",
+      "normalized_length": 1.587109
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "door_frame_7_21",
+      "normalized_length": 1.066038
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "handle_8_22",
+      "normalized_length": 1.669163
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "door_frame_4_17",
+      "normalized_length": 1.347848
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "handle_5_18",
+      "normalized_length": 1.163764
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "foot_12_5",
+      "normalized_length": 1.688467
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "foot_14_7",
+      "normalized_length": 1.286707
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "foot_11_4",
+      "normalized_length": 1.349855
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "label_id": "foot_13_6",
+      "normalized_length": 0.762716
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "frame_2_8",
+      "normalized_length": 2.149827
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "door_frame_7_11",
+      "normalized_length": 1.419097
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "handle_8_12",
+      "normalized_length": 1.785695
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "door_frame_4_13",
+      "normalized_length": 1.872979
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "handle_5_14",
+      "normalized_length": 0.927916
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "foot_11_4",
+      "normalized_length": 2.031966
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "foot_14_7",
+      "normalized_length": 0.952102
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "foot_12_5",
+      "normalized_length": 1.285946
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "label_id": "foot_13_6",
+      "normalized_length": 1.061291
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10429",
+      "label_id": "blade_2_19",
+      "normalized_length": 0.916951
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10429",
+      "label_id": "blade_5_17",
+      "normalized_length": 1.350964
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10429",
+      "label_id": "screw_7_13",
+      "normalized_length": 1.295516
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10429",
+      "label_id": "handle_6_18",
+      "normalized_length": 1.760902
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10429",
+      "label_id": "handle_3_20",
+      "normalized_length": 1.30097
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10994",
+      "label_id": "blade_5_6",
+      "normalized_length": 1.512098
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10994",
+      "label_id": "blade_2_8",
+      "normalized_length": 1.912563
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10994",
+      "label_id": "screw_7_3",
+      "normalized_length": 1.041457
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10994",
+      "label_id": "handle_6_7",
+      "normalized_length": 1.54222
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10994",
+      "label_id": "handle_3_9",
+      "normalized_length": 1.460056
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11002",
+      "label_id": "blade_5_4",
+      "normalized_length": 1.090058
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11002",
+      "label_id": "blade_2_6",
+      "normalized_length": 1.693339
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11002",
+      "label_id": "screw_7_3",
+      "normalized_length": 1.554232
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11002",
+      "label_id": "handle_6_5",
+      "normalized_length": 0.976765
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11002",
+      "label_id": "handle_3_7",
+      "normalized_length": 0.911948
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "cover_lid_2_7",
+      "normalized_length": 0.826411
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "cover_support_5_10",
+      "normalized_length": 1.787665
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "cover_support_6_11",
+      "normalized_length": 1.295202
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "container_box_8_6",
+      "normalized_length": 1.366584
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "frame_holistic_11_27",
+      "normalized_length": 1.676248
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "cover_support_4_9",
+      "normalized_length": 1.697047
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "cover_support_3_8",
+      "normalized_length": 1.356133
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "frame_horizontal_circle_12_28",
+      "normalized_length": 0.830976
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "label_id": "frame_bottom_10_26",
+      "normalized_length": 1.560646
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "label_id": "container_box_11_121",
+      "normalized_length": 1.096301
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "label_id": "frame_horizontal_circle_4_119",
+      "normalized_length": 1.7359
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "label_id": "frame_bottom_2_79",
+      "normalized_length": 1.192253
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "label_id": "frame_horizontal_circle_3_115",
+      "normalized_length": 1.313848
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "label_id": "foot_9_7",
+      "normalized_length": 2.354478
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "label_id": "foot_8_6",
+      "normalized_length": 2.267404
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "label_id": "foot_6_4",
+      "normalized_length": 1.233858
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "label_id": "foot_7_5",
+      "normalized_length": 1.740221
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "label_id": "frame_horizontal_circle_7_8",
+      "normalized_length": 1.482275
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "label_id": "cover_lid_2_4",
+      "normalized_length": 0.766917
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "label_id": "frame_holistic_9_10",
+      "normalized_length": 1.227999
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "label_id": "container_box_4_6",
+      "normalized_length": 1.27286
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "label_id": "container_bottom_5_7",
+      "normalized_length": 1.883913
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "label_id": "frame_horizontal_circle_8_9",
+      "normalized_length": 1.176455
+    }
+  ],
+  "validation_selection": {
+    "selected_without_test": true,
+    "selected_configuration": "train_p10_p90",
+    "criterion": "maximize train-derived leader band compliance and manual leader rhythm on val11 subject to deterministic safety non-regression",
+    "candidates": [
+      {
+        "configuration": "legacy_no_range",
+        "sample_count": 11,
+        "multidimensional_quality_score": 4.318909,
+        "objective_score": 2.124818,
+        "text_clarity": 4.662273,
+        "label_label_occlusion_ratio": 0.037273,
+        "label_object_occlusion_ratio": 0.022091,
+        "object_label_occlusion_ratio": 0.045182,
+        "object_penetration_ratio": 0.003545,
+        "mesh_surface_intersection_ratio": 0.018759,
+        "viewport_overflow_ratio": 0.000364,
+        "multi_view_worst_overflow": 0.001364,
+        "mean_anchor_distance": 0.762182,
+        "leader_length_compliance_ratio": 0.056545,
+        "leader_length_shortfall": 0.429091,
+        "manual_center_distance_norm": 1.448625,
+        "manual_style_distance": 0.362742,
+        "manual_leader_mean_difference": 0.848277,
+        "manual_leader_spread_difference": 0.163647,
+        "constraints": {
+          "text_clarity_change": 0,
+          "label_overlap_change": 0,
+          "label_object_occlusion_change": 0,
+          "object_label_occlusion_change": 0,
+          "penetration_change": 0,
+          "mesh_intersection_change": 0,
+          "worst_overflow_change": 0
+        },
+        "safety_pass": false,
+        "selection_score": null
+      },
+      {
+        "configuration": "train_p10_p90",
+        "sample_count": 11,
+        "multidimensional_quality_score": 4.380909,
+        "objective_score": 1.020364,
+        "text_clarity": 4.632,
+        "label_label_occlusion_ratio": 0.015,
+        "label_object_occlusion_ratio": 0.011364,
+        "object_label_occlusion_ratio": 0.028455,
+        "object_penetration_ratio": 0.000091,
+        "mesh_surface_intersection_ratio": 0.009091,
+        "viewport_overflow_ratio": 0.000545,
+        "multi_view_worst_overflow": 0.002636,
+        "mean_anchor_distance": 1.157545,
+        "leader_length_compliance_ratio": 0.950909,
+        "leader_length_shortfall": 0,
+        "manual_center_distance_norm": 1.468335,
+        "manual_style_distance": 0.268628,
+        "manual_leader_mean_difference": 0.47802,
+        "manual_leader_spread_difference": 0.241719,
+        "constraints": {
+          "text_clarity_change": -0.030273,
+          "label_overlap_change": -0.022273,
+          "label_object_occlusion_change": -0.010727,
+          "object_label_occlusion_change": -0.016727,
+          "penetration_change": -0.003454,
+          "mesh_intersection_change": -0.009668,
+          "worst_overflow_change": 0.001272
+        },
+        "safety_pass": true,
+        "selection_score": 2.585485
+      },
+      {
+        "configuration": "train_p20_p90",
+        "sample_count": 11,
+        "multidimensional_quality_score": 4.387182,
+        "objective_score": 1.012091,
+        "text_clarity": 4.631364,
+        "label_label_occlusion_ratio": 0.014818,
+        "label_object_occlusion_ratio": 0.006091,
+        "object_label_occlusion_ratio": 0.032818,
+        "object_penetration_ratio": 0.001727,
+        "mesh_surface_intersection_ratio": 0.012121,
+        "viewport_overflow_ratio": 0.000909,
+        "multi_view_worst_overflow": 0.004909,
+        "mean_anchor_distance": 1.295818,
+        "leader_length_compliance_ratio": 0.713727,
+        "leader_length_shortfall": 0.023636,
+        "manual_center_distance_norm": 1.54824,
+        "manual_style_distance": 0.218612,
+        "manual_leader_mean_difference": 0.353841,
+        "manual_leader_spread_difference": 0.197815,
+        "constraints": {
+          "text_clarity_change": -0.030909,
+          "label_overlap_change": -0.022455,
+          "label_object_occlusion_change": -0.016,
+          "object_label_occlusion_change": -0.012364,
+          "penetration_change": -0.001818,
+          "mesh_intersection_change": -0.006638,
+          "worst_overflow_change": 0.003545
+        },
+        "safety_pass": true,
+        "selection_score": 2.308187
+      },
+      {
+        "configuration": "train_p25_p90",
+        "sample_count": 11,
+        "multidimensional_quality_score": 4.378364,
+        "objective_score": 1.007545,
+        "text_clarity": 4.627,
+        "label_label_occlusion_ratio": 0.016364,
+        "label_object_occlusion_ratio": 0.007636,
+        "object_label_occlusion_ratio": 0.022273,
+        "object_penetration_ratio": 0.005273,
+        "mesh_surface_intersection_ratio": 0.015152,
+        "viewport_overflow_ratio": 0.000727,
+        "multi_view_worst_overflow": 0.003909,
+        "mean_anchor_distance": 1.324091,
+        "leader_length_compliance_ratio": 0.642364,
+        "leader_length_shortfall": 0.029091,
+        "manual_center_distance_norm": 1.582754,
+        "manual_style_distance": 0.227263,
+        "manual_leader_mean_difference": 0.325596,
+        "manual_leader_spread_difference": 0.230076,
+        "constraints": {
+          "text_clarity_change": -0.035273,
+          "label_overlap_change": -0.020909,
+          "label_object_occlusion_change": -0.014455,
+          "object_label_occlusion_change": -0.022909,
+          "penetration_change": 0.001728,
+          "mesh_intersection_change": -0.003607,
+          "worst_overflow_change": 0.002545
+        },
+        "safety_pass": true,
+        "selection_score": 2.216273
+      }
+    ]
+  },
+  "test_confirmation": {
+    "used_after_selection": true,
+    "selected_configuration": "train_p10_p90",
+    "summary": [
+      {
+        "configuration": "legacy_no_range",
+        "sample_count": 11,
+        "multidimensional_quality_score": 4.331273,
+        "objective_score": 2.087,
+        "text_clarity": 4.613273,
+        "label_label_occlusion_ratio": 0.023091,
+        "label_object_occlusion_ratio": 0.030182,
+        "object_label_occlusion_ratio": 0.063273,
+        "object_penetration_ratio": 0.001091,
+        "mesh_surface_intersection_ratio": 0.053838,
+        "viewport_overflow_ratio": 0.000091,
+        "multi_view_worst_overflow": 0.000455,
+        "mean_anchor_distance": 0.823455,
+        "leader_length_compliance_ratio": 0.092182,
+        "leader_length_shortfall": 0.380727,
+        "manual_center_distance_norm": 1.352525,
+        "manual_style_distance": 0.29418,
+        "manual_leader_mean_difference": 0.639935,
+        "manual_leader_spread_difference": 0.136019
+      },
+      {
+        "configuration": "train_p10_p90",
+        "sample_count": 11,
+        "multidimensional_quality_score": 4.393636,
+        "objective_score": 1.014636,
+        "text_clarity": 4.593818,
+        "label_label_occlusion_ratio": 0.012182,
+        "label_object_occlusion_ratio": 0.009545,
+        "object_label_occlusion_ratio": 0.032455,
+        "object_penetration_ratio": 0,
+        "mesh_surface_intersection_ratio": 0,
+        "viewport_overflow_ratio": 0.000091,
+        "multi_view_worst_overflow": 0.000455,
+        "mean_anchor_distance": 1.225727,
+        "leader_length_compliance_ratio": 0.969727,
+        "leader_length_shortfall": 0,
+        "manual_center_distance_norm": 1.484551,
+        "manual_style_distance": 0.195939,
+        "manual_leader_mean_difference": 0.237651,
+        "manual_leader_spread_difference": 0.217586
+      }
+    ]
+  }
+}

@@ -1,0 +1,2270 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-09-28T19:04:55.434Z",
+  "policy": "stratified_by_category_mod5",
+  "note": "clean_obj is derived at runtime; raw Obj-O files are never overwritten.",
+  "counts": {
+    "train": 33,
+    "val": 11,
+    "test": 11,
+    "by_category": {
+      "Chair": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Dishwasher": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Door": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Earphone": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Faucet": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Lamp": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Laptop": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Microwave": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Refrigerator": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "Scissors": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      },
+      "TrashCan": {
+        "train": 3,
+        "val": 1,
+        "test": 1
+      }
+    }
+  },
+  "samples": [
+    {
+      "category": "Chair",
+      "sample_id": "38635",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Chair/38635/layout1/Obj-O/38635-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Chair/38635/layout1/Annotation/38635.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Chair/38635/layout1/Mutiviews/38635-combined.png",
+          "data/Layout/Chair/38635/layout1/Mutiviews/38635-down.png",
+          "data/Layout/Chair/38635/layout1/Mutiviews/38635-left.png",
+          "data/Layout/Chair/38635/layout1/Mutiviews/38635-main.png",
+          "data/Layout/Chair/38635/layout1/Mutiviews/38635-right.png",
+          "data/Layout/Chair/38635/layout1/Mutiviews/38635-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Chair",
+      "sample_id": "39299",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Chair/39299/layout1/Obj-O/39299-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Chair/39299/layout1/Annotation/39299.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Chair/39299/layout1/Mutiviews/39299-combined.png",
+          "data/Layout/Chair/39299/layout1/Mutiviews/39299-down.png",
+          "data/Layout/Chair/39299/layout1/Mutiviews/39299-left.png",
+          "data/Layout/Chair/39299/layout1/Mutiviews/39299-main.png",
+          "data/Layout/Chair/39299/layout1/Mutiviews/39299-right.png",
+          "data/Layout/Chair/39299/layout1/Mutiviews/39299-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Chair",
+      "sample_id": "40801",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Chair/40801/layout1/Obj-O/40801-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Chair/40801/layout1/Annotation/40801.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Chair/40801/layout1/Mutiviews/40801-combined.png",
+          "data/Layout/Chair/40801/layout1/Mutiviews/40801-down.png",
+          "data/Layout/Chair/40801/layout1/Mutiviews/40801-left.png",
+          "data/Layout/Chair/40801/layout1/Mutiviews/40801-main.png",
+          "data/Layout/Chair/40801/layout1/Mutiviews/40801-right.png",
+          "data/Layout/Chair/40801/layout1/Mutiviews/40801-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Chair",
+      "sample_id": "41193",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Chair/41193/layout1/Obj-O/41193-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Chair/41193/layout1/Annotation/41193.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Chair/41193/layout1/Mutiviews/41193-combined.png",
+          "data/Layout/Chair/41193/layout1/Mutiviews/41193-down.png",
+          "data/Layout/Chair/41193/layout1/Mutiviews/41193-left.png",
+          "data/Layout/Chair/41193/layout1/Mutiviews/41193-main.png",
+          "data/Layout/Chair/41193/layout1/Mutiviews/41193-right.png",
+          "data/Layout/Chair/41193/layout1/Mutiviews/41193-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Chair",
+      "sample_id": "42397",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Chair/42397/layout1/Obj-O/42397-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Chair/42397/layout1/Annotation/42397.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Chair/42397/layout1/Mutiviews/42397-combined.png",
+          "data/Layout/Chair/42397/layout1/Mutiviews/42397-down.png",
+          "data/Layout/Chair/42397/layout1/Mutiviews/42397-left.png",
+          "data/Layout/Chair/42397/layout1/Mutiviews/42397-main.png",
+          "data/Layout/Chair/42397/layout1/Mutiviews/42397-right.png",
+          "data/Layout/Chair/42397/layout1/Mutiviews/42397-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "11898",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Dishwasher/11898/layout1/Obj-O/11898-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Dishwasher/11898/layout1/Annotation/11898.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Dishwasher/11898/layout1/Mutiviews/11898-combined.png",
+          "data/Layout/Dishwasher/11898/layout1/Mutiviews/11898-down.png",
+          "data/Layout/Dishwasher/11898/layout1/Mutiviews/11898-left.png",
+          "data/Layout/Dishwasher/11898/layout1/Mutiviews/11898-main.png",
+          "data/Layout/Dishwasher/11898/layout1/Mutiviews/11898-right.png",
+          "data/Layout/Dishwasher/11898/layout1/Mutiviews/11898-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12572",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Dishwasher/12572/layout1/Obj-O/12572-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Dishwasher/12572/layout1/Annotation/12572.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Dishwasher/12572/layout1/Mutiviews/12572-combined.png",
+          "data/Layout/Dishwasher/12572/layout1/Mutiviews/12572-down.png",
+          "data/Layout/Dishwasher/12572/layout1/Mutiviews/12572-left.png",
+          "data/Layout/Dishwasher/12572/layout1/Mutiviews/12572-main.png",
+          "data/Layout/Dishwasher/12572/layout1/Mutiviews/12572-right.png",
+          "data/Layout/Dishwasher/12572/layout1/Mutiviews/12572-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12575",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Dishwasher/12575/layout1/Obj-O/12575-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Dishwasher/12575/layout1/Annotation/12575.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Dishwasher/12575/layout1/Mutiviews/12575-combined.png",
+          "data/Layout/Dishwasher/12575/layout1/Mutiviews/12575-down.png",
+          "data/Layout/Dishwasher/12575/layout1/Mutiviews/12575-left.png",
+          "data/Layout/Dishwasher/12575/layout1/Mutiviews/12575-main.png",
+          "data/Layout/Dishwasher/12575/layout1/Mutiviews/12575-right.png",
+          "data/Layout/Dishwasher/12575/layout1/Mutiviews/12575-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "12580",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Dishwasher/12580/layout1/Obj-O/12580-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Dishwasher/12580/layout1/Annotation/12580.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Dishwasher/12580/layout1/Mutiviews/12580-combined.png",
+          "data/Layout/Dishwasher/12580/layout1/Mutiviews/12580-down.png",
+          "data/Layout/Dishwasher/12580/layout1/Mutiviews/12580-left.png",
+          "data/Layout/Dishwasher/12580/layout1/Mutiviews/12580-main.png",
+          "data/Layout/Dishwasher/12580/layout1/Mutiviews/12580-right.png",
+          "data/Layout/Dishwasher/12580/layout1/Mutiviews/12580-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Dishwasher",
+      "sample_id": "13175",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Dishwasher/13175/layout1/Obj-O/13175-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Dishwasher/13175/layout1/Annotation/13175.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Dishwasher/13175/layout1/Mutiviews/13175-combined.png",
+          "data/Layout/Dishwasher/13175/layout1/Mutiviews/13175-down.png",
+          "data/Layout/Dishwasher/13175/layout1/Mutiviews/13175-left.png",
+          "data/Layout/Dishwasher/13175/layout1/Mutiviews/13175-main.png",
+          "data/Layout/Dishwasher/13175/layout1/Mutiviews/13175-right.png",
+          "data/Layout/Dishwasher/13175/layout1/Mutiviews/13175-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Door",
+      "sample_id": "8944",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Door/8944/layout1/Obj-O/8944-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Door/8944/layout1/Annotation/8944.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Door/8944/layout1/Mutiviews/8944-combined.png",
+          "data/Layout/Door/8944/layout1/Mutiviews/8944-down.png",
+          "data/Layout/Door/8944/layout1/Mutiviews/8944-left.png",
+          "data/Layout/Door/8944/layout1/Mutiviews/8944-main.png",
+          "data/Layout/Door/8944/layout1/Mutiviews/8944-right.png",
+          "data/Layout/Door/8944/layout1/Mutiviews/8944-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Door",
+      "sample_id": "9164",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Door/9164/layout1/Obj-O/9164-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Door/9164/layout1/Annotation/9164.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Door/9164/layout1/Mutiviews/9164-combined.png",
+          "data/Layout/Door/9164/layout1/Mutiviews/9164-down.png",
+          "data/Layout/Door/9164/layout1/Mutiviews/9164-left.png",
+          "data/Layout/Door/9164/layout1/Mutiviews/9164-main.png",
+          "data/Layout/Door/9164/layout1/Mutiviews/9164-right.png",
+          "data/Layout/Door/9164/layout1/Mutiviews/9164-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Door",
+      "sample_id": "9200",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Door/9200/layout1/Obj-O/9200-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Door/9200/layout1/Annotation/9200.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Door/9200/layout1/Mutiviews/9200-combined.png",
+          "data/Layout/Door/9200/layout1/Mutiviews/9200-down.png",
+          "data/Layout/Door/9200/layout1/Mutiviews/9200-left.png",
+          "data/Layout/Door/9200/layout1/Mutiviews/9200-main.png",
+          "data/Layout/Door/9200/layout1/Mutiviews/9200-right.png",
+          "data/Layout/Door/9200/layout1/Mutiviews/9200-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Door",
+      "sample_id": "9288",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Door/9288/layout1/Obj-O/9288-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Door/9288/layout1/Annotation/9288.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Door/9288/layout1/Mutiviews/9288-combined.png",
+          "data/Layout/Door/9288/layout1/Mutiviews/9288-down.png",
+          "data/Layout/Door/9288/layout1/Mutiviews/9288-left.png",
+          "data/Layout/Door/9288/layout1/Mutiviews/9288-main.png",
+          "data/Layout/Door/9288/layout1/Mutiviews/9288-right.png",
+          "data/Layout/Door/9288/layout1/Mutiviews/9288-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Door",
+      "sample_id": "9290",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Door/9290/layout1/Obj-O/9290-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Door/9290/layout1/Annotation/9290.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Door/9290/layout1/Mutiviews/9290-combined.png",
+          "data/Layout/Door/9290/layout1/Mutiviews/9290-down.png",
+          "data/Layout/Door/9290/layout1/Mutiviews/9290-left.png",
+          "data/Layout/Door/9290/layout1/Mutiviews/9290-main.png",
+          "data/Layout/Door/9290/layout1/Mutiviews/9290-right.png",
+          "data/Layout/Door/9290/layout1/Mutiviews/9290-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "10953",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Earphone/10953/layout1/Obj-O/10953-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Earphone/10953/layout1/Annotation/10953.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Earphone/10953/layout1/Mutiviews/10953-combined.png",
+          "data/Layout/Earphone/10953/layout1/Mutiviews/10953-down.png",
+          "data/Layout/Earphone/10953/layout1/Mutiviews/10953-left.png",
+          "data/Layout/Earphone/10953/layout1/Mutiviews/10953-main.png",
+          "data/Layout/Earphone/10953/layout1/Mutiviews/10953-right.png",
+          "data/Layout/Earphone/10953/layout1/Mutiviews/10953-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11197",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Earphone/11197/layout1/Obj-O/11197-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Earphone/11197/layout1/Annotation/11197.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Earphone/11197/layout1/Mutiviews/11197-combined.png",
+          "data/Layout/Earphone/11197/layout1/Mutiviews/11197-down.png",
+          "data/Layout/Earphone/11197/layout1/Mutiviews/11197-left.png",
+          "data/Layout/Earphone/11197/layout1/Mutiviews/11197-main.png",
+          "data/Layout/Earphone/11197/layout1/Mutiviews/11197-right.png",
+          "data/Layout/Earphone/11197/layout1/Mutiviews/11197-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11446",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Earphone/11446/layout1/Obj-O/11446-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Earphone/11446/layout1/Annotation/11446.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Earphone/11446/layout1/Mutiviews/11446-combined.png",
+          "data/Layout/Earphone/11446/layout1/Mutiviews/11446-down.png",
+          "data/Layout/Earphone/11446/layout1/Mutiviews/11446-left.png",
+          "data/Layout/Earphone/11446/layout1/Mutiviews/11446-main.png",
+          "data/Layout/Earphone/11446/layout1/Mutiviews/11446-right.png",
+          "data/Layout/Earphone/11446/layout1/Mutiviews/11446-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11471",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Earphone/11471/layout1/Obj-O/11471-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Earphone/11471/layout1/Annotation/11471.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Earphone/11471/layout1/Mutiviews/11471-combined.png",
+          "data/Layout/Earphone/11471/layout1/Mutiviews/11471-down.png",
+          "data/Layout/Earphone/11471/layout1/Mutiviews/11471-left.png",
+          "data/Layout/Earphone/11471/layout1/Mutiviews/11471-main.png",
+          "data/Layout/Earphone/11471/layout1/Mutiviews/11471-right.png",
+          "data/Layout/Earphone/11471/layout1/Mutiviews/11471-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Earphone",
+      "sample_id": "11934",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Earphone/11934/layout1/Obj-O/11934-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Earphone/11934/layout1/Annotation/11934.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Earphone/11934/layout1/Mutiviews/11934-combined.png",
+          "data/Layout/Earphone/11934/layout1/Mutiviews/11934-down.png",
+          "data/Layout/Earphone/11934/layout1/Mutiviews/11934-left.png",
+          "data/Layout/Earphone/11934/layout1/Mutiviews/11934-main.png",
+          "data/Layout/Earphone/11934/layout1/Mutiviews/11934-right.png",
+          "data/Layout/Earphone/11934/layout1/Mutiviews/11934-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "370",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Faucet/370/layout1/Obj-O/370-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Faucet/370/layout1/Annotation/370.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Faucet/370/layout1/Mutiviews/370-combined.png",
+          "data/Layout/Faucet/370/layout1/Mutiviews/370-down.png",
+          "data/Layout/Faucet/370/layout1/Mutiviews/370-left.png",
+          "data/Layout/Faucet/370/layout1/Mutiviews/370-main.png",
+          "data/Layout/Faucet/370/layout1/Mutiviews/370-right.png",
+          "data/Layout/Faucet/370/layout1/Mutiviews/370-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1507",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Faucet/1507/layout1/Obj-O/1507-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Faucet/1507/layout1/Annotation/1507.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Faucet/1507/layout1/Mutiviews/1507-combined.png",
+          "data/Layout/Faucet/1507/layout1/Mutiviews/1507-down.png",
+          "data/Layout/Faucet/1507/layout1/Mutiviews/1507-left.png",
+          "data/Layout/Faucet/1507/layout1/Mutiviews/1507-main.png",
+          "data/Layout/Faucet/1507/layout1/Mutiviews/1507-right.png",
+          "data/Layout/Faucet/1507/layout1/Mutiviews/1507-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1708",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Faucet/1708/layout1/Obj-O/1708-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Faucet/1708/layout1/Annotation/1708.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Faucet/1708/layout1/Mutiviews/1708-combined.png",
+          "data/Layout/Faucet/1708/layout1/Mutiviews/1708-down.png",
+          "data/Layout/Faucet/1708/layout1/Mutiviews/1708-left.png",
+          "data/Layout/Faucet/1708/layout1/Mutiviews/1708-main.png",
+          "data/Layout/Faucet/1708/layout1/Mutiviews/1708-right.png",
+          "data/Layout/Faucet/1708/layout1/Mutiviews/1708-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1758",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Faucet/1758/layout1/Obj-O/1758-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Faucet/1758/layout1/Annotation/1758.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Faucet/1758/layout1/Mutiviews/1758-combined.png",
+          "data/Layout/Faucet/1758/layout1/Mutiviews/1758-down.png",
+          "data/Layout/Faucet/1758/layout1/Mutiviews/1758-left.png",
+          "data/Layout/Faucet/1758/layout1/Mutiviews/1758-main.png",
+          "data/Layout/Faucet/1758/layout1/Mutiviews/1758-right.png",
+          "data/Layout/Faucet/1758/layout1/Mutiviews/1758-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Faucet",
+      "sample_id": "1988",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Faucet/1988/layout1/Obj-O/1988-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Faucet/1988/layout1/Annotation/1988.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Faucet/1988/layout1/Mutiviews/1988-combined.png",
+          "data/Layout/Faucet/1988/layout1/Mutiviews/1988-down.png",
+          "data/Layout/Faucet/1988/layout1/Mutiviews/1988-left.png",
+          "data/Layout/Faucet/1988/layout1/Mutiviews/1988-main.png",
+          "data/Layout/Faucet/1988/layout1/Mutiviews/1988-right.png",
+          "data/Layout/Faucet/1988/layout1/Mutiviews/1988-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "14912",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Lamp/14912/layout1/Obj-O/14912-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Lamp/14912/layout1/Annotation/14912.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Lamp/14912/layout1/Mutiviews/14912-combined.png",
+          "data/Layout/Lamp/14912/layout1/Mutiviews/14912-down.png",
+          "data/Layout/Lamp/14912/layout1/Mutiviews/14912-left.png",
+          "data/Layout/Lamp/14912/layout1/Mutiviews/14912-main.png",
+          "data/Layout/Lamp/14912/layout1/Mutiviews/14912-right.png",
+          "data/Layout/Lamp/14912/layout1/Mutiviews/14912-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16297",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Lamp/16297/layout1/Obj-O/16297-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Lamp/16297/layout1/Annotation/16297.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Lamp/16297/layout1/Mutiviews/16297-combined.png",
+          "data/Layout/Lamp/16297/layout1/Mutiviews/16297-down.png",
+          "data/Layout/Lamp/16297/layout1/Mutiviews/16297-left.png",
+          "data/Layout/Lamp/16297/layout1/Mutiviews/16297-main.png",
+          "data/Layout/Lamp/16297/layout1/Mutiviews/16297-right.png",
+          "data/Layout/Lamp/16297/layout1/Mutiviews/16297-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16499",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Lamp/16499/layout1/Obj-O/16499-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Lamp/16499/layout1/Annotation/16499.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Lamp/16499/layout1/Mutiviews/16499-combined.png",
+          "data/Layout/Lamp/16499/layout1/Mutiviews/16499-down.png",
+          "data/Layout/Lamp/16499/layout1/Mutiviews/16499-left.png",
+          "data/Layout/Lamp/16499/layout1/Mutiviews/16499-main.png",
+          "data/Layout/Lamp/16499/layout1/Mutiviews/16499-right.png",
+          "data/Layout/Lamp/16499/layout1/Mutiviews/16499-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "16598",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Lamp/16598/layout1/Obj-O/16598-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Lamp/16598/layout1/Annotation/16598.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Lamp/16598/layout1/Mutiviews/16598-combined.png",
+          "data/Layout/Lamp/16598/layout1/Mutiviews/16598-down.png",
+          "data/Layout/Lamp/16598/layout1/Mutiviews/16598-left.png",
+          "data/Layout/Lamp/16598/layout1/Mutiviews/16598-main.png",
+          "data/Layout/Lamp/16598/layout1/Mutiviews/16598-right.png",
+          "data/Layout/Lamp/16598/layout1/Mutiviews/16598-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Lamp",
+      "sample_id": "17343",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Lamp/17343/layout1/Obj-O/17343-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Lamp/17343/layout1/Annotation/17343.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Lamp/17343/layout1/Mutiviews/17343-combined.png",
+          "data/Layout/Lamp/17343/layout1/Mutiviews/17343-down.png",
+          "data/Layout/Lamp/17343/layout1/Mutiviews/17343-left.png",
+          "data/Layout/Lamp/17343/layout1/Mutiviews/17343-main.png",
+          "data/Layout/Lamp/17343/layout1/Mutiviews/17343-right.png",
+          "data/Layout/Lamp/17343/layout1/Mutiviews/17343-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "9878",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Laptop/9878/layout1/Obj-O/9878-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Laptop/9878/layout1/Annotation/9878.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Laptop/9878/layout1/Mutiviews/9878-combined.png",
+          "data/Layout/Laptop/9878/layout1/Mutiviews/9878-down.png",
+          "data/Layout/Laptop/9878/layout1/Mutiviews/9878-left.png",
+          "data/Layout/Laptop/9878/layout1/Mutiviews/9878-main.png",
+          "data/Layout/Laptop/9878/layout1/Mutiviews/9878-right.png",
+          "data/Layout/Laptop/9878/layout1/Mutiviews/9878-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10203",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Laptop/10203/layout1/Obj-O/10203-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Laptop/10203/layout1/Annotation/10203.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Laptop/10203/layout1/Mutiviews/10203-combined.png",
+          "data/Layout/Laptop/10203/layout1/Mutiviews/10203-down.png",
+          "data/Layout/Laptop/10203/layout1/Mutiviews/10203-left.png",
+          "data/Layout/Laptop/10203/layout1/Mutiviews/10203-main.png",
+          "data/Layout/Laptop/10203/layout1/Mutiviews/10203-right.png",
+          "data/Layout/Laptop/10203/layout1/Mutiviews/10203-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10285",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Laptop/10285/layout1/Obj-O/10285-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Laptop/10285/layout1/Annotation/10285.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Laptop/10285/layout1/Mutiviews/10285-combined.png",
+          "data/Layout/Laptop/10285/layout1/Mutiviews/10285-down.png",
+          "data/Layout/Laptop/10285/layout1/Mutiviews/10285-left.png",
+          "data/Layout/Laptop/10285/layout1/Mutiviews/10285-main.png",
+          "data/Layout/Laptop/10285/layout1/Mutiviews/10285-right.png",
+          "data/Layout/Laptop/10285/layout1/Mutiviews/10285-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "10302",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Laptop/10302/layout1/Obj-O/10302-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Laptop/10302/layout1/Annotation/10302.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Laptop/10302/layout1/Mutiviews/10302-combined.png",
+          "data/Layout/Laptop/10302/layout1/Mutiviews/10302-down.png",
+          "data/Layout/Laptop/10302/layout1/Mutiviews/10302-left.png",
+          "data/Layout/Laptop/10302/layout1/Mutiviews/10302-main.png",
+          "data/Layout/Laptop/10302/layout1/Mutiviews/10302-right.png",
+          "data/Layout/Laptop/10302/layout1/Mutiviews/10302-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Laptop",
+      "sample_id": "11075",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Laptop/11075/layout1/Obj-O/11075-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Laptop/11075/layout1/Annotation/11075.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Laptop/11075/layout1/Mutiviews/11075-combined.png",
+          "data/Layout/Laptop/11075/layout1/Mutiviews/11075-down.png",
+          "data/Layout/Laptop/11075/layout1/Mutiviews/11075-left.png",
+          "data/Layout/Laptop/11075/layout1/Mutiviews/11075-main.png",
+          "data/Layout/Laptop/11075/layout1/Mutiviews/11075-right.png",
+          "data/Layout/Laptop/11075/layout1/Mutiviews/11075-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7177",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Microwave/7177/layout1/Obj-O/7177-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Microwave/7177/layout1/Annotation/7177.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Microwave/7177/layout1/Mutiviews/7177-combined.png",
+          "data/Layout/Microwave/7177/layout1/Mutiviews/7177-down.png",
+          "data/Layout/Microwave/7177/layout1/Mutiviews/7177-left.png",
+          "data/Layout/Microwave/7177/layout1/Mutiviews/7177-main.png",
+          "data/Layout/Microwave/7177/layout1/Mutiviews/7177-right.png",
+          "data/Layout/Microwave/7177/layout1/Mutiviews/7177-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7183",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Microwave/7183/layout1/Obj-O/7183-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Microwave/7183/layout1/Annotation/7183.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Microwave/7183/layout1/Mutiviews/7183-combined.png",
+          "data/Layout/Microwave/7183/layout1/Mutiviews/7183-down.png",
+          "data/Layout/Microwave/7183/layout1/Mutiviews/7183-left.png",
+          "data/Layout/Microwave/7183/layout1/Mutiviews/7183-main.png",
+          "data/Layout/Microwave/7183/layout1/Mutiviews/7183-right.png",
+          "data/Layout/Microwave/7183/layout1/Mutiviews/7183-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7184",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Microwave/7184/layout1/Obj-O/7184-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Microwave/7184/layout1/Annotation/7184.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Microwave/7184/layout1/Mutiviews/7184-combined.png",
+          "data/Layout/Microwave/7184/layout1/Mutiviews/7184-down.png",
+          "data/Layout/Microwave/7184/layout1/Mutiviews/7184-left.png",
+          "data/Layout/Microwave/7184/layout1/Mutiviews/7184-main.png",
+          "data/Layout/Microwave/7184/layout1/Mutiviews/7184-right.png",
+          "data/Layout/Microwave/7184/layout1/Mutiviews/7184-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7200",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Microwave/7200/layout1/Obj-O/7200-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Microwave/7200/layout1/Annotation/7200.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Microwave/7200/layout1/Mutiviews/7200-combined.png",
+          "data/Layout/Microwave/7200/layout1/Mutiviews/7200-down.png",
+          "data/Layout/Microwave/7200/layout1/Mutiviews/7200-left.png",
+          "data/Layout/Microwave/7200/layout1/Mutiviews/7200-main.png",
+          "data/Layout/Microwave/7200/layout1/Mutiviews/7200-right.png",
+          "data/Layout/Microwave/7200/layout1/Mutiviews/7200-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Microwave",
+      "sample_id": "7346",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Microwave/7346/layout1/Obj-O/7346-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Microwave/7346/layout1/Annotation/7346.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Microwave/7346/layout1/Mutiviews/7346-combined.png",
+          "data/Layout/Microwave/7346/layout1/Mutiviews/7346-down.png",
+          "data/Layout/Microwave/7346/layout1/Mutiviews/7346-left.png",
+          "data/Layout/Microwave/7346/layout1/Mutiviews/7346-main.png",
+          "data/Layout/Microwave/7346/layout1/Mutiviews/7346-right.png",
+          "data/Layout/Microwave/7346/layout1/Mutiviews/7346-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "10649",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Refrigerator/10649/layout1/Obj-O/10649-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Refrigerator/10649/layout1/Annotation/10649.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Refrigerator/10649/layout1/Mutiviews/10649-combined.png",
+          "data/Layout/Refrigerator/10649/layout1/Mutiviews/10649-down.png",
+          "data/Layout/Refrigerator/10649/layout1/Mutiviews/10649-left.png",
+          "data/Layout/Refrigerator/10649/layout1/Mutiviews/10649-main.png",
+          "data/Layout/Refrigerator/10649/layout1/Mutiviews/10649-right.png",
+          "data/Layout/Refrigerator/10649/layout1/Mutiviews/10649-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11585",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Refrigerator/11585/layout1/Obj-O/11585-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Refrigerator/11585/layout1/Annotation/11585.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Refrigerator/11585/layout1/Mutiviews/11585-combined.png",
+          "data/Layout/Refrigerator/11585/layout1/Mutiviews/11585-down.png",
+          "data/Layout/Refrigerator/11585/layout1/Mutiviews/11585-left.png",
+          "data/Layout/Refrigerator/11585/layout1/Mutiviews/11585-main.png",
+          "data/Layout/Refrigerator/11585/layout1/Mutiviews/11585-right.png",
+          "data/Layout/Refrigerator/11585/layout1/Mutiviews/11585-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11666",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Refrigerator/11666/layout1/Obj-O/11666-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Refrigerator/11666/layout1/Annotation/11666.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Refrigerator/11666/layout1/Mutiviews/11666-combined.png",
+          "data/Layout/Refrigerator/11666/layout1/Mutiviews/11666-down.png",
+          "data/Layout/Refrigerator/11666/layout1/Mutiviews/11666-left.png",
+          "data/Layout/Refrigerator/11666/layout1/Mutiviews/11666-main.png",
+          "data/Layout/Refrigerator/11666/layout1/Mutiviews/11666-right.png",
+          "data/Layout/Refrigerator/11666/layout1/Mutiviews/11666-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "11712",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Refrigerator/11712/layout1/Obj-O/11712-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Refrigerator/11712/layout1/Annotation/11712.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Refrigerator/11712/layout1/Mutiviews/11712-combined.png",
+          "data/Layout/Refrigerator/11712/layout1/Mutiviews/11712-down.png",
+          "data/Layout/Refrigerator/11712/layout1/Mutiviews/11712-left.png",
+          "data/Layout/Refrigerator/11712/layout1/Mutiviews/11712-main.png",
+          "data/Layout/Refrigerator/11712/layout1/Mutiviews/11712-right.png",
+          "data/Layout/Refrigerator/11712/layout1/Mutiviews/11712-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Refrigerator",
+      "sample_id": "12045",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Refrigerator/12045/layout1/Obj-O/12045-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Refrigerator/12045/layout1/Annotation/12045.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Refrigerator/12045/layout1/Mutiviews/12045-combined.png",
+          "data/Layout/Refrigerator/12045/layout1/Mutiviews/12045-down.png",
+          "data/Layout/Refrigerator/12045/layout1/Mutiviews/12045-left.png",
+          "data/Layout/Refrigerator/12045/layout1/Mutiviews/12045-main.png",
+          "data/Layout/Refrigerator/12045/layout1/Mutiviews/12045-right.png",
+          "data/Layout/Refrigerator/12045/layout1/Mutiviews/12045-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10429",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Scissors/10429/layout1/Obj-O/10429-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Scissors/10429/layout1/Annotation/10429.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Scissors/10429/layout1/Mutiviews/10429-combined.png",
+          "data/Layout/Scissors/10429/layout1/Mutiviews/10429-down.png",
+          "data/Layout/Scissors/10429/layout1/Mutiviews/10429-left.png",
+          "data/Layout/Scissors/10429/layout1/Mutiviews/10429-main.png",
+          "data/Layout/Scissors/10429/layout1/Mutiviews/10429-right.png",
+          "data/Layout/Scissors/10429/layout1/Mutiviews/10429-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "10994",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Scissors/10994/layout1/Obj-O/10994-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Scissors/10994/layout1/Annotation/10994.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Scissors/10994/layout1/Mutiviews/10994-combined.png",
+          "data/Layout/Scissors/10994/layout1/Mutiviews/10994-down.png",
+          "data/Layout/Scissors/10994/layout1/Mutiviews/10994-left.png",
+          "data/Layout/Scissors/10994/layout1/Mutiviews/10994-main.png",
+          "data/Layout/Scissors/10994/layout1/Mutiviews/10994-right.png",
+          "data/Layout/Scissors/10994/layout1/Mutiviews/10994-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11002",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/Scissors/11002/layout1/Obj-O/11002-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Scissors/11002/layout1/Annotation/11002.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Scissors/11002/layout1/Mutiviews/11002-combined.png",
+          "data/Layout/Scissors/11002/layout1/Mutiviews/11002-down.png",
+          "data/Layout/Scissors/11002/layout1/Mutiviews/11002-left.png",
+          "data/Layout/Scissors/11002/layout1/Mutiviews/11002-main.png",
+          "data/Layout/Scissors/11002/layout1/Mutiviews/11002-right.png",
+          "data/Layout/Scissors/11002/layout1/Mutiviews/11002-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11036",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/Scissors/11036/layout1/Obj-O/11036-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Scissors/11036/layout1/Annotation/11036.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Scissors/11036/layout1/Mutiviews/11036-combined.png",
+          "data/Layout/Scissors/11036/layout1/Mutiviews/11036-down.png",
+          "data/Layout/Scissors/11036/layout1/Mutiviews/11036-left.png",
+          "data/Layout/Scissors/11036/layout1/Mutiviews/11036-main.png",
+          "data/Layout/Scissors/11036/layout1/Mutiviews/11036-right.png",
+          "data/Layout/Scissors/11036/layout1/Mutiviews/11036-up.png"
+        ]
+      }
+    },
+    {
+      "category": "Scissors",
+      "sample_id": "11111",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/Scissors/11111/layout1/Obj-O/11111-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/Scissors/11111/layout1/Annotation/11111.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/Scissors/11111/layout1/Mutiviews/11111-combined.png",
+          "data/Layout/Scissors/11111/layout1/Mutiviews/11111-down.png",
+          "data/Layout/Scissors/11111/layout1/Mutiviews/11111-left.png",
+          "data/Layout/Scissors/11111/layout1/Mutiviews/11111-main.png",
+          "data/Layout/Scissors/11111/layout1/Mutiviews/11111-right.png",
+          "data/Layout/Scissors/11111/layout1/Mutiviews/11111-up.png"
+        ]
+      }
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "10425",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/TrashCan/10425/layout1/Obj-O/10425-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/TrashCan/10425/layout1/Annotation/10425.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/TrashCan/10425/layout1/Mutiviews/10425-combined.png",
+          "data/Layout/TrashCan/10425/layout1/Mutiviews/10425-down.png",
+          "data/Layout/TrashCan/10425/layout1/Mutiviews/10425-left.png",
+          "data/Layout/TrashCan/10425/layout1/Mutiviews/10425-main.png",
+          "data/Layout/TrashCan/10425/layout1/Mutiviews/10425-right.png",
+          "data/Layout/TrashCan/10425/layout1/Mutiviews/10425-up.png"
+        ]
+      }
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11183",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/TrashCan/11183/layout1/Obj-O/11183-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/TrashCan/11183/layout1/Annotation/11183.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/TrashCan/11183/layout1/Mutiviews/11183-combined.png",
+          "data/Layout/TrashCan/11183/layout1/Mutiviews/11183-down.png",
+          "data/Layout/TrashCan/11183/layout1/Mutiviews/11183-left.png",
+          "data/Layout/TrashCan/11183/layout1/Mutiviews/11183-main.png",
+          "data/Layout/TrashCan/11183/layout1/Mutiviews/11183-right.png",
+          "data/Layout/TrashCan/11183/layout1/Mutiviews/11183-up.png"
+        ]
+      }
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11659",
+      "split": "train",
+      "input": {
+        "source_obj": "data/Layout/TrashCan/11659/layout1/Obj-O/11659-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/TrashCan/11659/layout1/Annotation/11659.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/TrashCan/11659/layout1/Mutiviews/11659-combined.png",
+          "data/Layout/TrashCan/11659/layout1/Mutiviews/11659-down.png",
+          "data/Layout/TrashCan/11659/layout1/Mutiviews/11659-left.png",
+          "data/Layout/TrashCan/11659/layout1/Mutiviews/11659-main.png",
+          "data/Layout/TrashCan/11659/layout1/Mutiviews/11659-right.png",
+          "data/Layout/TrashCan/11659/layout1/Mutiviews/11659-up.png"
+        ]
+      }
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "11960",
+      "split": "val",
+      "input": {
+        "source_obj": "data/Layout/TrashCan/11960/layout1/Obj-O/11960-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/TrashCan/11960/layout1/Annotation/11960.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/TrashCan/11960/layout1/Mutiviews/11960-combined.png",
+          "data/Layout/TrashCan/11960/layout1/Mutiviews/11960-down.png",
+          "data/Layout/TrashCan/11960/layout1/Mutiviews/11960-left.png",
+          "data/Layout/TrashCan/11960/layout1/Mutiviews/11960-main.png",
+          "data/Layout/TrashCan/11960/layout1/Mutiviews/11960-right.png",
+          "data/Layout/TrashCan/11960/layout1/Mutiviews/11960-up.png"
+        ]
+      }
+    },
+    {
+      "category": "TrashCan",
+      "sample_id": "12366",
+      "split": "test",
+      "input": {
+        "source_obj": "data/Layout/TrashCan/12366/layout1/Obj-O/12366-main-O.obj",
+        "clean_obj": null,
+        "cleaning": {
+          "remove_groups": [
+            "label_*",
+            "leader_*"
+          ],
+          "remove_materials": [
+            "label_*",
+            "leader_*"
+          ],
+          "normalize_materials": [
+            "anchor_region_*"
+          ],
+          "emitted_material": "object_default",
+          "mode": "rebuild_faces_and_reindex"
+        }
+      },
+      "target": {
+        "annotation_json": "data/Layout/TrashCan/12366/layout1/Annotation/12366.json",
+        "labeled_obj": null,
+        "generated_at_runtime": true
+      },
+      "views": {
+        "expected": 5,
+        "files": [
+          "data/Layout/TrashCan/12366/layout1/Mutiviews/12366-combined.png",
+          "data/Layout/TrashCan/12366/layout1/Mutiviews/12366-down.png",
+          "data/Layout/TrashCan/12366/layout1/Mutiviews/12366-left.png",
+          "data/Layout/TrashCan/12366/layout1/Mutiviews/12366-main.png",
+          "data/Layout/TrashCan/12366/layout1/Mutiviews/12366-right.png",
+          "data/Layout/TrashCan/12366/layout1/Mutiviews/12366-up.png"
+        ]
+      }
+    }
+  ]
+}

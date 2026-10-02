@@ -1,0 +1,84 @@
+# ==============================
+# Local environments and dependencies
+# ==============================
+.venv-ai/
+.venv/
+venv/
+node_modules/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# ==============================
+# IDE / OS files
+# ==============================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# ==============================
+# Secrets and local configuration
+# ==============================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*token*
+*secret*
+*credential*
+
+# ==============================
+# Generated experiments and runtime/browser caches
+# Keep only the selected small reproducibility files explicitly unignored below.
+# ==============================
+/experiments/**
+!/experiments/
+!/experiments/README.md
+!/experiments/dataset_manifest.json
+!/experiments/dataset_manifest_200train_50test.json
+!/experiments/dataset_selection_200train_50test.csv
+!/experiments/manual_leader_length_prior.json
+!/experiments/layout_model.json
+!/experiments/preference_model.json
+!/experiments/model-config.json
+!/experiments/model-v1.json
+!/experiments/v10_anchor_frame_inference_selection.json
+!/experiments/v9_3d_inference_selection.json
+!/experiments/directional_density_policy.json
+!/experiments/leader_length_policy_selection.json
+!/experiments/moe_unsupervised_pseudolabels_train.json
+!/experiments/moe_style_human_score_template.csv
+!/experiments/v10_safe_preference_manifest_latest.json
+!/experiments/llm_preference_run_latest.json
+!/experiments/llm_visual_validation_latest.json
+
+# Runtime output folders can be recreated after cloning.
+logs/
+*.log
+*.stderr.log
+*.stdout.log
+*.journal
+
+# ==============================
+# Generated model/checkpoint/cache files
+# ==============================
+*.bin
+*.ckpt
+*.pth
+*.pt
+*.safetensors
+*.onnx
+*.ftz
+
+# ==============================
+# Temporary exports and previews
+# ==============================
+*.tmp
+*.bak
+*.old
+
+# Optional extended dataset; the default 55-sample dataset in data/Layout is kept in Git LFS.
+/data/Layout_200train_50test/

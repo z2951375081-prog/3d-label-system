@@ -1,0 +1,75 @@
+{
+  "protocol": "unified_dataset_camera_55_samples",
+  "source": "experiments/comparisons/round1/comparison.json",
+  "split_counts": {
+    "train": 33,
+    "val": 11,
+    "test": 11
+  },
+  "averages": [
+    {
+      "method": "BinoForce_final_snapshot",
+      "label": "BinoForce",
+      "sample_count": 55,
+      "multidimensional_quality_score": 4.47070909090909,
+      "text_clarity": 4.605145454545456,
+      "label_label_occlusion_ratio": 0.010727272727272731,
+      "label_object_occlusion_ratio": 0.009163636363636365,
+      "object_penetration_ratio": 0,
+      "mesh_surface_intersection_ratio": 0,
+      "mean_anchor_distance": 1.4958363636363634,
+      "leader_length_compliance_ratio": 0.915709090909091,
+      "directional_allocation_mismatch": 0.3568705636363636,
+      "directional_uniformity": 0.8419934363636365,
+      "manual_style_distance": 0.1564074181818182
+    },
+    {
+      "method": "hedgehog_1d",
+      "label": "Hedgehog 1D",
+      "sample_count": 55,
+      "multidimensional_quality_score": 4.267963636363636,
+      "text_clarity": 4.486490909090908,
+      "label_label_occlusion_ratio": 0.0546,
+      "label_object_occlusion_ratio": 0.02054545454545454,
+      "object_penetration_ratio": 0,
+      "mesh_surface_intersection_ratio": 0.006519480519480519,
+      "mean_anchor_distance": 0.8805272727272726,
+      "leader_length_compliance_ratio": 0.16796363636363634,
+      "directional_allocation_mismatch": 0.4811320363636362,
+      "directional_uniformity": 0.7007826909090908,
+      "manual_style_distance": 0.39335065454545465
+    },
+    {
+      "method": "hedgehog_3d",
+      "label": "Hedgehog 3D",
+      "sample_count": 55,
+      "multidimensional_quality_score": 4.288454545454544,
+      "text_clarity": 4.526745454545455,
+      "label_label_occlusion_ratio": 0.03949090909090907,
+      "label_object_occlusion_ratio": 0.022763636363636368,
+      "object_penetration_ratio": 0.00009090909090909092,
+      "mesh_surface_intersection_ratio": 0.008161616161616161,
+      "mean_anchor_distance": 0.7889454545454548,
+      "leader_length_compliance_ratio": 0.12374545454545453,
+      "directional_allocation_mismatch": 0.4476281636363636,
+      "directional_uniformity": 0.7395415090909092,
+      "manual_style_distance": 0.40283667272727275
+    },
+    {
+      "method": "current_fixed_label_seed17",
+      "label": "模型一（基础模型）",
+      "sample_count": 55,
+      "multidimensional_quality_score": 4.370000000000003,
+      "text_clarity": 4.530309090909092,
+      "label_label_occlusion_ratio": 0.01752727272727273,
+      "label_object_occlusion_ratio": 0.00963636363636364,
+      "object_penetration_ratio": 0.00009090909090909092,
+      "mesh_surface_intersection_ratio": 0.0036363636363636364,
+      "mean_anchor_distance": 1.2032545454545451,
+      "leader_length_compliance_ratio": 0.966381818181818,
+      "directional_allocation_mismatch": 0.44455190909090914,
+      "directional_uniformity": 0.7349764909090913,
+      "manual_style_distance": 0.23275478181818185
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "selection_rule": "Pick the first stable neighboring pair by OLR/LCD/avg_leader_length, preferring 500 when 300 and 500 are already stable; this is not an all-test best-metric search.",
+  "stability_tolerance": 0.08,
+  "eval_frames": 300,
+  "fps": 30,
+  "selected_warmup_frames": 800,
+  "records": [
+    {
+      "warmup_frames": 300,
+      "validation_samples": [
+        "Chair/38635",
+        "Dishwasher/11898",
+        "Door/8944",
+        "Earphone/10953",
+        "Faucet/1507",
+        "Lamp/14912",
+        "Laptop/10203",
+        "Microwave/7177",
+        "Refrigerator/10649",
+        "Scissors/10429",
+        "TrashCan/10425"
+      ],
+      "metrics": {
+        "PCK_005": 0.11180904254545454,
+        "PCK_010": 0.387013492,
+        "OLR": 0.23246440545454541,
+        "LCD": 0.0054461121818181815,
+        "DBV": 0.0009413536363636362,
+        "avg_leader_length": 0.0883629769090909,
+        "overlap_pairs": 0.7453333332727273,
+        "occluded_points": 0.33721212145454543,
+        "intersections": 0.38266666654545456,
+        "quality_score": 13.570966513818181
+      },
+      "max_relative_change_to_next": 0.34921755020121426,
+      "next_warmup_frames": 500
+    },
+    {
+      "warmup_frames": 500,
+      "validation_samples": [
+        "Chair/38635",
+        "Dishwasher/11898",
+        "Door/8944",
+        "Earphone/10953",
+        "Faucet/1507",
+        "Lamp/14912",
+        "Laptop/10203",
+        "Microwave/7177",
+        "Refrigerator/10649",
+        "Scissors/10429",
+        "TrashCan/10425"
+      ],
+      "metrics": {
+        "PCK_005": 0.13689179890909092,
+        "PCK_010": 0.4127781869090908,
+        "OLR": 0.15128375527272728,
+        "LCD": 0.008030234909090909,
+        "DBV": 0.0007478701818181817,
+        "avg_leader_length": 0.11280592254545453,
+        "overlap_pairs": 0.6206666669090909,
+        "occluded_points": 0.18672727272727271,
+        "intersections": 0.5161818181818182,
+        "quality_score": 18.10337529927273
+      },
+      "max_relative_change_to_next": 0.2544017590333023,
+      "next_warmup_frames": 800
+    },
+    {
+      "warmup_frames": 800,
+      "validation_samples": [
+        "Chair/38635",
+        "Dishwasher/11898",
+        "Door/8944",
+        "Earphone/10953",
+        "Faucet/1507",
+        "Lamp/14912",
+        "Laptop/10203",
+        "Microwave/7177",
+        "Refrigerator/10649",
+        "Scissors/10429",
+        "TrashCan/10425"
+      ],
+      "metrics": {
+        "PCK_005": 0.13577176527272727,
+        "PCK_010": 0.39391414127272734,
+        "OLR": 0.11279690181818183,
+        "LCD": 0.010675445636363638,
+        "DBV": 0.0008159065454545454,
+        "avg_leader_length": 0.14048949454545454,
+        "overlap_pairs": 0.5816363638181818,
+        "occluded_points": 0.14593939418181817,
+        "intersections": 0.6126666663636363,
+        "quality_score": 18.394770808
+      }
+    }
+  ]
+}

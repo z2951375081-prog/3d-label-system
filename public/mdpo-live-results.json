@@ -1,0 +1,671 @@
+{
+  "version": "v10_mdpo_live_results_v4",
+  "generated_at": "2026-09-24T03:30:26.728Z",
+  "source": "server_live_aggregation_from_experiment_ledgers",
+  "execution": {
+    "status": "evaluating",
+    "stage_id": "evaluate_81_grid_val11_aligned",
+    "stage_status": "running",
+    "current_candidate": {
+      "id": "lr_0p00005_beta_0p05_multi_0p3_rank_2",
+      "hyperparameters": {
+        "learningRate": 0.00005,
+        "beta": 0.05,
+        "lambdaMulti": 0.3,
+        "rank": 2
+      },
+      "started_at": "2026-09-24T03:20:09.911Z"
+    },
+    "pipeline_pid": null,
+    "child_pid": null,
+    "child_alive": true,
+    "pipeline_updated_at": "2026-09-24T03:20:09.911Z",
+    "last_activity_at": "2026-09-24T03:20:09.911Z",
+    "explanation": "安全对齐版 val11 评估正在运行"
+  },
+  "aligned": {
+    "policy": "safety_priority_v3_aligned",
+    "status": "evaluating",
+    "current": {
+      "id": "lr_0p00005_beta_0p05_multi_0p3_rank_2",
+      "hyperparameters": {
+        "learningRate": 0.00005,
+        "beta": 0.05,
+        "lambdaMulti": 0.3,
+        "rank": 2
+      },
+      "candidate_file": "experiments/mdpo/aligned_sweep/lr_0p00005_beta_0p05_multi_0p3_rank_2/layout_model_v10_mdpo_candidate.json",
+      "candidate_sha256": "904d4f285149ccffdc033703fa2ee3e632d3be163a43dcee59182b367ccb338d",
+      "started_at": "2026-09-24T03:20:09.911Z",
+      "status": "running",
+      "test_used": false,
+      "evaluation_policy": "safety_priority_v3_aligned"
+    },
+    "training": {
+      "trained": 81,
+      "failed": 0,
+      "required": 81
+    },
+    "val11": {
+      "evaluated": 3,
+      "failed": 0,
+      "required": 81
+    },
+    "updated_at": "2026-09-24T03:20:09.911Z",
+    "latest_completed_training": {
+      "id": "lr_0p0002_beta_0p2_multi_0p5_rank_8",
+      "completed_at": "2026-09-23T23:39:11.637Z",
+      "best_epoch": 28,
+      "proxy_val": {
+        "total": 1.0859131868258975,
+        "mse": 0.42362447679978116,
+        "center_tail_cvar": 6.622887100261164,
+        "local_center_proxy_005": 0,
+        "local_center_proxy_010": 0,
+        "node_count": 80
+      },
+      "hyperparameters": {
+        "learningRate": 0.0002,
+        "beta": 0.2,
+        "lambdaMulti": 0.5,
+        "rank": 8,
+        "seed": 17017,
+        "safetyAlignment": true,
+        "protocol": "safety_priority_v3_aligned",
+        "overlapPairWeight": 24,
+        "worstOverflowWeight": 20,
+        "cvarOverflowWeight": 12,
+        "preferenceSafetyWeight": 0.5
+      },
+      "deployment_status": "diagnostic_only_pending_authoritative_val11_v3_aligned_gate"
+    },
+    "current_metrics": {
+      "epoch": 30,
+      "epochs": 30,
+      "train_total": 1.040156083699405,
+      "geometry_safe": 0.16191835775183108,
+      "val_total": 1.0860358067313347,
+      "val_mse": 0.42326860838007974,
+      "center_tail_cvar": 6.627671983512549,
+      "best_epoch": 28,
+      "stale": 2,
+      "updated_at": "2026-09-23T15:17:39.690Z",
+      "source": "experiments/mdpo/aligned_sweep/lr_0p00005_beta_0p05_multi_0p3_rank_2/stdout.log"
+    },
+    "current_val11": {
+      "candidate_id": "lr_0p00005_beta_0p05_multi_0p3_rank_2",
+      "group": "mdpo_no_rerank",
+      "record_count": 0,
+      "required_records": 11,
+      "complete": false,
+      "metric_protocol": "unified_reproduction_metrics_v3_safety_weighted_low_pck",
+      "metrics": null,
+      "updated_at": null
+    },
+    "latest_val11": {
+      "candidate_id": "lr_0p00005_beta_0p05_multi_0p1_rank_8",
+      "completed_at": "2026-09-24T03:20:09.902Z",
+      "gate": {
+        "version": "v10_mdpo_val11_activation_gate_v3",
+        "policy": {
+          "id": "safety_priority_v3_aligned",
+          "objective": "training and activation gate aligned on overlap-pair risk, worst-view overflow, CVaR overflow, occlusion, penetration and intersections; PCK remains advisory-only"
+        },
+        "status": "rejected",
+        "accepted": false,
+        "deployment_status": "diagnostic_only",
+        "thresholds": {
+          "policy_id": "safety_priority_v3_aligned",
+          "pck_role": "advisory_only",
+          "required_samples": 11,
+          "minimum_aesthetic_gain": 0.02,
+          "minimum_composition_change": -0.01,
+          "minimum_pck_005_change": null,
+          "minimum_pck_010_change": null,
+          "maximum_olr_change": 0.01,
+          "maximum_overlap_pairs_change": 0,
+          "maximum_occluded_points_change": 0,
+          "maximum_lcd_change": 0,
+          "maximum_object_occlusion_change": 0,
+          "maximum_penetration_change": 0,
+          "maximum_mesh_intersection_change": 0,
+          "maximum_overflow_change": 0,
+          "minimum_text_clarity_change": 0,
+          "minimum_leader_line_clarity_change": 0,
+          "maximum_intersections": 0,
+          "maximum_worst_view_intersections": 0,
+          "training_alignment_required": true,
+          "aligned_terms": [
+            "overlap_pair_risk",
+            "worst_view_overflow",
+            "cvar_view_overflow"
+          ]
+        },
+        "evidence": {
+          "baseline_complete": true,
+          "candidate_complete": true,
+          "full_val11": true,
+          "same_cohort": true,
+          "same_scorer": true,
+          "same_prompt": true,
+          "same_views": true,
+          "same_protocol": true,
+          "test_not_used": true,
+          "training_alignment": true
+        },
+        "checks": {
+          "aesthetic_gain": true,
+          "composition_non_degradation": true,
+          "pck_005_advisory": true,
+          "pck_010_advisory": true,
+          "zero_intersections": true,
+          "zero_worst_view_intersections": true,
+          "lcd_non_degradation": true,
+          "olr_limit": true,
+          "overlap_pairs_non_degradation": false,
+          "occluded_points_non_degradation": true,
+          "object_occlusion_non_degradation": true,
+          "penetration_non_degradation": true,
+          "mesh_intersection_non_degradation": true,
+          "overflow_non_degradation": false,
+          "text_clarity_non_degradation": true,
+          "leader_line_clarity_non_degradation": false
+        },
+        "delta": {
+          "aesthetic": 0.07000000000000028,
+          "composition_harmony": 0.10000000000000053,
+          "PCK_005": 0.018124098109090936,
+          "PCK_010": -0.0066089466181818435,
+          "OLR": -0.013832352399999998,
+          "LCD": 0,
+          "overlap_pairs": 0.23636363636363655,
+          "occluded_points": -0.2,
+          "object_occlusion": -0.00863636363636364,
+          "penetration": 0,
+          "mesh_surface_intersection": 0,
+          "worst_view_overflow": 0.09100000000000001,
+          "text_clarity": 0.00963636363636411,
+          "leader_line_clarity": -0.09090909090909083
+        },
+        "safety_penalty": 102.03482070945455,
+        "baseline": {
+          "scores": {
+            "overall": 4.1090909090909085,
+            "composition_harmony": 4.127272727272727,
+            "visual_hierarchy": 4,
+            "spatial_balance": 3.9818181818181815,
+            "manual_style_similarity": 4.281818181818182,
+            "text_clarity": 4.640909090909091,
+            "leader_line_clarity": 4.2272727272727275
+          },
+          "metrics": {
+            "PCK_005": 0.15162337663636363,
+            "PCK_010": 0.4122510822727273,
+            "OLR": 0.11458715061818182,
+            "LCD": 0,
+            "overlap_pairs": 0.509090909090909,
+            "occluded_points": 0.43636363636363634,
+            "intersections": 0,
+            "worst_view_intersections": 0,
+            "object_occlusion": 0.017090909090909094,
+            "penetration": 0,
+            "mesh_surface_intersection": 0,
+            "worst_view_overflow": 0.009,
+            "text_clarity": 4.640909090909091,
+            "leader_line_clarity": 4.2272727272727275
+          },
+          "cohort": [
+            "Chair/41193",
+            "Dishwasher/12580",
+            "Door/9288",
+            "Earphone/11471",
+            "Faucet/1758",
+            "Lamp/16598",
+            "Laptop/10302",
+            "Microwave/7200",
+            "Refrigerator/11712",
+            "Scissors/11036",
+            "TrashCan/11960"
+          ]
+        },
+        "candidate": {
+          "scores": {
+            "overall": 4.20909090909091,
+            "composition_harmony": 4.2272727272727275,
+            "visual_hierarchy": 4,
+            "spatial_balance": 4.036363636363636,
+            "manual_style_similarity": 4.3500000000000005,
+            "text_clarity": 4.650545454545455,
+            "leader_line_clarity": 4.136363636363637
+          },
+          "metrics": {
+            "PCK_005": 0.16974747474545457,
+            "PCK_010": 0.40564213565454543,
+            "OLR": 0.10075479821818183,
+            "LCD": 0,
+            "overlap_pairs": 0.7454545454545456,
+            "occluded_points": 0.23636363636363633,
+            "intersections": 0,
+            "worst_view_intersections": 0,
+            "object_occlusion": 0.008454545454545454,
+            "penetration": 0,
+            "mesh_surface_intersection": 0,
+            "worst_view_overflow": 0.1,
+            "text_clarity": 4.650545454545455,
+            "leader_line_clarity": 4.136363636363637
+          },
+          "cohort": [
+            "Chair/41193",
+            "Dishwasher/12580",
+            "Door/9288",
+            "Earphone/11471",
+            "Faucet/1758",
+            "Lamp/16598",
+            "Laptop/10302",
+            "Microwave/7200",
+            "Refrigerator/11712",
+            "Scissors/11036",
+            "TrashCan/11960"
+          ]
+        },
+        "violations": [
+          "gate:overlap_pairs_non_degradation",
+          "gate:overflow_non_degradation",
+          "gate:leader_line_clarity_non_degradation"
+        ],
+        "test_not_used_for_activation": true,
+        "training_alignment": {
+          "protocol": "safety_priority_v3_aligned",
+          "overlap_pair_weight": 24,
+          "worst_view_overflow_weight": 20,
+          "cvar_overflow_weight": 12,
+          "final_gate_metrics": [
+            "overlap_pairs",
+            "worst_view_overflow",
+            "intersections",
+            "worst_view_intersections",
+            "occluded_points",
+            "object_occlusion",
+            "penetration",
+            "mesh_surface_intersection"
+          ]
+        }
+      },
+      "metrics": {
+        "PCK_005": 0.16974747474545457,
+        "PCK_010": 0.40564213565454543,
+        "OLR": 0.10075479821818183,
+        "LCD": 0,
+        "avg_leader_length": 0.1409726504,
+        "overlap_pairs": 0.7454545454545456,
+        "occluded_points": 0.23636363636363633,
+        "quality_score": 71.83209859554545,
+        "object_occlusion": 0.008454545454545454,
+        "penetration": 0,
+        "mesh_surface_intersection": 0,
+        "intersections": 0,
+        "worst_view_intersections": 0,
+        "worst_view_overflow": 0.1,
+        "text_clarity": 4.650545454545455,
+        "leader_line_clarity": 4.136363636363637
+      }
+    }
+  },
+  "progress": {
+    "required": 81,
+    "evaluated": 22,
+    "accepted": 0,
+    "rejected": 22,
+    "running": null
+  },
+  "latest": {
+    "candidate_id": "lr_0p00005_beta_0p2_multi_0p3_rank_2",
+    "completed_at": "2026-09-23T16:33:38.083Z",
+    "hyperparameters": {
+      "learningRate": 0.00005,
+      "beta": 0.2,
+      "lambdaMulti": 0.3,
+      "rank": 2
+    },
+    "candidate_sha256": "f1b7da796b84b7ec27e4b9b932a699b7c6bc56163bb8f3d3c0ad8fa6a94633df",
+    "gate": {
+      "version": "v10_mdpo_val11_activation_gate_v2",
+      "policy": {
+        "id": "safety_priority_v2",
+        "objective": "prioritize intersections, overlap, occlusion and worst-view safety; PCK is reported diagnostically and is not an activation criterion"
+      },
+      "status": "rejected",
+      "accepted": false,
+      "deployment_status": "diagnostic_only",
+      "thresholds": {
+        "policy_id": "safety_priority_v2",
+        "pck_role": "advisory_only",
+        "required_samples": 11,
+        "minimum_aesthetic_gain": 0.02,
+        "minimum_composition_change": -0.01,
+        "minimum_pck_005_change": null,
+        "minimum_pck_010_change": null,
+        "maximum_olr_change": 0.01,
+        "maximum_overlap_pairs_change": 0,
+        "maximum_occluded_points_change": 0,
+        "maximum_lcd_change": 0,
+        "maximum_object_occlusion_change": 0,
+        "maximum_penetration_change": 0,
+        "maximum_mesh_intersection_change": 0,
+        "maximum_overflow_change": 0,
+        "minimum_text_clarity_change": 0,
+        "minimum_leader_line_clarity_change": 0,
+        "maximum_intersections": 0,
+        "maximum_worst_view_intersections": 0
+      },
+      "evidence": {
+        "baseline_complete": true,
+        "candidate_complete": true,
+        "full_val11": true,
+        "same_cohort": true,
+        "same_scorer": true,
+        "same_prompt": true,
+        "same_views": true,
+        "same_protocol": true,
+        "test_not_used": true
+      },
+      "checks": {
+        "aesthetic_gain": true,
+        "composition_non_degradation": true,
+        "pck_005_advisory": true,
+        "pck_010_advisory": true,
+        "zero_intersections": true,
+        "zero_worst_view_intersections": true,
+        "lcd_non_degradation": true,
+        "olr_limit": true,
+        "overlap_pairs_non_degradation": false,
+        "occluded_points_non_degradation": true,
+        "object_occlusion_non_degradation": true,
+        "penetration_non_degradation": true,
+        "mesh_intersection_non_degradation": true,
+        "overflow_non_degradation": false,
+        "text_clarity_non_degradation": true,
+        "leader_line_clarity_non_degradation": true
+      },
+      "delta": {
+        "aesthetic": 0.13621818181818046,
+        "composition_harmony": 0.16363636363636314,
+        "PCK_005": 0.0001948052000000089,
+        "PCK_010": -0.04607503612727276,
+        "OLR": -0.009098741199999996,
+        "LCD": 0,
+        "overlap_pairs": 0.34545454545454557,
+        "occluded_points": -0.2,
+        "object_occlusion": -0.0074545454545454585,
+        "penetration": 0,
+        "mesh_surface_intersection": 0,
+        "worst_view_overflow": 0.09100000000000001,
+        "text_clarity": 0.08590909090909093,
+        "leader_line_clarity": 0.5818181818181825
+      },
+      "safety_penalty": 113.10942954872728,
+      "baseline": {
+        "scores": {
+          "overall": 4.027272727272727,
+          "composition_harmony": 4.072727272727273,
+          "visual_hierarchy": 3.9,
+          "spatial_balance": 3.9,
+          "manual_style_similarity": 4.283272727272728,
+          "text_clarity": 4.559545454545455,
+          "leader_line_clarity": 3.8454545454545452
+        },
+        "metrics": {
+          "PCK_005": 0.15162337663636363,
+          "PCK_010": 0.4122510822727273,
+          "OLR": 0.11458715061818182,
+          "LCD": 0,
+          "overlap_pairs": 0.509090909090909,
+          "occluded_points": 0.43636363636363634,
+          "intersections": 0,
+          "worst_view_intersections": 0,
+          "object_occlusion": 0.017090909090909094,
+          "penetration": 0,
+          "mesh_surface_intersection": 0,
+          "worst_view_overflow": 0.009,
+          "text_clarity": 4.559545454545455,
+          "leader_line_clarity": 3.8454545454545452
+        },
+        "cohort": [
+          "Chair/41193",
+          "Dishwasher/12580",
+          "Door/9288",
+          "Earphone/11471",
+          "Faucet/1758",
+          "Lamp/16598",
+          "Laptop/10302",
+          "Microwave/7200",
+          "Refrigerator/11712",
+          "Scissors/11036",
+          "TrashCan/11960"
+        ]
+      },
+      "candidate": {
+        "scores": {
+          "overall": 4.163636363636363,
+          "composition_harmony": 4.236363636363636,
+          "visual_hierarchy": 4.081818181818182,
+          "spatial_balance": 4.045454545454546,
+          "manual_style_similarity": 4.245454545454546,
+          "text_clarity": 4.6454545454545455,
+          "leader_line_clarity": 4.427272727272728
+        },
+        "metrics": {
+          "PCK_005": 0.15181818183636364,
+          "PCK_010": 0.3661760461454545,
+          "OLR": 0.10548840941818183,
+          "LCD": 0,
+          "overlap_pairs": 0.8545454545454546,
+          "occluded_points": 0.23636363636363633,
+          "intersections": 0,
+          "worst_view_intersections": 0,
+          "object_occlusion": 0.009636363636363636,
+          "penetration": 0,
+          "mesh_surface_intersection": 0,
+          "worst_view_overflow": 0.1,
+          "text_clarity": 4.6454545454545455,
+          "leader_line_clarity": 4.427272727272728
+        },
+        "cohort": [
+          "Chair/41193",
+          "Dishwasher/12580",
+          "Door/9288",
+          "Earphone/11471",
+          "Faucet/1758",
+          "Lamp/16598",
+          "Laptop/10302",
+          "Microwave/7200",
+          "Refrigerator/11712",
+          "Scissors/11036",
+          "TrashCan/11960"
+        ]
+      },
+      "violations": [
+        "gate:overlap_pairs_non_degradation",
+        "gate:overflow_non_degradation"
+      ],
+      "test_not_used_for_activation": true
+    },
+    "status": "diagnostic_only_rejected",
+    "deployed": false
+  },
+  "groups": [
+    {
+      "group": "v10_no_rerank",
+      "label": "v10 · reranker off",
+      "model_role": "baseline",
+      "preference_rerank": false,
+      "sample_count": 11,
+      "metric_protocol": "unified_reproduction_metrics_v2_exact_fixed_origin",
+      "metrics": {
+        "PCK_005": 0.15162337663636363,
+        "PCK_010": 0.4122510822727273,
+        "OLR": 0.11458715061818182,
+        "LCD": 0,
+        "avg_leader_length": 0.12187248530909091,
+        "overlap_pairs": 0.509090909090909,
+        "occluded_points": 0.43636363636363634,
+        "quality_score": 20.11649006670909,
+        "object_occlusion": 0.017090909090909094,
+        "penetration": 0,
+        "mesh_surface_intersection": 0,
+        "intersections": 0,
+        "worst_view_intersections": 0,
+        "worst_view_overflow": 0.009,
+        "text_clarity": 4.559545454545455,
+        "leader_line_clarity": 3.8454545454545452
+      },
+      "scores": {
+        "text_clarity": 4.559545454545455,
+        "coverage": 4.7272727272727275,
+        "label_label_occlusion": 4.709090909090909,
+        "object_occlusion": 4.6934545454545455,
+        "object_penetration": 4.7272727272727275,
+        "leader_line_clarity": 3.8454545454545452,
+        "multiview_consistency": 3.8636363636363638,
+        "binocular_consistency": 3.7818181818181817,
+        "manual_style_similarity": 4.283272727272728,
+        "spatial_balance": 3.9,
+        "size_consistency": 4.218181818181818,
+        "visual_hierarchy": 3.9,
+        "composition_harmony": 4.072727272727273,
+        "overall": 4.027272727272727
+      }
+    },
+    {
+      "group": "v10_historical_rerank",
+      "label": "v10 + historical reward MLP",
+      "model_role": "baseline",
+      "preference_rerank": true,
+      "sample_count": 11,
+      "metric_protocol": "unified_reproduction_metrics_v2_exact_fixed_origin",
+      "metrics": {
+        "PCK_005": 0.15621212123636366,
+        "PCK_010": 0.4260461759636364,
+        "OLR": 0.1031442933090909,
+        "LCD": 0,
+        "avg_leader_length": 0.12570941310909092,
+        "overlap_pairs": 0.6727272727272727,
+        "occluded_points": 0.3454545454545455,
+        "quality_score": 21.137626434945457,
+        "object_occlusion": 0.007272727272727273,
+        "penetration": 0.00045454545454545455,
+        "mesh_surface_intersection": 0.008080808080808079,
+        "intersections": 0,
+        "worst_view_intersections": 0,
+        "worst_view_overflow": 0.003,
+        "text_clarity": 4.641363636363637,
+        "leader_line_clarity": 4.027272727272727
+      },
+      "scores": {
+        "text_clarity": 4.641363636363637,
+        "coverage": 4.8,
+        "label_label_occlusion": 4.784727272727273,
+        "object_occlusion": 4.797454545454546,
+        "object_penetration": 4.8,
+        "leader_line_clarity": 4.027272727272727,
+        "multiview_consistency": 4.027272727272727,
+        "binocular_consistency": 4.009454545454545,
+        "manual_style_similarity": 4.356,
+        "spatial_balance": 4.072727272727272,
+        "size_consistency": 4.327272727272727,
+        "visual_hierarchy": 4.118181818181818,
+        "composition_harmony": 4.181818181818181,
+        "overall": 4.209090909090909
+      }
+    },
+    {
+      "group": "mdpo_no_rerank",
+      "label": "v10-MDPO · reranker off",
+      "model_role": "candidate",
+      "preference_rerank": false,
+      "sample_count": 11,
+      "metric_protocol": "unified_reproduction_metrics_v2_exact_fixed_origin",
+      "metrics": {
+        "PCK_005": 0.15181818183636364,
+        "PCK_010": 0.3661760461454545,
+        "OLR": 0.10548840941818183,
+        "LCD": 0,
+        "avg_leader_length": 0.14182401176363635,
+        "overlap_pairs": 0.8545454545454546,
+        "occluded_points": 0.23636363636363633,
+        "quality_score": 18.975343876727276,
+        "object_occlusion": 0.009636363636363636,
+        "penetration": 0,
+        "mesh_surface_intersection": 0,
+        "intersections": 0,
+        "worst_view_intersections": 0,
+        "worst_view_overflow": 0.1,
+        "text_clarity": 4.6454545454545455,
+        "leader_line_clarity": 4.427272727272728
+      },
+      "scores": {
+        "text_clarity": 4.6454545454545455,
+        "coverage": 4.818181818181818,
+        "label_label_occlusion": 4.8,
+        "object_occlusion": 4.7727272727272725,
+        "object_penetration": 4.7727272727272725,
+        "leader_line_clarity": 4.427272727272728,
+        "multiview_consistency": 4.363636363636363,
+        "binocular_consistency": 4.372727272727273,
+        "manual_style_similarity": 4.245454545454546,
+        "spatial_balance": 4.045454545454546,
+        "size_consistency": 4.327272727272727,
+        "visual_hierarchy": 4.081818181818182,
+        "composition_harmony": 4.236363636363636,
+        "overall": 4.163636363636363
+      }
+    },
+    {
+      "group": "mdpo_safe_rerank",
+      "label": "v10-MDPO + safe reward reranking",
+      "model_role": "candidate",
+      "preference_rerank": true,
+      "sample_count": 11,
+      "metric_protocol": "unified_reproduction_metrics_v2_exact_fixed_origin",
+      "metrics": {
+        "PCK_005": 0.14764069267272728,
+        "PCK_010": 0.40563492058181816,
+        "OLR": 0.10527119774545456,
+        "LCD": 0,
+        "avg_leader_length": 0.1380840773272727,
+        "overlap_pairs": 0.6,
+        "occluded_points": 0.2545454545454546,
+        "quality_score": 19.8721161602,
+        "object_occlusion": 0.008090909090909091,
+        "penetration": 0,
+        "mesh_surface_intersection": 0.0020202020202020198,
+        "intersections": 0,
+        "worst_view_intersections": 0,
+        "worst_view_overflow": 0.038,
+        "text_clarity": 4.662727272727273,
+        "leader_line_clarity": 4.4363636363636365
+      },
+      "scores": {
+        "text_clarity": 4.662727272727273,
+        "coverage": 4.818181818181818,
+        "label_label_occlusion": 4.8,
+        "object_occlusion": 4.790909090909091,
+        "object_penetration": 4.818181818181818,
+        "leader_line_clarity": 4.4363636363636365,
+        "multiview_consistency": 4.409090909090909,
+        "binocular_consistency": 4.363636363636363,
+        "manual_style_similarity": 4.345454545454545,
+        "spatial_balance": 4.118181818181818,
+        "size_consistency": 4.3545454545454545,
+        "visual_hierarchy": 4.072727272727272,
+        "composition_harmony": 4.254545454545454,
+        "overall": 4.199999999999999
+      }
+    }
+  ],
+  "security": {
+    "test_used": false,
+    "qwen_inference_input": false,
+    "candidate_not_presented_as_deployed": true
+  }
+}

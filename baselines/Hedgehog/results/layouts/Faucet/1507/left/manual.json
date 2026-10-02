@@ -1,0 +1,445 @@
+{
+  "version": "hedgehog_reproduction",
+  "name": "E-张宸语",
+  "layout_level": "layout1",
+  "layout_type": "manual",
+  "sample_id": "1507",
+  "category": "Faucet",
+  "hierarchy_file": "result_after_merging.json",
+  "normalization": {
+    "center_origin": [
+      -0.00032150000000000234,
+      0.16394800000000004,
+      0.08920550000000001
+    ],
+    "center_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 0.883492842610295
+  },
+  "groups": [
+    {
+      "group_id": "switch_3_3",
+      "id": 3,
+      "ori_id": 3,
+      "source_objs": [
+        "new-5.obj",
+        "original-17.obj"
+      ],
+      "target_g": [
+        "switch_new-5",
+        "switch_original-17"
+      ],
+      "anchor": {
+        "point": [
+          -0.04515429900001511,
+          0.8536164229999841,
+          -0.3371261040000162
+        ]
+      },
+      "label": {
+        "text": "switch",
+        "box_size": [
+          0.5027719174826032,
+          0.139412280464409,
+          0.02
+        ],
+        "center": [
+          0.0019195756109606776,
+          1.5923336644259303,
+          -0.7429000386433895
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.04515429900001511,
+          0.8536164229999841,
+          -0.3371261040000162
+        ],
+        "bend_points": [],
+        "end": [
+          0.0019195756109606776,
+          1.5923336644259303,
+          -0.7429000386433895
+        ]
+      }
+    },
+    {
+      "group_id": "vertical_support_6_6",
+      "id": 6,
+      "ori_id": 6,
+      "source_objs": [
+        "new-6.obj",
+        "new-7.obj"
+      ],
+      "target_g": [
+        "vertical_support_new-6",
+        "vertical_support_new-7"
+      ],
+      "anchor": {
+        "point": [
+          0.009424524999981365,
+          0.43881509999998247,
+          -0.3390729220000184
+        ]
+      },
+      "label": {
+        "text": "vertical_support",
+        "box_size": [
+          1.3337982662630803,
+          0.184,
+          0.02
+        ],
+        "center": [
+          1.2784001254907604,
+          0.15423681501291853,
+          -0.9699264954649234
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.009424524999981365,
+          0.43881509999998247,
+          -0.3390729220000184
+        ],
+        "bend_points": [],
+        "end": [
+          1.2784001254907604,
+          0.15423681501291853,
+          -0.9699264954649234
+        ]
+      }
+    },
+    {
+      "group_id": "horizontal_support_11_11",
+      "id": 11,
+      "ori_id": 11,
+      "source_objs": [
+        "original-16.obj"
+      ],
+      "target_g": [
+        "horizontal_support_original-16"
+      ],
+      "anchor": {
+        "point": [
+          0.0004102117035928998,
+          0.765988577715186,
+          -0.21272450006809418
+        ]
+      },
+      "label": {
+        "text": "horizontal_support",
+        "box_size": [
+          1.5573420711645425,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -1.5979947502422132,
+          1.4146500776309443,
+          0.5016471136198124
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.0004102117035928998,
+          0.765988577715186,
+          -0.21272450006809418
+        ],
+        "bend_points": [],
+        "end": [
+          -1.5979947502422132,
+          1.4146500776309443,
+          0.5016471136198124
+        ]
+      }
+    },
+    {
+      "group_id": "horizontal_support_9_9",
+      "id": 9,
+      "ori_id": 9,
+      "source_objs": [
+        "original-8.obj",
+        "original-13.obj",
+        "original-10.obj"
+      ],
+      "target_g": [
+        "horizontal_support_original-8",
+        "horizontal_support_original-13",
+        "horizontal_support_original-10"
+      ],
+      "anchor": {
+        "point": [
+          0.05291685371560373,
+          0.009059482603603008,
+          -0.3753112556116571
+        ]
+      },
+      "label": {
+        "text": "horizontal_support",
+        "box_size": [
+          1.5573420711645425,
+          0.184,
+          0.02
+        ],
+        "center": [
+          2.226229150971511,
+          -1.2255921057847603,
+          -0.6945871315909518
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.05291685371560373,
+          0.009059482603603008,
+          -0.3753112556116571
+        ],
+        "bend_points": [],
+        "end": [
+          2.226229150971511,
+          -1.2255921057847603,
+          -0.6945871315909518
+        ]
+      }
+    },
+    {
+      "group_id": "vertical_support_7_7",
+      "id": 7,
+      "ori_id": 7,
+      "source_objs": [
+        "original-7.obj"
+      ],
+      "target_g": [
+        "vertical_support_original-7"
+      ],
+      "anchor": {
+        "point": [
+          0.03428267699998244,
+          -0.6033755730000179,
+          -0.07921909100001834
+        ]
+      },
+      "label": {
+        "text": "vertical_support",
+        "box_size": [
+          1.3337982662630803,
+          0.184,
+          0.02
+        ],
+        "center": [
+          0.9379578233901436,
+          -1.425865099212074,
+          0.19313820913579338
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.03428267699998244,
+          -0.6033755730000179,
+          -0.07921909100001834
+        ],
+        "bend_points": [],
+        "end": [
+          0.9379578233901436,
+          -1.425865099212074,
+          0.19313820913579338
+        ]
+      }
+    },
+    {
+      "group_id": "horizontal_support_10_10",
+      "id": 10,
+      "ori_id": 10,
+      "source_objs": [
+        "original-5.obj",
+        "original-3.obj",
+        "original-9.obj"
+      ],
+      "target_g": [
+        "horizontal_support_original-5",
+        "horizontal_support_original-3",
+        "horizontal_support_original-9"
+      ],
+      "anchor": {
+        "point": [
+          0.050427685999980376,
+          -0.6904866350000196,
+          0.059015191999979955
+        ]
+      },
+      "label": {
+        "text": "horizontal_support",
+        "box_size": [
+          1.5573420711645425,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -1.6637233594056413,
+          0.30996414637891956,
+          1.4899728846863605
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.050427685999980376,
+          -0.6904866350000196,
+          0.059015191999979955
+        ],
+        "bend_points": [],
+        "end": [
+          -1.6637233594056413,
+          0.30996414637891956,
+          1.4899728846863605
+        ]
+      }
+    },
+    {
+      "group_id": "switch_2_2",
+      "id": 2,
+      "ori_id": 2,
+      "source_objs": [
+        "new-0.obj",
+        "original-4.obj"
+      ],
+      "target_g": [
+        "switch_new-0",
+        "switch_original-4"
+      ],
+      "anchor": {
+        "point": [
+          -0.04767610800001876,
+          -0.5816074280000176,
+          0.10892504799998193
+        ]
+      },
+      "label": {
+        "text": "switch",
+        "box_size": [
+          0.5027719174826032,
+          0.139412280464409,
+          0.02
+        ],
+        "center": [
+          -1.1471728107292707,
+          0.863426355157543,
+          0.6630205491082917
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.04767610800001876,
+          -0.5816074280000176,
+          0.10892504799998193
+        ],
+        "bend_points": [],
+        "end": [
+          -1.1471728107292707,
+          0.863426355157543,
+          0.6630205491082917
+        ]
+      }
+    },
+    {
+      "group_id": "surface_base_5_5",
+      "id": 5,
+      "ori_id": 5,
+      "source_objs": [
+        "new-3.obj"
+      ],
+      "target_g": [
+        "surface_base_new-3"
+      ],
+      "anchor": {
+        "point": [
+          -0.04953916800001679,
+          -0.8337373710000175,
+          0.15237984199998245
+        ]
+      },
+      "label": {
+        "text": "surface_base",
+        "box_size": [
+          1.0273333633970776,
+          0.16471377132548823,
+          0.02
+        ],
+        "center": [
+          -1.1405662851901477,
+          -1.323838656623236,
+          1.0730173511787156
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.04953916800001679,
+          -0.8337373710000175,
+          0.15237984199998245
+        ],
+        "bend_points": [],
+        "end": [
+          -1.1405662851901477,
+          -1.323838656623236,
+          1.0730173511787156
+        ]
+      }
+    },
+    {
+      "group_id": "vertical_support_8_8",
+      "id": 8,
+      "ori_id": 8,
+      "source_objs": [
+        "new-4.obj",
+        "new-2.obj"
+      ],
+      "target_g": [
+        "vertical_support_new-4",
+        "vertical_support_new-2"
+      ],
+      "anchor": {
+        "point": [
+          -2.207100002138418e-05,
+          -0.7286476690000212,
+          0.1990355679999798
+        ]
+      },
+      "label": {
+        "text": "vertical_support",
+        "box_size": [
+          1.3337982662630803,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -1.0892730865623665,
+          -0.4304034040819218,
+          1.6899959747557372
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -2.207100002138418e-05,
+          -0.7286476690000212,
+          0.1990355679999798
+        ],
+        "bend_points": [],
+        "end": [
+          -1.0892730865623665,
+          -0.4304034040819218,
+          1.6899959747557372
+        ]
+      }
+    }
+  ],
+  "reproduction": {
+    "paper": "Tatzgern et al. 2014, Hedgehog Labeling",
+    "view": "left",
+    "method": "manual",
+    "parameters": {
+      "plane_count": 3,
+      "iterations": 80
+    }
+  }
+}

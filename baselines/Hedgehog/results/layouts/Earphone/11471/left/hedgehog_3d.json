@@ -1,0 +1,677 @@
+{
+  "version": "hedgehog_reproduction",
+  "name": "张航乐",
+  "layout_level": "layout1",
+  "layout_type": "hedgehog_3d",
+  "sample_id": "11471",
+  "category": "Earphone",
+  "hierarchy_file": "result_after_merging.json",
+  "normalization": {
+    "center_origin": [
+      0.008740999999999999,
+      0.14867350000000001,
+      -0.189867
+    ],
+    "center_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.1438435464140218
+  },
+  "groups": [
+    {
+      "group_id": "top_band_7_24",
+      "id": 7,
+      "ori_id": 24,
+      "source_objs": [
+        "original-217.obj",
+        "original-216.obj",
+        "original-215.obj",
+        "original-214.obj",
+        "original-198.obj",
+        "original-219.obj",
+        "original-204.obj",
+        "original-202.obj",
+        "original-201.obj",
+        "original-199.obj",
+        "original-205.obj",
+        "original-203.obj",
+        "original-206.obj",
+        "original-212.obj",
+        "original-229.obj",
+        "original-210.obj",
+        "original-228.obj",
+        "original-200.obj",
+        "original-208.obj",
+        "original-231.obj",
+        "original-222.obj",
+        "original-173.obj",
+        "original-209.obj",
+        "original-213.obj",
+        "original-211.obj",
+        "original-224.obj",
+        "original-221.obj",
+        "original-227.obj",
+        "original-226.obj",
+        "original-225.obj"
+      ],
+      "target_g": [
+        "top_band_original-217",
+        "top_band_original-216",
+        "top_band_original-215",
+        "top_band_original-214",
+        "top_band_original-198",
+        "top_band_original-219",
+        "top_band_original-204",
+        "top_band_original-202",
+        "top_band_original-201",
+        "top_band_original-199",
+        "top_band_original-205",
+        "top_band_original-203",
+        "top_band_original-206",
+        "top_band_original-212",
+        "top_band_original-229",
+        "top_band_original-210",
+        "top_band_original-228",
+        "top_band_original-200",
+        "top_band_original-208",
+        "top_band_original-231",
+        "top_band_original-222",
+        "top_band_original-173",
+        "top_band_original-209",
+        "top_band_original-213",
+        "top_band_original-211",
+        "top_band_original-224",
+        "top_band_original-221",
+        "top_band_original-227",
+        "top_band_original-226",
+        "top_band_original-225"
+      ],
+      "anchor": {
+        "point": [
+          -0.09655428900000196,
+          0.5939348109999987,
+          0.09710943499999836
+        ]
+      },
+      "label": {
+        "text": "top_band",
+        "box_size": [
+          0.7514503965805039,
+          0.18212139376706324,
+          0.02
+        ],
+        "center": [
+          -0.12436319166037318,
+          0.8302274459892977,
+          0.12567455806774178
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.09655428900000196,
+          0.5939348109999987,
+          0.09710943499999836
+        ],
+        "bend_points": [],
+        "end": [
+          -0.12436319166037318,
+          0.8302274459892977,
+          0.12567455806774178
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_connector_5_7",
+      "id": 5,
+      "ori_id": 7,
+      "source_objs": [
+        "original-120.obj",
+        "original-207.obj",
+        "original-68.obj",
+        "original-119.obj"
+      ],
+      "target_g": [
+        "earcup_connector_original-120",
+        "earcup_connector_original-207",
+        "earcup_connector_original-68",
+        "earcup_connector_original-119"
+      ],
+      "anchor": {
+        "point": [
+          -0.5703437350000033,
+          0.1450325089999973,
+          0.22663938699999697
+        ]
+      },
+      "label": {
+        "text": "earcup_connector",
+        "box_size": [
+          1.4753430454350094,
+          0.15416416696617533,
+          0.02
+        ],
+        "center": [
+          -1.2034095467208725,
+          0.3854299811110082,
+          0.3774318547858282
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.5703437350000033,
+          0.1450325089999973,
+          0.22663938699999697
+        ],
+        "bend_points": [],
+        "end": [
+          -1.2034095467208725,
+          0.3854299811110082,
+          0.3774318547858282
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_frame_3_5",
+      "id": 3,
+      "ori_id": 5,
+      "source_objs": [
+        "original-194.obj",
+        "original-145.obj",
+        "original-135.obj",
+        "original-136.obj",
+        "original-151.obj",
+        "original-177.obj",
+        "original-176.obj",
+        "original-149.obj",
+        "original-152.obj",
+        "original-162.obj",
+        "original-148.obj",
+        "original-157.obj",
+        "original-181.obj",
+        "original-159.obj",
+        "original-164.obj",
+        "original-188.obj",
+        "original-192.obj",
+        "original-193.obj",
+        "original-190.obj",
+        "original-195.obj",
+        "original-127.obj",
+        "original-129.obj",
+        "original-123.obj",
+        "original-185.obj",
+        "original-186.obj",
+        "original-142.obj",
+        "original-141.obj",
+        "original-167.obj",
+        "original-184.obj",
+        "original-147.obj",
+        "original-168.obj",
+        "original-183.obj",
+        "original-139.obj",
+        "original-122.obj",
+        "original-165.obj",
+        "original-69.obj",
+        "original-125.obj",
+        "original-124.obj",
+        "original-128.obj",
+        "original-144.obj",
+        "original-196.obj",
+        "original-154.obj",
+        "original-175.obj",
+        "original-76.obj",
+        "original-146.obj",
+        "original-174.obj",
+        "original-187.obj",
+        "original-140.obj",
+        "original-182.obj",
+        "original-155.obj",
+        "original-178.obj",
+        "original-161.obj",
+        "original-180.obj",
+        "original-158.obj",
+        "original-150.obj",
+        "original-163.obj",
+        "original-160.obj",
+        "original-156.obj",
+        "original-153.obj",
+        "original-75.obj",
+        "original-73.obj",
+        "original-72.obj",
+        "original-80.obj",
+        "original-87.obj",
+        "original-82.obj",
+        "original-105.obj",
+        "original-108.obj",
+        "original-106.obj",
+        "original-103.obj",
+        "original-101.obj",
+        "original-110.obj",
+        "original-115.obj",
+        "original-113.obj",
+        "original-102.obj",
+        "original-77.obj",
+        "original-90.obj",
+        "original-91.obj",
+        "original-143.obj",
+        "original-171.obj",
+        "original-166.obj",
+        "original-169.obj",
+        "original-172.obj",
+        "original-170.obj",
+        "original-189.obj",
+        "original-191.obj",
+        "original-138.obj"
+      ],
+      "target_g": [
+        "earcup_frame_original-194",
+        "earcup_frame_original-145",
+        "earcup_frame_original-135",
+        "earcup_frame_original-136",
+        "earcup_frame_original-151",
+        "earcup_frame_original-177",
+        "earcup_frame_original-176",
+        "earcup_frame_original-149",
+        "earcup_frame_original-152",
+        "earcup_frame_original-162",
+        "earcup_frame_original-148",
+        "earcup_frame_original-157",
+        "earcup_frame_original-181",
+        "earcup_frame_original-159",
+        "earcup_frame_original-164",
+        "earcup_frame_original-188",
+        "earcup_frame_original-192",
+        "earcup_frame_original-193",
+        "earcup_frame_original-190",
+        "earcup_frame_original-195",
+        "earcup_frame_original-127",
+        "earcup_frame_original-129",
+        "earcup_frame_original-123",
+        "earcup_frame_original-185",
+        "earcup_frame_original-186",
+        "earcup_frame_original-142",
+        "earcup_frame_original-141",
+        "earcup_frame_original-167",
+        "earcup_frame_original-184",
+        "earcup_frame_original-147",
+        "earcup_frame_original-168",
+        "earcup_frame_original-183",
+        "earcup_frame_original-139",
+        "earcup_frame_original-122",
+        "earcup_frame_original-165",
+        "earcup_frame_original-69",
+        "earcup_frame_original-125",
+        "earcup_frame_original-124",
+        "earcup_frame_original-128",
+        "earcup_frame_original-144",
+        "earcup_frame_original-196",
+        "earcup_frame_original-154",
+        "earcup_frame_original-175",
+        "earcup_frame_original-76",
+        "earcup_frame_original-146",
+        "earcup_frame_original-174",
+        "earcup_frame_original-187",
+        "earcup_frame_original-140",
+        "earcup_frame_original-182",
+        "earcup_frame_original-155",
+        "earcup_frame_original-178",
+        "earcup_frame_original-161",
+        "earcup_frame_original-180",
+        "earcup_frame_original-158",
+        "earcup_frame_original-150",
+        "earcup_frame_original-163",
+        "earcup_frame_original-160",
+        "earcup_frame_original-156",
+        "earcup_frame_original-153",
+        "earcup_frame_original-75",
+        "earcup_frame_original-73",
+        "earcup_frame_original-72",
+        "earcup_frame_original-80",
+        "earcup_frame_original-87",
+        "earcup_frame_original-82",
+        "earcup_frame_original-105",
+        "earcup_frame_original-108",
+        "earcup_frame_original-106",
+        "earcup_frame_original-103",
+        "earcup_frame_original-101",
+        "earcup_frame_original-110",
+        "earcup_frame_original-115",
+        "earcup_frame_original-113",
+        "earcup_frame_original-102",
+        "earcup_frame_original-77",
+        "earcup_frame_original-90",
+        "earcup_frame_original-91",
+        "earcup_frame_original-143",
+        "earcup_frame_original-171",
+        "earcup_frame_original-166",
+        "earcup_frame_original-169",
+        "earcup_frame_original-172",
+        "earcup_frame_original-170",
+        "earcup_frame_original-189",
+        "earcup_frame_original-191",
+        "earcup_frame_original-138"
+      ],
+      "anchor": {
+        "point": [
+          -0.4108411520000015,
+          -0.09026802700000225,
+          0.4689671079999975
+        ]
+      },
+      "label": {
+        "text": "earcup_frame",
+        "box_size": [
+          1.0961231610621678,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -1.2218627131043998,
+          -0.28097715978816606,
+          1.0010149296416773
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.4108411520000015,
+          -0.09026802700000225,
+          0.4689671079999975
+        ],
+        "bend_points": [],
+        "end": [
+          -1.2218627131043998,
+          -0.28097715978816606,
+          1.0010149296416773
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_pad_4_6",
+      "id": 4,
+      "ori_id": 6,
+      "source_objs": [
+        "original-133.obj",
+        "original-132.obj"
+      ],
+      "target_g": [
+        "earcup_pad_original-133",
+        "earcup_pad_original-132"
+      ],
+      "anchor": {
+        "point": [
+          -0.28880785400000253,
+          -0.5121841200000032,
+          0.23675440699999672
+        ]
+      },
+      "label": {
+        "text": "earcup_pad",
+        "box_size": [
+          0.9140016482679085,
+          0.18212139376706324,
+          0.02
+        ],
+        "center": [
+          -0.7032978111589937,
+          -1.1982595898193213,
+          0.551659634688274
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.28880785400000253,
+          -0.5121841200000032,
+          0.23675440699999672
+        ],
+        "bend_points": [],
+        "end": [
+          -0.7032978111589937,
+          -1.1982595898193213,
+          0.551659634688274
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_frame_9_12",
+      "id": 9,
+      "ori_id": 12,
+      "source_objs": [
+        "original-46.obj",
+        "original-65.obj",
+        "original-4.obj",
+        "original-44.obj",
+        "original-45.obj",
+        "original-49.obj",
+        "original-66.obj",
+        "original-47.obj",
+        "original-58.obj",
+        "original-55.obj",
+        "original-57.obj",
+        "original-53.obj",
+        "original-54.obj",
+        "original-7.obj",
+        "original-5.obj",
+        "original-8.obj",
+        "original-6.obj",
+        "original-13.obj",
+        "original-22.obj",
+        "original-21.obj",
+        "original-20.obj",
+        "original-19.obj",
+        "original-18.obj",
+        "original-17.obj",
+        "original-16.obj",
+        "original-15.obj",
+        "original-10.obj",
+        "original-9.obj",
+        "original-14.obj",
+        "original-11.obj",
+        "original-12.obj",
+        "original-52.obj",
+        "original-51.obj",
+        "original-32.obj",
+        "original-40.obj",
+        "original-41.obj",
+        "original-27.obj",
+        "original-29.obj",
+        "original-39.obj",
+        "original-33.obj",
+        "original-31.obj",
+        "original-24.obj",
+        "original-48.obj",
+        "original-223.obj",
+        "original-218.obj",
+        "original-220.obj",
+        "original-59.obj",
+        "original-35.obj",
+        "original-50.obj",
+        "original-42.obj"
+      ],
+      "target_g": [
+        "earcup_frame_original-46",
+        "earcup_frame_original-65",
+        "earcup_frame_original-4",
+        "earcup_frame_original-44",
+        "earcup_frame_original-45",
+        "earcup_frame_original-49",
+        "earcup_frame_original-66",
+        "earcup_frame_original-47",
+        "earcup_frame_original-58",
+        "earcup_frame_original-55",
+        "earcup_frame_original-57",
+        "earcup_frame_original-53",
+        "earcup_frame_original-54",
+        "earcup_frame_original-7",
+        "earcup_frame_original-5",
+        "earcup_frame_original-8",
+        "earcup_frame_original-6",
+        "earcup_frame_original-13",
+        "earcup_frame_original-22",
+        "earcup_frame_original-21",
+        "earcup_frame_original-20",
+        "earcup_frame_original-19",
+        "earcup_frame_original-18",
+        "earcup_frame_original-17",
+        "earcup_frame_original-16",
+        "earcup_frame_original-15",
+        "earcup_frame_original-10",
+        "earcup_frame_original-9",
+        "earcup_frame_original-14",
+        "earcup_frame_original-11",
+        "earcup_frame_original-12",
+        "earcup_frame_original-52",
+        "earcup_frame_original-51",
+        "earcup_frame_original-32",
+        "earcup_frame_original-40",
+        "earcup_frame_original-41",
+        "earcup_frame_original-27",
+        "earcup_frame_original-29",
+        "earcup_frame_original-39",
+        "earcup_frame_original-33",
+        "earcup_frame_original-31",
+        "earcup_frame_original-24",
+        "earcup_frame_original-48",
+        "earcup_frame_original-223",
+        "earcup_frame_original-218",
+        "earcup_frame_original-220",
+        "earcup_frame_original-59",
+        "earcup_frame_original-35",
+        "earcup_frame_original-50",
+        "earcup_frame_original-42"
+      ],
+      "anchor": {
+        "point": [
+          0.5222619839999982,
+          -0.5661985000000023,
+          0.13310561599999815
+        ]
+      },
+      "label": {
+        "text": "earcup_frame",
+        "box_size": [
+          1.0961231610621678,
+          0.184,
+          0.02
+        ],
+        "center": [
+          0.8148662358617692,
+          -0.6841922701945854,
+          0.1532885863684963
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.5222619839999982,
+          -0.5661985000000023,
+          0.13310561599999815
+        ],
+        "bend_points": [],
+        "end": [
+          0.8148662358617692,
+          -0.6841922701945854,
+          0.1532885863684963
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_connector_11_14",
+      "id": 11,
+      "ori_id": 14,
+      "source_objs": [
+        "original-28.obj"
+      ],
+      "target_g": [
+        "earcup_connector_original-28"
+      ],
+      "anchor": {
+        "point": [
+          0.6314342569999969,
+          -0.012194412000003929,
+          0.023949078999997653
+        ]
+      },
+      "label": {
+        "text": "earcup_connector",
+        "box_size": [
+          1.4753430454350094,
+          0.15416416696617533,
+          0.02
+        ],
+        "center": [
+          1.4685319892914313,
+          0.09085961217218556,
+          0.0026185244120074044
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.6314342569999969,
+          -0.012194412000003929,
+          0.023949078999997653
+        ],
+        "bend_points": [],
+        "end": [
+          1.4685319892914313,
+          0.09085961217218556,
+          0.0026185244120074044
+        ]
+      }
+    },
+    {
+      "group_id": "earcup_pad_10_13",
+      "id": 10,
+      "ori_id": 13,
+      "source_objs": [
+        "original-62.obj",
+        "original-63.obj"
+      ],
+      "target_g": [
+        "earcup_pad_original-62",
+        "earcup_pad_original-63"
+      ],
+      "anchor": {
+        "point": [
+          0.40022956099999707,
+          -0.4940968560000032,
+          0.22416177499999623
+        ]
+      },
+      "label": {
+        "text": "earcup_pad",
+        "box_size": [
+          0.9140016482679085,
+          0.18212139376706324,
+          0.02
+        ],
+        "center": [
+          0.6677386847154937,
+          -0.8409580089299833,
+          0.38068055421885105
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.40022956099999707,
+          -0.4940968560000032,
+          0.22416177499999623
+        ],
+        "bend_points": [],
+        "end": [
+          0.6677386847154937,
+          -0.8409580089299833,
+          0.38068055421885105
+        ]
+      }
+    }
+  ],
+  "reproduction": {
+    "paper": "Tatzgern et al. 2014, Hedgehog Labeling",
+    "view": "left",
+    "method": "hedgehog_3d",
+    "parameters": {
+      "plane_count": 3,
+      "iterations": 80
+    }
+  }
+}

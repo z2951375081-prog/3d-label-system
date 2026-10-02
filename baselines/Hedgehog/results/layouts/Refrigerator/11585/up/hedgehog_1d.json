@@ -1,0 +1,479 @@
+{
+  "version": "hedgehog_reproduction",
+  "name": "刘轩阳",
+  "layout_level": "layout1",
+  "layout_type": "hedgehog_1d",
+  "sample_id": "11585",
+  "category": "Refrigerator",
+  "hierarchy_file": "result_after_merging.json",
+  "normalization": {
+    "center_origin": [
+      0.0011680000000000024,
+      -0.020968000000000042,
+      -0.02795249999999999
+    ],
+    "center_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 1.0088796560224247
+  },
+  "groups": [
+    {
+      "group_id": "frame_2_8",
+      "id": 2,
+      "ori_id": 8,
+      "source_objs": [
+        "new-1.obj",
+        "original-55.obj"
+      ],
+      "target_g": [
+        "frame_new-1",
+        "frame_original-55"
+      ],
+      "anchor": {
+        "point": [
+          0.018066046423886206,
+          0.08669235997087466,
+          -0.29860606867625883
+        ]
+      },
+      "label": {
+        "text": "frame",
+        "box_size": [
+          0.5140864764689373,
+          0.15785620547031898,
+          0.02
+        ],
+        "center": [
+          0.05412993967702184,
+          0.259749814961046,
+          -0.894690963666946
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.018066046423886206,
+          0.08669235997087466,
+          -0.29860606867625883
+        ],
+        "bend_points": [],
+        "end": [
+          0.05412993967702184,
+          0.259749814961046,
+          -0.894690963666946
+        ]
+      }
+    },
+    {
+      "group_id": "door_frame_7_21",
+      "id": 7,
+      "ori_id": 21,
+      "source_objs": [
+        "original-48.obj",
+        "original-49.obj",
+        "original-43.obj",
+        "original-42.obj",
+        "original-37.obj",
+        "original-39.obj",
+        "original-41.obj",
+        "original-40.obj",
+        "original-38.obj",
+        "new-0.obj",
+        "original-56.obj"
+      ],
+      "target_g": [
+        "door_frame_original-48",
+        "door_frame_original-49",
+        "door_frame_original-43",
+        "door_frame_original-42",
+        "door_frame_original-37",
+        "door_frame_original-39",
+        "door_frame_original-41",
+        "door_frame_original-40",
+        "door_frame_original-38",
+        "door_frame_new-0",
+        "door_frame_original-56"
+      ],
+      "anchor": {
+        "point": [
+          -0.2718746622828885,
+          0.5442743799270033,
+          0.206422264006628
+        ]
+      },
+      "label": {
+        "text": "door_frame",
+        "box_size": [
+          1.0718962742618043,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -0.7106656687552464,
+          1.422703803838492,
+          0.5395766382363439
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2718746622828885,
+          0.5442743799270033,
+          0.206422264006628
+        ],
+        "bend_points": [],
+        "end": [
+          -0.7106656687552464,
+          1.422703803838492,
+          0.5395766382363439
+        ]
+      }
+    },
+    {
+      "group_id": "handle_8_22",
+      "id": 8,
+      "ori_id": 22,
+      "source_objs": [
+        "original-35.obj",
+        "original-31.obj",
+        "original-34.obj",
+        "original-33.obj",
+        "original-30.obj"
+      ],
+      "target_g": [
+        "handle_original-35",
+        "handle_original-31",
+        "handle_original-34",
+        "handle_original-33",
+        "handle_original-30"
+      ],
+      "anchor": {
+        "point": [
+          -0.2698637030000439,
+          0.10271492699995477,
+          0.2743751429999568
+        ]
+      },
+      "label": {
+        "text": "handle",
+        "box_size": [
+          0.5726846662681379,
+          0.1557359739809553,
+          0.02
+        ],
+        "center": [
+          -0.48570359264796303,
+          0.1848674294017346,
+          0.49382333084029434
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2698637030000439,
+          0.10271492699995477,
+          0.2743751429999568
+        ],
+        "bend_points": [],
+        "end": [
+          -0.48570359264796303,
+          0.1848674294017346,
+          0.49382333084029434
+        ]
+      }
+    },
+    {
+      "group_id": "door_frame_4_17",
+      "id": 4,
+      "ori_id": 17,
+      "source_objs": [
+        "original-52.obj",
+        "original-50.obj",
+        "original-53.obj"
+      ],
+      "target_g": [
+        "door_frame_original-52",
+        "door_frame_original-50",
+        "door_frame_original-53"
+      ],
+      "anchor": {
+        "point": [
+          -0.07554069452935508,
+          -0.8539768983697087,
+          0.20890997876568207
+        ]
+      },
+      "label": {
+        "text": "door_frame",
+        "box_size": [
+          1.0718962742618043,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -0.21829435033031838,
+          -2.467786845066321,
+          0.6036993487590128
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.07554069452935508,
+          -0.8539768983697087,
+          0.20890997876568207
+        ],
+        "bend_points": [],
+        "end": [
+          -0.21829435033031838,
+          -2.467786845066321,
+          0.6036993487590128
+        ]
+      }
+    },
+    {
+      "group_id": "handle_5_18",
+      "id": 5,
+      "ori_id": 18,
+      "source_objs": [
+        "original-25.obj",
+        "original-26.obj",
+        "original-27.obj",
+        "original-23.obj",
+        "original-22.obj"
+      ],
+      "target_g": [
+        "handle_original-25",
+        "handle_original-26",
+        "handle_original-27",
+        "handle_original-23",
+        "handle_original-22"
+      ],
+      "anchor": {
+        "point": [
+          -0.27073694900004774,
+          -0.28293166400004743,
+          0.2739786639999551
+        ]
+      },
+      "label": {
+        "text": "handle",
+        "box_size": [
+          0.5726846662681379,
+          0.1557359739809553,
+          0.02
+        ],
+        "center": [
+          -0.5079007992725377,
+          -0.530778007271951,
+          0.5139822360529545
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.27073694900004774,
+          -0.28293166400004743,
+          0.2739786639999551
+        ],
+        "bend_points": [],
+        "end": [
+          -0.5079007992725377,
+          -0.530778007271951,
+          0.5139822360529545
+        ]
+      }
+    },
+    {
+      "group_id": "foot_12_5",
+      "id": 12,
+      "ori_id": 5,
+      "source_objs": [
+        "original-10.obj",
+        "original-11.obj"
+      ],
+      "target_g": [
+        "foot_original-10",
+        "foot_original-11"
+      ],
+      "anchor": {
+        "point": [
+          -0.24702961411909996,
+          -0.9151403862127552,
+          -0.27773926162603146
+        ]
+      },
+      "label": {
+        "text": "foot",
+        "box_size": [
+          0.3779583483852428,
+          0.15785620547031898,
+          0.02
+        ],
+        "center": [
+          -1.0871940571531953,
+          -4.027594800320989,
+          -1.2223492950620738
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.24702961411909996,
+          -0.9151403862127552,
+          -0.27773926162603146
+        ],
+        "bend_points": [],
+        "end": [
+          -1.0871940571531953,
+          -4.027594800320989,
+          -1.2223492950620738
+        ]
+      }
+    },
+    {
+      "group_id": "foot_14_7",
+      "id": 14,
+      "ori_id": 7,
+      "source_objs": [
+        "original-6.obj",
+        "original-7.obj"
+      ],
+      "target_g": [
+        "foot_original-6",
+        "foot_original-7"
+      ],
+      "anchor": {
+        "point": [
+          -0.2499785733995532,
+          -0.9151406817644308,
+          0.1976666881390896
+        ]
+      },
+      "label": {
+        "text": "foot",
+        "box_size": [
+          0.3779583483852428,
+          0.15785620547031898,
+          0.02
+        ],
+        "center": [
+          -0.5420989922213497,
+          -1.9845574545795994,
+          0.42865638834037695
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2499785733995532,
+          -0.9151406817644308,
+          0.1976666881390896
+        ],
+        "bend_points": [],
+        "end": [
+          -0.5420989922213497,
+          -1.9845574545795994,
+          0.42865638834037695
+        ]
+      }
+    },
+    {
+      "group_id": "foot_11_4",
+      "id": 11,
+      "ori_id": 4,
+      "source_objs": [
+        "original-18.obj",
+        "original-19.obj"
+      ],
+      "target_g": [
+        "foot_original-18",
+        "foot_original-19"
+      ],
+      "anchor": {
+        "point": [
+          0.2642178359999461,
+          -0.9151408640000547,
+          -0.270619492000054
+        ]
+      },
+      "label": {
+        "text": "foot",
+        "box_size": [
+          0.3779583483852428,
+          0.15785620547031898,
+          0.02
+        ],
+        "center": [
+          0.48886998125905773,
+          -1.693242605443169,
+          -0.5007146678108025
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.2642178359999461,
+          -0.9151408640000547,
+          -0.270619492000054
+        ],
+        "bend_points": [],
+        "end": [
+          0.48886998125905773,
+          -1.693242605443169,
+          -0.5007146678108025
+        ]
+      }
+    },
+    {
+      "group_id": "foot_13_6",
+      "id": 13,
+      "ori_id": 6,
+      "source_objs": [
+        "original-15.obj",
+        "original-14.obj"
+      ],
+      "target_g": [
+        "foot_original-15",
+        "foot_original-14"
+      ],
+      "anchor": {
+        "point": [
+          0.2642178282843819,
+          -0.9151410922681977,
+          0.19766635225266604
+        ]
+      },
+      "label": {
+        "text": "foot",
+        "box_size": [
+          0.3779583483852428,
+          0.15785620547031898,
+          0.02
+        ],
+        "center": [
+          0.4367619154461273,
+          -1.512762325532087,
+          0.3267498457227557
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.2642178282843819,
+          -0.9151410922681977,
+          0.19766635225266604
+        ],
+        "bend_points": [],
+        "end": [
+          0.4367619154461273,
+          -1.512762325532087,
+          0.3267498457227557
+        ]
+      }
+    }
+  ],
+  "reproduction": {
+    "paper": "Tatzgern et al. 2014, Hedgehog Labeling",
+    "view": "up",
+    "method": "hedgehog_1d",
+    "parameters": {
+      "plane_count": 3,
+      "iterations": 80
+    }
+  }
+}

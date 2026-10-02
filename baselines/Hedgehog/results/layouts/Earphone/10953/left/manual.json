@@ -1,0 +1,359 @@
+{
+  "version": "hedgehog_reproduction",
+  "name": "宋治桥",
+  "layout_level": "layout1",
+  "layout_type": "manual",
+  "sample_id": "10953",
+  "category": "Earphone",
+  "hierarchy_file": "result_after_merging.json",
+  "normalization": {
+    "center_origin": [
+      -0.034652499999999975,
+      0.0022445000000000034,
+      0.052252999999999966
+    ],
+    "center_target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": 0.9494247950150213
+  },
+  "groups": [
+    {
+      "group_id": "earbud_pad_9_6",
+      "id": 9,
+      "ori_id": 6,
+      "source_objs": [
+        "original-1.obj",
+        "original-14.obj",
+        "original-11.obj"
+      ],
+      "target_g": [
+        "earbud_pad_original-1",
+        "earbud_pad_original-14",
+        "earbud_pad_original-11"
+      ],
+      "anchor": {
+        "point": [
+          -0.35592842703954997,
+          0.02196423616723564,
+          -0.4012879128391047
+        ]
+      },
+      "label": {
+        "text": "earbud_pad",
+        "box_size": [
+          0.937956112423241,
+          0.184,
+          0.02
+        ],
+        "center": [
+          -0.09287498755052503,
+          0.57775281354568,
+          -1.05049980181653
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.35592842703954997,
+          0.02196423616723564,
+          -0.4012879128391047
+        ],
+        "bend_points": [],
+        "end": [
+          -0.09287498755052503,
+          0.57775281354568,
+          -1.05049980181653
+        ]
+      }
+    },
+    {
+      "group_id": "earbud_frame_8_5",
+      "id": 8,
+      "ori_id": 5,
+      "source_objs": [
+        "original-10.obj"
+      ],
+      "target_g": [
+        "earbud_frame_original-10"
+      ],
+      "anchor": {
+        "point": [
+          -0.2832072939321444,
+          0.0006474099739683936,
+          -0.3894896857851693
+        ]
+      },
+      "label": {
+        "text": "earbud_frame",
+        "box_size": [
+          1.1219561364742363,
+          0.16471377132548823,
+          0.02
+        ],
+        "center": [
+          0.8851044746256118,
+          0.3894470831473775,
+          -1.7088771541774914
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.2832072939321444,
+          0.0006474099739683936,
+          -0.3894896857851693
+        ],
+        "bend_points": [],
+        "end": [
+          0.8851044746256118,
+          0.3894470831473775,
+          -1.7088771541774914
+        ]
+      }
+    },
+    {
+      "group_id": "earbud_connector_10_7",
+      "id": 10,
+      "ori_id": 7,
+      "source_objs": [
+        "original-2.obj"
+      ],
+      "target_g": [
+        "earbud_connector_original-2"
+      ],
+      "anchor": {
+        "point": [
+          -0.19943640654626282,
+          -0.018122548014926743,
+          -0.3737735834478064
+        ]
+      },
+      "label": {
+        "text": "earbud_connector",
+        "box_size": [
+          1.5050878202491342,
+          0.16281578702111557,
+          0.02
+        ],
+        "center": [
+          1.551132094311014,
+          -0.022427616831242503,
+          -1.6692344197519438
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.19943640654626282,
+          -0.018122548014926743,
+          -0.3737735834478064
+        ],
+        "bend_points": [],
+        "end": [
+          1.551132094311014,
+          -0.022427616831242503,
+          -1.6692344197519438
+        ]
+      }
+    },
+    {
+      "group_id": "earbud_connector_wire_2_2",
+      "id": 2,
+      "ori_id": 2,
+      "source_objs": [
+        "original-4.obj",
+        "original-5.obj",
+        "original-6.obj",
+        "original-3.obj",
+        "new-1.obj",
+        "new-0.obj"
+      ],
+      "target_g": [
+        "earbud_connector_wire_original-4",
+        "earbud_connector_wire_original-5",
+        "earbud_connector_wire_original-6",
+        "earbud_connector_wire_original-3",
+        "earbud_connector_wire_new-1",
+        "earbud_connector_wire_new-0"
+      ],
+      "anchor": {
+        "point": [
+          -0.7191190960000879,
+          -0.0034541970000887545,
+          0.20122394199991245
+        ]
+      },
+      "label": {
+        "text": "earbud_connector_wire",
+        "box_size": [
+          1.9648859001170003,
+          0.16281578702111557,
+          0.02
+        ],
+        "center": [
+          -1.8833254068906342,
+          -0.20857298852672557,
+          1.7392632433011102
+        ]
+      },
+      "leader_line": {
+        "start": [
+          -0.7191190960000879,
+          -0.0034541970000887545,
+          0.20122394199991245
+        ],
+        "bend_points": [],
+        "end": [
+          -1.8833254068906342,
+          -0.20857298852672557,
+          1.7392632433011102
+        ]
+      }
+    },
+    {
+      "group_id": "earbud_pad_5_9",
+      "id": 5,
+      "ori_id": 9,
+      "source_objs": [
+        "original-15.obj",
+        "original-7.obj",
+        "original-12.obj"
+      ],
+      "target_g": [
+        "earbud_pad_original-15",
+        "earbud_pad_original-7",
+        "earbud_pad_original-12"
+      ],
+      "anchor": {
+        "point": [
+          0.03789328499360245,
+          0.03264115976136939,
+          0.04159852452701962
+        ]
+      },
+      "label": {
+        "text": "earbud_pad",
+        "box_size": [
+          0.937956112423241,
+          0.184,
+          0.02
+        ],
+        "center": [
+          1.0605436864048698,
+          -1.918445466267391,
+          -0.9677525174489965
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.03789328499360245,
+          0.03264115976136939,
+          0.04159852452701962
+        ],
+        "bend_points": [],
+        "end": [
+          1.0605436864048698,
+          -1.918445466267391,
+          -0.9677525174489965
+        ]
+      }
+    },
+    {
+      "group_id": "earbud_frame_4_8",
+      "id": 4,
+      "ori_id": 8,
+      "source_objs": [
+        "original-13.obj"
+      ],
+      "target_g": [
+        "earbud_frame_original-13"
+      ],
+      "anchor": {
+        "point": [
+          0.023231434999923195,
+          -0.04513838300007755,
+          0.0870843069999232
+        ]
+      },
+      "label": {
+        "text": "earbud_frame",
+        "box_size": [
+          1.1219561364742363,
+          0.16471377132548823,
+          0.02
+        ],
+        "center": [
+          -0.921211085232768,
+          -0.7953696764752873,
+          1.9516633575652484
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.023231434999923195,
+          -0.04513838300007755,
+          0.0870843069999232
+        ],
+        "bend_points": [],
+        "end": [
+          -0.921211085232768,
+          -0.7953696764752873,
+          1.9516633575652484
+        ]
+      }
+    },
+    {
+      "group_id": "earbud_connector_6_10",
+      "id": 6,
+      "ori_id": 10,
+      "source_objs": [
+        "original-8.obj"
+      ],
+      "target_g": [
+        "earbud_connector_original-8"
+      ],
+      "anchor": {
+        "point": [
+          0.015430768688831087,
+          0.0016825705497200971,
+          0.06836336811489385
+        ]
+      },
+      "label": {
+        "text": "earbud_connector",
+        "box_size": [
+          1.5050878202491342,
+          0.16281578702111557,
+          0.02
+        ],
+        "center": [
+          -1.726906510150843,
+          0.5688654826432886,
+          0.17019875837592036
+        ]
+      },
+      "leader_line": {
+        "start": [
+          0.015430768688831087,
+          0.0016825705497200971,
+          0.06836336811489385
+        ],
+        "bend_points": [],
+        "end": [
+          -1.726906510150843,
+          0.5688654826432886,
+          0.17019875837592036
+        ]
+      }
+    }
+  ],
+  "reproduction": {
+    "paper": "Tatzgern et al. 2014, Hedgehog Labeling",
+    "view": "left",
+    "method": "manual",
+    "parameters": {
+      "plane_count": 3,
+      "iterations": 80
+    }
+  }
+}

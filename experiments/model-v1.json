@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "status": "v1_initialized_untrained",
+  "task": "3d_label_layout",
+  "experts": [
+    { "id": "fnn_v1", "type": "feed_forward", "input": "candidate_node_features" },
+    { "id": "gnn_v1", "type": "graph_message_passing", "input": "candidate_nodes_and_constraint_edges" },
+    { "id": "cnn_v1", "type": "local_geometry_encoder", "input": "voxel_or_local_geometry_descriptor" },
+    { "id": "transformer_v1", "type": "set_transformer", "input": "candidate_set_tokens" }
+  ],
+  "router": { "id": "moe_v1", "type": "mixture_of_experts", "experts": ["fnn_v1", "gnn_v1", "cnn_v1", "transformer_v1"] },
+  "default_encoder": "moe_v1",
+  "input": {
+    "feature_dim": 12,
+    "features": ["anchor_xyz_norm", "center_xyz_norm", "box_size_norm", "source_group_count", "target_group_count", "distance_norm"],
+    "constraint_edges": ["same_semantic", "nearby_candidate", "symmetric_pair", "leader_crossing", "binocular_visibility"]
+  },
+  "expert_hyperparameters": {
+    "fnn_v1": { "hidden_dims": [64, 32], "activation": "tanh", "dropout": 0.0 },
+    "gnn_v1": { "layers": 3, "hidden_dim": 64, "aggregation": "mean_plus_edge_type_bias", "activation": "tanh" },
+    "cnn_v1": { "voxel_resolutions": [16, 32, 64], "channels": [16, 32, 64], "kernel": 3, "activation": "relu" },
+    "transformer_v1": { "layers": 4, "heads": 8, "hidden_dim": 128, "ffn_dim": 256, "dropout": 0.1 },
+    "moe_v1": { "experts": 4, "router_hidden_dim": 32, "router_activation": "softmax", "top_k": 4 }
+  },
+  "training": { "status": "not_trained", "preference_source": "experiments/preferences.jsonl", "button": "网页训练偏好模型", "batch_size": 16, "epochs": 80, "learning_rate": 0.01, "weight_decay": 0.0001, "seed": 17, "loss": "pairwise_logistic_preference" }
+}
